@@ -30,6 +30,7 @@ tmp
 *.fot
 *.cb
 *.cb2
+*.nlo
 
 ## Intermediate documents:
 *.dvi
