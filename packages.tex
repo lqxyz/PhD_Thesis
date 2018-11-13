@@ -1,0 +1,162 @@
+
+\usepackage{tocloft}   % This package must be the first one
+\usepackage{todo-book}
+
+\usepackage{geometry}
+%\geometry{verbose,a4paper,textwidth=6.in,textheight=9.8in}
+%\documentclass[twocolumn,journal]{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+
+\usepackage{fancyhdr}
+%  \pagestyle{fancy}
+%  \fancypagestyle{plain}{%
+%     \fancyhf{} % clear all header and footer fields
+%  
+%     \lfoot[\thepage]{}
+%     \rfoot[]{\thepage}
+%     \renewcommand{\headrulewidth}{0pt}
+%  }
+%  %\fancypagestyle{fancy}{%
+%     \fancyhf{}
+%     %\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}} 
+%     \renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter.\ #1}{}} % Add Chapter by Qun Liu
+%     \lhead{\leftmark}
+%     %\rhead{\thepage}
+%     \lfoot[\thepage]{}
+%     \rfoot[]{\thepage}
+%  %}
+
+%%%% Qun Liu modify the header in April 20, 2018 %%%%
+\fancyfoot{}
+%\fancyhead{}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter.\ #1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}} 
+%\fancyhead[RO,LE]{\thepage}
+%\fancyhead[LO]{\slshape\nouppercase \leftmark}
+%\fancyhead[LO]{\nouppercase \leftmark}
+%\fancyhead[RE]{\nouppercase \rightmark}
+%%% E: Even page, O: Odd page, L: Left field, C: Center field, R: Right field, H: Header, F: Footer
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase \leftmark}
+\fancyhead[LO]{\nouppercase \rightmark}
+
+%% -- One worked way to remove page number on the first page of chapter
+%\makeatletter
+%\let\ps@plain\ps@empty
+%\makeatother
+\fancypagestyle{plain}{ %
+	\fancyhf{} % remove everything
+	\renewcommand{\headrulewidth}{0pt} % remove lines as well
+	\renewcommand{\footrulewidth}{0pt}
+	\cfoot{\thepage} % Add page number at the center of page foot
+}
+
+
+%\usepackage{parskip}            % parskip separates non-indented paras by a blank line.
+%\addtolength{\parskip}{0.2\parskip}
+
+\usepackage{url}
+ %\usepackage{doublespace}
+\usepackage[square,sort]{natbib}
+%\usepackage[round]{natbib}
+ %\usepackage[numbers]{natbib}
+
+\usepackage{float}
+\usepackage[small,labelsep=space]{caption}
+\setcapindent{0pt} % To stop the second and subsequent lines of captions being indented. (Caused by exeterthesis)
+
+\usepackage{subfig}
+\usepackage{mathtools}   % For \shortintertext
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{decorations.pathreplacing}   % for curly brackets
+\usetikzlibrary{shadows}
+
+% Glossary
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{Glossary}
+\RequirePackage{ifthen}
+\renewcommand{\nomgroup}[1]{%
+   \ifthenelse{\not\equal{#1}{A}}{\vspace{5mm}}{}%
+   \ifthenelse{\equal{#1}{A}}{\item[\textbf{Acronyms and abbreviations}]}{%
+   \ifthenelse{\equal{#1}{B}}{\item[\textbf{Matrix/vector/scalar notation}]}{%
+   \ifthenelse{\equal{#1}{C}}{\item[\textbf{Probability density functions}]}{%
+   \ifthenelse{\equal{#1}{R}}{\item[\textbf{Roman}]}{%
+   \ifthenelse{\equal{#1}{G}}{\item[\textbf{Greek}]}{}}}}}}
+
+% Appendix
+\usepackage{appendix}
+
+\usepackage{fixltx2e}
+
+%-------------------------------------------------------------------------------
+% The following causes contents, citations, bookmarks etc to come out in colour.
+%\usepackage[bookmarks=false]{hyperref}
+%\hypersetup{linktoc=all,
+%            unicode=true,
+%            colorlinks=true,
+%            pdfstartview=Fit,
+%            pdfnewwindow=true}
+%-------------------------------------------------------------------------------
+
+\usepackage{scrhack}
+\usepackage{lscape}
+
+%\usepackage{framed}
+\usepackage{afterpage}   % For \afterpage{\clearpage} to flush figures.
+%\usepackage{fancybox}
+%\setlength{\mylength}{\textwidth}%
+%\newenvironment{FramedTable}%
+%{\begin{table}[h]
+%\begin{Sbox}%
+%\setlength{\mylength}{\textwidth}%
+%\addtolength{\mylength}{-2\fboxsep}%
+%\addtolength{\mylength}{-2\fboxrule}%
+%\begin{minipage}{\mylength}}%
+%{\end{minipage}\end{Sbox}\fbox{\TheSbox}\end{table}}%
+
+
+%\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+%\renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+%   Parameters for TEXT pages (not float pages):
+%    \setcounter{topnumber}{2}
+%    \setcounter{bottomnumber}{2}
+%    \setcounter{totalnumber}{4}     % 2 may work better
+%    \setcounter{dbltopnumber}{2}    % for 2-column pages
+%    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+%    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+%   Parameters for FLOAT pages (not text pages):
+%\renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+% N.B.: floatpagefraction MUST be less than topfraction !!
+%\renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+% For thousands separators
+\usepackage{siunitx}
+%\usepackage[]{siunitx}
+
+\usepackage{pifont}   % Also need to install the symbol package
+\newcommand{\tick}{\ding{52}}
+
+\usepackage{morefloats} % Latex Error: Float(s) lost.
+
+%%%%%%%% ADDED BY MYSELF %%%%%%%%%%%
+\usepackage{epigraph} % Added by Qun Liu, 2018/04/20, quoting
+%\usepackage{fncychap}[Glenn]
+%\usepackage[Glenn]{fncychap}
+\usepackage{fncychap}  % Fancy chapter title styles
+\usepackage{lipsum}  % Produce large text
+\usepackage{bm} % math bold
+
+\usepackage{booktabs} % for table, such as \midrule
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{diagbox}
+\usepackage{mathrsfs}
