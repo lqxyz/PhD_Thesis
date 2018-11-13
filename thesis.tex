@@ -1,0 +1,88 @@
+%\documentclass[onehalfspacing,oneside]{exeterthesis}
+\documentclass[doublespacing,twoside,12pt]{exeterthesis}
+\input{packages}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+
+%\includeonly{thesisPreamble}
+%\includeonly{chapter1}
+%\includeonly{chapter2}
+%\includeonly{chapter3}
+%\includeonly{chapter4}
+%\includeonly{chapter5}
+%\includeonly{appendix1}
+%\includeonly{appendix2}
+
+%-----------------------------
+% 		Document title
+%-----------------------------
+
+\title{My thesis title}
+\author{Qun Liu}
+\date{December 2020}
+\department{Mathematics}
+\supervisor{Prof. Mat Collins and Prof. Geoffrey Vallis}
+%\dedication{Some dedication text to thank various people.}
+%\declaration{Declaration of work already published.}
+
+%==============================
+% 		Document body
+%==============================
+\begin{document}
+	
+% Uncomment these if you want to see your To-Do lists
+%\listoftodos           % \todo{remember to do thins thing}
+%\listoftodorefs        % \todoref{I need a reference for this}
+%\listoftodoexps        % \todoexp{Do an experiment}
+
+%\include{thesisPreamble}
+
+% % % Glossary
+% % % MakeIndex command line: makeindex thesis.nlo -s nomencl.ist -o thesis.nls
+%  \newpage
+%  \renewcommand{\nomname}{Nomenclature and Abbreviations}
+%  %\chapter*{Nomenclature and Abbreviations}
+%  \setlength{\nomlabelwidth}{2.5cm}
+%  \setlength{\nomitemsep}{-\parsep}
+%  \input{glossary}
+%  \printnomenclature
+%  \addcontentsline{toc}{chapter}{Nomenclature and Abbreviations}
+%  \label{glossary}
+
+\clearpage
+%% Begin new page of 
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+\include{chapter1}
+%\include{chapter2}
+%\include{chapter/chapter3}
+%\include{chapter/chapter4}
+%\include{chapter/chapter5}
+
+%==========================================================================================
+
+%------------------------------------------------------------------------------------------
+% Appendices
+%------------------------------------------------------------------------------------------
+%\addappheadtotoc
+%\appendixpage
+
+%\begin{appendices}
+
+%\include{appendix1}
+%\include{appendix2}
+
+%\end{appendices}
+
+%------------------------------------------------------------------------------------------
+% References
+%------------------------------------------------------------------------------------------
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{paperslib}
+%\bibliographystyle{plainnat}
+\bibliographystyle{ametsoc2014}
+
+\end{document}

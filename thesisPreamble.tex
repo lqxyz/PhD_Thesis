@@ -1,0 +1,41 @@
+% thesisPreamble.tex
+
+\pagenumbering{roman}
+\clearpage
+%\pagenumbering{gobble}
+\maketitle
+
+%Abstract goes here.  Approx 300 words.
+\begin{abstract}
+This is part of abstract.
+\end{abstract}
+
+\makededication
+
+%--------------------------------------------------------------
+% List of contents
+%--------------------------------------------------------------
+\newpage
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+
+%---------------------------------------------------------------
+% List of tables, illustrations etc
+%---------------------------------------------------------------
+\newpage
+\addcontentsline{toc}{chapter}{List of tables}
+%\chapter*{List of tables}
+\listoftables
+
+\newpage
+\addcontentsline{toc}{chapter}{List of figures}
+\listoffigures
+
+%--------------------------------------------------------------
+% List of accompanying material (if any)
+%--------------------------------------------------------------
+
+%--------------------------------------------------------------
+% Definitions (terms specific to the work); abbreviations
+%--------------------------------------------------------------

@@ -1,0 +1,32 @@
+% TODO-BOOK.sty
+% By Andrew Clark & David Walker
+% 19 August 2010
+% Amended by Jacq Christmas to enable three different todo lists
+%
+% Produces a TODO list at the start of a LaTeX book document, based on uses of the
+% \todo{} tag throughout the document.  Requires the package 'tocloft' to be
+% included *first*, before any other includes.
+\newcommand{\listtodotitle}{To-do list}
+\newlistof{todos}{tod}{\listtodotitle}
+\newcommand{\todolist}[1]{%
+\refstepcounter{todos}
+\addcontentsline{tod}{todos}
+{\protect\numberline{\thechapter.\thetodos} #1}}
+%\newcommand{\todo}[1]{\todolist{#1}\textbf{\underline{TODO}: #1}}
+\newcommand{\todo}[1]{\todolist{#1}[\Blue{\textbf{\textit{\small{TO DO: #1}}}]}}
+
+\newcommand{\listtodoreftitle}{References required}
+\newlistof{todorefs}{todref}{\listtodoreftitle}
+\newcommand{\todoreflist}[1]{%
+\refstepcounter{todorefs}
+\addcontentsline{todref}{todorefs}
+{\protect\numberline{\thechapter.\thetodorefs} #1}}
+\newcommand{\todoref}[1]{\todoreflist{#1}[\Blue{\textbf{\textit{\small{REF: #1}}}]}}
+
+\newcommand{\listtodoexptitle}{Experimental results required}
+\newlistof{todoexps}{todexp}{\listtodoexptitle}
+\newcommand{\todoexplist}[1]{%
+\refstepcounter{todoexps}
+\addcontentsline{todexp}{todoexps}
+{\protect\numberline{\thechapter.\thetodoexps} #1}}
+\newcommand{\todoexp}[1]{\todoexplist{#1}[\Blue{\textbf{\textit{\small{EXPERIMENT: #1}}}]}}
