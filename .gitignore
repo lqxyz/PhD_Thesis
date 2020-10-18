@@ -6,7 +6,6 @@
 *.pyc
 *.aux
 *.idx
-*.png
 *.swp
 *~
 .DS_Store
