@@ -1,3 +1,6 @@
+# neglect output pdf
+thesis.pdf
+
 *.nc
 *.o
 *.so*
