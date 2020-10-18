@@ -1,6 +1,9 @@
 # Makefile to compile the thesis.tex
+# References:
+# 	https://tex.stackexchange.com/questions/318569/makefile-for-a-latex-report
 
-.PHONY: thesis.pdf all clean
+LATEXMK = latexmk
+
 all: thesis.pdf
 
 # MAIN LATEXMK RULE
@@ -12,13 +15,16 @@ all: thesis.pdf
 #    missing file reference and interactively asking you for an alternative.
 
 thesis.pdf: thesis.tex
-	#latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
-	latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	#$(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 cleanall:
-	latexmk -CA
+	$(LATEXMK) -silent -CA
 	#rm *.bbl *.nlo
 
 clean:
-	latexmk -c
+	$(LATEXMK) -silent -c
 	rm *.bbl *.nlo
+
+.PHONY: thesis.pdf all clean cleanall
+
