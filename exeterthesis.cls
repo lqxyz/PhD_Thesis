@@ -129,6 +129,7 @@
   \fi
   \vskip 3em
  \end{center}\par
+
  \noindent\begin{minipage}[b]{\textwidth}
   %\centering
   Submitted by \@author, to the 
@@ -145,11 +146,19 @@
   approved for the award of a degree by this or any other University.\\
   \\
   \\
+  % =============  Added by QUN LIU ============= %
+  % 2020/10/18
+  \hspace*{7cm} \includegraphics[height=1.0\baselineskip]{figs/QunLiu_signature.png}
+  \vspace{-1cm}
+  % =============  Added by QUN LIU ============= %
   \begin{flushright}(signature)
-  	%\fromsig{\includegraphics[scale=0.1]{QunLiu_signature.png}}
+    % It seems with fromsig, the maketitle command does not work...
+  	%\fromsig{\includegraphics[scale=0.1]{figs/QunLiu_signature.png}}
+  	%\fromsig{\includegraphics[height=1.5\baselineskip]{figs/QunLiu_signature.png}}
   	.................................................................................................
  \end{flushright}
  \end{minipage}
+
  \ifx\@declaration\@empty\else{
  \cleardoublepage
  \chapter*{Declaration}
