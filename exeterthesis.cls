@@ -108,11 +108,19 @@
  \clearpage
  \thispagestyle{\titlepagestyle}
  \noindent\begin{minipage}[t]{\textwidth}
-  \centering\large
+  %\centering\large
   \ifx\@university\@empty \else \@university\par\fi
-  \@college
+  \centering
+  \includegraphics[width=0.5\linewidth]{figs/colour_logo.png}
+  %\@college
   \ifx\@department\@empty \else \par Department of \@department\fi
  \end{minipage}
+
+% \noindent\begin{minipage}[t]{\textwidth}
+%   \centering
+%   \includegraphics[width=0.5\linewidth]{figs/colour_logo.png}
+% \end{minipage}
+
  \null\vfill
  \begin{center}
   {\titlefont\huge \@title\par}
@@ -125,38 +133,42 @@
   {\Large \@date \par}
   \vskip \z@ \@plus3fill
   \ifx\@supervisor\@empty \else
-  {\Large Supervised by \@supervisor \par}
+  {\large Supervised by \@supervisor \par}
   \fi
   \vskip 3em
  \end{center}\par
 
  \noindent\begin{minipage}[b]{\textwidth}
-  %\centering
-  Submitted by \@author, to the 
+  \centering
+  Submitted by \textbf{\@author}, to the 
   \ifx\empty\@university{\@college}\else{the \@university}\fi\
   as a thesis for the degree of
-  \@degree\ in \ifx\empty\@field{\@department}\else{\@field}\fi\,, \@date.\\
-  \\
+  \@degree\ in \ifx\empty\@field{\@department}\else{\@field}\fi\,, \@date.
+  \vspace{0.8cm}
+  
   This thesis is available for library use on the understanding that it
   is copyright material and that no quotation from the thesis may be published
-  without proper acknowledgement.\\
-  \\
+  without proper acknowledgement.
+  \vspace{0.8cm}
+  
   I certify that all material in this thesis which is not my own work has
   been identified and that no material has previously been submitted and
-  approved for the award of a degree by this or any other University.\\
-  \\
-  \\
+  approved for the award of a degree by this or any other University.
+ 
   % =============  Added by QUN LIU ============= %
   % 2020/10/18
-  \hspace*{7cm} \includegraphics[height=1.0\baselineskip]{figs/QunLiu_signature.png}
-  \vspace{-1cm}
+  \vspace{0.8cm}
+  \hspace*{1cm} \includegraphics[height=1.0\baselineskip]{figs/QunLiu_signature.png}
+  \vspace{-0.6cm}
   % =============  Added by QUN LIU ============= %
-  \begin{flushright}(signature)
+  %\begin{flushright}(signature)
     % It seems with fromsig, the maketitle command does not work...
   	%\fromsig{\includegraphics[scale=0.1]{figs/QunLiu_signature.png}}
   	%\fromsig{\includegraphics[height=1.5\baselineskip]{figs/QunLiu_signature.png}}
-  	.................................................................................................
- \end{flushright}
+  %  .................................................................................................
+  %\end{flushright}
+
+  (signature)...................................................................
  \end{minipage}
 
  \ifx\@declaration\@empty\else{
