@@ -1,23 +1,55 @@
 % chapter2.tex
 
-\chapter{Simple Clouds Model}  
+%\chapter{Simple Cloud Model}
+\chapter{Clouds and Cloud Schemes}
 \label{ch:chapter2}
 
+In the next following chapters, our focus lies on the cloud scheme. To begin with, the literature about clouds and cloud schemes are reviewed in this chapter. The roles of clouds in climate system is introduced in \secref{sec:chp2_role_of_clouds}. A brief history of cloud scheme development is reviewed in \secref{sec:chp2_cld_scheme}. In \secref{sec:chp2_why_simple_cld_schem_in_isca} what kind of simple cloud scheme will be implemented in Isca and the reasons to do so are presented.
 
-In this chapter, the literature about clouds and cloud schemes will be reviewed. The roles of clouds in climate system is reviewed in Section \ref{sec:chp2_role_of_clouds}. A brief history of cloud scheme development is reviewed in  \ref{sec:chp2_cld_scheme}
+%\section{Clouds in observatixons}
+
+%What are clouds and the distribution of clouds from observations
+
 
 %\epigraph{\textit{Let's begin the scientific journey!}}{\textit{Qun Liu}, 2018}
+%\section{Clouds in the observations}
 
 \section{Roles of clouds in climate system}
 \label{sec:chp2_role_of_clouds}
 % Literature review about the role of clouds in climate system
 
-Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014} and play a fundamental role in Earth's radiation budget and hydrological cycle. In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. According to \cite{Zelinka2017}, the net cooling effect of clouds is about 18 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$. Therefore, even a small change of clouds could have large influence to the climate, that's one possible reason that why the cloud feedback is so important in climate system. 
+\subsection{Introduction}
+Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014}. As shown in \tabref{tab:statistics_cld_amt}, the cloud amounts over ocean regions are usually larger than those over lands. 
+the annual mean cloud amounts are usually mdifferent locations, 
+
+\begin{table}[htp]
+\centering
+%\scriptsize
+\caption{Statistics of the annually averaged total cloud amount for various regions, which are from the ISCCP-H series data sets \citep{Young2018} from 1984 to 2014.}
+\begin{tabular}{cccc}
+	\toprule
+	Region & Ocean & Land &  Total\\
+	\midrule
+	Global & 71.7 & 54.8 & 66.1 \\
+	15$^\circ$S-15$^\circ$N&  62.4&  63.5& 62.6 \\
+	15$^\circ$N-35$^\circ$N&  60.1&  46.6& 55.2\\
+	15$^\circ$S-35$^\circ$S&  65.0&  48.3& 61.4\\
+	35$^\circ$N-60$^\circ$N&  80.9&  64.6& 72.5 \\
+	35$^\circ$S-60$^\circ$S&  84.0&  65.0& 83.5 \\
+	60$^\circ$N-90$^\circ$N&  68.9&  62.0& 66.5\\
+	60$^\circ$S-90$^\circ$S&  80.1&  44.3& 60.1 \\
+	\bottomrule
+\end{tabular}
+\label{tab:statistics_cld_amt}
+\end{table}
+
+Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014} and play a fundamental role in Earth's radiation budget and hydrological cycle. In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. According to \cite{Zelinka2017}, the net cooling effect of clouds is about 18 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$. Small changes in clouds can have a large impact on the climate energy balance due to balance between longwave and shortwave cloud effects. As a consequence, and not surprisingly, there are many studies focusing on the role of clouds under global warming \citep[e.g.,][]{Zelinka2017, Sherwood2020}.
+% Therefore, even a small change of clouds could have large influence to the climate, that's one possible reason that why the cloud feedback is so important in climate system. 
 
 
 \subsection{Cloud feedback}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/chp2/cloud_feedback_ceppi}.png}
 	\caption{Strengths of individual global-mean feedbacks and equilibrium climate sensitivity (ECS) for CMIP5 models, derived from coupled experiments with abrupt quadrupling of CO$_2$ concentration. Circles are colored according to the total feedback parameter. The Planck feedback (mean value of -3.15 W m$^{-2}$ K$^{-1}$) is excluded from the total feedback parameter shown here. Adapted from \cite{Ceppi2017}.}
@@ -28,17 +60,19 @@ Cloud feedback is the variation of cloud radiative forcing at top-of-atmosphere 
 
 A recent study by \cite{Sherwood2020} estimates that total cloud feedback is 0.45 Wm$^{-2}$K$^{-1}$ and the uncertainty (0.12 to 0.78 Wm$^{-2}$K$^{-1}$) is narrowed compared to the results from IPCC AR5. Nevertheless, the uncertainty of cloud feedback is still the largest ones among all the feedback parameters (see Table 1 of \citealt{Sherwood2020}), which has no clear reduction from CMIP5 to CMIP6 (see Figure 4 of \citealt{Sherwood2020}).
 
+
+Cloud feedback decomposition? 
+
 \subsection{Coupling with circulation}
-
-
 %\section{Cloud Radiative Effect and its feedback}
-
 %\section{Method: Diagnosis of cloud}
 
 \section{Cloud schemes}
 \label{sec:chp2_cld_scheme}
 
-\begin{figure}[h]
+\subsection{Overview}
+
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{{figs/chp2/Schematic_partial_cloud_cover_in_gridbox}.pdf}
 	\caption{Schematic showing that partial cloud cover in a grid box (1D) when temperature or humidity fluctuations exist. The blue line shows humidity and the red dashed line indicates saturation mixing ratio of the grid box. The shaded regions are cloudy parts as the humidity exceeds the saturation mixing ratio.}
@@ -47,9 +81,12 @@ A recent study by \cite{Sherwood2020} estimates that total cloud feedback is 0.4
 
 At present the typical horizontal resolution of the GCMs is 50-200km, but the clouds usually involve the air motions in mesoscale and convective scale \citep{Houze2014}, which are usually in sub-grid scale both horizontally and vertically, implying that cloud processes are hard to be explicitly resolved by the GCMs. In this case, the ``parameterization" becomes a practical way to build cloud schemes. The parameterization is to represent the effects of the smaller-scale processes (turbulence, cloud microphysics, convection, etc.) in terms of the large-scale states (such as velocity, temperature, pressure, humidity) \citep{Randall2003}, which could be seen as a way to find potential relationships between the unknown and known variables \citep{Randall1989}.
 
+
+\subsection{Relative humidity schemes}
+
 Previous studies have investigated various ways to represent clouds in climate models. For example, \cite{Holloway1971} prescribed the clouds externally with climatological data without dynamic interplay with the other components of the model. Some early modelling studies made the assumption that a grid box in the model is either fully saturated or totally unsaturated. However, this assumption is not reasonable enough as the humidity can distribute unevenly within a grid box, suggesting that condensation can occur even the relative humidity is less than 100\%. A general idea is to link the cloud cover with the relative humidity, as one can expect that the amount of condensation would increase with the increase of mean humidity of the model grid box, which is the basis for some diagnostic methods.
 
-Diagnostic schemes predict the cloudiness based on the model variables empirically or statistically. In these schemes, the clouds can be linked to atmospheric outputs such as relative humidity, vertical velocity and static stability, among which the linear relationship between cloud fraction against RH could be simplest one. For example, \cite{Smagorinsky1960} found empirically that non-convective cloud amount correlated with the average relative humidity in the respective layers (Figure \ref{fig:Smagorinsky_RH_cld}), arguing that the non-precipitating condensation depend only on the accumulated history of vertical motion, which can be reflected by the humidity. \cite{Ricketts1973} obtained roughly linear relationship between cloud amount and observed relative humidity but commented that the relationship is somewhat indefinite.
+Diagnostic schemes predict the cloudiness based on the model variables empirically or statistically. In these schemes, the clouds can be linked to atmospheric outputs such as relative humidity, vertical velocity and static stability, among which the linear relationship between cloud fraction against RH could be simplest one. For example, \cite{Smagorinsky1960} found empirically that non-convective cloud amount correlated with the average relative humidity in the respective layers (\figref{fig:Smagorinsky_RH_cld}), arguing that the non-precipitating condensation depend only on the accumulated history of vertical motion, which can be reflected by the humidity. \cite{Ricketts1973} obtained roughly linear relationship between cloud amount and observed relative humidity but commented that the relationship is somewhat indefinite.
 
 Water vapor generally distributes heterogeneously in the grid box, so the averaged RH within a box should be less than 1 for a partial coverage of clouds. Previous studies usually adopt the critical relative humidity $RH_{crit}$ as the minimum threshold for clouds to form, which is often left as a free parameter that can be tuned during model development (e.g. \citealp{Hourdin2017,Kay2012,Mauritsen2012}). For example, \cite{Sundqvist1978} and \cite{Sundqvist1989} find that cloud fraction can be rewritten as a function of critical RH by assuming the water vapour is uniform distributed within the grid box. In general, $RH_{crit}$ decreases with height, but will vary according to different types of clouds. Although the $RH_{crit}$ doesn't have clear physical meaning, it can be used to modify the cloud amounts in different locations. For example, one can increase $RH_{crit}$ asymptotically to nearly unity to prevent the unrealistic circus clouds \citep{Sundqvist1989}. 
 
@@ -65,6 +102,9 @@ In summary, the methods based on relative humidity and other predictors are usef
 	\label{fig:Smagorinsky_RH_cld}
 \end{figure}
 
+
+\subsection{Statistical schemes}
+
 In contrast, the prognostic approach \citep[e.g.,][]{Tiedtke1993} is to explicitly calculate the clouds related variables, such as cloud water content, in order to pursuing a unification of all clouds processes, which is more realistic in some degree and requires more physical basis and interactions with other parts of the models. Another widely used cloud prediction method is statistical scheme, in which the cloud fraction and in-cloud liquid water/ice are determined based on the assumed probability distributions of subgrid variability of thermodynamic properties. As the cloud related variables such as moisture and temperature are not the same everywhere but distributed randomly within the grid box, it is natural to assume that the cloud cover depends on the distribution of moisture, sometimes on the joint distribution of moisture and temperature. As shown in a very early work, \cite{Sommeria1977} gave up the assumption that a grid is either entirely saturated or unsaturated in the climate models and proposed the idea to use the statistical distribution of moisture within the grid box. For example, given the probability distribution function (PDF) of the total water ($q_t$ is the mixing ratio) in grid box, the cloud fraction ($CF$) can be caluculate as $CF=\int_{q_s}^{\infty}PDF(q_t)\operatorname{d}q_t,$
 and the cloud water content ($q_c$ is the mixing ratio of cloud water) is
 $q_c=\int_{q_s}^{\infty}(q_t-q_s)PDF(q_t)\operatorname{d}q_t,$ where $q_s$ is the saturation mixing ratio in both formulations.
@@ -74,3 +114,20 @@ humidity, saturation deficit, or a combined variable of liquid water and potenti
 and shallow convective processes, which could improve the simulation of low marine clouds and alleviate double Intertropical Convergence Zone (ITCZ) problem \citep{Qin2018alleviated}.
 
 The statistical cloud schemes may have better performance than the diagnostic ones, but considering the fact that there is no clouds scheme in Isca currently, it would be useful to implement the simple diagnostic schemes in Isca first, which can be seen as the first step to implemented a hierarchy of cloud schemes.
+
+\subsection{Relationship between relative humidity and statistical schemes}
+
+
+\section{Aims of the study}
+\label{sec:chp2_why_simple_cld_schem_in_isca}
+% This section introduce our goal to do for this phd study
+
+The question then arises as to what a `simple' scheme is. One option would be to specify the PDF of total water within a grid box. Then, supposing that cloud formation occurs on saturation, one may be able derive a functional relation between mean cloud amount and mean relative humidity, supposing that the latter is what is predicted by the GCM from its predictions of specific humidity and temperature. \citet{Sundqvist1989} scheme was motivated this way, where the uniform distribution is adopted and variance of the distribution is assumed to be time-invariant \citep{Tompkins2005}. Although such a procedure is physically motivated it has two potential drawbacks. First, deciding on a distribution of humidity is somewhat arbitrary, or involves turbulence closure assumptions used in the stochastic model \citep{Sommeria1977,Tsang2018}. Second, translating the prediction of a probability distribution into a practical cloud model may be problematic, for there is in general no straightforward translation from a humidity probability distribution to an analytic formula connecting fractional cloud cover to relative humidity. 
+
+Thus, here we chose another course by linking the cloud cover with the relative humidity ab initio. We explore two schemes, one with a piecewise linear relationship between cloud cover and relative humidity and the other with a square-root relationship, as in \citet{Sundqvist1989}. The various coefficients entering into these schemes are obtained empirically, comparing results with observations. We also use the scheme in an idealized GCM, Isca \citep{Vallis2018}, configured with a realistic distribution of continents to explore the geographical variability of the cloud schemes. Idealized models have a number of advantages in investigating physical processes, especially when set within a hierarchy connecting them to more comprehensive models \citep[e.g.,][]{Maher2018_hierarchies, Thomson2019}. We find that a relative-humidity scheme alone is unable to capture the subtropical low cloud distribution but that this can be readily improved by the addition of a scheme that takes into account inversion strength. Similarly, we find that in high-latitudes the cloud radiative effect is improved by the addition of a `freeze-dry' scheme. 
+
+In its most complete form the scheme is able to capture the main features of clouds on Earth to a level of accuracy (in both geographical and seasonal variability) similar to that of other contemporary, and much more complicated, schemes in comprehensive climate models. It does so in a very transparent fashion and the dependence on parameters can be made explicit. And although we have implemented the scheme in a particular GCM it could easily be ported to others, either by an ab initio but straightforward implementation or by porting the code itself. 
+
+% Idealised climate models can be used, amongst other things, to investigate how clouds impact the large-scale circulation, see  for a review. For example, using the cloud locking approach or investigating the behaviour of a process in the absence of clouds, such as the Isca model that does not have clouds or water vapour feedbacks. For our purpose, the scheme should be simple enough to facilitate understanding of the role of clouds in the dynamics of climate variability and climate change, but complex enough to be able to capture the main features of clouds on Earth, comparable to that of other contemporary (and more complicated) climate models.
+
+% We organize the paper as follows. Section 2 provides a description of the simple cloud scheme, SimCloud, including the methods to parameterize the cloud fraction and specify other needed physical parameters, such as the effective radius of cloud droplets and in-cloud condensate content. (Some of the choices and parameters used come from the experiments and observations described in later sections, but for clarity the cloud scheme is described first.) Section 3 describes the model and experimental configurations as well as the data sets used in this study. In Sect. 4 we compare the simulated cloud properties with observations, with an emphasis on the CRE. A discussion and conclusions are presented in Sect. 5.
