@@ -146,7 +146,7 @@
  %\null\vfill
  \begin{center}
   {\titlefont\Huge \@title\par}
-  \vskip 6em
+  \vskip 3em
  \end{center}\par
  
  \noindent \centering \begin{minipage}{0.8\textwidth}
@@ -155,12 +155,15 @@
   %Submitted by \@author to the
   \ifx\empty\@university{\@college}\else{the \@university}\fi\ \\
   as a thesis for the degree of \\
-  \@degree\ in \ifx\empty\@field{\@department}, \else{\@field}\fi\,\\
+  \@degree\ in \ifx\empty\@field{\@department}, \else{\@field}\fi\, \\
   \@date.
-  \vspace{0.8cm}
+  \vspace{1.5cm}
+ 
+  \centering
+  \includegraphics[width=0.3\linewidth]{{figs/University_of_Exeter_arms}.png}
  \end{minipage}
 
- \vskip 12em
+ \vskip 3em
  
  \noindent\begin{minipage}[b]{\textwidth}
   \centering
