@@ -104,16 +104,19 @@
 %\setkomafont{sectioning}{\rmfamily\bfseries}
 %\setkomafont{sectioning}{\sffamily\bfseries}
 \setkomafont{sectioning}{\bfseries}
+
 \renewcommand*{\maketitle}{
+
 \begin{titlepage}
  \par
  \clearpage
  \thispagestyle{\titlepagestyle}
+ 
  \noindent\begin{minipage}[t]{\textwidth}
   %\centering\large
   \ifx\@university\@empty \else \@university\par\fi
   \centering
-  \includegraphics[width=0.5\linewidth]{figs/colour_logo.png}
+  \includegraphics[width=0.6\linewidth]{figs/colour_logo.png}
   %\@college
   %\ifx\@department\@empty \else \par Department of \@department\fi
  \end{minipage}
@@ -123,35 +126,47 @@
 %   \includegraphics[width=0.5\linewidth]{figs/colour_logo.png}
 % \end{minipage}
 
- \null\vfill
- \begin{center}
-  {\titlefont\huge \@title\par}
-  \vskip 3em
-  {\Large \lineskip 0.75em
-  \begin{tabular}[t]{c}
-   \textbf{\@author}
-  \end{tabular}\par}
-  \vskip 1.5em
-  {\Large \@date \par}
-  \vskip \z@ \@plus3fill
-  \ifx\@supervisor\@empty \else
-  {\large Supervised by \@supervisor \par}
-  \fi
-  \vskip 3em
- \end{center}\par
+%  \null\vfill
+%  \begin{center}
+%   {\titlefont\huge \@title\par}
+%   \vskip 3em
+%   {\Large \lineskip 0.75em
+%   \begin{tabular}[t]{c}
+%   \textbf{\@author}
+%   \end{tabular}\par}
+%   \vskip 1.5em
+%   {\Large \@date \par}
+%   \vskip \z@ \@plus3fill
+%   \ifx\@supervisor\@empty \else
+%   {\large Supervised by \@supervisor \par}
+%   \fi
+%   \vskip 3em
+%  \end{center}\par
 
- \noindent\begin{minipage}[b]{\textwidth}
-  \centering
+ %\null\vfill
+ \begin{center}
+  {\titlefont\Huge \@title\par}
+  \vskip 6em
+ \end{center}\par
+ 
+ \noindent \centering \begin{minipage}{0.8\textwidth}
+  \centering \large
   Submitted by \textbf{\@author}, to the 
+  %Submitted by \@author, to the
   \ifx\empty\@university{\@college}\else{the \@university}\fi\
   as a thesis for the degree of
-  \@degree\ in \ifx\empty\@field{\@department}\else{\@field}\fi\,, \@date.
+  \@degree\ in \ifx\empty\@field{\@department},\else{\@field}\fi\, \@date.
   \vspace{0.8cm}
-  
+ \end{minipage}
+
+ \vskip 12em
+ 
+ \noindent\begin{minipage}[b]{\textwidth}
+  \centering
   This thesis is available for library use on the understanding that it
   is copyright material and that no quotation from the thesis may be published
   without proper acknowledgement.
-  \vspace{0.8cm}
+  \vspace{1cm}
   
   I certify that all material in this thesis which is not my own work has
   been identified and that no material has previously been submitted and
@@ -159,18 +174,18 @@
  
   % =============  Added by QUN LIU ============= %
   % 2020/10/18
-  \vspace{0.8cm}
+  \vspace{1.5cm}
   \hspace*{1cm} \includegraphics[height=1.0\baselineskip]{figs/QunLiu_signature.png}
   \vspace{-0.6cm}
   % =============  Added by QUN LIU ============= %
-  %\begin{flushright}(signature)
+  %\begin{flushright}(Signature)
     % It seems with fromsig, the maketitle command does not work...
   	%\fromsig{\includegraphics[scale=0.1]{figs/QunLiu_signature.png}}
   	%\fromsig{\includegraphics[height=1.5\baselineskip]{figs/QunLiu_signature.png}}
   %  .................................................................................................
   %\end{flushright}
 
-  (signature)...................................................................
+  (Signature) ...................................................................
  \end{minipage}
 
     %  \ifx\@declaration\@empty\else{
