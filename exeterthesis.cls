@@ -173,16 +173,16 @@
   (signature)...................................................................
  \end{minipage}
 
- \ifx\@declaration\@empty\else{
- \cleardoublepage
- \chapter*{Declaration}
- %\thispagestyle{plain}
- \thispagestyle{empty} % Qun
- \@declaration
- \par\vspace{3cm}
- \hfill\@author
- \cleardoublepage
- }\fi
+    %  \ifx\@declaration\@empty\else{
+    %  \cleardoublepage
+    %  \chapter*{Declaration}
+    %  %\thispagestyle{plain}
+    %  \thispagestyle{empty} % Qun
+    %  \@declaration
+    %  \par\vspace{3cm}
+    %  \hfill\@author
+    %  \cleardoublepage
+    %  }\fi
 \end{titlepage}
 }
 \newcommand{\makededication}{
@@ -197,6 +197,19 @@
  \cleardoublepage
  \fi
 }
+\newcommand{\makedeclaration}{
+ \ifx\@declaration\@empty\else{
+ \cleardoublepage
+ \chapter*{Declaration}
+ %\thispagestyle{plain}
+ \thispagestyle{empty} % Qun
+ \@declaration
+ \par\vspace{3cm}
+ \hfill\@author
+ \cleardoublepage
+ }\fi
+}
+ 
 \renewenvironment{abstract}{%
 %\chapter*{Abstract}\thispagestyle{plain}}{\cleardoublepage}
 \chapter*{Abstract}\thispagestyle{empty}}{\cleardoublepage} % Qun
