@@ -83,14 +83,7 @@ As we will show in XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX, there are biases in the cloud
 \end{equation}
 in which the second term is called the freeze-dry factor ($f$). Although the formula is applied globally, the threshold value in Equation \eqref{eq:freeze-dry} ensures that only polar regions will be affected and even there the cloud fraction is adjusted only under very dry conditions.
 
-In the original freeze-dry method, Equation \eqref{eq:freeze-dry} was only applied in the lower troposphere \citep{Vavrus2008}. In this study, the freeze-dry formula is applied through the whole atmospheric column, finding that the cloud radiative effect in polar regions is thereby improved. In order to do so, we prescribe the specific humidity threshold $q_v$ in Equation \eqref{eq:freeze-dry} to be a function of pressure with the threshold decreasing exponentially with height as
-\begin{equation}
-	q_{v} = q_0\left(\frac{p}{p_s}\right)^n.
-	\label{eq:qv_freeze-dry}
-\end{equation}
-Here $q_0$ is the surface specific humidity, $p_s=1000$ hPa is the sea level pressure and $n$ is the power to describe how quickly the specific humidity decreases with height. In \figref{fig:freeze-dry}, different profiles of $q_v$ are shown for the two tunable parameters $n$ and $q_0$. These two parameters are selected to ensure that the freeze-dry adjustment only has effects on polar regions when the $q_v$ profile is applied in Equation \eqref{eq:freeze-dry}. In doing so, the specific humidity profiles from several different regions are plotted in \figref{fig:freeze-dry}. In particular, the profiles of $60^{\circ}$N and $60^{\circ}$S are used to show the specific humidity boundary values of polar regions, and thus the two parameters $q_0$ and $n$ are tuned to follow the boundary profiles. As shown in \figref{fig:freeze-dry}, the $q_v$ profile follows $60^{\circ}$N profile well when the $q_0=0.006$ kg kg$^{-1}$ and $n=2.5$, which can also cover the specific humidity range poleward of $60^{\circ}$S. Therefore in this study the parameters $q_0$ and $n$ are chosen as 0.006 kg kg$^{-1}$ and 2.5, respectively. This threshold works well in current climate setup (see \secref{sec:cld_amt}), but whether it holds under global warming situation still needs further investigation.
-
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/chp3/feezedry_with_various_qv}.pdf}
 	\caption{The $q_v$ vertical profiles with different $n$ and $q_0$. The thick solid and dashed black lines are specific humidity profiles averaged over latitude circles, 60N and 60S, as boundary values of polar regions in Northern and Southern hemispheres, respectively. The thin dashed blue and orange lines are averaged specific humidity profiles over subtropical (30$^\circ$-60$^\circ$N) and tropical (30$^\circ$S-30$^\circ$N) regions in Isca simulation. The other thin solid lines are from Equation \eqref{eq:qv_freeze-dry} with different parameters. In the left, $q_0$ in Equation \eqref{eq:qv_freeze-dry} is 0.006 kg kg$^{-1}$ but $n$ varies from 2 to 4. In the right, $n=2.5$ but $q_0$ varies from 0.003 to 0.006 kg kg$^{-1}$.} 
@@ -98,14 +91,16 @@ Here $q_0$ is the surface specific humidity, $p_s=1000$ hPa is the sea level pre
 	\label{fig:freeze-dry}
 \end{figure}
 
-\subsection{Low cloud fraction}
+In the original freeze-dry method, Equation \eqref{eq:freeze-dry} was only applied in the lower troposphere \citep{Vavrus2008}. In this study, the freeze-dry formula is applied through the whole atmospheric column, finding that the cloud radiative effect in polar regions is thereby improved. In order to do so, we prescribe the specific humidity threshold $q_v$ in Equation \eqref{eq:freeze-dry} to be a function of pressure with the threshold decreasing exponentially with height as
+\begin{equation}
+	q_{v} = q_0\left(\frac{p}{p_s}\right)^n.
+	\label{eq:qv_freeze-dry}
+\end{equation}
+Here $q_0$ is the surface specific humidity, $p_s=1000$ hPa is the sea level pressure and $n$ is the power to describe how quickly the specific humidity decreases with height. In \figref{fig:freeze-dry}, different profiles of $q_v$ are shown for the two tunable parameters $n$ and $q_0$. These two parameters are selected to ensure that the freeze-dry adjustment only has effects on polar regions when the $q_v$ profile is applied in Equation \eqref{eq:freeze-dry}. In doing so, the specific humidity profiles from several different regions are plotted in \figref{fig:freeze-dry}. In particular, the profiles of $60^{\circ}$N and $60^{\circ}$S are used to show the specific humidity boundary values of polar regions, and thus the two parameters $q_0$ and $n$ are tuned to follow the boundary profiles. As shown in \figref{fig:freeze-dry}, the $q_v$ profile follows $60^{\circ}$N profile well when the $q_0=0.006$ kg kg$^{-1}$ and $n=2.5$, which can also cover the specific humidity range poleward of $60^{\circ}$S. Therefore in this study the parameters $q_0$ and $n$ are chosen as 0.006 kg kg$^{-1}$ and 2.5, respectively. This threshold works well in current climate setup (see \secref{sec:cld_amt}), but whether it holds under global warming situation still needs further investigation.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\linewidth]{{figs/chp3/low_cld_frac_vs_diff_vars_season}.pdf}
-	\caption{The relationship between low-level cloud amount and (a) minimum $d\theta/dp$ below 750 hPa, (b) lower tropospheric stability (LTS), (c) estimated inversion strength (EIS), (d) estimated cloud-top entrainment index (ECTEI) and (e) estimated low cloud fraction (ELF) over stratiform cloud regions, including Peru (20$^\circ$S-5$^\circ$N, 80$^\circ$-90$^\circ$W), Namibia (10$^\circ$-30$^\circ$S, 0$^\circ$-15$^\circ$E), California (15$^\circ$-30$^\circ$N, 110$^\circ$-150$^\circ$W), Australia (15$^\circ$-35$^\circ$S, 90$^\circ$-110$^\circ$E), Canary (15$^\circ$-25$^\circ$N, 25$^\circ$-35$^\circ$W), North Pacific (40$^\circ$-5$^\circ$0N, 170$^\circ$-180$^\circ$E), North Atlantic (50$^\circ$-60$^\circ$N, 35$^\circ$-45$^\circ$W) and China (20$^\circ$-30$^\circ$N, 105$^\circ$-120$^\circ$E), which are selected based on \citet{Klein1993}. The data sets are from ERA-Interim reanalysis covering the period from 2013 to 2017. The four points in each region denote the average for different seasons. Linear regression lines and the corresponding fraction of variance ($R^2$) explained by the equation are shown at the top of each plot.}
-	\label{fig:fit_low_cld_proxy}
-\end{figure}
+
+
+\subsection{Low cloud fraction}
 
 Low clouds, especially the subtropical marine stratocumulus clouds, are characterized by high albedo and a cooling effect on climate \citep{Hartmann1992}. Because these clouds cover about 20\% of the subtropical regions even a small change in stratocumulus cloud amount can exert a large radiative forcing at the top of the atmosphere (TOA) \citep{Slingo1990}. However, marine stratocumulus amounts off the west coast of continents have commonly been underestimated and the been an issue in climate models for some time \citep[e.g.,][]{Nam2012, Lauer2013, Dolinar2015}. 
 
@@ -117,6 +112,13 @@ Several proxies or indices for low cloud fraction have been used as predictors f
 \end{equation}
 where $f$ is the freeze-dry factor defined in \eqref{eq:freeze-dry} with $q_v=0.003$ kg kg$^{-1}$ and $q$ is the surface water vapor specific humidity,  $z_{inv}$ is the inversion height, $z_{LCL}$ is the lifting condensation level of near-surface air, and $\Delta z_{s}= 2750$ m is a constant scale height. As pointed by \citet{Park2019},
 $\sqrt{z_{inv} \cdot z_{LCL}}/\Delta z_{s}$ can be rewritten as $z_{LCL}/\Delta z_{s}\cdot \sqrt{1+(z_{inv} -z_{LCL})/z_{LCL}}$, in which $z_{LCL}/\Delta z_{s}$ is a simple but practical proxy of surface moisture, and $(z_{inv}-z_{LCL})/z_{LCL}$ quantifies the strength of the vertical decoupling of the inversion base air from the surface. The ELF predicts that low-level cloud fraction increases as the near-surface air gets more wet (smaller $z_{LCL}$) and as the planetary boundary layer becomes more vertically coupled (smaller $z_{inv}$).
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{{figs/chp3/low_cld_frac_vs_diff_vars_season}.pdf}
+	\caption{The relationship between low-level cloud amount and (a) minimum $d\theta/dp$ below 750 hPa, (b) lower tropospheric stability (LTS), (c) estimated inversion strength (EIS), (d) estimated cloud-top entrainment index (ECTEI) and (e) estimated low cloud fraction (ELF) over stratiform cloud regions, including Peru (20$^\circ$S-5$^\circ$N, 80$^\circ$-90$^\circ$W), Namibia (10$^\circ$-30$^\circ$S, 0$^\circ$-15$^\circ$E), California (15$^\circ$-30$^\circ$N, 110$^\circ$-150$^\circ$W), Australia (15$^\circ$-35$^\circ$S, 90$^\circ$-110$^\circ$E), Canary (15$^\circ$-25$^\circ$N, 25$^\circ$-35$^\circ$W), North Pacific (40$^\circ$-5$^\circ$0N, 170$^\circ$-180$^\circ$E), North Atlantic (50$^\circ$-60$^\circ$N, 35$^\circ$-45$^\circ$W) and China (20$^\circ$-30$^\circ$N, 105$^\circ$-120$^\circ$E), which are selected based on \citet{Klein1993}. The data sets are from ERA-Interim reanalysis covering the period from 2013 to 2017. The four points in each region denote the average for different seasons. Linear regression lines and the corresponding fraction of variance ($R^2$) explained by the equation are shown at the top of each plot.}
+	\label{fig:fit_low_cld_proxy}
+\end{figure}
 
 We have examined the relationship between the seasonal mean low cloud fraction and the various proxies (i.e., $d\theta/dp$, LTS, EIS, ECTEI and ELF) using the ERA-Interim reanalysis data set \citep{Dee2011}. These proxies are derived from the five-year monthly data from 2013 to 2017, including air temperature, surface pressure, surface temperature and low cloud fraction. As shown in \figref{fig:fit_low_cld_proxy}, the regions with typical stratus clouds are selected for the calculation \citep{Klein1993}. The results indicate that the low cloud fraction is linearly related to each indicator in stratus clouds regions, and the ELF tends to have very high correlation with the low-level cloud cover, judging from the fraction of variance ($R^2$) explained by the regression equation. We thus choose to use ELF to construct the diagnostic low cloud fraction formula, that is:
 \begin{equation}
@@ -183,8 +185,8 @@ where the atmospheric temperature $T$ is in units of K. The temperature threshol
 		\multirow{2}{*}{$C_{sc}$} & \multirow{2}{*}{[0, 1]} & \multirow{2}{*}{Low cloud fraction} & $\min(1, ~\max(0, ~b\times \text{ELF} +c))$, & $b=1.3$, $c= -0.1$  \\
 		& & &  $\text{ELF}=f \cdot\left[1-\sqrt{z_{inv} \cdot z_{LCL}}/{\Delta z_{s}}\right]$  & $q_v=3~g~kg^{-1}$ in $f$ \\
 		\hline 
-		\multirow{2}{*}{$f_l$} & \multirow{2}{*}{[0, 1]}  & \multirow{2}{*}{Liquid cloud fraction} & $\max\left(0, ~\min\left(1, ~\frac{T-T_{min}}{T_{max}-T_{min}} \right)\right)$, & \multirow{2}{*}{$T_{min}$=$-40$, $T_{max}$=$-5$$^\circ C$} \\
-		& & & ($T$ in units of $^\circ$C) & \\
+		\multirow{2}{*}{$f_l$} & \multirow{2}{*}{[0, 1]}  & \multirow{2}{*}{Liquid cloud fraction} & $\max\left(0, ~\min\left(1, ~\frac{T-T_{min}}{T_{max}-T_{min}} \right)\right)$, & \multirow{2}{*}{$T_{min}=-40$, $T_{max}=-5^\circ C$} \\
+		& & & ($T$ in units of $^\circ C$) & \\
 		$r_e$ & $\mu$m &	Effective radius & $r_{e\_liq}f_l + r_{e\_ice}(1-f_l)$ & $r_{e\_liq}=14$, $r_{e\_ice}=25$ $\mu m$ \\
 		\hline
 		\multirow{2}{*}{$q_l$} & \multirow{2}{*}{g kg$^{-1}$} & \multirow{2}{*}{In-cloud liquid water mixing ratio} & $\max\left(3\times 10^{-4}, ~q_{l0}\times \min\left(1, ~\frac{T-220}{280-220}\right)\right)$, &
