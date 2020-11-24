@@ -101,7 +101,9 @@
 \RequirePackage{setspace}
 \RequirePackage[left=3cm,right=3cm,top=2cm,bottom=2cm]%
  {geometry}
-\setkomafont{sectioning}{\rmfamily\bfseries}
+%\setkomafont{sectioning}{\rmfamily\bfseries}
+%\setkomafont{sectioning}{\sffamily\bfseries}
+\setkomafont{sectioning}{\bfseries}
 \renewcommand*{\maketitle}{
 \begin{titlepage}
  \par
@@ -113,7 +115,7 @@
   \centering
   \includegraphics[width=0.5\linewidth]{figs/colour_logo.png}
   %\@college
-  \ifx\@department\@empty \else \par Department of \@department\fi
+  %\ifx\@department\@empty \else \par Department of \@department\fi
  \end{minipage}
 
 % \noindent\begin{minipage}[t]{\textwidth}
@@ -127,7 +129,7 @@
   \vskip 3em
   {\Large \lineskip 0.75em
   \begin{tabular}[t]{c}
-   \@author
+   \textbf{\@author}
   \end{tabular}\par}
   \vskip 1.5em
   {\Large \@date \par}
