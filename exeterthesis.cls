@@ -152,10 +152,11 @@
  \noindent \centering \begin{minipage}{0.8\textwidth}
   \centering \large
   Submitted by \textbf{\@author}, to the 
-  %Submitted by \@author, to the
-  \ifx\empty\@university{\@college}\else{the \@university}\fi\
-  as a thesis for the degree of
-  \@degree\ in \ifx\empty\@field{\@department},\else{\@field}\fi\, \@date.
+  %Submitted by \@author to the
+  \ifx\empty\@university{\@college}\else{the \@university}\fi\ \\
+  as a thesis for the degree of \\
+  \@degree\ in \ifx\empty\@field{\@department}, \else{\@field}\fi\,\\
+  \@date.
   \vspace{0.8cm}
  \end{minipage}
 
