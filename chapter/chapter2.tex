@@ -64,7 +64,7 @@ Not only for the climatology, cloud responses to climate change have also attrac
 \end{figure}
 
 %What is feedback?
-The idea of feedback is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to the climate system, which can be seen as the radiative forcing produced by the doubling of CO$_2$, aerosol or volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative imbalance at the top of the atmosphere (TOA), that is the output response is fed back to the system. The feedback paramter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introuduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
+The idea of feedback is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to the climate system, which can be seen as the radiative forcing produced by the doubling of CO$_2$, aerosol or volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA). That is to say the output response is fed back to the system. The feedback paramter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introuduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
 
 \begin{figure}[ht]
 	\centering
@@ -78,11 +78,47 @@ Cloud feedback is the variation of cloud radiative forcing at the TOA in respons
 A recent study by \cite{Sherwood2020} estimates that total cloud feedback is 0.45 Wm$^{-2}$K$^{-1}$ and the uncertainty (0.12 to 0.78 Wm$^{-2}$K$^{-1}$) is narrowed compared to the results from IPCC AR5. Nevertheless, the uncertainty of cloud feedback is still the largest one among all the feedback parameters (see Table 1 of \citealt{Sherwood2020}) and has no clear reduction from CMIP5 to CMIP6 (see Figure 4 of \citealt{Sherwood2020}).
 
 %Cloud feedback decomposition? 
-To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system. For example, there are many different types of clouds, which are located at different locations and in different shapes or forms (such as liquid, ice or mixed phase), thus affecting the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the cloud feedback and here are some progresses. To make it clear, the cloud feedbacks are grouped into three categories: cloud amount, cloud altitude and cloud opacity feedbacks \citep{Zelinka2017}.
+To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system \citep{Zelinka2017}. For example, there are many different types of clouds, which are located at different locations and in different shapes or forms (such as liquid, ice or mixed phase), thus affecting the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the cloud feedback and here are some progresses. To make it clear, the cloud feedbacks are grouped into three categories: cloud amount, cloud altitude and cloud opacity feedbacks \citep{Zelinka2017}.
 
 % cloud amount, cloud altitude, cloud opacity
 
 \subsubsection{Cloud amount feedback}
+% the cloud top of these clouds are usually high, meaning a low temperature at cloud top. 
+The feedback induced by the cloud amount change is different for different cloud types. Specifically, the warming-induced increase of high, thin clouds usually leads to a positive feedback. The reason is that the optical depth of these high, thin clouds is typically small, thus having little impact on the shortwave radiation. However, the clouds can absorb the longwave radiation and thus constitute a strong greenhouse effect (XXXXXXX some reference). In contrast, the warming-induced increase in the amount of low clouds (opaque ones) brings a negative feedback as less sunlight can reach the surface, thus a cooling effects. These are the two typical cloud amount feedbacks.
+
+Low clouds
+
+The formation and dissipation of low clouds are controlled by the differences between the supply of moisture from the surface and the mixing of relatively dry air above the boundary layer. The processes can be influenced by many large-scale meteorological factors, including sea surface temperature (SST), estimated inversion strength \citep[EIS;][]{Wood2006}, the relative humidity in the free troposphere, the strength of large-scale subsidence, warm/cold temperature advection and surface wind speed \citep{Scott2020}. The detailed effects are as follows:
+
+\begin{enumerate}[label={(\arabic*)}]
+    \item SST \\
+    Warmer SST leads to the higher temperature and saturation water vapor pressure in the boundary layer, and can weaken the inversion strength if the temperature in the free troposphere remains constant. In this case, the in-cloud latent heating 
+    \textcolor{red}{(I don't know why SST can influence the in-cloud latent heating?)} enhances the turbulance and entrainment of the drier air from aloft into the boundary layer, thus resulting in the reduction of cloudiness in low level.
+    
+    \item EIS \\
+    Stronger EIS means more energy needed to mixing the relatively dry free-tropospheric air into the boundary layer and more moisture is trapped below the inversion layer, thereby favoring more low-level clouds.
+    
+    \item Subsidence \\
+    Stronger subsidence can push down the boundary layer much lower and make the clouds lower and thinner, thereby supporting less low-level clouds.
+    
+    \item Moisture in free troposphere \\
+    If the relative humidity in free troposphere is large, then the cloud-top entrainment drying is weaker, which thus favors more low-level clouds.
+    
+    
+    At the same time, more free-tropospheric moisture emits more downwelling LW radiation, which can weaken cloud-top radiative-cooling and the overturning circulations that mix moisture up from the surface, thereby favoring less low-level cloud
+    
+    
+    \item Warm/cold temperature advection\\
+    %Stronger warm (cold) temperature advection in the boundary can lead to stronger upward (downward) latent heat flux
+    Low-level advection from cold to warm SST brings relatively cool and dry air over warmer water, which triggers enhanced upward turbulent fluxes of heat and moisture from the sea surface, providing a strong source of moisture for cloud formation.
+    
+    Conversely, low-level airflow from warm to cold SST brings relatively warm and moist air over cooler water, which stabilizes the boundary layer and cuts off clouds from the surface moisture supply. 
+    
+    \item Surface winds\\
+    Stronger winds increase evaporation from the sea surface and promote deepening of the boundary layer.
+    
+\end{enumerate}
+
 
 \subsubsection{Cloud altitude feedback}
 
