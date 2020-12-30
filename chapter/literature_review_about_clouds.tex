@@ -1,9 +1,8 @@
-% chapter2.tex
-
+% literature_review_clouds.tex
 \chapter{Backgrounds about Clouds and Cloud Schemes}
-\label{ch:chapter2}
+\label{ch:literature_review_about_clouds}
 
-In the following chapters, we will focus on clouds and cloud scheme. To begin with, the literature about clouds and cloud schemes are reviewed in this chapter. A general introduction about clouds is presented in \secref{sec:ch2_intro}. \secref{sec:ch2_cld_feedback} focuses on cloud feedback and our current understandings about how cloud feedback changes in response to climate change. The coupling between clouds and circulation is briefly introduced in \secref{sec:ch2_cld_circ_coupling}. A short history of cloud scheme development is reviewed in \secref{sec:ch2_cld_scheme}. In \secref{sec:ch2_why_simple_cld_schem_in_isca} what kind of simple cloud scheme will be implemented in Isca and the reasons to do so are presented.
+In the following chapters, we will focus on clouds and cloud scheme. To begin with, the literature about clouds and cloud schemes are reviewed in this chapter. A general introduction about clouds is presented in \secref{sec:cld_intro}. \secref{sec:cloud_feedback} focuses on cloud feedback and our current understandings about how cloud feedback changes in response to climate change. The coupling between clouds and circulation is briefly introduced in \secref{sec:cld_circulation_coupling}. A short history of cloud scheme development is reviewed in \secref{sec:cld_scheme_history}. In \secref{sec:why_simple_cld_schem_in_isca} what kind of simple cloud scheme will be implemented in Isca and the reasons to do so are presented.
 
 %\section{Clouds in observatixons}
 %What are clouds and the distribution of clouds from observations
@@ -16,7 +15,7 @@ In the following chapters, we will focus on clouds and cloud scheme. To begin wi
 % Literature review about the role of clouds in climate system
 
 \section{Introduction}
-\label{sec:ch2_intro}
+\label{sec:cld_intro}
 %\subsection{Introduction}
 Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP) H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor.
 %the annual mean cloud amounts are usually mdifferent locations, 
@@ -51,14 +50,14 @@ Clouds play a fundamental role in Earth's radiation budget and hydrological cycl
 
 %Besides interacting with radiation, clouds also couple with circulation \citep{Voigt2020review}.
 
-Not only for the climatology, cloud responses to climate change have also attracted lots of attention. As described in detail in \secref{sec:ch2_cld_feedback}, one important feature is cloud feedback, as it contributed a lot to the intermodel spread of the climate sensitivity of GCMs \citep{Ceppi2017, Sherwood2020}. In addition, clouds also have impact on the atmospheric circulation via their interactions with radiation \citep{Voigt2020review}, which can finally influence the regional climate, as reviewed in \secref{sec:ch2_cld_circ_coupling}.
+Not only for the climatology, cloud responses to climate change have also attracted lots of attention. As described in detail in \secref{sec:cloud_feedback}, one important feature is cloud feedback, as it contributed a lot to the intermodel spread of the climate sensitivity of GCMs \citep{Ceppi2017, Sherwood2020}. In addition, clouds also have impact on the atmospheric circulation via their interactions with radiation \citep{Voigt2020review}, which can finally influence the regional climate, as reviewed in \secref{sec:cld_circulation_coupling}.
 
 \section{Cloud feedback}
-\label{sec:ch2_cld_feedback}
+\label{sec:cloud_feedback}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{{figs/chp2/clim_system_feedback}.pdf}
+	\includegraphics[width=0.6\linewidth]{{figs/literature_review/clim_system_feedback}.pdf}
 	\caption{Schematic of feedback in climate system. $\Delta R$ is the input disturbance to the climate system, $\Delta T_s$ is the change of surface temperature and $\lambda$ denotes the climate feedback parameter.}
 	\label{fig:schematic_climate_feedback}
 \end{figure}
@@ -68,7 +67,7 @@ The idea of feedback is taken from the control system, which is used to understa
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/chp2/cloud_feedback_ceppi}.png}
+	\includegraphics[width=1\linewidth]{{figs/literature_review/cloud_feedback_ceppi}.png}
 	\caption{Strengths of individual global-mean feedbacks and equilibrium climate sensitivity (ECS) for CMIP5 models, derived from coupled experiments with abrupt quadrupling of CO$_2$ concentration. Circles are colored according to the total feedback parameter. The Planck feedback (mean value of -3.15 W m$^{-2}$ K$^{-1}$) is excluded from the total feedback parameter shown here. Adapted from \cite{Ceppi2017}.}
 	\label{fig:cld_feed_back_ecs}
 \end{figure}
@@ -130,20 +129,20 @@ The formation and dissipation of low clouds are controlled by the differences be
 %\section{Cloud Radiative Effect and its feedback}
 
 \section{Cloud-circulation coupling}
-\label{sec:ch2_cld_circ_coupling}
+\label{sec:cld_circulation_coupling}
 
 As introduced in previous section, in climate system clouds modulate the flow of energy by interacting with radiation, which then can have an impact on the circulation.
 
 \cite{Voigt2020review}
 
 \section{Cloud schemes}
-\label{sec:ch2_cld_scheme}
+\label{sec:cld_scheme_history}
 
 \subsection{Overview}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{{figs/chp2/Schematic_partial_cloud_cover_in_gridbox}.pdf}
+	\includegraphics[width=0.8\linewidth]{{figs/literature_review/Schematic_partial_cloud_cover_in_gridbox}.pdf}
 	\caption{Schematic showing that partial cloud cover in a grid box (1D) when temperature or humidity fluctuations exist. The blue line shows humidity and the red dashed line indicates saturation mixing ratio of the grid box. The shaded regions are cloudy parts as the humidity exceeds the saturation mixing ratio.}
 	\label{fig:schematic_partial_clouds}
 \end{figure}
@@ -166,7 +165,7 @@ In summary, the methods based on relative humidity and other predictors are usef
 \begin{figure}
 	\vspace{-0.3cm}
 	\centering
-	\includegraphics[width=0.6\linewidth]{{figs/chp2/Smagorinsky1960}.png}
+	\includegraphics[width=0.6\linewidth]{{figs/literature_review/Smagorinsky1960}.png}
 	\caption{Empirically determined relation of mean relative humidity $h$ in the layers 1000-800mb, 800-550mb and 550-300mb with cloud amount $c$ classed as low, middle and high clouds. Adapted from Figure 1 of \cite{Smagorinsky1960}.}
 	\label{fig:Smagorinsky_RH_cld}
 \end{figure}
@@ -188,7 +187,7 @@ The statistical cloud schemes may have better performance than the diagnostic on
 
 
 \section{Aims of the study}
-\label{sec:ch2_why_simple_cld_schem_in_isca}
+\label{sec:why_simple_cld_schem_in_isca}
 % This section introduce our goal to do for this phd study
 
 The question then arises as to what a `simple' scheme is. One option would be to specify the PDF of total water within a grid box. Then, supposing that cloud formation occurs on saturation, one may be able derive a functional relation between mean cloud amount and mean relative humidity, supposing that the latter is what is predicted by the GCM from its predictions of specific humidity and temperature. \citet{Sundqvist1989} scheme was motivated this way, where the uniform distribution is adopted and variance of the distribution is assumed to be time-invariant \citep{Tompkins2005}. Although such a procedure is physically motivated it has two potential drawbacks. First, deciding on a distribution of humidity is somewhat arbitrary, or involves turbulence closure assumptions used in the stochastic model \citep{Sommeria1977,Tsang2018}. Second, translating the prediction of a probability distribution into a practical cloud model may be problematic, for there is in general no straightforward translation from a humidity probability distribution to an analytic formula connecting fractional cloud cover to relative humidity. 

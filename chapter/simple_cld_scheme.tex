@@ -1,8 +1,4 @@
-% chapter3.tex
 \chapter{The Simple Diagnostic Cloud Scheme}
-
-%\section{Introduction}
-%\section{Simple cloud scheme}
 
 \section{Overview}
 
@@ -10,7 +6,7 @@ In order to have a cloud scheme that interacts with the radiation, we need to pr
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.7\linewidth]{figs/chp3/diag_cld_scheme_summary.pdf}
+	\includegraphics[width=0.7\linewidth]{figs/simple_cld_scheme/diag_cld_scheme_summary.pdf}
 	\caption{A sketch of the simple cloud scheme components, which include the cloud fraction, effective radius of cloud droplet and in-cloud liquid water mixing ratio. At any given location, the maximum of the cloud fractions from large-scale cloud scheme and marine low stratocumulus cloud scheme is applied if both of them are used.} 
 	\label{fig:cld_scheme_summary}
 \end{figure}
@@ -46,7 +42,7 @@ where $p$ is the pressure, $p_s$ is the surface pressure, $a_s$ and $a_t$ are th
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{{figs/chp3/fit_linear_coeff_profile}.pdf}
+	\includegraphics[width=0.8\textwidth]{{figs/simple_cld_scheme/fit_linear_coeff_profile}.pdf}
 	\caption{(a) Vertical profiles of the linear coefficient for the relative humidity-based cloud diagnostic scheme, with cloud fraction as a piecewise linear function of relative humidity as shown in Equation \eqref{eq:linear_cf_rh}. The dashed lines with different colors are profiles of $a$ obtained from ERA5 data with various horizontal resolutions. The solid pale blue line denotes the fitted profile used in the model based on the form of Equation \eqref{eq:linear_coeff_a}. (b) is the same as (a), but for the critical relative humidity ($H_{c}$) profiles.}
 	\label{fig:linear_coeff_profile}
 \end{figure}
@@ -67,7 +63,7 @@ where $a$ and $b$ are determined from the least squares fitting of hourly cloud 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/chp3/cmp_sundqvist_linear_with_ecmwf_cc_t_12_lev_20}.png}
+	\includegraphics[width=1\linewidth]{{figs/simple_cld_scheme/cmp_sundqvist_linear_with_ecmwf_cc_t_12_lev_20}.png}
 	\caption{(a) A snapshot of cloud fraction from ERA5 reanalysis at 450 hPa on 12:00 January 01, 2017. Diagnosed cloud fraction from ERA5 relative humidity field at the same time and level based on the (b) Sundqvist formula, and two linear formulas (c) using Equation \eqref{eq:linear2} and (d) using Equation \eqref{eq:linear_cf_rh}. Note that Equation \eqref{eq:linear_cf_rh} is the form used to determine the large-scale clouds in this study. The global mean cloud fractions are given in the titles.} 
 	% [$\min\left(1, ~\max \left(0, ~ a \cdot H + b \right)\right)$],  [i.e., $\min\left(1, ~\max \left(0, ~ a \cdot (H -1) + 1 \right)\right)$]
 	\label{fig:offline_cld_fraction_test}
@@ -85,7 +81,7 @@ in which the second term is called the freeze-dry factor ($f$). Although the for
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/chp3/feezedry_with_various_qv}.pdf}
+	\includegraphics[width=1\linewidth]{{figs/simple_cld_scheme/feezedry_with_various_qv}.pdf}
 	\caption{The $q_v$ vertical profiles with different $n$ and $q_0$. The thick solid and dashed black lines are specific humidity profiles averaged over latitude circles, 60N and 60S, as boundary values of polar regions in Northern and Southern hemispheres, respectively. The thin dashed blue and orange lines are averaged specific humidity profiles over subtropical (30$^\circ$-60$^\circ$N) and tropical (30$^\circ$S-30$^\circ$N) regions in Isca simulation. The other thin solid lines are from Equation \eqref{eq:qv_freeze-dry} with different parameters. In the left, $q_0$ in Equation \eqref{eq:qv_freeze-dry} is 0.006 kg kg$^{-1}$ but $n$ varies from 2 to 4. In the right, $n=2.5$ but $q_0$ varies from 0.003 to 0.006 kg kg$^{-1}$.} 
 	% The thick solid and dashed black lines, and the thin dashed blue and orange lines are averaged specific humidity profiles from different regions in Isca simulation. 
 	\label{fig:freeze-dry}
@@ -115,7 +111,7 @@ $\sqrt{z_{inv} \cdot z_{LCL}}/\Delta z_{s}$ can be rewritten as $z_{LCL}/\Delta 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/chp3/low_cld_frac_vs_diff_vars_season}.pdf}
+	\includegraphics[width=1\linewidth]{{figs/simple_cld_scheme/low_cld_frac_vs_diff_vars_season}.pdf}
 	\caption{The relationship between low-level cloud amount and (a) minimum $d\theta/dp$ below 750 hPa, (b) lower tropospheric stability (LTS), (c) estimated inversion strength (EIS), (d) estimated cloud-top entrainment index (ECTEI) and (e) estimated low cloud fraction (ELF) over stratiform cloud regions, including Peru (20$^\circ$S-5$^\circ$N, 80$^\circ$-90$^\circ$W), Namibia (10$^\circ$-30$^\circ$S, 0$^\circ$-15$^\circ$E), California (15$^\circ$-30$^\circ$N, 110$^\circ$-150$^\circ$W), Australia (15$^\circ$-35$^\circ$S, 90$^\circ$-110$^\circ$E), Canary (15$^\circ$-25$^\circ$N, 25$^\circ$-35$^\circ$W), North Pacific (40$^\circ$-5$^\circ$0N, 170$^\circ$-180$^\circ$E), North Atlantic (50$^\circ$-60$^\circ$N, 35$^\circ$-45$^\circ$W) and China (20$^\circ$-30$^\circ$N, 105$^\circ$-120$^\circ$E), which are selected based on \citet{Klein1993}. The data sets are from ERA-Interim reanalysis covering the period from 2013 to 2017. The four points in each region denote the average for different seasons. Linear regression lines and the corresponding fraction of variance ($R^2$) explained by the equation are shown at the top of each plot.}
 	\label{fig:fit_low_cld_proxy}
 \end{figure}
