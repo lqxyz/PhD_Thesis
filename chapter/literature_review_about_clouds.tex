@@ -18,7 +18,6 @@ In the following chapters, we will focus on clouds and cloud scheme. To begin wi
 \label{sec:cld_intro}
 %\subsection{Introduction}
 Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP) H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor.
-%the annual mean cloud amounts are usually mdifferent locations, 
 
 \begin{table}[htp]
 \centering
@@ -63,7 +62,7 @@ Not only for the climatology, cloud responses to climate change have also attrac
 \end{figure}
 
 %What is feedback?
-The idea of feedback is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to the climate system, which can be seen as the radiative forcing produced by the doubling of CO$_2$, aerosol or volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA). That is to say the output response is fed back to the system. The feedback paramter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introuduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
+The idea of feedback is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to climate system, which can be seen as the radiative forcing produced by changing the content of CO$_2$ or aerosol, or by other factors such as volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA). That is to say the output response is fed back to the system. The feedback parameter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
 
 \begin{figure}[ht]
 	\centering
@@ -72,7 +71,9 @@ The idea of feedback is taken from the control system, which is used to understa
 	\label{fig:cld_feed_back_ecs}
 \end{figure}
 
-Cloud feedback is the variation of cloud radiative forcing at the TOA in response to global warming. In the fifth assessment report of the Intergovernmental Panel on Climate Change (IPCC AR5), the sign of net cloud radiative feedback is likely positive with an estimate of 0.6 Wm$^{-2}$K$^{-1}$ \citep{stocker2013climate}, which, however, has a lot of uncertainties (-0.2 to 2 Wm$^{-2}$K$^{-1}$). As shown in Figure \ref{fig:cld_feed_back_ecs}, comparing to the water vapor, lapse rate and albedo feedbacks, cloud feedback is the largest uncertainty of simulated climate response to CO$_2$ foricng (i.e. climate sensitivity) in the general circulation models (GCMs) \citep{Ceppi2017}. Lots of efforts have been payed to investigate the possible reasons for the uncertainty of cloud feedbacks. For example, \cite{Webb2015} has proposed the Selected Process On/Off Klima Intercomparison Experiment (SPOOKIE) project, where the role of the convection has been accessed in the first phase of the project. They conclude that while parametrized convection influences the strength of the cloud feedbacks substantially in some models, other processes must also contribute substantially to the overall inter-model spread. In the second phase, the roles of cloud scheme will be examined. %, where the cloud fraction, cloud water content and effective cloud droplets radius are prescribed or will be diagnosed empirically.
+Cloud feedback is the variation of cloud radiative forcing at the TOA in response to global warming. In the fifth assessment report of the Intergovernmental Panel on Climate Change (IPCC AR5), the sign of net cloud radiative feedback is likely positive with an estimate of 0.6 Wm$^{-2}$K$^{-1}$ \citep{stocker2013climate}, which, however, has a lot of uncertainties (-0.2 to 2 Wm$^{-2}$K$^{-1}$). As shown in Figure \ref{fig:cld_feed_back_ecs}, comparing to the water vapor, lapse rate and albedo feedbacks, cloud feedback is the largest uncertainty of simulated climate response to CO$_2$ foricng (i.e. climate sensitivity) in the general circulation models (GCMs) \citep{Ceppi2017}. Lots of efforts have been payed to investigate the possible reasons for the uncertainty of cloud feedbacks. For example, \cite{Webb2015} has proposed the Selected Process On/Off Klima Intercomparison Experiment (SPOOKIE) project, where the role of the convection has been accessed in the first phase of the project. They conclude that while parametrized convection influences the strength of the cloud feedbacks substantially in some models, other processes must also contribute substantially to the overall inter-model spread. In the second phase, the role of cloud scheme will be examined. For example, \cite{Geoffroy2017} found that the stratiform cloud scheme does play an important role in the spread of cloud feedback among the GCMs, both in stratocumulus regions and globally.
+
+%, where the cloud fraction, cloud water content and effective cloud droplets radius are prescribed or will be diagnosed empirically.
 
 A recent study by \cite{Sherwood2020} estimates that total cloud feedback is 0.45 Wm$^{-2}$K$^{-1}$ and the uncertainty (0.12 to 0.78 Wm$^{-2}$K$^{-1}$) is narrowed compared to the results from IPCC AR5. Nevertheless, the uncertainty of cloud feedback is still the largest one among all the feedback parameters (see Table 1 of \citealt{Sherwood2020}) and has no clear reduction from CMIP5 to CMIP6 (see Figure 4 of \citealt{Sherwood2020}).
 
@@ -125,6 +126,16 @@ The formation and dissipation of low clouds are controlled by the differences be
 
 \subsection{Cloud opacity feedback}
 
+
+\subsection{Role of cloud schemes in cloud feedback}
+Roles of parameterizations to the spread of cloud feedback among GCMs
+
+Previous studies have shown that many parameterizations can have impact on the spread of cloud feedbacks among GCMs. For example, \cite{Sherwood2014spread} pointed out that the strength of convective mixing between the lower and middle tropical troposphere can explain about half of the variance in climate sensitivity estimated by GCMs.
+
+
+\cite{Geoffroy2017}
+\cite{Qu2014}
+\cite{Sherwood2010}
 
 %\section{Cloud Radiative Effect and its feedback}
 
