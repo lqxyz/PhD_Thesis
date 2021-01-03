@@ -128,13 +128,20 @@ The formation and dissipation of low clouds are controlled by the differences be
 
 
 \subsection{Role of cloud schemes in cloud feedback}
-Roles of parameterizations to the spread of cloud feedback among GCMs
 
-Previous studies have shown that many parameterizations can have impact on the spread of cloud feedbacks among GCMs. For example, \cite{Sherwood2014spread} pointed out that the strength of convective mixing between the lower and middle tropical troposphere can explain about half of the variance in climate sensitivity estimated by GCMs.
+%Roles of parameterizations to the spread of cloud feedback among GCMs
 
+Previous studies have shown that many parameterization schemes such as boundary layer and shallow convection can have impact on the spread of cloud feedbacks in GCMs \cite[e.g.,][]{Gettelman2012,Zhang2013CGILS,Sherwood2014spread}.
+However, this inter-model spread did not decrease after the convective parametrizations being turn off \citep{Webb2015}, indicating that difference in convection pramameterization schemes is not the main cause for inter-model spread of cloud feedback and other processes must also contribute substantially to the overall inter-model spread.
 
-\cite{Geoffroy2017}
-\cite{Qu2014}
+\cite{Zhang2013CGILS} proposed a mechanism to explain the positive subtropical low cloud feedback in climate models, in which the increased entrainment of dry air from the free troposphere into the boundary layer by parametrized convection in the warmer climate reduces low cloud amounts.
+
+%For example, \cite{Sherwood2014spread} pointed out that the strength of convective mixing between the lower and middle tropical troposphere can explain about half of the variance in climate sensitivity estimated by GCMs. \cite{Zhang2013CGILS} showed that the differences in shallow convection schemes are causes of different cloud feedbacks in the models.
+
+% The net cloud feedbacks can be considered as due to two opposing roles of surface-based PBL turbulence and shallow convection aided by cloud-top entrainment. \cite{Zhang2013CGILS} 
+
+\cite{Geoffroy2017} implemented a range of diagnostic cloud schemes into two climate models (CAM4 and CSIRO-Mk3L) in lower troposphere, and found that roughly half of the multi-model spread in the cloud feedback in stratocumulus regions could be reproduced by changing the stratiform cloud scheme alone. In addition, they found that total water probability density function (PDF)-based schemes (see more in \secref{sec:PDF_cld_scheme}) tend to impose a positive low cloud feedback, while the stability dependent schemes tend to produce a negative feedback. These are similar to the findings of \cite{Qu2014}, in which they find the PDF-based schemes predict low cloud cover reduction in the stratocumulus regions, whereas most models employing schemes with stability dependent cloud fraction predict opposing changes in the same regions. In this case, it seems that stability dependence plays an important role in determining the sign of cloud feedback, which, however, does not fully determine the sign of cloud feedback, including in marine stratus regions \citep{Geoffroy2017}.
+
 \cite{Sherwood2010}
 
 %\section{Cloud Radiative Effect and its feedback}
@@ -183,6 +190,7 @@ In summary, the methods based on relative humidity and other predictors are usef
 
 
 \subsection{Statistical schemes}
+\label{sec:PDF_cld_scheme}
 
 In contrast, the prognostic approach \citep[e.g.,][]{Tiedtke1993} is to explicitly calculate the clouds related variables, such as cloud water content, in order to pursuing a unification of all clouds processes, which is more realistic in some degree and requires more physical basis and interactions with other parts of the models. Another widely used cloud prediction method is statistical scheme, in which the cloud fraction and in-cloud liquid water/ice are determined based on the assumed probability distributions of subgrid variability of thermodynamic properties. As the cloud related variables such as moisture and temperature are not the same everywhere but distributed randomly within the grid box, it is natural to assume that the cloud cover depends on the distribution of moisture, sometimes on the joint distribution of moisture and temperature. As shown in a very early work, \cite{Sommeria1977} gave up the assumption that a grid is either entirely saturated or unsaturated in the climate models and proposed the idea to use the statistical distribution of moisture within the grid box. For example, given the probability distribution function (PDF) of the total water ($q_t$ is the mixing ratio) in grid box, the cloud fraction ($CF$) can be caluculate as $CF=\int_{q_s}^{\infty}PDF(q_t)\operatorname{d}q_t,$
 and the cloud water content ($q_c$ is the mixing ratio of cloud water) is
