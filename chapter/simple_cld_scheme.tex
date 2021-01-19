@@ -122,13 +122,13 @@ We have examined the relationship between the seasonal mean low cloud fraction a
 	C_{sc} = \min(1, ~\max(0, ~b\times \text{ELF} + c)),
 	\label{eq:sc_ELF}
 \end{equation}
-where $C_{sc}$ is the low stratus cloud fraction, and the two coefficients $b$ and $c$ are treated as tunable parameters. The linear regression formula displayed in \figref{fig:fit_low_cld_proxy}e provides a good starting point for tuning $b$ and $c$ in Equation \eqref{eq:sc_ELF}. After a sensitivity test performed with Isca (the setups will be introduced in \secref{sec:exp_and_data}), we find that if $c$ is specified as the value shown in \figref{fig:fit_low_cld_proxy}e, the shortwave cloud radiative effect is still weak compared to observations. Therefore the parameters $b$ and $c$ are chosen as 1.3 and -0.1 respectively.
+where $C_{sc}$ is the low stratus cloud fraction, and the two coefficients $b$ and $c$ are treated as tunable parameters. The linear regression formula displayed in \figref{fig:fit_low_cld_proxy}e provides a good starting point for tuning $b$ and $c$ in Equation \eqref{eq:sc_ELF}. After a sensitivity test performed with Isca (the setups will be introduced in \secref{sec:exp_setup_and_dataset}), we find that if $c$ is specified as the value shown in \figref{fig:fit_low_cld_proxy}e, the shortwave cloud radiative effect is still weak compared to observations. Therefore the parameters $b$ and $c$ are chosen as 1.3 and -0.1 respectively.
 
 In addition, the stratocumulus clouds usually form at the top of planetary boundary layer \citep{Wood2012}, where a strong inversion layer usually exists \citep{Wood2006,Park2019}. However, it is hard for a global model to capture the exact position of the inversion layer due to the limitation of vertical resolution  \citep{Kawai2019}. Care thus needs to be taken to diagnose the marine stratocumulus clouds. First we find the most stable layer below 750 hPa, which is determined by the most negative $d\theta/dp$ \citep{Slingo1987}. Then within the most stable layer, if the lapse rate and vertical velocity satisfy $d\theta/dp<-0.08$ K/hPa and $\omega<0$ hPa/s respectively, then we diagnose stratocumulus clouds at that location. Note that the $d\theta/dp$ threshold is tuneable in our scheme, and it is $-0.125$ K/hPa, as in \citet{Collins2004}.
 
-
 \subsection{Cloud fraction diagnosis}
 \label{sec:cld_amt_diag}
+
 The cloud fraction of a grid box ($C_\mathrm{total}$) is simply defined as the largest fraction of all the clouds within that grid box for simplicity, without separate consideration of their different optical properties:
 \begin{equation}
 	C_\mathrm{total}=\max(C_s, ~C_{sc}),
@@ -136,8 +136,7 @@ The cloud fraction of a grid box ($C_\mathrm{total}$) is simply defined as the l
 \end{equation}
 assuming a horizontal maximum overlap hypothesis \citep[e.g.,][]{Collins2004, Roehrig2020}. $C_s$ and $C_{sc}$ in Equation \eqref{eq:CF_total} are determined by Equations \eqref{eq:linear_cf_rh} and \eqref{eq:sc_ELF} respectively. To assess the performance of the cloud scheme, it is useful to evaluate the total cloud amount and cloud amounts at different levels. In our scheme, the cloud height is determined by cloud top pressures, where those located above 400 hPa are treated as high clouds, those below 700 hPa are defined as low clouds, and in between are middle clouds \citep{Collins2004}. Then, the total, high, middle or low cloud amounts are diagnosed from the maximum-random overlap assumption \citep{Morcrette2000}, which assumes maximum overlap for consecutive cloudy model levels and random overlap for cloud layers that are separated by clear-sky levels.
 
-
-\section{Effective radius and in-cloud water mixing ratio}
+\section{Effective radius}
 
 Cloud particles, including liquid droplets and ice crystals, usually have different sizes, shapes and optical properties. In order not to introduce complicated microphysical processes, we do not distinguish them and assume that all particles seen by the radiation scheme are spherical liquid droplets, and ice clouds have a different effective radius from the liquid ones. In this study, the liquid cloud fraction varies with temperature, which only has an influence on the effective radius. %and ice clouds have a different effective radius from liquid ones.
 
@@ -155,12 +154,18 @@ The effective radius ($r_{e}$) of droplets within a grid box is defined as a wei
 \end{equation}
 which is applied globally in the model, although the effective radius of cloud droplets is found a little larger over ocean than over continents in observations \citep{Stubenrauch2013}.
 
+\section{In-cloud water mixing ratio}
+
 The in-cloud liquid water mixing ratio ($q_l$) is specified as a linear function of the atmospheric temperature, with values of $3\times 10^{-4}$ g kg$^{-1}$ at $220$ K and $q_{l0}=0.18$ g kg$^{-1}$ at $280$ K:
 \begin{equation}
 	q_l = \max\left(3\times 10^{-4}, ~q_{l0}\times  \min\left(1, ~\frac{T-220}{280-220}\right)\right),
 	\label{eq:qcl}
 \end{equation}
-where the atmospheric temperature $T$ is in units of K. The temperature thresholds, 280 and 220 K,  are selected close to the global averages of liquid and ice cloud top temperature in observations, respectively \citep[Fig. 4 in][]{Stubenrauch2013}. Then the grid mean liquid water specific humidity can be obtained from the product of $q_l$ and cloud fraction. For reference, the equations and parameters used in the cloud scheme are summarized in Table \ref{tab:cld_scheme_summary}. 
+where the atmospheric temperature $T$ is in units of K. The temperature thresholds, 280 and 220 K, are selected close to the global averages of liquid and ice cloud top temperature in observations, respectively \citep[Fig. 4 in][]{Stubenrauch2013}. Then the grid mean liquid water specific humidity can be obtained from the product of $q_l$ and cloud fraction.
+
+\section{Summary and discussions}
+
+This chapter presents how the simple cloud scheme was build. For reference, the equations and parameters used in the cloud scheme are summarized in Table \ref{tab:cld_scheme_summary}. 
 
 \begin{sidewaystable}
 	\caption{Summary of the diagnostic cloud scheme.}
@@ -194,8 +199,3 @@ where the atmospheric temperature $T$ is in units of K. The temperature threshol
 	\end{tabular}
 	\label{tab:cld_scheme_summary}
 \end{sidewaystable}
-
-%\section{Radiation}
-%\label{sec:radiation}
-
-%\section{Data sets}
