@@ -18,6 +18,7 @@ In order to compare the roles of different cloud parameterization schemes, simul
 
 \begin{table}
 	\caption{Summary of the Isca fixed-SST simulations}
+	\vspace{0.5em}
 	\centering
 	\begin{tabular}{ll}
 		\hline
@@ -41,6 +42,36 @@ In order to compare the roles of different cloud parameterization schemes, simul
 To evaluate the performance of the cloud scheme, several observations and reanalysis data sets are employed. Specifically, the 10-year monthly data (1995 to 2014) of International Satellite Cloud Climatology Project (ISCCP) H-series products \citep{Young2018} is used to evaluate the simulated cloud amounts. The cloud fraction from Isca simulations is compared to retrieved cloud fraction from GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observations (CALIPSO) Cloud Observations product (GOCCP) \citep{Chepfer2010}. To examine the radiative flux simulated in Isca, monthly data from January 2001 to December 2018 from Clouds and Earth's Radiant Energy System (CERES) Energy Balanced and Filled (EBAF) Edition 4.1 product \citep[CERES-EBAF hereafter;][]{Loeb2018} are used for comparison. The cloud water path is from the CloudSat 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. In addition, monthly vertical pressure velocity from ERA-Interim reanalysis and radiative flux data from CERES-EBAF data sets covering the period 2008-2017 are also adopted to quantify the longwave CRE over the tropics.
 
 In order to demonstrate how this cloud scheme performs with respect to more comprehensive models, the monthly mean radiative fluxes at clear-sky and all-sky conditions in historical simulation (1996 to 2005) from various CMIP5 models are also shown for the names of models). All the data sets are remapped to T42 resolution when necessary for a direct comparison with Isca simulations.
+
+\section{General feature}
+
+The global mean cloud amount and radiative components for the observations and Isca simulations are summarized in Table \ref{tab:global_mean_climate}. We first focus on the mean state of the cloud amount, cloud water path and CRE at TOA from the LS, FD and ALL simulations (sections \ref{sec:cld_amt} to \ref{sec:CRE}). Then, in Sect. \ref{sec:cmp_cmip5} we compare the simulated CREs with CMIP5 models. The sensitivity of the cloud scheme to the choice of parameters is briefly presented in Sect. \ref{sec:sensitivity}.
+
+\begin{sidewaystable}
+	\caption{Global and annual mean climatological properties of observations and different Isca simulations, which are summarized in Table \ref{tab:exps}. The net fluxes in the table are positive downward. The observed cloud amounts are from ISCCP H-series product (1995-2014), the radiative fluxes and cloud radiative effects (CREs) at the TOA are from CERES-EBAF data set (2001-2018), and the cloud water path is from CloudSat data product.}
+	\vspace{0.5em}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{lrrrrrrr}
+    	\hline
+    	{} &   Obs &  Linear\_LS &  Linear\_FD &  Linear\_ALL &  Sundqvist\_LS &  Sundqvist\_FD &  Sundqvist\_ALL \\
+    	\hline
+    	Low cloud amount (\%)      &  28.0 &       54.6 &       49.3 &        48.6 &          53.8 &          48.3 &           47.5 \\
+    	Middle cloud amount (\%)   &  20.8 &       25.9 &       20.8 &        20.6 &          25.3 &          20.2 &           20.0 \\
+    	High cloud amount (\%)     &  12.8 &       42.3 &       30.4 &        30.4 &          35.9 &          25.5 &           25.5 \\
+    	Total cloud amount (\%)    &  65.3 &       75.6 &       66.4 &        66.0 &          72.4 &          63.3 &           62.6 \\
+    	TOA net SW flux (Wm$^{-2}$)  & 241.3 &      226.8 &      229.2 &       229.6 &         228.7 &         231.2 &          231.5 \\
+    	TOA net LW flux (Wm$^{-2}$)  & 240.3 &      220.4 &      224.8 &       224.9 &         223.3 &         227.6 &          227.4 \\
+    	TOA net flux (Wm$^{-2}$)     &   1.0 &        6.4 &        4.5 &         4.7 &           5.4 &           3.6 &            4.0 \\
+    	TOA SW CRE (Wm$^{-2}$)       & -45.8 &      -58.8 &      -56.3 &       -56.0 &         -56.9 &         -54.3 &          -54.1 \\
+    	TOA LW CRE (Wm$^{-2}$)       &  28.0 &       36.4 &       31.3 &        31.0 &          33.3 &          28.5 &           28.3 \\
+    	TOA net CRE (Wm$^{-2}$)      & -17.8 &      -22.4 &      -25.0 &       -24.9 &         -23.5 &         -25.8 &          -25.8 \\
+    	Cloud water path (gm$^{-2}$) & 119.3 &      147.0 &      129.7 &       130.4 &         144.1 &         127.1 &          126.8 \\
+    	\hline
+    \end{tabular}
+    \label{tab:global_mean_climate}
+\end{sidewaystable}
+
 
 \section{Simulated cloud fraction}
 
