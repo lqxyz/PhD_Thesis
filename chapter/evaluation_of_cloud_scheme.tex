@@ -5,7 +5,7 @@
 In this chapter, the simulated climatology from the simple cloud scheme described in \chapref{chp:simple_cld_scheme} is presented here. \secref{sec:exp_setup_and_dataset} introduces the experiment setup and data sets used in this chapter. The evaluation will focus on features of cloud fraction, cloud water path and cloud radiative effects, including their vertical profile (if any), spatial pattern, zonal mean structure and seasonal cycles.
 
 
-\section{Experiment setup and data sets}
+\section{Data and methods}
 \label{sec:exp_setup_and_dataset}
 
 \subsection{Experiment setup}
@@ -62,7 +62,7 @@ The global mean cloud amount and radiative components for the observations and I
     	\hline
     	{} &   Obs &  Linear\_LS &  Linear\_FD &  Linear\_ALL &  Sundqvist\_LS &  Sundqvist\_FD &  Sundqvist\_ALL \\
     	\hline
-    	Low cloud amount (\%)      &  28.0\tnote{a} &       54.6 &       49.3 &        48.6 &          53.8 &          48.3\tnote{a} &           47.5 \\
+    	Low cloud amount (\%)      &  28.0\tnote{a} &       54.6 &       49.3 &        48.6 &          53.8 &          48.3 &           47.5 \\
     	Middle cloud amount (\%)   &  20.8\tnote{a} &       25.9 &       20.8 &        20.6 &          25.3 &          20.2 &           20.0 \\
     	High cloud amount (\%)     &  12.8\tnote{a} &       42.3 &       30.4 &        30.4 &          35.9 &          25.5 &           25.5 \\
     	Total cloud amount (\%)    &  65.3\tnote{a} &       75.6 &       66.4 &        66.0 &          72.4 &          63.3 &           62.6 \\
@@ -86,29 +86,29 @@ The global mean cloud amount and radiative components for the observations and I
     \label{tab:global_mean_climate}
 \end{sidewaystable}
 
-\begin{figure}
+The global mean cloud fraction profiles from CALIPSO-GOCCP, ERA-Interim reanalysis and Isca simulations are displayed in \figref{fig:cld_fraction_profile}a. The cloud fractions from all the Isca simulations are higher than observations, especially in the middle and high levels. The FD simulations are closer to observations than the LS simulations, which is true for both the linear and Sundqvist schemes. Regarding the annual and zonal mean profiles, a striking feature is that the LS simulations from both linear and Sundqvist schemes overestimate the cloud fraction at high latitudes (\figsref{fig:cld_fraction_profile}d and \ref{fig:cld_fraction_profile}g) compared to the observation (\figref{fig:cld_fraction_profile}b) and reanalysis (\figref{fig:cld_fraction_profile}c). These biases are mitigated in the FD simulations (\figsref{fig:cld_fraction_profile}e and \ref{fig:cld_fraction_profile}h), as the cloud fractions are limited due to insufficient water vapor content at high latitudes. Despite more clouds being diagnosed at low levels over the eastern subtropical ocean regions, the zonal mean cloud fraction profiles in the ALL simulations (\figsref{fig:cld_fraction_profile}f and \ref{fig:cld_fraction_profile}i) are generally similar to those from the FD simulations. In summary, the cloud fraction profiles have been improved from the LS to ALL simulations due to the freeze-dry adjustment and the extra low clouds. However, the cloud fractions are still overestimated in high levels over the subtropics, which could possibly explain the CRE biases over these regions.
+
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/cloud_zonal_mean_vert_profiles}.pdf}
 	\caption{(a) The annual and global mean of cloud fraction profiles from the CALIPSO-GOCCP (thick blue solid line), ERA-Interim reanalysis (thick orange solid line) and different Isca simulations, including linear\_LS (blue dotted), linear\_FD (orange dash-dotted), linear\_ALL (green dashed), Sundqvist\_LS (pink dotted), Sundqvist\_FD (yellow dash-dotted) and Sundqvist\_ALL (azure dashed). (b-i) Same as in (a), but for annual and zonal mean of cloud fraction profiles.}
 	\label{fig:cld_fraction_profile}
 \end{figure}
 
-The global mean cloud fraction profiles from CALIPSO-GOCCP, ERA-Interim reanalysis and Isca simulations are displayed in \figref{fig:cld_fraction_profile}a. The cloud fractions from all the Isca simulations are higher than observations, especially in the middle and high levels. The FD simulations are closer to observations than the LS simulations, which is true for both the linear and Sundqvist schemes. Regarding the annual and zonal mean profiles, a striking feature is that the LS simulations from both linear and Sundqvist schemes overestimate the cloud fraction at high latitudes (\figsref{fig:cld_fraction_profile}d and \ref{fig:cld_fraction_profile}g) compared to the observation (\figref{fig:cld_fraction_profile}b) and reanalysis (\figref{fig:cld_fraction_profile}c). These biases are mitigated in the FD simulations (\figsref{fig:cld_fraction_profile}e and \ref{fig:cld_fraction_profile}h), as the cloud fractions are limited due to insufficient water vapor content at high latitudes. Despite more clouds being diagnosed at low levels over the eastern subtropical ocean regions, the zonal mean cloud fraction profiles in the ALL simulations (\figsref{fig:cld_fraction_profile}f and \ref{fig:cld_fraction_profile}i) are generally similar to those from the FD simulations. In summary, the cloud fraction profiles have been improved from the LS to ALL simulations due to the freeze-dry adjustment and the extra low clouds. However, the cloud fractions are still overestimated in high levels over the subtropics, which could possibly explain the CRE biases over these regions.
+In addition to the cloud fraction profiles, the geographic patterns of cloud amount, diagnosed from the random-maximum overlap assumption (\secref{sec:cld_amt_diag}), are also compared with observations. For example, the annual mean spatial patterns of low cloud amount from three different simulations (LS, FD and ALL) with linear RH cloud scheme, ISCCP-H data set, and the differences between them are shown in \figref{fig:low_cld_amt}. It should be pointed out that the simulated cloud amounts are compared to the satellite retrievals directly in this study, because the cloud simulator \citep[e.g.,][]{Bodas2011} has not been implemented in Isca. This may bring in some inconsistencies, but it does provide a useful first look of the cloud amount diagnosis.
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/low_cld_amt_isca_obs}.pdf}
 	\caption{The annual mean geographic patterns of low cloud amount (\%) from the (a) LS, (b) FD, (c) ALL simulations with the linear scheme as well as (d) observation (ISCCP-H), and the differences between the (e) FD and LS, (f) ALL and FD, (g) LS and observation, (h) FD and observation, and (i) ALL and observation. Note that (a-d) use the upper color scale, (e-f) use the middle one, and (g-i) use the one at the bottom.}
 	\label{fig:low_cld_amt}
 \end{figure}
 
-In addition to the cloud fraction profiles, the geographic patterns of cloud amount, diagnosed from the random-maximum overlap assumption (\secref{sec:cld_amt_diag}), are also compared with observations. For example, the annual mean spatial patterns of low cloud amount from three different simulations (LS, FD and ALL) with linear RH cloud scheme, ISCCP-H data set, and the differences between them are shown in \figref{fig:low_cld_amt}. It should be pointed out that the simulated cloud amounts are compared to the satellite retrievals directly in this study, because the cloud simulator \citep[e.g.,][]{Bodas2011} has not been implemented in Isca. This may bring in some inconsistencies, but it does provide a useful first look of the cloud amount diagnosis.
-
 One evident feature of the low cloud amount in observations is that marine stratocumulus clouds dominate the areas off the west coast of continents (\figref{fig:low_cld_amt}d), related to the subsidence branch of the Hadley Cell \citep{Wood2012}. The predominantly downward motion in these regions generally suppresses cloud formation in the middle and upper troposphere, but due to the abundance of water vapor near the ocean surface, clouds form at the top of convective boundary layers. However, these marine low clouds are too far from the coasts in the LS simulation compared to the observations (\figref{fig:low_cld_amt}a). Looking at the differences between LS simulation and observations (\figref{fig:low_cld_amt}g), the low cloud amount is underestimated by about 20\% off the west coast of Peru. In fact, these are well-known biases in CMIP5 models \citep{Dolinar2015}. Another problem of the LS simulation is the overproduction of low cloud amount in polar regions (\figref{fig:low_cld_amt}g). For example, LS simulation produces more than 40\% low cloud over Arctic region. %which is a similar but less severe bias in mid-latitudes.
 
 In contrast, the cloud fractions in the FD and ALL simulations are adjusted by the freeze-dry method (see \secref{sec:freezedry}), which is mainly designed to reduce the unrealistic cloud amount in polar regions. Thus there is a reduction of low cloud amount over high latitudes in these two simulations (\figsref{fig:low_cld_amt}h and \ref{fig:low_cld_amt}i), although some positive biases still exist there. Compared with the LS simulation directly, the FD simulation can reduce the low cloud amount by more than 20\% over polar regions (\figref{fig:low_cld_amt}e), showing a better agreement with the observations. The ALL simulation can further diagnose the marine stratus clouds off the west coast of continents through the predictor ELF, making the low clouds distribution closer to the observation (\figref{fig:low_cld_amt}c). It is noted that pronounced changes occur off the west coasts of Peru, California and Namibia in the ALL simulation, where the cloud fraction increases over 20\% (\figref{fig:low_cld_amt}f) than the FD run. As shown in Table \ref{tab:global_mean_climate}, the global mean low cloud amount decreases from 54.6\% to 48.6\% from the LS to ALL simulations with the linear RH scheme, which is closer to the observed value (28\%). The changes of total cloud amount in these simulations (not shown here) are similar, and the global mean value decreases from 75.6\% (the LS run) to 66.0\% (the ALL run) for the linear RH scheme (Table \ref{tab:global_mean_climate}).
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{{figs/evaluation_of_cld_scheme/cloud_amount_in_arctic_region}.pdf}
 	\caption{The seasonal cycle of (a) low and (b) total cloud amount (\%) over the Arctic region ($60^\circ$-$90^\circ$N) from the LS (solid lines) and FD (dashed lines) simulations, where the freeze-dry adjustment method is applied in the FD simulations. The green and pink colors denote the experiments performed with the linear and Sundqvist cloud schemes respectively.}
@@ -121,7 +121,7 @@ The above analyses have shown that the freeze-dry method can improve the spatial
 \section{Simulated cloud water path}
 \label{sec:cwp}
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/cwp_isca_obs}.pdf}
 	\caption{Same as \figref{fig:low_cld_amt}, but for the spatial patterns of total cloud water path (CWP; gm$^{-2}$). The observed climatology of CWP is derived from the CloudSat data set.}
@@ -135,17 +135,16 @@ The cloud water path (CWP) measures the total amount of cloud water within a col
 \end{equation}
 where $q_l$ is the in-cloud liquid water mixing ratio specified in Equation (\ref{eq:qcl}), $C$ is the cloud fraction within a grid box, $g$ is the acceleration due to gravity and $p$ is the pressure. The global and annual mean CWP in the LS simulation from linear RH scheme is 147.0 gm$^{-2}$, which is larger than the observed global mean result (119.3 gm$^{-2}$, see Table \ref{tab:global_mean_climate}). As displayed in \figref{fig:cwp}, one obvious bias in the spatial pattern in the LS simulation is the overestimation of CWP at high latitudes. For instance, these biases can be even more than 90 gm$^{-2}$ in the polar regions (\figsref{fig:cwp}a and \ref{fig:cwp}g). Such an overestimation is also evident in cloud amount over the polar regions (e.g. \figref{fig:low_cld_amt}g), suggesting that the adjustment of cloud fraction probably reduces the CWP biases there. Indeed, incorporating the freeze-dry method into the simulation produces a large change in the CWP spatial pattern, with a reduction over 60 gm$^{-2}$ over polar regions (\figsref{fig:cwp}b, \ref{fig:cwp}e and \ref{fig:cwp}h). The CWP biases off the west coast of continents are reduced in the ALL simulation due to the increase of the low cloud fraction there. For example, the CWP over Peruvian and Californian coasts in the ALL simulation increases at least 20 gm$^{-2}$ when compared to the LS simulation (\figref{fig:cwp}e).
 
-
 \section{Simulated cloud radiative effect}
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/toa_sw_cre_isca_obs}.pdf}
 	\caption{Same as \figref{fig:low_cld_amt}, but for shortwave (SW) cloud radiative effect (CRE) (Wm$^{-2}$) at TOA. The observed SW CRE is from CERES-EBAF data set.}
 	\label{fig:toa_sw_cre}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/SW_CREs_improvement_linear}.pdf}
 	\caption{(a) The regional mean SW CRE biases from the FD and ALL simulations with with linear RH scheme in five different subtropical ocean regions off the west coast of continents, whose ranges are defined in the caption of \figref{fig:fit_low_cld_proxy}. (b) The relationship of regional mean SW CRE and low cloud amount changes in the FD and ALL simulations, and the changes are calculated as their differences (i.e., ALL-FD).}
@@ -160,7 +159,7 @@ The global mean SW CRE from the LS simulation is -58.8 Wm$^{-2}$, which is much 
 
 Another problem of the SW CRE in the LS simulation is that it is too negative in trade wind cumulus regions, Southern Ocean and northern Pacific Ocean (\figref{fig:toa_sw_cre}g), which is associated with the excessive clouds over these regions (\figref{fig:low_cld_amt}g). The freeze-dry adjustment has reduced the cloud amount at high latitudes, making the SW CRE in the Southern Ocean less negative compared to the LS simulation (\figsref{fig:toa_sw_cre}e and \ref{fig:toa_sw_cre}h). In the end, the SW CRE in the ALL simulation becomes more realistic compared to observations, and the global mean value (-56.0 Wm$^{-2}$) is closer to the observed value (-45.8 Wm$^{-2}$) from CERES-EBAF (Table \ref{tab:global_mean_climate}).
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/toa_lw_cre_isca_obs}.pdf}
 	\caption{Same as \figref{fig:toa_sw_cre}, but for LW CRE (Wm$^{-2}$) at TOA. }
@@ -169,7 +168,7 @@ Another problem of the SW CRE in the LS simulation is that it is too negative in
 
 The LS simulation reproduces the general spatial pattern of the observed LW CRE (\figsref{fig:toa_lw_cre}a and \ref{fig:toa_lw_cre}d). However, the radiative effect is too strong, especially in the polar regions and also over the maritime continent regions (\figsref{fig:toa_lw_cre}a and \ref{fig:toa_lw_cre}d), which is also illustrated by the positive biases over these regions (\figref{fig:toa_lw_cre}g). The LW CRE in the LS simulation is overestimated by over 30 Wm$^{-2}$ in the Arctic and over 15 Wm$^{-2}$ in tropical regions. As discussed in previous sections, the cloud fraction, as well as the CWP in polar regions, decreases in the FD simulation compared to the LS run. Therefore, the LW CRE is improved over these regions (\figsref{fig:toa_lw_cre}b and \ref{fig:toa_lw_cre}h), where the bias in polar region is reduced by more than 15 Wm$^{-2}$ (\figref{fig:toa_lw_cre}e). Nevertheless, there is still a small positive bias over the Arctic and tropical regions. Compared to the FD simulation, the changes in the ALL simulation has little effect on LW CRE (\figref{fig:toa_lw_cre}f). After these improvements, the spatial patterns of LW CRE in the FD and ALL simulations become more similar to the observations, and the global mean CRE drops from 36.4 Wm$^{-2}$ to 31.0 Wm$^{-2}$, much closer to global mean result from observations (Table \ref{tab:global_mean_climate}).
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/linear_cldamt_lwcre_binned_by_omega_year_ocean}.pdf}
 	\caption{(a) The vertical pressure velocity field at 500 hPa ($\omega_{500}$) over tropical oceans between 30$^\circ$S and 30$^\circ$N from the linear\_LS simulation. (b) The probability density functions (PDFs) of the 500 hPa large-scale vertical velocity ($\omega_{500}$) over the tropical ocean regions defined in (a), where the vertical bars indicate one standard deviation of the annual mean data. (c) The low, high cloud amounts and (d) the TOA LW CRE in different dynamical regimes binned by $\omega_{500}$. The 10-year (2005-2014) observed cloud amounts from ISCCP-H and the LW CRE from CERES-EBAF are binned by $\omega_{500}$ from ERA-Interim reanalysis data set (black lines). The results from the LS, FD and ALL simulations with the linear RH scheme are represented by blue, orange and green lines, respectively.}
@@ -180,7 +179,7 @@ To further quantify the simulated LW CRE at TOA over the tropical ocean regions 
 
 Figures \ref{fig:pdf_lw_cre}c and \ref{fig:pdf_lw_cre}d illustrate the high/low cloud amounts and LW CRE at the TOA over different dynamical regimes over tropical oceans, respectively. The observed cloud amount and LW CRE are from ISCCP-H and CERES-EBAF data sets respectively, both covering the period from 2005 to 2014 with the regimes being defined by the $\omega_{500}$ from ERA-Interim. The regimes with stronger convective activity, related to the magnitude of $\omega_{500}$ in ascending regions ($\omega_{500}<0$), usually have a larger amount of high clouds and thus stronger LW CREs. All the LW CREs from the three simulations are close to the observed values over the weak upwelling and subsidence regions. However, the LW CREs from the LS simulation deviate from the observations in strong ascending regions ($\omega_{500}<-20$ hPa day$^{-1}$). Furthermore, this discrepancy increases with the magnitude of $\omega_{500}$ in ascending regions ($\omega_{500}<0$). It is noted that the large biases of LW CRE over ascending regions is reduced slightly in the FD and ALL simulations, associated with the decrease of high clouds over those regimes (\figref{fig:pdf_lw_cre}c). However, the positive biases still exist at the strong convection regions. 
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/toa_net_cre_isca_obs}.pdf}
 	\caption{Same as \figref{fig:toa_sw_cre}, but for net CRE (Wm$^{-2}$) at TOA.}
@@ -190,7 +189,7 @@ Figures \ref{fig:pdf_lw_cre}c and \ref{fig:pdf_lw_cre}d illustrate the high/low 
 Finally, the spatial pattens of net CREs at the TOA are presented in \figref{fig:toa_net_cre}, where we can see that the positive biases in the LS simulation mainly occur in the polar regions and subtropical eastern ocean regions. There are also small negative biases in subtropical and extratropical regions. The positive biases in net CRE in the LS simulation are related to the cloud amount biases in these regions, as we have seen in the SW and LW CRE fields. Clearly, the biases in polar regions are reduced greatly in the FD simulations (\figsref{fig:toa_net_cre}b, \ref{fig:toa_net_cre}e and \ref{fig:toa_net_cre}h) due to the freeze-dry method. Additionally, the positive biases off the west coasts of continents in subtropics can be mitigated in the ALL simulation (\figref{fig:toa_net_cre}i), making the spatial pattern closer to CERES-EBAF, although there are still slight positive biases in polar regions.
 
 \subsection{Zonal mean structure}
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/cmp_zonal_toa_CRE_cmip_isca}.pdf}
 	\caption{Zonally averaged distribution of the TOA (a) SW, (b) LW and (c) net CREs from CERES-EBAF Ed4.1 (blue solid line), ERA-Interim reanalysis (orange solid line), CMIP5 models (thin gray solid lines for each model and black solid line for multimodel mean) and different Isca simulations (dashed/dotted color lines, listed in legend).}
@@ -205,7 +204,7 @@ In addition, compared to the zonal mean variation of the SW, LW and net CREs fro
 
 
 \subsection{Seasonal cycle}
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/isca_linear_amip_seasonal_cycle_map}.pdf}
 	\caption{The zonal mean annual cycle of TOA LW (top), SW (middle) and net (bottom) CREs from observation (CERES-EBAF), LS and ALL simulations with the linear RH scheme in Isca.}
@@ -220,14 +219,14 @@ The seasonal cycle of SW CRE in the LS simulation is good, except that it is too
 
 \subsection{Comparison with CMIP5 models}
 \label{sec:cmp_cmip5}
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/global_mean_toa_CREs_4.1}.pdf}
 	\caption{Globally averaged TOA (a) shortwave (SW), (b) longwave (LW) and (c) net cloud radiative effects (CREs, Wm$^{-2}$) from 21 CMIP5 models historical runs (1996-2005, gray bars) and Isca simulations with different setups (orange bars for linear scheme and cyan bars for Sundqvist scheme). The horizontal lines are annual and global mean CREs from CERES-EBAF (green dashed lines, covering from 2001 to 2018) and the multimodel ensemble mean results (orange dotted lines) of CMIP5 models, whose names are listed on right for reference.}
 	\label{fig:global_mean_cres}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/cmp_cmip5_isca_CRE_taylor_obs_v4.1_sundqvist_linear}.pdf}
 	\caption{Taylor diagrams showing standard deviation (Wm$^{-2}$), root mean square error (RMSE; Wm$^{-2}$) and spatial pattern correlation for the observed and simulated (a) LW, (b) SW and (c) net CREs at TOA in CMIP5 models and Isca simulations (LS, FD and ALL). The statistics of these variables are calculated based on annual mean data, where  the monthly data (1996-2005) from historical simulation is used for analysis of CMIP5 models. The observed field is as a reference and denoted by a black star. Contour of the standard deviation from observed field is shown by the black dashed line and contours of RMSE are displayed in gray with labels.}
