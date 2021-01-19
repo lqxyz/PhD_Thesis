@@ -45,6 +45,7 @@ To evaluate the performance of the cloud scheme, several observations and reanal
 In order to demonstrate how this cloud scheme performs with respect to more comprehensive models, the monthly mean radiative fluxes at clear-sky and all-sky conditions in historical simulation (1996 to 2005) from various CMIP5 models are also shown for the names of models). All the data sets are remapped to T42 resolution when necessary for a direct comparison with Isca simulations.
 
 \section{Simulated cloud amount}
+\label{sec:cld_amt}
 
 The global mean cloud amount and radiative components for the observations and Isca simulations are summarized in Table \ref{tab:global_mean_climate}. 
 
@@ -85,8 +86,18 @@ The global mean cloud amount and radiative components for the observations and I
     \label{tab:global_mean_climate}
 \end{sidewaystable}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/cloud_zonal_mean_vert_profiles}.pdf}
+	\caption{(a) The annual and global mean of cloud fraction profiles from the CALIPSO-GOCCP (thick blue solid line), ERA-Interim reanalysis (thick orange solid line) and different Isca simulations, including linear\_LS (blue dotted), linear\_FD (orange dash-dotted), linear\_ALL (green dashed), Sundqvist\_LS (pink dotted), Sundqvist\_FD (yellow dash-dotted) and Sundqvist\_ALL (azure dashed). (b-i) Same as in (a), but for annual and zonal mean of cloud fraction profiles.}
+	\label{fig:cld_fraction_profile}
+\end{figure}
+
+The global mean cloud fraction profiles from CALIPSO-GOCCP, ERA-Interim reanalysis and Isca simulations are displayed in \figref{fig:cld_fraction_profile}a. The cloud fractions from all the Isca simulations are higher than observations, especially in the middle and high levels. The FD simulations are closer to observations than the LS simulations, which is true for both the linear and Sundqvist schemes. Regarding the annual and zonal mean profiles, a striking feature is that the LS simulations from both linear and Sundqvist schemes overestimate the cloud fraction at high latitudes (\figsref{fig:cld_fraction_profile}d and \ref{fig:cld_fraction_profile}g) compared to the observation (\figref{fig:cld_fraction_profile}b) and reanalysis (\figref{fig:cld_fraction_profile}c). These biases are mitigated in the FD simulations (\figsref{fig:cld_fraction_profile}e and \ref{fig:cld_fraction_profile}h), as the cloud fractions are limited due to insufficient water vapor content at high latitudes. Despite more clouds being diagnosed at low levels over the eastern subtropical ocean regions, the zonal mean cloud fraction profiles in the ALL simulations (\figsref{fig:cld_fraction_profile}f and \ref{fig:cld_fraction_profile}i) are generally similar to those from the FD simulations. In summary, the cloud fraction profiles have been improved from the LS to ALL simulations due to the freeze-dry adjustment and the extra low clouds. However, the cloud fractions are still overestimated in high levels over the subtropics, which could possibly explain the CRE biases over these regions.
+
 
 \section{Simulated cloud water path}
+
 
 \section{Simulated cloud radiative effect}
 
