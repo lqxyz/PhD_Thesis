@@ -20,6 +20,7 @@ In order to compare the roles of different cloud parameterization schemes, simul
 	\caption{Summary of the Isca fixed-SST simulations}
 	\vspace{0.5em}
 	\centering
+	\renewcommand{\arraystretch}{1.3}
 	\begin{tabular}{ll}
 		\hline
 		Experiment & Description \\
@@ -43,37 +44,47 @@ To evaluate the performance of the cloud scheme, several observations and reanal
 
 In order to demonstrate how this cloud scheme performs with respect to more comprehensive models, the monthly mean radiative fluxes at clear-sky and all-sky conditions in historical simulation (1996 to 2005) from various CMIP5 models are also shown for the names of models). All the data sets are remapped to T42 resolution when necessary for a direct comparison with Isca simulations.
 
-\section{General feature}
+\section{Simulated cloud amount}
 
-The global mean cloud amount and radiative components for the observations and Isca simulations are summarized in Table \ref{tab:global_mean_climate}. We first focus on the mean state of the cloud amount, cloud water path and CRE at TOA from the LS, FD and ALL simulations (sections \ref{sec:cld_amt} to \ref{sec:CRE}). Then, in Sect. \ref{sec:cmp_cmip5} we compare the simulated CREs with CMIP5 models. The sensitivity of the cloud scheme to the choice of parameters is briefly presented in Sect. \ref{sec:sensitivity}.
+The global mean cloud amount and radiative components for the observations and Isca simulations are summarized in Table \ref{tab:global_mean_climate}. 
 
 \begin{sidewaystable}
-	\caption{Global and annual mean climatological properties of observations and different Isca simulations, which are summarized in Table \ref{tab:exps}. The net fluxes in the table are positive downward. The observed cloud amounts are from ISCCP H-series product (1995-2014), the radiative fluxes and cloud radiative effects (CREs) at the TOA are from CERES-EBAF data set (2001-2018), and the cloud water path is from CloudSat data product.}
+	\caption{Global and annual mean climatological properties of observations and different Isca simulations, which are summarized in Table \ref{tab:exps}. The net fluxes in the table are positive downward. }
 	\vspace{0.5em}
 	\centering
 	\renewcommand{\arraystretch}{1.5}
-	\begin{tabular}{lrrrrrrr}
+	% https://tex.stackexchange.com/questions/209802/footnote-in-table-environment
+	% use this package for footnote
+	\begin{threeparttable}
+	%\begin{tabular}{lrrrrrrr}
+	\begin{tabular}{lccccccc}
     	\hline
     	{} &   Obs &  Linear\_LS &  Linear\_FD &  Linear\_ALL &  Sundqvist\_LS &  Sundqvist\_FD &  Sundqvist\_ALL \\
     	\hline
-    	Low cloud amount (\%)      &  28.0 &       54.6 &       49.3 &        48.6 &          53.8 &          48.3 &           47.5 \\
-    	Middle cloud amount (\%)   &  20.8 &       25.9 &       20.8 &        20.6 &          25.3 &          20.2 &           20.0 \\
-    	High cloud amount (\%)     &  12.8 &       42.3 &       30.4 &        30.4 &          35.9 &          25.5 &           25.5 \\
-    	Total cloud amount (\%)    &  65.3 &       75.6 &       66.4 &        66.0 &          72.4 &          63.3 &           62.6 \\
-    	TOA net SW flux (Wm$^{-2}$)  & 241.3 &      226.8 &      229.2 &       229.6 &         228.7 &         231.2 &          231.5 \\
-    	TOA net LW flux (Wm$^{-2}$)  & 240.3 &      220.4 &      224.8 &       224.9 &         223.3 &         227.6 &          227.4 \\
-    	TOA net flux (Wm$^{-2}$)     &   1.0 &        6.4 &        4.5 &         4.7 &           5.4 &           3.6 &            4.0 \\
-    	TOA SW CRE (Wm$^{-2}$)       & -45.8 &      -58.8 &      -56.3 &       -56.0 &         -56.9 &         -54.3 &          -54.1 \\
-    	TOA LW CRE (Wm$^{-2}$)       &  28.0 &       36.4 &       31.3 &        31.0 &          33.3 &          28.5 &           28.3 \\
-    	TOA net CRE (Wm$^{-2}$)      & -17.8 &      -22.4 &      -25.0 &       -24.9 &         -23.5 &         -25.8 &          -25.8 \\
-    	Cloud water path (gm$^{-2}$) & 119.3 &      147.0 &      129.7 &       130.4 &         144.1 &         127.1 &          126.8 \\
+    	Low cloud amount (\%)      &  28.0\tnote{a} &       54.6 &       49.3 &        48.6 &          53.8 &          48.3\tnote{a} &           47.5 \\
+    	Middle cloud amount (\%)   &  20.8\tnote{a} &       25.9 &       20.8 &        20.6 &          25.3 &          20.2 &           20.0 \\
+    	High cloud amount (\%)     &  12.8\tnote{a} &       42.3 &       30.4 &        30.4 &          35.9 &          25.5 &           25.5 \\
+    	Total cloud amount (\%)    &  65.3\tnote{a} &       75.6 &       66.4 &        66.0 &          72.4 &          63.3 &           62.6 \\
+    	TOA net SW flux (Wm$^{-2}$)  & 241.3\tnote{b} &      226.8 &      229.2 &       229.6 &         228.7 &         231.2 &          231.5 \\
+    	TOA net LW flux (Wm$^{-2}$)  & 240.3\tnote{b} &      220.4 &      224.8 &       224.9 &         223.3 &         227.6 &          227.4 \\
+    	TOA net flux (Wm$^{-2}$)     &   1.0\tnote{b} &        6.4 &        4.5 &         4.7 &           5.4 &           3.6 &            4.0 \\
+    	TOA SW CRE (Wm$^{-2}$)       & -45.8\tnote{b} &      -58.8 &      -56.3 &       -56.0 &         -56.9 &         -54.3 &          -54.1 \\
+    	TOA LW CRE (Wm$^{-2}$)       &  28.0\tnote{b} &       36.4 &       31.3 &        31.0 &          33.3 &          28.5 &           28.3 \\
+    	TOA net CRE (Wm$^{-2}$)      & -17.8\tnote{b} &      -22.4 &      -25.0 &       -24.9 &         -23.5 &         -25.8 &          -25.8 \\
+    	Cloud water path (gm$^{-2}$) & 119.3\tnote{c} &      147.0 &      129.7 &       130.4 &         144.1 &         127.1 &          126.8 \\
     	\hline
     \end{tabular}
+    
+    \begin{tablenotes}
+      \item[a] The observed cloud amounts are from ISCCP H-series \citep{Young2018} product (1995--2014)
+      \item[b] The radiative fluxes and cloud radiative effects (CREs) at the TOA are from CERES-EBAF \citep{Loeb2018} data set (2001--2018)
+      \item[c] The cloud water path is from CloudSat 2B-CWC-RO Release P1\_R05 \citep{Austin2009} data product (2012--2016)
+     \end{tablenotes}
+     
+    \end{threeparttable}
     \label{tab:global_mean_climate}
 \end{sidewaystable}
 
-
-\section{Simulated cloud fraction}
 
 \section{Simulated cloud water path}
 
