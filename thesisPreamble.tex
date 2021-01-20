@@ -29,7 +29,12 @@ I would like to take this opportunity to acknowledge my supervisors: Mat Collins
 \newpage
 \pagestyle{fancy}
 \setcounter{tocdepth}{4}
+% Reset linkcolor to black
+% https://tex.stackexchange.com/questions/59462/change-ref-color-of-on-the-list-of-figures
+\bgroup
+\hypersetup{linkcolor=black}
 \tableofcontents
+\egroup
 
 %---------------------------------------------------------------
 % List of tables, illustrations etc
@@ -37,11 +42,17 @@ I would like to take this opportunity to acknowledge my supervisors: Mat Collins
 \newpage
 \addcontentsline{toc}{chapter}{List of tables}
 %\chapter*{List of tables}
+\bgroup
+\hypersetup{linkcolor=black}
 \listoftables
+\egroup
 
 \newpage
 \addcontentsline{toc}{chapter}{List of figures}
+\bgroup
+\hypersetup{linkcolor=black}
 \listoffigures
+\egroup
 
 %--------------------------------------------------------------
 % List of accompanying material (if any)

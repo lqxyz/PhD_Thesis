@@ -118,12 +118,17 @@
 
 %-------------------------------------------------------------------------------
 % The following causes contents, citations, bookmarks etc to come out in colour.
-%\usepackage[bookmarks=false]{hyperref}
-%\hypersetup{linktoc=all,
-%            unicode=true,
-%            colorlinks=true,
-%            pdfstartview=Fit,
-%            pdfnewwindow=true}
+% \usepackage{xcolor}
+% \definecolor{myurlcolor}{rgb}{0, 0.427, 0.592}
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{linktoc=all,
+            unicode=true,
+            colorlinks=true,
+            pdfstartview=Fit,
+            pdfnewwindow=true}
+\hypersetup{urlcolor= [rgb]{0,0.427,0.592},
+            linkcolor=[rgb]{0,0.427,0.592},
+            citecolor=[rgb]{0,0.427,0.592}}
 %-------------------------------------------------------------------------------
 
 \usepackage{scrhack}
