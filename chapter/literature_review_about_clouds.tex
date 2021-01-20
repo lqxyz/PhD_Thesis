@@ -63,7 +63,7 @@ Not only for the climatology, cloud responses to climate change have also attrac
 \end{figure}
 
 %What is feedback?
-The idea of feedback\index{feedback} is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to climate system, which can be seen as the radiative forcing produced by changing the content of CO$_2$ or aerosol, or by other factors such as volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA)\index{top of the atmosphere (TOA)}. That is to say the output response is fed back to the system. The feedback parameter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
+The idea of feedback\index{feedback} is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to climate system, which can be seen as the radiative forcing produced by changing the content of CO$_2$ or aerosol, or by other factors such as volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA)\index{TOA}. That is to say the output response is fed back to the system. The feedback parameter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback. As introduced in \chapref{ch:polaramplification} there are many different feedbacks in the climate system, and here we focus on the ones related to clouds.
 
 \begin{figure}[ht]
 	\centering
@@ -156,7 +156,7 @@ As introduced in previous section, in climate system clouds modulate the flow of
 
 \section{Cloud schemes}
 \label{sec:cld_scheme_history}
-
+\index{cloud scheme}
 \subsection{Overview}
 
 \begin{figure}[ht]
@@ -170,7 +170,7 @@ At present the typical horizontal resolution of the GCMs is 50-200km, but the cl
 
 
 \subsection{Relative humidity schemes}
-
+\index{cloud scheme!RH scheme}
 Previous studies have investigated various ways to represent clouds in climate models. For example, \cite{Holloway1971} prescribed the clouds externally with climatological data without dynamic interplay with the other components of the model. Some early modelling studies made the assumption that a grid box in the model is either fully saturated or totally unsaturated. However, this assumption is not reasonable enough as the humidity can distribute unevenly within a grid box, suggesting that condensation can occur even the relative humidity is less than 100\%. A general idea is to link the cloud cover with the relative humidity, as one can expect that the amount of condensation would increase with the increase of mean humidity of the model grid box, which is the basis for some diagnostic methods.
 
 Diagnostic schemes predict the cloudiness based on the model variables empirically or statistically. In these schemes, the clouds can be linked to atmospheric outputs such as relative humidity, vertical velocity and static stability, among which the linear relationship between cloud fraction against RH could be simplest one. For example, \cite{Smagorinsky1960} found empirically that non-convective cloud amount correlated with the average relative humidity in the respective layers (\figref{fig:Smagorinsky_RH_cld}), arguing that the non-precipitating condensation depend only on the accumulated history of vertical motion, which can be reflected by the humidity. \cite{Ricketts1973} obtained roughly linear relationship between cloud amount and observed relative humidity but commented that the relationship is somewhat indefinite.
@@ -192,6 +192,7 @@ In summary, the methods based on relative humidity and other predictors are usef
 
 \subsection{Statistical schemes}
 \label{sec:PDF_cld_scheme}
+\index{cloud scheme!statistical or PDF scheme}
 
 In contrast, the prognostic approach \citep[e.g.,][]{Tiedtke1993} is to explicitly calculate the clouds related variables, such as cloud water content, in order to pursuing a unification of all clouds processes, which is more realistic in some degree and requires more physical basis and interactions with other parts of the models. Another widely used cloud prediction method is statistical scheme, in which the cloud fraction and in-cloud liquid water/ice are determined based on the assumed probability distributions of subgrid variability of thermodynamic properties. As the cloud related variables such as moisture and temperature are not the same everywhere but distributed randomly within the grid box, it is natural to assume that the cloud cover depends on the distribution of moisture, sometimes on the joint distribution of moisture and temperature. As shown in a very early work, \cite{Sommeria1977} gave up the assumption that a grid is either entirely saturated or unsaturated in the climate models and proposed the idea to use the statistical distribution of moisture within the grid box. For example, given the probability distribution function (PDF) of the total water ($q_t$ is the mixing ratio) in grid box, the cloud fraction ($CF$) can be calculated as 
 \begin{equation}
