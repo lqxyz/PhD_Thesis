@@ -1,0 +1,209 @@
+\chapter{Methods to Calculate Cloud Feedback}
+
+\section{Introduction}
+
+As introdued in \chapref{ch:literature_review_about_clouds}, 
+the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external foring $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
+\begin{equation}
+    \Delta R = \Delta Q + \lambda \Delta T_s,
+    \label{eq:imbalance_forcing_lambda}
+\end{equation}
+in which $\lambda$ is called climate feedback parameter. Besides surface temperature, other variables such as atmospheric temperature, water vapor, albedo and cloud properties may also change, and thus might have an impact on $\lambda$ as well. In theory, the climate feedback parameter $\lambda$ can be evaluated as follows
+\begin{equation}
+    \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s}  + Re, %\text{high-order terms},
+    %+  \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
+    \label{eq:lambda}
+\end{equation}
+where $x$ represent the climate variable such as temperature, water vapor, albedo and cloud properties. The high-order residual term ($Re$) is usually neglected in analysis.
+
+\section{Short summary of three approaches}
+\label{sec:three_climate_fbk_methods}
+
+Several different methods have been proposed to diagnose climate feedbacks in gerenal ciculation models (GCMs). Three main approaches are summarized below. Readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
+
+\begin{enumerate}[label={(\arabic*)}]
+    \item \textbf{The PRP approach}\\
+    The partial radiative perturbation (PRP) method \citep{Wetherald1988cloud} evaluates partial derivatives of model TOA radiation with respect to changes in model parameters by re-running the model radiation code offline. For example, to calculate the climate feedback parameter associated with $x$, the radiative response that results from the perturbation of $x$ is calculated as follows:
+    %substituting one variable at a time from the perturbed climate state into the control climate.
+    \begin{equation}
+        \delta_x R = R(a,b,...,x') - R(a,b,...,x),
+        \label{eq:delta_R_x}
+    \end{equation}
+    where $a$, $b$ etc are climate variables except $x$ and they are kept unchanged during calculation. $x'$ is the value of $x$ from perturbed climate state. In doing so, $\frac{\partial R}{\partial x}$ in \eqref{eq:lambda} can be obtained from this offline calculation. The feedback parameter associated with $x$ is finally computed from $\lambda_x = \frac{\partial R}{\partial x}\frac{\mathrm{d} x}{\mathrm{d} T_s}$, and $\frac{\mathrm{d} x}{\mathrm{d} T_s}$ is calculated by differencing the simulation outputs from two experiments or from different time periods. Note that a more accurate two-sided PRP method \citep{Colman1997} is also used to estimate the partial radiative responses at TOA, so \eqref{eq:delta_R_x} can be rewritten as
+    \begin{equation}
+        \delta_x R = \frac{1}{2} \left[R(a,b,...,x') - R(a,b,...,x) + R(a',b',...,x') - R(a',b',...,x) \right].
+    \end{equation}
+    The advantage of PRP method is that it can separate different climate feedbacks, including ones related to clouds. But the procedure can be computationally expensive \citep{Soden2008}, and the calculation  must be repeated for every simulation and climate model versions.
+    % The parameters  from control and perturbed climate states are substituted one by one into radiation code to obtain the partial responses at TOA.
+    
+    \item \textbf{The CRE approach}\\
+    The `cloud radiative effect' (CRE) approach \citep[or CRF in][]{Cess1990intercomparison, Cess1996cloud} decompose the climate feedback into clear-sky and cloudy components. They do so by decompose the total TOA radiation budget $R$ as the sum clear-sky component ($R_{clear}$) and CRE ($\mathrm{CRE}=R-R_{clear}$), so \eqref{eq:imbalance_forcing_lambda} can be written as
+    \begin{equation}
+        \lambda = \frac{\Delta R - \Delta Q}{\Delta T_s} = \underbrace{\frac{\Delta R_{clear} - \Delta Q}{\Delta T_s}}_{\text{clear-sky climate feedback}} + \underbrace{\frac{\Delta\mathrm{CRE}}{\Delta T_s}}_{\text{cloud feedback}}.
+        \label{eq:CRE_approach}
+    \end{equation}
+    It is clear that this method can not separate the clear-sky climate feedback components into temperature, water vapor and surface albedo ones in further. As we will discuss in \secref{sec:CRE_or_PRP}, the cloud feedback parameter (second term in \eqref{eq:CRE_approach}) obtained from this approach depends on changes in both clear-sky and cloudy properties, which in fact can not separate the cloud feedback completely from the clear-sky components. Nevertheless, the calculation of this method is straightforward and still valuable in GCM evaluations.
+    
+    \item \textbf{The radiative kernel method}\\
+    The radiative kernel method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008} decompose each climate feedback into two parts. The first is the `radiative kernel' ($\partial R/\partial x$), which describes the change of TOA fluxes in response to a standard change in property $x$ and depends on the radiative properties and base state of the model. The second term is the climate response of feedback varaible normalized by surface temperature change ($\mathrm{d} x/\mathrm{d} T_s$). Most importantly, \cite{Soden2008} has shown the climate feedbacks calculated from three different radiative kernels are quite similar, although the radiative transfer code is different, indicating that a single kernel can be used to perform a first-order comparison of feedbacks across mutliple models \citep{Shell2008}. One problem is that the kernel calculation is also computationally expensive as it requres running the offline radiative transfer code for perturbation at each model level and time step, but luckily it just needs one-time calculation and the kernel can be applied for different experiments and models. Currently, more radiative kernels from different GCMs are available as summarized in \tabref{tab:rad_kernels}.
+\end{enumerate}   
+    
+\begin{table}
+	\caption{Summary of available radiative kernels for several GCMs}
+	% %(Part from \url{https://climate.rsmas.miami.edu/data/radiative-kernels/index.html})
+	\vspace{0.5em}
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{lccll}
+		\hline
+		Source & TOA & Surface & Reference & Note (Data link) \\
+		\hline
+        GFDL & $\checkmark$ & $\checkmark$ & \cite{Soden2008}  & \\
+        CESM-CAM3 & $\checkmark$ & $\checkmark$ & \cite{Shell2008} & \url{http://people.oregonstate.edu/~shellk/kernel.html}\\
+        \multirow{2}{*}{CESM-CAM5} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \cite{Pendergrass2018}  & \url{https://github.com/apendergrass/cam5-kernels}\\
+         & & & or \cite{Huang2017}  & \url{https://huanggroup.wordpress.com/publication/} \\
+        %{CESM-CAM5} &{$\checkmark$} & {$\checkmark$} & \cite{Pendergrass2018} or \cite{Huang2017}  \\
+        HadGEM3-GA7.1 & $\checkmark$ & $\checkmark$ & \cite{Smith2020} & \url{https://doi.org/10.5281/zenodo.3594673}  \\
+        \multirow{2}{*}{CloudSat} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{\cite{Kramer2019}} & \multirow{2}{*}{Derived from the CloudSat fluxes and } \\
+         & & & & heating rates data product.\\
+		\hline
+	\end{tabular}}
+	\label{tab:rad_kernels}
+\end{table}
+
+%These approaches summarized above are proposed for general climate feedback parameters, which of course can be used to diagnose cloud feedbacks. for the cloud feedback
+
+As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the histogram of cloud fraction partitioned into cloud-top ressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedback into different components such as cloud amount, height and optical depth. This will discussed further in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
+
+\section{Using $\Delta$CRE to estimate cloud feedback?}
+\label{sec:CRE_or_PRP}
+
+In this section, we try to answer the question whether we could use the change of CRE between perturbed and control climate states to estimate the cloud feedback.
+% In the partial radiative perturbation (PRP) method, the cloud feedback is defined as 
+% \begin{equation}
+%     \lambda_C = - \frac{\partial \overline{R}}{\partial C}\frac{\text{d}C}{\text{d}T_s}
+% \end{equation}
+In PRP method the change of radiation flux at TOA due to clouds ($\delta_C {R}$) is calculated as follows:
+\begin{equation}
+    %\delta_C \overline{R} = \overline{R}(T, C', w, \alpha_s)  - \overline{R}(T, C, w, \alpha_s),
+    \delta_C R = {R}(T, C', w, \alpha_s)  - {R}(T, C, w, \alpha_s),
+    \label{eq:prp_delta_Rc}
+\end{equation}
+%  $R$ is the net upward radiation flux at tropopause,
+where $T$, $C$, $w$ and $\alpha_s$ are temperature, cloud properties (e.g., cloud fraction, cloud water content), water vapor and surface albedo, respectively. $C'$ represents the altered cloud properties in perturbed climate; that is $C'=C+\Delta C$, and so forth for other variables. 
+%The cloud radiative effect (CRE) is defined as the difference between total-sky and clear-sky net fluxes at top of the atmosphere (TOA). 
+%As we will show below, the CRE method has some limitations. 
+In contrast, the change in net CRE at TOA from control and perturbed simulations is defined as
+% As the CRE at TOA is defined as the radiation difference between total- and clear-sky conditions, 
+\begin{equation}
+    \Delta CRE_{net} = \underbrace{\left[~{R}(T', C', w', \alpha'_s)  - {R}(T', 0, w', \alpha'_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in perturbed climate}} - 
+    \underbrace{\left[~{R}(T, C, w, \alpha_s)  - {R}(T, 0, w, \alpha_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in control climate}},
+    %\overline{CRE}_2 - \overline{CRE}_1
+    \label{eq:delta_CRE}
+\end{equation}
+as the CRE at TOA is computed from the radiation flux difference between total- and clear-sky conditions. For the case there is no cloud feedback $\Delta C=0$, thus $C'=C$ and $\delta_C {R}=0$ in \eqref{eq:prp_delta_Rc}. The change in net CRE in \eqref{eq:delta_CRE} becomes
+\begin{equation}
+    \begin{aligned}
+        \Delta {CRE}_{net} &= \left[~{R}(T', C, w', \alpha'_s)  - {R}(T', 0, w', \alpha'_s) ~\right] - 
+        \left[~{R}(T, C, w, \alpha_s) - {R}(T, 0, w, \alpha_s) ~\right] \\
+         & = \underbrace{\left[~{R}(T', C, w', \alpha'_s)  - {R}(T, C, w, \alpha_s)  ~\right]}_\text{Change in total-sky flux} - \underbrace{\left[~ {R}(T', 0, w', \alpha'_s) - {R}(T, 0, w, \alpha_s) ~\right].}_\text{Change in clear-sky flux} \\
+    \end{aligned}
+    \label{eq:delta_CRE_no_cld_fbk}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{{figs/methods/fig2_Soden2004_PRP_CRF_comparison}.pdf}
+    \caption{Comparison of the (a) shortwave, (b) longwave, and (c) net cloud feedback parameters from the PRP and $\Delta$CRF (or $\Delta$CRE) methods. Adapted from Fig. 2 of \cite{Soden2004}.}
+    \label{fig:cmp_PRP_CRE_Soden}
+\end{figure}
+If we assume that $\Delta T$, $\Delta w$, and  $\Delta \alpha_s$ are not zero (i.e. $T'\neq T$,  $w'\neq w$, and  $\alpha_s'\neq \alpha_s$), the only way to get $\Delta {CRE}_{net}=0$ would be the changes in total-sky flux (term within first bracket in \eqref{eq:delta_CRE_no_cld_fbk}) and clear-sky flux (term within second bracket in \eqref{eq:delta_CRE_no_cld_fbk}) due to non-cloud feedbacks are equal. However, this is not always the case. An explanation with a simple model is presented in \secref{sec:cld_masking_effect}, but here we provide some simulation results from GCMs first.
+
+Taking the results from \cite{Soden2004} as an example, shortwave (SW), longwave (LW) and net cloud feedback parameters estimated from PRP and $\Delta$CRE mthods from several GFDL AM2 (version numbers denoted as p\#) models are shown in \figref{fig:cmp_PRP_CRE_Soden}. The SW cloud feedback calculated from PRP method is smaller than the ones from $\Delta$CRE method, while the LW cloud feedback from PRP method is larger than that from $\Delta$CRE approach. In total, the magnitude of net cloud feedback from $\Delta$CRE method is underestimated ranges from 0.3 to 0.4 Wm$^{-2}$K$^{-1}$ in AM2 models compared to PRP method. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\linewidth]{{figs/methods/Soden_Held_cld_fbk_and_delta_CRF}.png}
+    \caption{The cloud feedback parameter plotted as a function of the change in global-mean net cloud radiative forcing per degree change in global surface temperature. Adapted from Fig. 4 of \cite{Soden2006}.}
+    \label{fig:cld_fbk_and_CRE_Soden_Held}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{{figs/methods/cld_fbk_from_kernel_CRF_adjust_forcing}.pdf}
+%     \caption{Multimodel ensemble-mean maps of the cloud feedback estimated as (a) the residual of the kernel calculations, (b) the change in cloud forcing, and (c) the change in cloud forcing after adjusting for the effects of cloud masking on noncloud feedbacks and external radiative forcing. Both the cloud feedback and cloud-masking adjustments to the change in cloud forcing are estimated using the GFDL kernel. Adapted from Fig. 11 of \cite{Soden2008}.}
+%     %  Only those models for which both the cloud feedback and CRE were available are included in the ensemble mean.
+%     \label{fig:cld_fbk_and_CRE_pattern}
+% \end{figure}
+
+Similarly, as shown in \figref{fig:cld_fbk_and_CRE_Soden_Held}, \cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different (\figref{fig:cmp_PRP_CRE_Soden}c and \figref{fig:cld_fbk_and_CRE_Soden_Held}). However, it is noted that the cloud feedback is correlated with the change in net CRE as displayed in \figref{fig:cld_fbk_and_CRE_Soden_Held}, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
+
+\section{Cloud masking effect}
+\label{sec:cld_masking_effect}
+
+A modified simple thought experiment from \cite{Soden2008} is adopted here to explain what cloud masking effect is and why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other. As illustrated in \figref{fig:cld_masking_effect}, we assume part of the grid is covered by high clouds (cloud fraction is $f$), and the water vapor contents are $q_1$ and $q_2$ for clear and cloudy subgrid regions, respectively. Here we focus on LW radiation only and assume the LW radiation emitted by water vapor is a linear function of its content, that is $\alpha + \beta q$, where $\alpha$ and $\beta$ are assumed linear coefficients and $\beta$ is negative so that the outgoing LW radiation decreases with the increase of water vapor. The outgoing LW radiation emitted from clouds is regarded as a constant $W$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\linewidth]{{figs/methods/cloud_masking_effect}.pdf}
+    \caption{Illustration of cloud masking effect on noncloud feedbacks in a grid box.}
+    \label{fig:cld_masking_effect}
+\end{figure}
+
+If there is no clouds in this grid (i.e. $f=0$), the net LW radiation flux at TOA (downward positive) is $-[\alpha + \beta(q_1+q_2)]$. When clouds are present, the grid averaged net LW flux at TOA becomes
+\begin{equation}
+    R = - (\alpha + \beta q_1)(1-f)- Wf,
+    \label{eq:cld_masking}
+\end{equation}
+as the LW raditation emitted from water vapor $q_2$ is masked by clouds. Consider a climate change case in which the water vapor and cloud fraction change a bit, and the change in $R$ can be written as follows by differencing \eqref{eq:cld_masking}:
+\begin{equation}
+    \delta R = \delta R_f + \delta R_q,
+\end{equation}
+where
+\begin{equation}
+    \delta R_f = (\alpha + \beta q_1 - W)~\delta f,
+    \label{eq:lw_change_due_to_cld}
+\end{equation}
+and
+\begin{equation}
+    \delta R_q = -(1-f)\beta~\delta q_1.
+    \label{eq:lw_change_due_to_q}
+\end{equation}
+Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there is no cloud feedback ($\delta f=0$), so the LW radiation change at TOA due to clouds is also zero, namely $\delta R_f=0$ in \eqref{eq:lw_change_due_to_cld}. However, as for the  LW radiation flux change due to water vapor perturbation, the cloud fraction $f$ is also included as in \eqref{eq:lw_change_due_to_q}, indicating that clouds have masking effect on the water vapor feedback and the $\delta R_q$ under clear-sky should be different from the one under cloudy condition. 
+
+This simple thought experiment has illustrated that the presence of clouds can have impact on the radiation associated with noncloud variables. That is why the the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other, and it also implies that estimating cloud feedback from changes of cloud radiative effect is probably not a good option due to the cloud masking effect.
+
+\section{Cloud radiative kernel method}
+\label{sec:Zelinka_method}
+In genreal, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} propose a new technique based on cloud radiative kernel and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
+
+In this method, the cloud kernel $K$ in each histogram bin of \figref{fig:cld_rad_kernel_Zelinka} is defined as
+\begin{equation}
+    K = \frac{\partial R}{\partial C},
+\end{equation}
+which quantifies the sensitivity of TOA radiative flux to cloud fraction changes ($\Delta C$), and is estimated offline from radiation transfer code for each CTP-$\tau$ bin. The process is complicated and detailed description can be found from \cite{Zelinka2012computing1}. The LW, SW and net cloud radiative kernel results are shown in \figref{fig:cld_rad_kernel_Zelinka}, and the major features are:
+\begin{enumerate}
+    \item The LW cloud radiative kernel is positive for all bins, as the LW CRE is positive. It increases dramatically with cloud top height, and is small near surface as the cloud top temperature contrast with surface is small.
+    \item The SW cloud radiative kernel is negative for all bins, as the SW CRE is negative. Its magnitude increases dramatically with optical depth, and almost insensitive to cloud top height.
+    \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the SW reflection exceeds LW trapping; while for higher and thinner clouds, the net cloud radiative kenrel are positive, as LW trapping exceeds SW reflection.
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{{figs/methods/cld_kernel_Zelinka}.pdf}
+    \caption{Global, annual, and ensemble mean (a) LW, (b) SW, and (c) net cloud radiative kernels. Adapted from Fig. 1 of \cite{Zelinka2012computing1}}
+    % In each model, the kernels have been mapped to the control climate's clear-sky surface albedo distribution before averaging in space; thus, the average kernels are weighted by the actual global distribution of clear-sky surface albedo in each model.
+    \label{fig:cld_rad_kernel_Zelinka}
+\end{figure}
+
+Multiplying the cloud radiative kernel $K$ by the change in cloud fraction histogram ($\Delta C$, differencing the histogram outputs from cloud simulator) can estimate the contribution of each cloud type to the change in TOA radiation associated with climate change:
+\begin{equation}
+    \Delta R = K \Delta C
+\end{equation}
+and hence the cloud feedback is calculated as follows:
+\begin{equation}
+    \lambda_c = K \frac{\Delta C}{\Delta T_s} = \frac{\Delta R}{\Delta {T}_s}.
+\end{equation}
+Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$).
