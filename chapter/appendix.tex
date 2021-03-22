@@ -1,0 +1,32 @@
+\chapter{Code availability}
+
+\section{The simple cloud scheme}
+%The simple cloud code can be accessed at \url{https://doi.org/10.5281/zenodo.4382536}, and the updates can be found at \url{https://github.com/lqxyz/Isca/tree/simple_clouds}. It will be mergred with Isca master repository (\url{https://www.github.com/ExeClim/Isca}) in the future. 
+
+\subsection{Introduction}
+The simple cloud scheme diagnoses cloud fraction based on relative humidity (RH) and specifies the in-cloud water mixing ratio and effective radius of the cloud condensate as function of temperature. It has been implemented and tested under Isca framework \citep{Vallis2018} and can be ported to other climate models if needed.
+
+\subsection{Code Structure}
+
+The simple cloud scheme code can be accessed at \url{https://doi.org/10.5281/zenodo.4382536}, and the updates can be found at \url{https://github.com/lqxyz/Isca/tree/simple_clouds}. It will be merged with the Isca master repository (\url{https://github.com/ExeClim/Isca}) in the future. Specifically, they are in \url{src/atmos\_param/cloud\_simple} directory and are called by the file \normalfont{\url{src/atmos\_spectral/driver/solo/idealized\_moist\_phys.F90}}.
+
+The major files in \textit{src/atmos\_param/cloud\_simple} directory include:
+\begin{itemize}
+    \item \textit{cloud\_simple.F90} \\
+    The main module of the SimCloud scheme, which specifies the in-cloud water mixing ratio and effective radius of cloud condensate, and calls the following modules to diagnose cloud fraction.
+    
+    \item \textit{large\_scale\_cloud.F90}\\
+    The module that diagnoses large-scale clouds based on RH. In this module, several different schemes are provided, such as \textit{linear} and \textit{\cite{Sundqvist1989}} schemes, which can be set through \textit{large\_scale\_cloud\_nml} namelist by specifying the method name (\textit{cf\_diag\_formula\_name}).
+    
+    \item \textit{marine\_strat\_cloud.F90}\\
+    This module diagnoses the marine stratus clouds based on low-level cloud proxy \textit{ELF} (estimated low-level cloud fraction) from \cite{Park2019}.
+
+    \item \textit{cloud\_cover\_diags.F90}\\
+    This module diagnoses the 2D cloud cover based on different overlap assumptions, including \textit{`maximum-random'}, \textit{`maximum'} and \textit{`random'}.
+\end{itemize}
+
+\section{Scripts for data processing and plotting}
+
+An archive of the scripts used to process data and generate figures/tables in \chapref{ch:eval_cld_scheme} is available at \url{https://doi.org/10.5281/zenodo.4597263} and the updates can be found at \url{https://github.com/lqxyz/cloud_scheme_manuscript_figs}.
+
+%\chapter{Method to calculate cloud feedback}
