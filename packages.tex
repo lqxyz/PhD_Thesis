@@ -85,8 +85,11 @@
  % --------------------- For reference ---------------------%
 
 \usepackage{float}
-\usepackage[small,labelsep=space]{caption}
+\usepackage[labelfont=bf,labelsep=colon]{caption}
 \setcapindent{0pt} % To stop the second and subsequent lines of captions being indented. (Caused by exeterthesis)
+% Set caption line spacing
+% https://tex.stackexchange.com/questions/153334/change-the-baselinestretch-line-spacing-only-for-figure-captions
+\captionsetup{font={small,stretch=1.2}}
 
 \usepackage{subfig}
 \usepackage{mathtools}   % For \shortintertext
