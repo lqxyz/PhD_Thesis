@@ -16,7 +16,7 @@ The monthly sea surface temperature and sea ice concentration are fixed at AMIP 
 
 The SOCRATES (Suite of Community Radiation Codes based on Edwards \& Slingo) radiation scheme \index{SOCRATES} \citep{Edwards1996, Manners2015} is employed for the radiation transfer calculation as in \citet{Thomson2019}. Spectral files with 9 longwave bands and 6 shortwave bands are used, which are those used in the Unified Model's Global Atmosphere version 7 \citep{Walters2019}. The cloud fraction, effective radius of cloud particle and liquid water mixing ratio in each grid are passed to it, then the radiation fluxes under all-sky and clear-sky conditions are obtained, which are used to analyze the energy balance and to calculate the cloud radiative effect \citep{Ramanathan1989, Li2017} at the TOA.
 
-In order to compare the roles of different cloud parameterization schemes, simulations are performed with the combination of different clouds or different adjustment methods as shown in Table \ref{tab:exps}. The simulation with large-scale clouds only is denoted as the LS simulation. The run with large-scale clouds and freeze-dry adjustment is called the FD simulation. The run performed with large-scale clouds, freeze-dry adjustment and marine low stratiform clouds is referred as the ALL simulation. The simulations are all run for 20 years, with the first 10 years treated as spin-up and discarded.
+In order to compare the roles of different cloud parameterization schemes, simulations are performed with the combination of different clouds or different adjustment methods as shown in Table \ref{tab:exps}. The simulation with large-scale clouds only is denoted as the LS simulation. The run with large-scale clouds and freeze-dry adjustment is called the FD simulation. The run performed with large-scale clouds, freeze-dry adjustment and marine low stratiform clouds is referred as the ALL simulation. The simulations are all run for 20 years, with the first 10 years treated as spin-up and discarded. The outputs are archived at Zenodo: \url{https://doi.org/10.5281/zenodo.4573610}.
 
 \begin{table}
 	\caption{Summary of the Isca fixed-SST simulations}
@@ -24,9 +24,9 @@ In order to compare the roles of different cloud parameterization schemes, simul
 	\centering
 	\renewcommand{\arraystretch}{1.3}
 	\begin{tabular}{ll}
-		\hline
+		\toprule
 		Experiment & Description \\
-		\hline
+		\midrule
 		LS  & Run with large-scale clouds only. \\ 
 		FD  & Based on the LS run, with freeze-dry adjustment also applied. \\ 
 		\multirow{2}{*}{ALL} & The marine low-level clouds are also included on top of the \\
@@ -36,7 +36,7 @@ In order to compare the roles of different cloud parameterization schemes, simul
 		& in \eqref{eq:linear_cf_rh}. \\
 		\multirow{2}{*}{Sundqvist\_X} & Same as Linear\_X, but with \citet{Sundqvist1989} scheme\\ 
 		& as defined in \eqref{eq:sundqvist}.\\
-		\hline
+		\bottomrule
 	\end{tabular}
 	\label{tab:exps}
 \end{table}
@@ -46,7 +46,7 @@ To evaluate the performance of the cloud scheme, several observations and reanal
 
 To examine the radiative flux simulated in Isca, monthly data from January 2001 to December 2018 from Clouds and Earth's Radiant Energy System (CERES) \index{CERES} Energy Balanced and Filled (EBAF) Edition 4.1 product \citep[CERES-EBAF hereafter;][]{Loeb2018} are used for comparison.
 
-The cloud water path is from the CloudSat \index{CloudSat} 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. The script to process CloudSat cloud water path data set can be accessed at \url{https://github.com/lqxyz/cloudsat_cloud_water_path}. In addition, monthly vertical pressure velocity from ERA-Interim reanalysis and radiative flux data from CERES-EBAF data sets covering the period 2008-2017 are also adopted to quantify the longwave CRE over the tropics.
+The cloud water path is from the CloudSat \index{CloudSat} 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. The scripts to process CloudSat cloud water path data set can be accessed at \url{https://github.com/lqxyz/cloudsat_cloud_water_path}. In addition, monthly vertical pressure velocity from ERA-Interim reanalysis and radiative flux data from CERES-EBAF data sets covering the period 2008-2017 are also adopted to quantify the longwave CRE over the tropics.
 
 In order to demonstrate how this cloud scheme performs with respect to more comprehensive models, the monthly mean radiative fluxes at clear-sky and all-sky conditions in historical simulation (1996 to 2005) from various CMIP5 models are also shown for the names of models). All the data sets are remapped to T42 resolution when necessary for a direct comparison with Isca simulations.
 
@@ -65,26 +65,26 @@ The global mean cloud amount and radiative components for the observations and I
 	\begin{threeparttable}
 	%\begin{tabular}{lrrrrrrr}
 	\begin{tabular}{lccccccc}
-    	\hline
+    	\toprule
     	{} &   Obs &  Linear\_LS &  Linear\_FD &  Linear\_ALL &  Sundqvist\_LS &  Sundqvist\_FD &  Sundqvist\_ALL \\
-    	\hline
-    	Low cloud amount (\%)      &  28.0\tnote{a} &       54.6 &       49.3 &        48.6 &          53.8 &          48.3 &           47.5 \\
-    	Middle cloud amount (\%)   &  20.8\tnote{a} &       25.9 &       20.8 &        20.6 &          25.3 &          20.2 &           20.0 \\
-    	High cloud amount (\%)     &  12.8\tnote{a} &       42.3 &       30.4 &        30.4 &          35.9 &          25.5 &           25.5 \\
-    	Total cloud amount (\%)    &  65.3\tnote{a} &       75.6 &       66.4 &        66.0 &          72.4 &          63.3 &           62.6 \\
-    	TOA net SW flux (Wm$^{-2}$)  & 241.3\tnote{b} &      226.8 &      229.2 &       229.6 &         228.7 &         231.2 &          231.5 \\
-    	TOA net LW flux (Wm$^{-2}$)  & 240.3\tnote{b} &      220.4 &      224.8 &       224.9 &         223.3 &         227.6 &          227.4 \\
-    	TOA net flux (Wm$^{-2}$)     &   1.0\tnote{b} &        6.4 &        4.5 &         4.7 &           5.4 &           3.6 &            4.0 \\
-    	TOA SW CRE (Wm$^{-2}$)       & -45.8\tnote{b} &      -58.8 &      -56.3 &       -56.0 &         -56.9 &         -54.3 &          -54.1 \\
-    	TOA LW CRE (Wm$^{-2}$)       &  28.0\tnote{b} &       36.4 &       31.3 &        31.0 &          33.3 &          28.5 &           28.3 \\
-    	TOA net CRE (Wm$^{-2}$)      & -17.8\tnote{b} &      -22.4 &      -25.0 &       -24.9 &         -23.5 &         -25.8 &          -25.8 \\
-    	Cloud water path (gm$^{-2}$) & 119.3\tnote{c} &      147.0 &      129.7 &       130.4 &         144.1 &         127.1 &          126.8 \\
-    	\hline
+    	\midrule
+    	Low cloud amount (\%)    &  40.4\tnote{a} &       54.9 &       49.3 &        48.8 &          53.8 &          48.6 &           47.7 \\
+        Middle cloud amount (\%) &  20.3\tnote{a} &       25.6 &       20.6 &        20.7 &          25.2 &          20.2 &           20.0 \\
+        High cloud amount (\%)   &  31.6\tnote{a} &       43.7 &       31.0 &        31.1 &          36.8 &          26.0 &           26.0 \\
+        Total cloud amount (\%)  &  68.9\tnote{a} &       76.4 &       66.8 &        66.5 &          73.0 &          63.8 &           63.2 \\
+        TOA net SW flux  (Wm$^{-2}$)        & 241.3\tnote{b} &      228.0 &      230.7 &       230.6 &         232.6 &         235.0 &          235.2 \\
+        TOA net LW flux  (Wm$^{-2}$)        & 240.3\tnote{b} &      222.7 &      227.3 &       227.1 &         226.2 &         230.5 &          230.4 \\
+        TOA net flux  (Wm$^{-2}$)           &   1.0\tnote{b} &        5.3 &        3.4 &         3.6 &           6.4 &           4.5 &            4.8 \\
+        TOA SW CRE (Wm$^{-2}$)              & -45.8\tnote{b} &      -60.0 &      -57.3 &       -57.3 &         -55.4 &         -53.0 &          -52.8 \\
+        TOA LW CRE  (Wm$^{-2}$)             &  28.0\tnote{b} &       36.8 &       31.7 &        31.6 &          33.3 &          28.5 &           28.3 \\
+        TOA net CRE  (Wm$^{-2}$)            & -17.8\tnote{b} &      -23.2 &      -25.5 &       -25.7 &         -22.1 &         -24.5 &          -24.4 \\
+        Cloud water path  (gm$^{-2}$)       & 119.3\tnote{c}&      142.1 &      126.0 &       127.8 &         123.4 &         109.8 &          110.4 \\
+    	\bottomrule
     \end{tabular}
     
     \begin{tablenotes}
       \setstretch{1.3}
-      \item[a] The observed cloud amounts are from ISCCP H-series \citep{Young2018} product (1995--2014)
+      \item[a] The observed cloud amounts are from CALIPSO-GOCCP \citep{Chepfer2010} product (2007--2015)
       \item[b] The radiative fluxes and cloud radiative effects (CREs) at the TOA are from CERES-EBAF \citep{Loeb2018} data set (2001--2018)
       \item[c] The cloud water path is from CloudSat 2B-CWC-RO Release P1\_R05 \citep{Austin2009} data product (2012--2016)
      \end{tablenotes}

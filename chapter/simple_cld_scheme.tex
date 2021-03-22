@@ -175,11 +175,11 @@ This chapter presents how the simple cloud scheme was build. For reference, the 
 	\centering
 	\renewcommand{\arraystretch}{1.5}
 	\begin{tabular}{c c p{6cm} p{7cm} l} 
-		\hline
+		\toprule
 		%Symbol & Range /Units & Definition & Diagnostic formula & Tunable parameters \\
 		\multirow{2}{*}{Symbol} & Range  & \multirow{2}{*}{Definition} & \multirow{2}{*}{Diagnostic formula} & \multirow{2}{*}{Tunable parameters} \\
 		& / Units & & & \\
-		\hline % \multirow{3}{*}{
+		\midrule % \multirow{3}{*}{
 		\multirow{3}{*}{$C_s$} & \multirow{3}{*}{[0, 1]} & \multirow{3}{*}{Large-scale cloud fraction} & $\min\left(1, ~\max \left(0, ~a \cdot (H-1) + 1 \right)\right)$,&  \multirow{2}{*}{$a_s=36$, $a_t=13$, $n=12$} \\
 		& &  &	$a=a_t + (a_s-a_t)\exp{\left[1-\left( \frac{p_s}{p} \right)^{n} \right]}$& \\ \cline{4-5}
 		& &  &	$\min\left(1, ~\max \left(0, ~1-\sqrt{\frac{1-H}{1-H_{c}}} \right)\right)$ & $H_c$: function of height  \\
@@ -197,7 +197,7 @@ This chapter presents how the simple cloud scheme was build. For reference, the 
 		\multirow{2}{*}{$q_l$} & \multirow{2}{*}{g kg$^{-1}$} & \multirow{2}{*}{In-cloud liquid water mixing ratio} & $\max\left(3\times 10^{-4}, ~q_{l0}\times \min\left(1, ~\frac{T-220}{280-220}\right)\right)$, &
 		\multirow{2}{*}{$q_{l0}=0.18~g~kg^{-1}$} \\
 		& & & ($T$ in units of $K$) & \\
-		\hline
+		\bottomrule
 	\end{tabular}
 	\label{tab:cld_scheme_summary}
 \end{sidewaystable}
