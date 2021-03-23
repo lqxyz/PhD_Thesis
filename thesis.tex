@@ -77,6 +77,13 @@
 \appendixpage
 
 \begin{appendices}
+% Change title from Chapter A. to Appendix A.
+%   https://tex.stackexchange.com/questions/262950/modify-chapter-thumb-for-appendix
+%   https://tex.stackexchange.com/questions/310260/retrieve-only-chapter-name-in-fancyhdr/310262
+%   \thechapter, which is the number. (For instance, 2 of "Chapter 2.")
+%   \chaptername, which is the current language equivalent of the word "chapter."
+%   \chaptermark, the actual title of the chapter.
+\renewcommand\chaptermark[1]{\markboth{\appendixname~\thechapter. #1}{}}
 
 \include{chapter/appendix}
 %\include{appendix2}
