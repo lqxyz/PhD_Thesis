@@ -151,11 +151,10 @@ To calculate the radiation transfer with clouds properly, it is important to rep
     \tau = \frac{3\text{LWP}}{2 r_e},
     \label{eq:cld_tau_lwp_re}
 \end{equation}
-where LWP is the liquid water path (g m$^{-2}$, defined in \Eqref{eq:cwp}) and $r_e$ is effective radius in units of micrometers ($\mu$m). Therefore in this study, the cloud optical properties are parameterized by effective radius (\secref{sec:effective_radius}) and in-cloud water content (\secref{sec:in_cloud_water}).
+where LWP is the liquid water path (g m$^{-2}$, defined in \Eqref{eq:cwp}) and $r_e$ is effective radius in units of micrometers ($\mu$m). Therefore in this study, the cloud optical properties are parameterized by effective radius (\secref{sec:effective_radius}) and in-cloud water content (\secref{sec:in_cloud_water}), as the cloud water path can be derived from the in-cloud water mixing ratio and cloud fraction based on hydrostatic balance assumption \citep[Eq. 9.30 in][]{Stensrud2009}.
 
 \subsection{Effective radius}
 \label{sec:effective_radius}
-% 2.53 of \cite{Hansen1974light}
 
 Cloud particles, including liquid droplets and ice crystals, usually have different sizes, shapes and optical properties. In order not to introduce complicated microphysical processes, we do not distinguish them and assume that all particles seen by the radiation scheme are spherical liquid droplets, and ice clouds have a different effective radius from the liquid ones. In this study, the liquid cloud fraction varies with temperature, which only has an influence on the effective radius. %and ice clouds have a different effective radius from liquid ones.
 
@@ -166,7 +165,7 @@ Following \citet{Ose1993} and \citet{Boville2006}, a very simple approach is use
 \end{equation}
 The bounds $T_{min}$ and $T_{max}$ are different in different models. For example, the lower bound ($T_{min}$) is $-40^{\circ}$C in \citet{Ose1993} and \citet{Boville2006}, while it is $-15^{\circ}$C in \citet{Smith1990}. Observations have shown that cloud liquid water can exist at temperature as low as $-40^{\circ}$C \citep{Heymsfield1993}, although the incidence of liquid water in stratiform clouds is quite low at temperatures below $-15^{\circ}$C \citep{Ryan1996}. The upper bounds ($T_{max}$) are $-5^{\circ}$C for stratiform clouds in \citet{Ose1993}, $-10^{\circ}$C in \citet{Boville2006}, and $0^{\circ}$C in \citet{Smith1990}. Based on the choices in previous studies, $T_{min}$ and $T_{max}$ in \Eqref{eq:liquid_frac} are chosen to use $-40^{\circ}$C and $-5^{\circ}$C respectively in this study, but they are to be regarded as adjustable parameters.
 
-The effective radius ($r_{e}$) of droplets within a grid box is defined as a weighted mean of liquid and ice particle radii, with the weights given by the liquid and ice cloud fraction respectively. The radii of liquid and ice particles are selected based on observations. \citet{Stubenrauch2013} assessed cloud properties derived from various satellite data sets, finding that the global mean effective particle radii are about $14$ ($\pm1$) and $25$ ($\pm2$) $\mu m$ for the tops of liquid clouds and for high-level ice clouds, respectively. Therefore these two values are selected to calculate $r_e$,
+The effective radius ($r_{e}$) is a weighted mean of the size distribution of cloud droplets as defined in Eq. (2.53) of \cite{Hansen1974light}. But in this study the microphysical properties such as number density of cloud droplets are not included, so the effective radius of droplets within a grid box is simply defined as a weighted mean of liquid and ice effective particle radii, with the weights given by the liquid and ice cloud fraction respectively. The radii of liquid and ice particles are selected based on observations. \citet{Stubenrauch2013} assessed cloud properties derived from various satellite data sets, finding that the global mean effective particle radii are about $14$ ($\pm1$) and $25$ ($\pm2$) $\mu m$ for the tops of liquid clouds and for high-level ice clouds, respectively. Therefore these two values are selected to calculate $r_e$,
 \begin{equation}
 	r_e = 14f_l + 25(1-f_l),
 	\label{eq:Reff}
@@ -181,7 +180,7 @@ The in-cloud liquid water mixing ratio ($q_l$) is specified as a linear function
 	w_l = \max\left(3\times 10^{-4}, ~w_{l0}\times  \min\left(1, ~\frac{T-220}{280-220}\right)\right),
 	\label{eq:qcl}
 \end{equation}
-where the atmospheric temperature $T$ is in units of K. The temperature thresholds, 280 and 220 K, are selected close to the global averages of liquid and ice cloud top temperature in observations, respectively \citep[Fig. 4 in][]{Stubenrauch2013}. Then the grid mean liquid water specific humidity can be obtained from the product of $w_l$ and cloud fraction. Note that \Eqref{eq:qcl} is modified from the SPOOKIE II project (see \url{https://www.cfmip.org/experiments/informal-experiments} for detail). At first, the in-cloud water content is specified as a function of height, but in the second version of the protocol, it has been updated as a function of temperature.
+where the atmospheric temperature $T$ is in units of K. The temperature thresholds, 280 and 220 K, are selected close to the global averages of liquid and ice cloud top temperature in observations, respectively \citep[Fig. 4 in][]{Stubenrauch2013}. Then the grid mean liquid water specific humidity can be obtained from the product of $w_l$ and cloud fraction. Note that \Eqref{eq:qcl} is modified from the SPOOKIE II project (see \url{https://www.cfmip.org/experiments/informal-experiments} for detail, last accessed: 12 March, 2021). At first, the in-cloud water content is specified as a function of height, but in the second version of the protocol, it has been updated as a function of temperature.
 
 \section{Summary and discussions}
 
