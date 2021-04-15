@@ -142,7 +142,7 @@ assuming a horizontal maximum overlap hypothesis \citep[e.g.,][]{Collins2004, Ro
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{{figs/simple_cld_scheme/emissivity_albedo_vs_tau}.pdf}
-	\caption[The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$)]{The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$). The $\epsilon-\tau$ relationship (blue line) is based on Eq. (2) of \citep{Liou1990remote}, and the $\alpha-\tau$ relationship (orange line) is from Eq. (12) of \cite{Painemal2012} after \cite{Bohren1987}.}.
+	\caption[The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$)]{The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$). The $\epsilon-\tau$ relationship (blue line) is based on Eq. (2) of \citep{Liou1990remote}, and the $\alpha-\tau$ relationship (orange line) is from Eq. (12) of \cite{Painemal2012} after \cite{Bohren1987}.}
 	\label{fig:cld_optial_property}
 \end{figure}
 
@@ -184,8 +184,6 @@ where the atmospheric temperature $T$ is in units of K. The temperature threshol
 
 \section{Summary and discussions}
 
-This chapter presents how the simple cloud scheme was build. For reference, the equations and parameters used in the cloud scheme are summarized in Table \ref{tab:cld_scheme_summary}. 
-
 \begin{sidewaystable}
 	\caption{Summary of the diagnostic cloud scheme.}
 	\vspace{0.5em}
@@ -217,3 +215,5 @@ This chapter presents how the simple cloud scheme was build. For reference, the 
 	\end{tabular}
 	\label{tab:cld_scheme_summary}
 \end{sidewaystable}
+
+This chapter presents how the simple cloud scheme was build. It has a modest level of complexity and is transparent in describing its dependence on tunable parameters. The large-scale clouds, which form the core of the scheme, are diagnosed from relative humidity. In addition, the marine low stratus clouds, typically found off the west coast of continents over subtropical oceans, are determined largely as a function of inversion strength. A `freeze-dry' adjustment based on a simple function of specific humidity is also available to reduce an excessive clouds bias in polar regions. Cloud optical properties, such as the effective radius of cloud droplet and cloud liquid water content, are specified as simple functions of temperature. All of these features are user-configurable. For reference, the equations and parameters used in the cloud scheme are summarized in Table \ref{tab:cld_scheme_summary}. In next chapter, the performance of this simple cloud scheme will be examined in Isca.
