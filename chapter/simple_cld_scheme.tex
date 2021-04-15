@@ -138,7 +138,24 @@ The cloud fraction of a grid box ($C_\mathrm{total}$) is simply defined as the l
 \end{equation}
 assuming a horizontal maximum overlap hypothesis \citep[e.g.,][]{Collins2004, Roehrig2020}. $C_s$ and $C_{sc}$ in \Eqref{eq:CF_total} are determined by \Eqref{eq:linear_cf_rh} and \Eqref{eq:sc_ELF} respectively. To assess the performance of the cloud scheme, it is useful to evaluate the total cloud amount and cloud amounts at different levels. In our scheme, the cloud height is determined by cloud top pressures, where those located above 400 hPa are treated as high clouds, those below 700 hPa are defined as low clouds, and in between are middle clouds \citep{Collins2004}. Then, the total, high, middle or low cloud amounts are diagnosed from the maximum-random overlap assumption \citep{Morcrette2000}, which assumes maximum overlap for consecutive cloudy model levels and random overlap for cloud layers that are separated by clear-sky levels.
 
-\section{Effective radius}
+\section{Cloud optical property}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\linewidth]{{figs/simple_cld_scheme/emissivity_albedo_vs_tau}.pdf}
+	\caption[The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$)]{The relationship between cloud emissivity ($\epsilon$), albedo ($\alpha$) and optical depth ($\tau$). The $\epsilon-\tau$ relationship (blue line) is based on Eq. (2) of \citep{Liou1990remote}, and the $\alpha-\tau$ relationship (orange line) is from Eq. (12) of \cite{Painemal2012} after \cite{Bohren1987}.}.
+	\label{fig:cld_optial_property}
+\end{figure}
+
+To calculate the radiation transfer with clouds properly, it is important to represent the cloud radiative property reasonably. In general, the emissivity ($\epsilon$) and albedo ($\alpha$) are important properties for longwave and shortwave radiation transfer respectively. As displayed in \figref{fig:cld_optial_property}, the emissivity increases quickly towards 1 as the increase of optical depth \citep[see Eq. (2) in ][]{Liou1990remote}. The cloud albedo also increases with optical depth \citep[see Eq. (12) of][]{Painemal2012}, but in a slower speed than emissivity. Thus, both cloud emssivity and albedo are related to cloud optical depth, which is in fact determined by the cloud water path and effective radius as derived by \cite{Stephens1978radiation}. Here we re-write the formula as follows:
+\begin{equation}
+    \tau = \frac{3\text{LWP}}{2 r_e},
+    \label{eq:cld_tau_lwp_re}
+\end{equation}
+where LWP is the liquid water path (g m$^{-2}$, defined in \Eqref{eq:cwp}) and $r_e$ is effective radius in units of micrometers ($\mu$m). Therefore in this study, the cloud optical properties are parameterized by effective radius (\secref{sec:effective_radius}) and in-cloud water content (\secref{sec:in_cloud_water}).
+
+\subsection{Effective radius}
+\label{sec:effective_radius}
+% 2.53 of \cite{Hansen1974light}
 
 Cloud particles, including liquid droplets and ice crystals, usually have different sizes, shapes and optical properties. In order not to introduce complicated microphysical processes, we do not distinguish them and assume that all particles seen by the radiation scheme are spherical liquid droplets, and ice clouds have a different effective radius from the liquid ones. In this study, the liquid cloud fraction varies with temperature, which only has an influence on the effective radius. %and ice clouds have a different effective radius from liquid ones.
 
@@ -147,7 +164,7 @@ Following \citet{Ose1993} and \citet{Boville2006}, a very simple approach is use
 	f_{l} =\max\left(0, ~\min\left(1, ~\frac{T-T_{min}}{T_{max}-T_{min}} \right)\right).
 	\label{eq:liquid_frac}
 \end{equation}
-The bounds $T_{min}$ and $T_{max}$ are different in different models. For example, the lower bound ($T_{min}$) is $-40^{\circ}$C in \citet{Ose1993} and \citet{Boville2006}, while it is $-15^{\circ}$C  in \citet{Smith1990}. Observations have shown that cloud liquid water can exist at temperature as low as $-40^{\circ}$C \citep{Heymsfield1993}, although the incidence of liquid water in stratiform clouds is quite low at temperatures below $-15^{\circ}$C \citep{Ryan1996}. The upper bounds ($T_{max}$) are $-5^{\circ}$C for stratiform clouds in \citet{Ose1993}, $-10^{\circ}$C in \citet{Boville2006}, and $0^{\circ}$C in \citet{Smith1990}. Based on the choices in previous studies, $T_{min}$ and $T_{max}$ in \Eqref{eq:liquid_frac} are chosen to use $-40^{\circ}$C and $-5^{\circ}$C respectively in this study, but they are to be regarded as adjustable parameters.
+The bounds $T_{min}$ and $T_{max}$ are different in different models. For example, the lower bound ($T_{min}$) is $-40^{\circ}$C in \citet{Ose1993} and \citet{Boville2006}, while it is $-15^{\circ}$C in \citet{Smith1990}. Observations have shown that cloud liquid water can exist at temperature as low as $-40^{\circ}$C \citep{Heymsfield1993}, although the incidence of liquid water in stratiform clouds is quite low at temperatures below $-15^{\circ}$C \citep{Ryan1996}. The upper bounds ($T_{max}$) are $-5^{\circ}$C for stratiform clouds in \citet{Ose1993}, $-10^{\circ}$C in \citet{Boville2006}, and $0^{\circ}$C in \citet{Smith1990}. Based on the choices in previous studies, $T_{min}$ and $T_{max}$ in \Eqref{eq:liquid_frac} are chosen to use $-40^{\circ}$C and $-5^{\circ}$C respectively in this study, but they are to be regarded as adjustable parameters.
 
 The effective radius ($r_{e}$) of droplets within a grid box is defined as a weighted mean of liquid and ice particle radii, with the weights given by the liquid and ice cloud fraction respectively. The radii of liquid and ice particles are selected based on observations. \citet{Stubenrauch2013} assessed cloud properties derived from various satellite data sets, finding that the global mean effective particle radii are about $14$ ($\pm1$) and $25$ ($\pm2$) $\mu m$ for the tops of liquid clouds and for high-level ice clouds, respectively. Therefore these two values are selected to calculate $r_e$,
 \begin{equation}
@@ -156,7 +173,8 @@ The effective radius ($r_{e}$) of droplets within a grid box is defined as a wei
 \end{equation}
 which is applied globally in the model, although the effective radius of cloud droplets is found a little larger over ocean than over continents in observations \citep{Stubenrauch2013}.
 
-\section{In-cloud water mixing ratio}
+\subsection{In-cloud water mixing ratio}
+\label{sec:in_cloud_water}
 
 The in-cloud liquid water mixing ratio ($q_l$) is specified as a linear function of the atmospheric temperature, with values of $3\times 10^{-4}$ g kg$^{-1}$ at $220$ K and $q_{l0}=0.18$ g kg$^{-1}$ at $280$ K:
 \begin{equation}
