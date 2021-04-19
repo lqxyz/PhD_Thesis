@@ -16,6 +16,7 @@ The question then arises as to what a `simple' scheme is. One option would be to
 %In its most complete form, the scheme is able to capture the key features (in both geographical and seasonal variability) of observed clouds without the complexity of contemporary cloud schemes. It does so in a very transparent fashion and the dependence on parameters can be made explicit. And although we have implemented the scheme in a particular GCM it could easily be ported to others, either by a straightforward implementation or by porting the code itself.
 
 \section{Cloud fraction}
+\label{sec:cld_frac_scheme}
 
 In order to have a cloud scheme that interacts with the radiation, we need to predict not only the cloud amount but also its radiative properties. We focus mainly on the former, for the latter we require effective radius of the cloud droplets, and in-cloud liquid water content. In the following subsections we describe how these are specified; an encapsulation of the cloud scheme is also given in \figref{fig:cld_scheme_summary}. 
 
