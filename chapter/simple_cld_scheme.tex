@@ -32,7 +32,6 @@ The large-scale clouds are parameterized as a function of relative humidity and 
 %An alternative way to proceed would be to diagnose the convective clouds based on precipitation \citep[e.g.,][]{Gordon1992,Hack1998}, including that predicted by the convection scheme. 
 
 
-
 \subsection{Relative humidity-based cloud fraction}
 \label{sec:rh_cloud}
 
@@ -148,6 +147,7 @@ The cloud fraction of a grid box ($C_\mathrm{total}$) is simply defined as the l
 assuming a horizontal maximum overlap hypothesis \citep[e.g.,][]{Collins2004, Roehrig2020}. $C_s$ and $C_{sc}$ in \Eqref{eq:CF_total} are determined by \Eqref{eq:linear_cf_rh} and \Eqref{eq:sc_ELF} respectively. To assess the performance of the cloud scheme, it is useful to evaluate the total cloud amount and cloud amounts at different levels. In our scheme, the cloud height is determined by cloud top pressures, where those located above 400 hPa are treated as high clouds, those below 700 hPa are defined as low clouds, and in between are middle clouds \citep{Collins2004}. Then, the total, high, middle or low cloud amounts are diagnosed from the maximum-random overlap assumption \citep{Morcrette2000}, which assumes maximum overlap for consecutive cloudy model levels and random overlap for cloud layers that are separated by clear-sky levels.
 
 \section{Cloud optical property}
+\label{sec:cld_optical_property}
 
 \begin{figure}[ht]
 	\centering
