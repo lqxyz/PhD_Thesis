@@ -16,11 +16,12 @@ all: thesis.pdf
 
 thesis.pdf: thesis.tex
 	#$(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
-	$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	#$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode thesis.tex
 
 cleanall:
 	$(LATEXMK) -silent -CA
-	#rm *.bbl *.nlo
+	rm *.bbl *.nlo
 
 clean:
 	$(LATEXMK) -silent -c
