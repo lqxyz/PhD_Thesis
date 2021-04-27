@@ -1,6 +1,22 @@
-\chapter{Methods to Calculate Cloud Feedback}
+\chapter{Datasets and Methods}
+\label{ch:methods}
 
-\section{Introduction}
+\section{Observational and reanalysis datasets}
+\subsection{Satellite datasets}
+\subsubsection{CERES}
+
+\subsection{Reanalysis datasets}
+
+\section{Isca}
+\subsection{Overview}
+%\subsection{}
+
+%\section{Climate feedback}
+
+\section{CFMIP observation simulator pacakage}
+
+\section{The calculation of cloud feedback}
+\subsection{Introduction}
 
 As introdued in \chapref{ch:literature_review_about_clouds}, 
 the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external foring $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
@@ -16,7 +32,7 @@ in which $\lambda$ is called climate feedback parameter. Besides surface tempera
 \end{equation}
 where $x$ represent the climate variable such as temperature, water vapor, albedo and cloud properties. The high-order residual term ($Re$) is usually neglected in analysis.
 
-\section{Short summary of three approaches}
+\subsection{Short summary of three approaches}
 \label{sec:three_climate_fbk_methods}
 
 Several different methods have been proposed to diagnose climate feedbacks in gerenal ciculation models (GCMs). Three main approaches are summarized below. Readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
@@ -77,7 +93,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
 
 As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the histogram of cloud fraction partitioned into cloud-top ressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedback into different components such as cloud amount, height and optical depth. This will discussed further in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
 
-\section{Using $\Delta$CRE to estimate cloud feedback?}
+\subsection{Using $\Delta$CRE to estimate cloud feedback?}
 \label{sec:CRE_or_PRP}
 
 In this section, we try to answer the question whether we could use the change of CRE between perturbed and control climate states to estimate the cloud feedback.
@@ -140,7 +156,7 @@ Taking the results from \cite{Soden2004} as an example, shortwave (SW), longwave
 
 Similarly, as shown in \figref{fig:cld_fbk_and_CRE_Soden_Held}, \cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different (\figref{fig:cmp_PRP_CRE_Soden}c and \figref{fig:cld_fbk_and_CRE_Soden_Held}). However, it is noted that the cloud feedback is correlated with the change in net CRE as displayed in \figref{fig:cld_fbk_and_CRE_Soden_Held}, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
 
-\section{Cloud masking effect}
+\subsection{Cloud masking effect}
 \label{sec:cld_masking_effect}
 
 A modified simple thought experiment from \cite{Soden2008} is adopted here to explain what cloud masking effect is and why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other. As illustrated in \figref{fig:cld_masking_effect}, we assume part of the grid is covered by high clouds (cloud fraction is $f$), and the water vapor contents are $q_1$ and $q_2$ for clear and cloudy subgrid regions, respectively. Here we focus on LW radiation only and assume the LW radiation emitted by water vapor is a linear function of its content, that is $\alpha + \beta q$, where $\alpha$ and $\beta$ are assumed linear coefficients and $\beta$ is negative so that the outgoing LW radiation decreases with the increase of water vapor. The outgoing LW radiation emitted from clouds is regarded as a constant $W$.
@@ -175,7 +191,7 @@ Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there 
 
 This simple thought experiment has illustrated that the presence of clouds can have impact on the radiation associated with noncloud variables. That is why the the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other, and it also implies that estimating cloud feedback from changes of cloud radiative effect is probably not a good option due to the cloud masking effect.
 
-\section{Cloud radiative kernel method}
+\subsection{Cloud radiative kernel method}
 \label{sec:Zelinka_method}
 In genreal, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} propose a new technique based on cloud radiative kernel and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
 
