@@ -3,20 +3,27 @@
 
 In this thesis, several different observational and reanalysis data sets, as well as model simulations, are used. For example, the reanalysis data sets are employed in \chapref{ch:simple_cld_scheme} to derive the linear formula between cloud fraction and relative humidity, and to evaluate the relationship between low cloud amount and its possible proxies. The satellite products about clouds and radiation fields are used in \chapref{ch:eval_cld_scheme} to evaluate the performance of the simple cloud scheme. To make it clear, these data sets are briefly summarized in this chapter.
 
-%For the methodology, the main tool we used in this study is the idealized climate model, Isca \citep{Vallis2018}. 
-
 The major topic of this thesis is about the cloud feedback, and the main tool used to simulate it is the idealized climate model, Isca \citep{Vallis2018}. Therefore, the features of this climate model and the advantages of using the idealized models are discussed here. However, how to calculate or estimate cloud feedback in climate models is not so evident, and the direct estimate from the change of cloud radiative effect might be impacted by the cloud masking effect. Therefore, it is necessary to discuss the pros and cons of the several different methods to estimate cloud feedback in this chapter. Also, based on these discussion, it would be much easier for Isca to calculate the cloud feedback and decompose it into different components if the cloud simulator is implemented there, so the topic about this is also presented in this chapter. 
-
-
-%to derive the cloud fraction relationship with relative humidity and evaluate the simulated 
 
 The chapter is organized as follows: The satellite data sets related to radiation and cloud fields are introduced in \secref{sec:obs_reanalysis_dataset}. The idealized general circulation model employed throughout this thesis is briefly described in \secref{sec:isca_intro}. In \secref{sec:cosp}, how the cloud observation simulator package is implemented in Isca is documented. \secref{sec:method_cloud_fbk} summarizes the possible methods to calculate the cloud feedback.
 
 \section{Observational and reanalysis datasets}
 \label{sec:obs_reanalysis_dataset}
 
-
 \subsection{Satellite datasets}
+Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels (see \url{https://earthdata.nasa.gov/collaborate/open-data-services-and-software/data-information-policy/data-levels}, last accessed: April 28, 2021), and they are briefly summarized as follows:
+
+\begin{itemize}
+    \item \textbf{Level 0}:	Reconstructed, unprocessed instrument and payload data at full resolution, with the communications artifacts removed.
+    \item \textbf{Level 1A}: The Level 0 data with time-reference and with ancillary information
+    \item \textbf{Level 1B}: Same as Level 1A data, but have been processed to sensor units (not all instruments have Level 1B source data)
+    \item \textbf{Level 2}:	Derived geophysical variables at the same resolution and location as Level 1 source data.
+    \item \textbf{Level 3}:	Variables mapped on uniform space-time grid scales, usually with some completeness and consistency.
+    \item \textbf{Level 4}:	Model output or results from analyses of lower-level data (e.g., variables derived from multiple measurements).
+\end{itemize}
+
+In general, it is easier for user to use if the levels are higher as more processes have been applied to the retrievals.
+
 \subsubsection{CERES}
 
 \subsection{Reanalysis datasets}
