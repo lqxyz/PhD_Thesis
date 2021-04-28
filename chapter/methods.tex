@@ -3,13 +3,14 @@
 
 In this thesis, several different observational and reanalysis data sets, as well as model simulations, are used. For example, the reanalysis data sets are employed in \chapref{ch:simple_cld_scheme} to derive the linear formula between cloud fraction and relative humidity, and to evaluate the relationship between low cloud amount and its possible proxies. The satellite products about clouds and radiation fields are used in \chapref{ch:eval_cld_scheme} to evaluate the performance of the simple cloud scheme. To make it clear, these data sets are briefly summarized in this chapter.
 
-In addition, this chapter also introduces the methods 
+%For the methodology, the main tool we used in this study is the idealized climate model, Isca \citep{Vallis2018}. 
+
+The major topic of this thesis is about the cloud feedback, and the main tool used to simulate it is the idealized climate model, Isca \citep{Vallis2018}. Therefore, the features of this climate model and the advantages of using the idealized models are discussed here. However, how to calculate or estimate cloud feedback in climate models is not so evident, and the direct estimate from the change of cloud radiative effect might be impacted by the cloud masking effect. Therefore, it is necessary to discuss the pros and cons of the several different methods to estimate cloud feedback in this chapter. Also, based on these discussion, it would be much easier for Isca to calculate the cloud feedback and decompose it into different components if the cloud simulator is implemented there, so the topic about this is also presented in this chapter. 
+
 
 %to derive the cloud fraction relationship with relative humidity and evaluate the simulated 
 
-The chapter is organized as follows: The satellite data sets related to radiation and cloud fields are introduced in \secref{sec:obs_reanalysis_dataset}. The idealized general circulation model employed throughout this thesis is briefly described in \secref{sec:isca_intro}. In \secref{sec:cosp}, \secref{sec:method_cloud_fbk} summarizes the possible methods to calculate the cloud feedback, including their 
-
-
+The chapter is organized as follows: The satellite data sets related to radiation and cloud fields are introduced in \secref{sec:obs_reanalysis_dataset}. The idealized general circulation model employed throughout this thesis is briefly described in \secref{sec:isca_intro}. In \secref{sec:cosp}, how the cloud observation simulator package is implemented in Isca is documented. \secref{sec:method_cloud_fbk} summarizes the possible methods to calculate the cloud feedback.
 
 \section{Observational and reanalysis datasets}
 \label{sec:obs_reanalysis_dataset}
