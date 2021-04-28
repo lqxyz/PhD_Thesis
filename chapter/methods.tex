@@ -266,11 +266,13 @@ Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of
 
 \section{Low cloud amount proxy}
 
+\subsubsection{Low-tropospheric stability}
 \cite{Klein1993} studied the seasonal cycle of low stratiform clouds with the data from the Earth Radiation Budget Experiment and found that the low-tropospheric stability (LTS) has a good linear relationship with the low stratus amount, which is applied in Community Atmosphere Model \citep{Collins2004}. In the scheme, LTS can be seen as a measure of the inversion strength and is defined as the potential temperature difference between 700 hPa ($\theta_{700}$) and surface ($\theta_s$),
 \begin{equation}
 	LTS=\Delta \theta \equiv \theta_{700} - \theta_s.
 \end{equation}
 
+\subsubsection{Estimate inversion strength}
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/methods/Wood_EIS}.png}
@@ -302,6 +304,7 @@ where
 In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gradient, $z_{700}$ is the height of 700 hPa, $z_{LCL}$ is the height of the lifting condensation level. In \Eqref{eq:gamma_m}, $L_v=2.47\times 10^6$ J kg$^{-1}$ is the latent heat of vaporization. $q_s(T,p)$ is the saturation mixing ratio, and is a function of temperature and pressure derived from the Clausius-Clapeyron equation. $R_a=287.04$ J kg$^{-1}$ K$^{-1}$ and $R_v=461.50$ J kg$^{-1}$ K$^{-1}$ are the gas constants
 for dry and water vapor, respectively, $g=9.8$ kg m$^{-2}$ is the gravitational acceleration, and $c_p=1005.0$ J kg$^{-1}$ K$^{-1}$ is the specific heat of air at constant pressure. In \Eqref{eq:z700}, $T_0$ and $p_0$ (in units of hPa) are the surface temperature and pressure respectively.
 
+\subsubsection{Estimated cloud-top entrainment index}
 The recent proposed predictors of low cloud amount are also considered in this study: one is the estimated cloud-top entrainment index (ECTEI) by \cite{Kawai2017} and the other is the estimated low-level cloud fraction (ELF) by \cite{Park2019}. 
 
 The ECTEI is a modification of estimated inversion strength (EIS) and takes into account a cloud-top entrainment criterion and is defined as
