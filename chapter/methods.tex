@@ -292,7 +292,7 @@ or simplified as
 where 
 \begin{equation}
     \Gamma_{m}(T, p)=\frac{g}{c_{p}}\left[1-\frac{1+L_{v} q_{s}(T, p) / (R_{a} T)}{1+L_{v}^{2} q_{s}(T, p) / (c_{p} R_{v} T^{2})}\right],
-\label{eq:gamma_m}
+    \label{eq:gamma_m}
 \end{equation}
 
 \begin{equation}
@@ -301,3 +301,20 @@ where
 \end{equation}
 In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gradient, $z_{700}$ is the height of 700 hPa, $z_{LCL}$ is the height of the lifting condensation level. In \Eqref{eq:gamma_m}, $L_v=2.47\times 10^6$ J kg$^{-1}$ is the latent heat of vaporization. $q_s(T,p)$ is the saturation mixing ratio, and is a function of temperature and pressure derived from the Clausius-Clapeyron equation. $R_a=287.04$ J kg$^{-1}$ K$^{-1}$ and $R_v=461.50$ J kg$^{-1}$ K$^{-1}$ are the gas constants
 for dry and water vapor, respectively, $g=9.8$ kg m$^{-2}$ is the gravitational acceleration, and $c_p=1005.0$ J kg$^{-1}$ K$^{-1}$ is the specific heat of air at constant pressure. In \Eqref{eq:z700}, $T_0$ and $p_0$ (in units of hPa) are the surface temperature and pressure respectively.
+
+The recent proposed predictors of low cloud amount are also considered in this study: one is the estimated cloud-top entrainment index (ECTEI) by \cite{Kawai2017} and the other is the estimated low-level cloud fraction (ELF) by \cite{Park2019}. 
+
+The ECTEI is a modification of estimated inversion strength (EIS) and takes into account a cloud-top entrainment criterion and is defined as
+\begin{equation}
+    \mathrm{ECTEI} \equiv \mathrm{EIS} - \beta\left(L_v / c_{p}\right)\left(q_{surf}-q_{700}\right),
+    \label{eq:ectei_Kawai}
+\end{equation}
+where
+\begin{equation}
+    \beta=(1-k) C_{q\_gap}.
+\end{equation}
+In \Eqref{eq:ectei_Kawai}, $L_v$ is latent heat of vaporization, and $c_p$ is the specific heat of air at constant pressure. The values of both parameters are the same as the ones in  \Eqref{eq:gamma_m}. $q_{surf}$ and $q_{700}$ are the specific humidity at surface and 700 hPa respectively. The coefficient $C_{q\_gap}$ is the ratio of the total water specific humidity ($q_t$) gap at
+the inversion and the $q$ difference between the surface
+and 700 hPa. \cite{Kawai2017} estimated the $C_{q\_gap} = 0.76, k=0.70 $ and $\beta = 0.23$ based on radiosonde observation data off the coast of Peru. 
+\cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited
+due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}. 
