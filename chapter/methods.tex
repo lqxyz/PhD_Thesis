@@ -11,7 +11,7 @@ The chapter is organized as follows: The satellite data sets related to radiatio
 \label{sec:obs_reanalysis_dataset}
 
 \subsection{Satellite datasets}
-Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. Of course, it is easier for users to use these satellite retrievals when they have higher processing levels.
+Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. It is usually easier for users to use these satellite retrievals when they have higher processing levels.
 
 % (see \url{https://earthdata.nasa.gov/collaborate/open-data-services-and-software/data-information-policy/data-levels}, last accessed: April 28, 2021)
 % https://nsidc.org/the-drift/2013/08/is-it-1b-2-or-3-definitions-of-data-processing-levels/
@@ -34,9 +34,9 @@ Clouds and the Earth’s Radiant Energy System (CERES) Top-of-Atmosphere (TOA) D
 
 The International Satellite Cloud Climatology Project (ISCCP) began in early 1980s as part of the World Climate Research Program (WCRP) \citep{Schiffer1983,Rossow1991}, and is probably the longest-running international satellite-based global environmental data project. Its goal is to collect weather satellite radiance measurements and to analyze them to infer the global distribution of clouds, their properties, and their diurnal, seasonal and interannual variations. This project has accumulated cloud observation for almost four decades and has been therefore widely used in cloud related researches.
 
-Several series of the ISCCP products hve been publised previously. However, the widely used ISCCP D-series product \citep{Rossow1999advances} has not been updated since December 2009. Recently, a new H-series product was published \citep{Young2018}, spanning from 1982 to 2015 (see \url{https://isccp.giss.nasa.gov/products/onlineData.html}). Comparing to the previous ISCCP D-series product, the H-series has improved the low-level cloud sensitivity over snow and ice in polar regions. More importantly, based on ISCCP’s legacy and in light of the technological advancements that include active spaceborne sensors (e.g., Cloud–Aerosol Lidar and Infrared Pathfinder Satellite Observations – CALIPSO – and CloudSat) and cloud datasets that rely on newer passive imagers with higher spectral, spatial, radiometric, and temporal resolutions, the H-series has exploited to produce cloud products with much higher resolutions \citep{Young2018}.
+Several series of the ISCCP products hve been publised previously. However, the widely used ISCCP D-series product \citep{Rossow1999advances} has not been updated since December 2009. Recently, a new H-series product was published \citep{Young2018}, spanning from 1982 to 2015 (see \url{https://isccp.giss.nasa.gov/products/onlineData.html}, last accessed: April 28, 2021). Comparing to the previous ISCCP D-series product, the H-series has improved the low-level cloud sensitivity over snow and ice in polar regions. More importantly, based on ISCCP’s legacy and in light of the technological advancements that include active spaceborne sensors (e.g., Cloud–Aerosol Lidar and Infrared Pathfinder Satellite Observations – CALIPSO – and CloudSat) and cloud data sets that rely on newer passive imagers with higher spectral, spatial, radiometric, and temporal resolutions, the H-series has exploited to produce cloud products with much higher resolutions \citep{Young2018}.
 
-In this study, the high-resolution global monthly (HGM) product (at Level 3) with 1$^\circ\times$ 1$^\circ$ resolution is used for analysis. Of course, gridded hourly high-resolution output (HGH) is also available. In ISCCP H-series product, it has provided many cloud related variables, such as (but are not limited to) cloud amount (low, middle, high and total), cloud-top temperature, cloud-top pressure, cloud optical thickness, cloud water path, cloud phase and cloud type.
+In this study, the high-resolution global monthly (HGM) product (at Level 3) with $1^\circ \times 1^\circ$ resolution is used for analysis. Of course, gridded hourly high-resolution output (HGH) is also available. In ISCCP H-series product, it has provided many cloud related variables, such as (but are not limited to) cloud amount (low, middle, high and total), cloud-top temperature, cloud-top pressure, cloud optical thickness, cloud water path, cloud phase and cloud type.
 
 \subsection{Reanalysis datasets}
 
@@ -262,3 +262,43 @@ and hence the cloud feedback is calculated as follows:
     \lambda_c = K \frac{\Delta C}{\Delta T_s} = \frac{\Delta R}{\Delta {T}_s}.
 \end{equation}
 Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$).
+
+
+\section{Low cloud amount proxy}
+
+\cite{Klein1993} studied the seasonal cycle of low stratiform clouds with the data from the Earth Radiation Budget Experiment and found that the low-tropospheric stability (LTS) has a good linear relationship with the low stratus amount, which is applied in Community Atmosphere Model \citep{Collins2004}. In the scheme, LTS can be seen as a measure of the inversion strength and is defined as the potential temperature difference between 700 hPa ($\theta_{700}$) and surface ($\theta_s$),
+\begin{equation}
+	LTS=\Delta \theta \equiv \theta_{700} - \theta_s.
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{{figs/methods/Wood_EIS}.png}
+    \caption{Idealized profile (thick solid line) of lower-tropospheric structure during periods of undisturbed flow. Moist adiabats are shown as light dotted lines. Adapted from \cite{Wood2006}.}
+    \label{fig:wood_eis_atm_profile}
+\end{figure}
+
+Despite the widely use of LTS in climate models, \cite{Wood2006} argued that it has yet to be demonstrated
+whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) to represent the planetary boundary
+layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
+\begin{equation}
+    EIS=LTS-\Gamma_{m}^{700} z_{700}+\Gamma_{m}^{LCL} z_{LCL},
+    \label{eq:eis}
+\end{equation}
+or simplified as
+\begin{equation}
+    EIS=LTS-\Gamma_{m}^{850}\left(z_{700}-z_{LCL}\right),
+\end{equation}
+where 
+\begin{equation}
+    \Gamma_{m}(T, p)=\frac{g}{c_{p}}\left[1-\frac{1+L_{v} q_{s}(T, p) / (R_{a} T)}{1+L_{v}^{2} q_{s}(T, p) / (c_{p} R_{v} T^{2})}\right],
+\label{eq:gamma_m}
+\end{equation}
+
+\begin{equation}
+	z_{700}=\frac{R_{a} T_{0}}{g} \ln \left(\frac{p_{0}}{700~ \mathrm{hPa}}\right).
+	\label{eq:z700}
+\end{equation}
+In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gradient, $z_{700}$ is the height of 700 hPa, $z_{LCL}$ is the height of LCL. In \Eqref{eq:gamma_m}, $L_v$ is the latent heat of vaporization, $q_s$ is the saturation mixing ratio, $R_a$ and $R_v$ are the gas constants
+for dry and water vapor, respectively, $g$ is the gravitational acceleration, and $c_p$ is the specific heat of air at constant pressure. In \Eqref{eq:z700}, $T_0$ and $p_0$ are the surface temperature and pressure respectively. 
+
