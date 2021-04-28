@@ -11,7 +11,7 @@ The chapter is organized as follows: The satellite data sets related to radiatio
 \label{sec:obs_reanalysis_dataset}
 
 \subsection{Satellite datasets}
-Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. It is usually easier for users to use these satellite retrievals when they have higher processing levels.
+Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. It is usually easier for users to use these satellite retrievals when they have higher processing levels. 
 
 % (see \url{https://earthdata.nasa.gov/collaborate/open-data-services-and-software/data-information-policy/data-levels}, last accessed: April 28, 2021)
 % https://nsidc.org/the-drift/2013/08/is-it-1b-2-or-3-definitions-of-data-processing-levels/
@@ -26,9 +26,11 @@ Satellites play important roles in observing the Earth (not limit to clouds and 
 % \end{itemize}
 
 
-\subsubsection{Clouds and the Earth’s Radiant Energy System  Top-of-Atmosphere (TOA) Data Product}
+\subsubsection{Clouds and the Earth’s Radiant Energy System  Top-of-Atmosphere (TOA) data product}
 % Energy Balanced and Filled (EBAF)
-Clouds and the Earth’s Radiant Energy System (CERES) Top-of-Atmosphere (TOA) Data Product is
+
+The Clouds and the Earth’s Radiant Energy System (CERES) project (\url{https://ceres.larc.nasa.gov}) provides satellite-based observations of Earth's radiation budget and clouds. It uses measurements from CERES instruments flying on several satellites (TRMM\footnote{TRMM: Tropical Rainfall Measuring Mission, a research satellite in operation from 1997 to 2015}, Terra, Aqua, S-NPP\footnote{S-NPP: Suomi National Polar-orbiting Partnership}, NOAA-20\footnote{NOAA-20: National Oceanic and Atmospheric Administration-20}), along with measurements from higher-resolution imagers on polar orbiting and geostationary satellites and other input data source, to produce a comprehensive set of Earth's radiaiton budget data products for weather, climate and applied science research. The goal of CERES is to produce a long-term, integrated global climate data record for detecting decadal changes in the Earth’s radiation budget from the surface to the top of the atmosphere, so as to improve our understanding of how Earth’s radiation budget varies in time and space and of the role that clouds and other atmospheric properties play.
+
 
 \subsubsection{International Satellite Cloud Climatology Project (ISCCP) -- H Series}
 
@@ -40,16 +42,15 @@ In this study, the high-resolution global monthly (HGM) product (at Level 3) wit
 
 \subsubsection{CloudSat Radar-Only Cloud Water Content (2B-CWC-RO) product}
 
-The CloudSat Radar-Only Cloud Water Content (2B-CWC-RO) product contains retrievals of cloud liquid and ice water content, effective radius of the ice and liquid particles, number concentration, and the size distribution width parameter using radar and auxiliary temperature data \citep{Austin2009}. The latest release P1\_05 is used in this study. Retrievals are performed separately for the liquid and ice phases assuming liquid only and ice only, then the two sets combined in a simple way to obtain a composite proﬁle that is consistent with the input measurements. The partition of ice and liquid is purely based on temperature, and the solutions of ice and liquid are scaled linearly with temperature to obtain a smooth transition from all ice at −20$^\circ$C to all liquid at 0$^\circ$C. The retrieval uses a temperature dependent a priori of lognormal (a modified gamma distribution) size distribution parameters, which are fitted from in situ particle size spectra .  
+The CloudSat Radar-Only Cloud Water Content (2B-CWC-RO) product contains retrievals of cloud liquid and ice water content, effective radius of the ice and liquid particles, number concentration, and the size distribution width parameter using radar and auxiliary temperature data \citep{Austin2009}. The latest release P1\_05 is used in this study. Retrievals are performed separately for the liquid and ice phases assuming liquid only and ice only, then the two sets combined in a simple way to obtain a composite proﬁle that is consistent with the input measurements. The partition of ice and liquid is purely based on temperature, and the solutions of ice and liquid are scaled linearly with temperature to obtain a smooth transition from all ice at −20$^\circ$C to all liquid at 0$^\circ$C. The retrieval uses a temperature dependent a priori of lognormal (a modified gamma distribution) size distribution parameters, which are fitted from in situ particle size spectra.  
 % Refer to: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020EA001147
 
 In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water path rather than the CERES-EBAF data set, because previous study has shown that CloudSat 2B-CWC-RO product can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. But we should notice that CloudSat 2B-CWC-RO product also has some potential problems. For example, \cite{Barker2008} has shown the temperature-partitioned profiles could not capture the mixed phased cloud structure accurately.
 
-
 %The cloud water path is from the CloudSat \index{CloudSat} 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. The original CloudSat cloud water path data set has some missing data for certain dates, and is not in the T42 resolution we are going to use. To get the annual mean product we desired, the original data set is processed as follows: For the area each grid point covers, the total times that the satellite has visited over the 5 years and the sum of the cloud water path that has been retrieved over same period are recorded, from which the annual mean cloud water path is derived. The scripts to do this can be accessed at \url{https://github.com/lqxyz/cloudsat_cloud_water_path}.
 
 
-\subsection{Reanalysis datasets}
+\subsection{Reanalysis data sets}
 
 \subsubsection{European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis (ERA-Interim)}
 
