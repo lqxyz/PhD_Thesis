@@ -38,7 +38,7 @@ The main CERES product used in this thesis is the Energy Balanced and Filled (EB
 
 The International Satellite Cloud Climatology Project (ISCCP) began in early 1980s as part of the World Climate Research Program (WCRP) \citep{Schiffer1983,Rossow1991}, and is probably the longest-running international satellite-based global environmental data project. Its goal is to collect weather satellite radiance measurements and to analyze them to infer the global distribution of clouds, their properties, and their diurnal, seasonal and interannual variations. This project has accumulated cloud observation for almost four decades and has been therefore widely used in cloud related researches.
 
-Several series of the ISCCP products hve been publised previously. However, the widely used ISCCP D-series product \citep{Rossow1999advances} has not been updated since December 2009. Recently, a new H-series product was published \citep{Young2018}, spanning from 1982 to 2015 (see \url{https://isccp.giss.nasa.gov/products/onlineData.html}, last accessed: April 28, 2021). Comparing to the previous ISCCP D-series product, the H-series has improved the low-level cloud sensitivity over snow and ice in polar regions. More importantly, based on ISCCP’s legacy and in light of the technological advancements that include active spaceborne sensors (e.g., Cloud–Aerosol Lidar and Infrared Pathfinder Satellite Observations – CALIPSO – and CloudSat) and cloud data sets that rely on newer passive imagers with higher spectral, spatial, radiometric, and temporal resolutions, the H-series has exploited to produce cloud products with much higher resolutions \citep{Young2018}.
+Several series of the ISCCP products hve been publised previously. However, the widely used ISCCP D-series product \citep{Rossow1999advances} has not been updated since December 2009. Recently, a new H-series product was published \citep{Young2018}, spanning from 1982 to 2015 (see \url{https://isccp.giss.nasa.gov/products/onlineData.html}, last accessed: April 28, 2021). Comparing to the previous ISCCP D-series product, the H-series has improved the low-level cloud sensitivity over snow and ice in polar regions. More importantly, based on ISCCP’s legacy and in light of the technological advancements that include active spaceborne sensors (e.g., Cloud–Aerosol Lidar and Infrared Pathfinder Satellite Observations and CloudSat) and cloud data sets that rely on newer passive imagers with higher spectral, spatial, radiometric, and temporal resolutions, the H-series has exploited to produce cloud products with much higher resolutions \citep{Young2018}.
 
 In this study, the high-resolution global monthly (HGM) product (at Level 3) with $1^\circ \times 1^\circ$ resolution is used for analysis. Of course, gridded hourly high-resolution output (HGH) is also available. In ISCCP H-series product, it has provided many cloud related variables, such as (but are not limited to) cloud amount (low, middle, high and total), cloud-top temperature, cloud-top pressure, cloud optical thickness, cloud water path, cloud phase and cloud type.
 
@@ -52,7 +52,8 @@ In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water p
 %The cloud water path is from the CloudSat \index{CloudSat} 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. The original CloudSat cloud water path data set has some missing data for certain dates, and is not in the T42 resolution we are going to use. To get the annual mean product we desired, the original data set is processed as follows: For the area each grid point covers, the total times that the satellite has visited over the 5 years and the sum of the cloud water path that has been retrieved over same period are recorded, from which the annual mean cloud water path is derived. The scripts to do this can be accessed at \url{https://github.com/lqxyz/cloudsat_cloud_water_path}.
 
 \subsubsection{GCM-Oriented CALIPSO Cloud Product}
-%GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) 
+
+The GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) \citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010} is designed to evaluate the cloudiness simulated by general circulation models (GCMs). It contains observational cloud diagnostics fully consistent with the ones simulated by the GCM plus the Lidar simulator.
  
 
 %\subsection{Reanalysis data sets}
@@ -60,8 +61,6 @@ In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water p
 
 \subsubsection{European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis (ERA-Interim)}
 
-
-\citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010}
 
 
 \section{Isca}
