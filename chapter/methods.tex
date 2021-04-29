@@ -10,8 +10,9 @@ The chapter is organized as follows: The satellite data sets related to radiatio
 \section{Observational and reanalysis datasets}
 \label{sec:obs_reanalysis_dataset}
 
-\subsection{Satellite datasets}
-Satellites play important roles in observing the Earth (not limit to clouds and radiation) over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. It is usually easier for users to use these satellite retrievals when they have higher processing levels. 
+%\subsection{Satellite datasets}
+\subsection{Clouds and radiation data sets}
+Satellites play important roles in observing the Earth over the past decades, and these satellite retrievals are essential data sets for us to understand the weather and climate on Earth. The observation of clouds and radiation at the TOA is particularly depend on the satellites. In general, the satellite products can be categorized into different groups according to their processing levels ranging from Level 0 to Level 4 \citep{Parkinson2006earth}. Specifically, Level 0 is the raw and unprocessed instrument data. Level 1 is annotated with ancillary information (1A) and processed to sensor units (1B). Level 2 is derived geophysical variables, Level 3 is mapped to a space-time grid, and Level 4 are modeled outputs or variables derived from multiple measurements. It is usually easier for users to use these satellite retrievals when they have higher processing levels.
 
 % (see \url{https://earthdata.nasa.gov/collaborate/open-data-services-and-software/data-information-policy/data-levels}, last accessed: April 28, 2021)
 % https://nsidc.org/the-drift/2013/08/is-it-1b-2-or-3-definitions-of-data-processing-levels/
@@ -31,6 +32,7 @@ Satellites play important roles in observing the Earth (not limit to clouds and 
 
 The Clouds and the Earth’s Radiant Energy System (CERES) project (\url{https://ceres.larc.nasa.gov}) provides satellite-based observations of Earth's radiation budget and clouds \citep{Wielicki1996clouds}. It uses measurements from CERES instruments flying on several satellites (TRMM\footnote{TRMM: Tropical Rainfall Measuring Mission, a research satellite in operation from 1997 to 2015}, Terra, Aqua, S-NPP\footnote{S-NPP: Suomi National Polar-orbiting Partnership}, NOAA-20\footnote{NOAA-20: National Oceanic and Atmospheric Administration-20}), along with measurements from higher-resolution imagers on polar orbiting and geostationary satellites and other input data source, to produce a comprehensive set of Earth's radiaiton budget data products for weather, climate and applied science research. The goal of CERES is to produce a long-term, integrated global climate data record for detecting the possible changes in the Earth’s radiation budget from the surface to the top of the atmosphere, so as to improve our understanding of how Earth’s radiation budget varies in time and space and of the role that clouds and other atmospheric properties play.
 
+The main CERES product used in this thesis is the Energy Balanced and Filled (EBAF) product  \citep[CERES-EBAF hereafter;][]{Loeb2009}. 
 
 \subsubsection{International Satellite Cloud Climatology Project (ISCCP) -- H Series}
 
@@ -49,10 +51,18 @@ In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water p
 
 %The cloud water path is from the CloudSat \index{CloudSat} 2B-CWC-RO Release P1\_R05 data product \citep{Austin2009} from 2012 to 2016, which can better represent cloud liquid and ice water path over high latitudes than CERES-EBAF data set, owing to its explicit determination of cloud phase \citep{Lenaerts2017}. The original CloudSat cloud water path data set has some missing data for certain dates, and is not in the T42 resolution we are going to use. To get the annual mean product we desired, the original data set is processed as follows: For the area each grid point covers, the total times that the satellite has visited over the 5 years and the sum of the cloud water path that has been retrieved over same period are recorded, from which the annual mean cloud water path is derived. The scripts to do this can be accessed at \url{https://github.com/lqxyz/cloudsat_cloud_water_path}.
 
+\subsubsection{GCM-Oriented CALIPSO Cloud Product}
+%GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) 
+ 
 
-\subsection{Reanalysis data sets}
+%\subsection{Reanalysis data sets}
+\subsection{Other climatology variables}
 
 \subsubsection{European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis (ERA-Interim)}
+
+
+\citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010}
+
 
 \section{Isca}
 \label{sec:isca_intro}
