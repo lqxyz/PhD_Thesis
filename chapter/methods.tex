@@ -53,8 +53,9 @@ In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water p
 
 \subsubsection{GCM-Oriented CALIPSO Cloud Product}
 
-The GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) \citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010} is designed to evaluate the cloudiness simulated by general circulation models (GCMs). It contains observational cloud diagnostics fully consistent with the ones simulated by the GCM plus the Lidar simulator.
- 
+The GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) \citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010} is designed to evaluate the cloudiness simulated by general circulation models (GCMs). It contains observational cloud diagnostics fully consistent with the ones simulated by the GCM plus the lidar simulator, that is they have similar spatial resolution, same criteria used for cloud detection and same statistical cloud diagnostics. In doing so, the Cloud-Aerosol Lidar with Orthogonal Polarization (CALIOP) Level 1 data (raw data but annotated with ancillary information) are processed following the steps in a lidar simulator to diagnose the model cloud cover that CALIPSO would observe from space if the satellite was flying above the atmosphere similar to that predicted by the GCM. 
+
+The CALIPSO-GOCCP products include the vertical distribution of cloud fraction, horizontal distribution of low, middle, high, and total cloud fractions, instantaneous lidar scattering ratio profiles, and scattering ratio histograms as a function of height. Hence, the cloud cover outputs from GCM can be compared directly with this product when the cloud simulator was not implemented. More importantly, the CALIPSO-GOCCP data can be used to evaluate the cloud fraction profiles simulated from climate models. 
 
 %\subsection{Reanalysis data sets}
 \subsection{Other climatology variables}
