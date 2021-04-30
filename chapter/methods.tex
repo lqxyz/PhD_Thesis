@@ -60,10 +60,6 @@ The CALIPSO-GOCCP products include the vertical distribution of cloud fraction, 
 %\subsection{Reanalysis data sets}
 \subsection{Other climatology variables}
 
-%\subsubsection{European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis (ERA-Interim)}
-
-In this thesis, the basic climate state variables such as temperature, specific humidity, relative humidity and dynamical fields such as zonal and meridional winds, pressure velocity (e.g., $\omega_{500}$) and mean sea level pressure are taken from the reanalysis data sets. As shown in \figref{fig:reanalysis}, the reanalysis is produced by combing the past short-range weather forecasts with observations through data assimilation, which can provide multi-variate, globally complete, consistent record of the atmosphere. The reanalysis has some advantages over the observation. For example, the observations are not always evenly distributed, and even in the satellite era, observations alone cannot provide a complete picture of the state of the Earth system across the globe at a given point in time. Also, the reanalysis is usually the best choice currently  when there is no complete observation of a certain variable, or when data sets which are consistent with each other are required.
-
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/methods/reanalysis_ecmwf}.pdf}
@@ -71,18 +67,32 @@ In this thesis, the basic climate state variables such as temperature, specific 
     \label{fig:reanalysis}
 \end{figure}
 
-In this thesis, the European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis \citep[ERA-Interim;][]{Dee2011} and the latest ERA5 \citep{era5} reanalysis are used. The ERA-Interim is produced by the data assimilation system based on Cy31r2 of the Integrated Forecasting System (IFS), which includes a 4-dimensional variational analysis (4D-Var) with a 12-hour analysis window. The spatial resolution of the data set is approximately 80 km (T255 spectral) on 60 levels in the vertical from the surface up to 0.1 hPa \citep{Dee2011}. This ERA-Interim is available from 1 January 1979 to 31 August 2019, and now is replaced by the ERA5. ERA5 is the latest reanalysis product from ECMWF, which is based on the IFS Cy41r2 and covers the period from 1950 to present. The atmospheric variables from ERA5 has a regular latitude-longitude grid (0.25$^\circ \times$ 0.25$^\circ$) with 37 pressure levels from 1000 to 1 hPa \citep{Hersbach2020era5}.
+In this thesis, the basic climate state variables such as temperature, specific humidity, relative humidity and dynamical fields such as zonal and meridional winds, pressure velocity (e.g., $\omega_{500}$) and mean sea level pressure are taken from the reanalysis data sets. As shown in \figref{fig:reanalysis}, the reanalysis is produced by combing the past short-range weather forecasts with observations through data assimilation, which can provide multi-variate, globally complete, consistent record of the atmosphere. The reanalysis has some advantages over the observation. For example, the observations are not always evenly distributed, and even in the satellite era, observations alone cannot provide a complete picture of the state of the Earth system across the globe at a given point in time. Also, the reanalysis is usually the best choice currently  when there is no complete observation of a certain variable, or when data sets which are consistent with each other are required.
+
+In this thesis, the European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis \citep[ERA-Interim;][]{Dee2011} and the latest ERA5 \citep{era5} reanalysis are used. The ERA-Interim is produced by the data assimilation system based on Cy31r2 of the Integrated Forecasting System (IFS), which includes a 4-dimensional variational analysis (4D-Var) with a 12-hour analysis window. The spatial resolution of the data set is approximately 80 km (T255 spectral) on 60 levels in the vertical from the surface up to 0.1 hPa \citep{Dee2011}. This ERA-Interim is available from 1 January 1979 to 31 August 2019, and now is replaced by the ERA5. ERA5 is the latest reanalysis product from ECMWF, which is based on the IFS Cy41r2 and covers the period from 1950 to present. The atmospheric variables from ERA5 has a regular latitude-longitude grid (0.25$^\circ \times$0.25$^\circ$) with 37 pressure levels from 1000 to 1 hPa \citep{Hersbach2020era5}.
 
 In \chapref{ch:simple_cld_scheme}, the hourly outputs from ERA5 reanalysis are used to derive the relationship between the cloud fraction and relative humidity. The monthly outputs from ERA-Interim are used to assess the relationship between low cloud amount and its proxy. In \chapref{ch:eval_cld_scheme}, the monthly pressure velocity from ERA-Interim reanalysis is used to distinguish the dynamical regimes over tropical region.
 
-\section{Isca}
+\section{Idealized climate model - Isca}
 \label{sec:isca_intro}
+In this section, the idealized climate model, Isca\citep{Vallis2018}, is introduced, which is the model employed for all the simulations in this thesis.
+
 \subsection{Overview}
-%\subsection{}
+
+Isca\index{Isca} is an open-source framework for the idealized modeling of global circulation of atmospheres \citep{Vallis2018}, hich is built around a dynamical core from the Geophysical Fluid Dynamics Laboratory (GFDL) and physical parameterizations from \citet{Frierson2006} and \citet{Frierson2007}. 
+
+Isca provides various options for users to set up experiments for their own interests, which include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres.
+
+These options include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres. Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG hereafter;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and a full radiation scheme, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005}. In fact, the plentiful options in Isca offer users an opportunity to explore the models with different levels of complexity under the same experimental setup. 
+
+Isca is public available at \url{https://github.com/ExeClim/Isca}.
+
+
+\subsection{Experiments}
+
 
 %\section{Climate feedback}
-
-\section{CFMIP observation simulator pacakage}
+\section{CFMIP Observation Simulator Package (COSP)}
 \label{sec:cosp}
 
 \section{The calculation of cloud feedback}
@@ -90,7 +100,7 @@ In \chapref{ch:simple_cld_scheme}, the hourly outputs from ERA5 reanalysis are u
 
 \subsection{Introduction}
 
-As introdued in \chapref{ch:literature_review_about_clouds}, 
+As introduced in \chapref{ch:introduction}, 
 the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external foring $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
 \begin{equation}
     \Delta R = \Delta Q + \lambda \Delta T_s,
