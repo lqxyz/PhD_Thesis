@@ -75,18 +75,18 @@ In \chapref{ch:simple_cld_scheme}, the hourly outputs from ERA5 reanalysis are u
 
 \section{Idealized climate model - Isca}
 \label{sec:isca_intro}
-In this section, the idealized climate model, Isca\citep{Vallis2018}, is introduced, which is the model employed for all the simulations in this thesis.
 
 \subsection{Overview}
 
-Isca\index{Isca} is an open-source framework for the idealized modeling of global circulation of atmospheres \citep{Vallis2018}, hich is built around a dynamical core from the Geophysical Fluid Dynamics Laboratory (GFDL) and physical parameterizations from \citet{Frierson2006} and \citet{Frierson2007}. 
+In this section, the idealized climate model, Isca \citep{Vallis2018}, is introduced, which is the model employed for all the simulations in this thesis. Isca\index{Isca}\footnote{Isca is the ancient name of city Exeter in Roman times and is also an ancient word for running water; see more at \url{https://execlim.github.io/IscaWebsite/} (last access: May 1, 2021)} is an open-source framework for the idealized modeling of global circulation of atmospheres developed at University of Exeter \citep{Vallis2018}, which is built around a dynamical core from the Geophysical Fluid Dynamics Laboratory (GFDL) and physical parameterizations from \citet{Frierson2006} and \citet{Frierson2007}. Isca is coded in Fortran and the scripts to configure and run the experiments are written in Python. The code is public available at \url{https://github.com/ExeClim/Isca} (last access: May 1, 2021), and the documents can be found at \url{https://execlim.github.io/Isca/latest/html/} (last access: May 1, 2021).
 
-Isca provides various options for users to set up experiments for their own interests, which include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres.
+% Isca uses the Flexible Modeling System (FMS, \url{https://www.gfdl.noaa.gov/fms/}, last access: May 1, 2021) of GFDL.
 
-These options include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres. Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG hereafter;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and a full radiation scheme, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005}. In fact, the plentiful options in Isca offer users an opportunity to explore the models with different levels of complexity under the same experimental setup. 
+Isca provides various options for users to set up experiments for their own interests, including the dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres.
 
-Isca is public available at \url{https://github.com/ExeClim/Isca}.
+Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and two full radiation schemes, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005} and the SOCRATES (Suite of Community Radiation Codes based on Edwards \& Slingo) radiation scheme \index{SOCRATES} \citep{Edwards1996, Manners2015}.
 
+In fact, the plentiful options in Isca offer users an opportunity to explore the models with different levels of complexity under the same experimental setup.
 
 \subsection{Experiments}
 
