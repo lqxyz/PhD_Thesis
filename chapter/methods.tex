@@ -83,6 +83,10 @@ In this section, the idealized climate model, Isca\footnote{Isca is the ancient 
 Isca provides various options for users to set up experiments for their own interests, so that they can explore the models with different levels of complexity under the same experimental setup. These options include the dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres.
 
 \subsubsection{Convection scheme}
+Isca includes various convective parameterization schemes, specifically a simple dry scheme following \cite{Walker2006eddy}, a simplified Betts--Miller scheme \citep[a covective relaxation scheme;][]{Frierson2007}, and the relaxed Arakawa--Schubert (RAS) scheme \citep[a mass-flux based scheme;][]{Moorthi1992relaxed}.
+
+The simplified Betts--Miller scheme is the scheme used in this thesis, which is a moist adjustment convection scheme developed by \cite{Frierson2007} and the modifications described in \cite{OGorman2008hydrological}. 
+
 
 \subsubsection{Radiation scheme}
 Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and two full radiation schemes, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005} and the SOCRATES (Suite Of Community RAdiative Transfer codes based on Edwards and Slingo) radiation scheme \index{SOCRATES} \citep{Edwards1996, Manners2015}. 
