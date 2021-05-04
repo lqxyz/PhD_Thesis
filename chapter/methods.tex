@@ -82,15 +82,18 @@ In this section, the idealized climate model, Isca\footnote{Isca is the ancient 
 
 Isca provides various options for users to set up experiments for their own interests, so that they can explore the models with different levels of complexity under the same experimental setup. These options include the dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres.
 
+\subsection{Several parameterization schemes}
+
 \subsubsection{Convection and large-scale condensation}
+
 Isca includes various convective parameterization schemes, specifically a simple dry scheme following \cite{Walker2006eddy}, the original Bettts--Miller scheme \citep[a covective relaxation scheme;][]{Betts1986,BettsMiller1986}, a simplified Betts--Miller scheme \citep[SBM;][]{Frierson2007}, and the relaxed Arakawa--Schubert (RAS) scheme \citep[a mass-flux based scheme;][]{Moorthi1992relaxed}.
 
 The SBM scheme used in this thesis is a moist adjustment convection scheme developed by \cite{Frierson2007} and the modifications described in \cite{OGorman2008hydrological}. In the SBM scheme, the convection acts to relax the temperature and humidity to the post-convective reference profiles. Based on the first-guessed reference profiles, the next step is to determine whether there will be deep, shallow, or no convection based on some criterion, then to relax towards the reference profiles. Also, the scheme will do some corrections if the enthalpy is not conserved during the relaxation. In this convection scheme, deep convection and non-precipitating shallow convection are both included, and the convective precipitation can be derived from the deep convection. In addition, the precipitation can be partitioned into rain and snow simply by the temperature, but this is not enabled in this study.
 
 The large-scale condensation scheme used in Isca is from \cite{Frierson2006}, which is accomplished by adjusting the humidity in super-saturated regions to the saturated values immediately, with temperatures adjusted to reflect this condensation. The precipitation falls out immediately, but is re-evaporated below. The precipitation diagnosed from this scheme is regarded as large-scale precipitation.
 
-
 \subsubsection{Radiation scheme}
+
 For the radiation scheme in Isca, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and two full radiation schemes, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005} and the SOCRATES (Suite Of Community RAdiative Transfer codes based on Edwards and Slingo) radiation scheme \index{SOCRATES} \citep{Edwards1996, Manners2015}. 
 
 In the clouds related simulations in this thesis, Isca uses the SOCRATES radiation scheme, as implemented in \cite{Thomson2019}. It is the radiation scheme used by UK Met Office for Earth and planetary science \citep{Manners2015}. Compared to RRTM radiation scheme, SOCRATES is more flexible in terms of atmospheric composition and the spectral properties of the radiation scheme (e.g. number of bands for longwave and shortwave), as these properties can be specified by the spectral files separately. More bands in spectral files can have more accurate simulation results, but they will make the model run much slowly. Currently, the default spectral files used in Isca are from the Met Office Unified Model's Global Atmosphere version 7 (GA7), which have 9 longwave bands and 6 shortwave bands \citep{Walters2019}.
@@ -98,17 +101,17 @@ In the clouds related simulations in this thesis, Isca uses the SOCRATES radiati
 % Add introduction about Gray Radiation scheme if the polar amplification is also included in the thesis
 
 \subsubsection{Land/sea configuration}
+
 For Earth-like simulations, Isca can use land/sea configurations with various complexities. For example, Isca can run with slab ocean without lands \citep[aquaplanet setup; e.g.,][]{Geen2018regime,Geen2019processes}, or run with idealized continent shapes \citep[e.g.,][]{Pietschnig2019}, or run with realistic continents and topography \citep[e.g.,][]{Geen2018regime}. In the model, the land is treated the same with the slab ocean, except that the physical properties such as mixed layer depth, albedo, roughness length seen by the boundary-layer scheme, and moisture availability over prescribed areas are different.
 
 In general, the prescribed mixed layer depth for land is smaller than  that for ocean, and thus the land has lower heat capacity compared to the ocean. In this thesis, the mixed layer depth of land is 1/10 of ocean's mixed layer depth, so the mixed layer depth for ocean and land are 20 m and 2 m, respectively. In addition, the albedo of the land is 1.3 times of ocean in the setup, so that land can reflect more shortwave radiation than ocean. The moisture availability is controlled by introducing the ``evaporative resistance" parameters into the equation for surface evaporation ($E$):
 \begin{equation}
     E = \rho_a C|\bold{v}_a|\beta(\alpha q_s - q_a),
 \end{equation}
-where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specific humidity at the lowest model level, respectively; $C$ is the drag coefficient; and $q_s$ is the saturation specific humidity at the surface temperature \citep{Frierson2006}. Evaporative resistance parameters ($\alpha$ and $\beta$) are used to adjust the surface evaporation flux and their values can be chosen by the users. Typically, one of them might be 1 and the other is between 0 and 1, and such values will reduce evaporation from land regions. As recommended in \cite{Vallis2018}, using $\alpha=1$ and $\beta<1$ has the advantage of not allowing $E$ to change sign. In this study, the default values are $\alpha=1$ and $\beta=0.6$. Currently, there is no dynamical ocean in Isca and the slab ocean with prescribed mixed layer depth is adopted in the model. In this way, a closed atmospheric energy budget can be achieved, as the slab ocean responds to the incident fluxes at the sea surface, with no dynamic heat transport. In fact, the horizontal heat transport in the ocean can be achieved in Isca by prescribing the Q-flux, which is the topic of next part.
+where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specific humidity at the lowest model level, respectively; $C$ is the drag coefficient; and $q_s$ is the saturation specific humidity at the surface temperature \citep{Frierson2006}. Evaporative resistance parameters ($\alpha$ and $\beta$) are used to adjust the surface evaporation flux and their values can be chosen by the users. Typically, one of them might be 1 and the other is between 0 and 1, and such values will reduce evaporation from land regions. As recommended in \cite{Vallis2018}, using $\alpha=1$ and $0<\beta<1$ has the advantage of not allowing $E$ to change sign. In this study, the default values are $\alpha=1$ and $\beta=0.6$. Currently, there is no dynamical ocean in Isca and the slab ocean with prescribed mixed layer depth is adopted in the model. In this way, a closed atmospheric energy budget can be achieved, as the slab ocean responds to the incident fluxes at the sea surface, with no dynamic heat transport. In fact, the horizontal heat transport in the ocean can be achieved in Isca by prescribing the Q-flux, which is the topic of next part.
 
-\subsubsection{Ocean heat transport (Q-flux)}
+\subsection{Ocean heat transport (Q-flux)}
 
-%In simulation other planets such as Jupiter, Isca can 
 
 \subsection{Experiments}
 
