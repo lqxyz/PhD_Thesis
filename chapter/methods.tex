@@ -112,18 +112,17 @@ where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specif
 
 \subsection{Boundary conditions for Isca}
 
-For the Atmospheric Model Intercomparison Project (AMIP)-type simulations \citep{Gates1999amip} in Isca, the boundary conditions such as sea surface temperature (SST) and sea ice concentration are specified by the files. The monthly sea surface temperature and sea ice concentration are fixed at their climatology, which are derived from the input4MIPs data sets (input data sets for Model Intercomparison Projects) \citep{Durack2018} over the period from 1979 to 2008, and the scripts to process the input data set are available at \url{https://github.com/lqxyz/input4MIPs}.
+For the Atmospheric Model Intercomparison Project (AMIP)-type simulations \citep{Gates1999amip} in Isca, the boundary conditions such as sea surface temperature (SST) and sea ice concentration are specified by the files. In this thesis, the monthly sea surface temperature (SST) and sea ice concentration are fixed at their climatology, which are derived from the input4MIPs data sets (input data sets for Model Intercomparison Projects) \citep{Durack2018} over the period from 1979 to 2008, and the scripts to process the input data set are available at \url{https://github.com/lqxyz/input4MIPs}. The annual mean spatial patterns of the derived SST and sea ice concentration are shown in \figref{fig:input_sst_ice}.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{{figs/methods/input_sst_sic_annual_mean}.png}
-	\caption[Boundary conditions for Isca, including sea surface temperature, sea ice concentration and topography.]{Boundary conditions for Isca, including (a) the annual mean sea surface temperature (SST, units: K; orange) and topography over land (altitude), and (b) annual mean sea ice concentration (SIC; units: \%). The SST and SIC are derived from input4MIPs data sets \citep{Durack2018} over the period from 1979 to 2008, and the topography is derived from ERA-Interim reanalysis \citep{Dee2011}.}
+	\caption[Boundary conditions for Isca, including sea surface temperature, sea ice concentration and topography.]{Boundary conditions for Isca, including (a) the annual mean sea surface temperature (SST, units: K; orange) and topography over land (altitude, units: m), and (b) annual mean sea ice concentration (SIC; units: \%). The SST and SIC are derived from input4MIPs data sets \citep{Durack2018} over the period from 1979 to 2008, and the topography is derived from ERA-Interim reanalysis \citep{Dee2011}.}
 	\label{fig:input_sst_ice}
 \end{figure}
 
 % Topography file
-The topography 
-
+The topography and land/sea mask are from the ERA-Interim reanalysis \citep{Dee2011}. The original topography is smoothed to reduce the Gibbs ripples that arise from the truncated spherical harmonic expansion (The method is provided by Greg Colyer and Ruth Geen). The final topography over land is displayed in \figref{fig:input_sst_ice}a.
 
 \subsection{Ocean heat transport (Q-flux)}
 The simulations in \chapref{ch:eval_cld_scheme} are the AMIP-type fixed-SST experiments, and the changes in atmosphere could not feedback into the SST changes. To make it more realistic, here we prescribe the derived ocean heat transport flux (the `Q-flux') from a given distribution of SSTs following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. As in \chapref{ch:eval_cld_scheme}, the observed SST is from the input4MIPs data set \citep{Durack2018} over the period from 1979 to 2008. To derive the Q-flux, the aforementioned SST climatology is prescribed in a simulation with the realistic continents and a slab ocean of 20m depth. The energy balance model is applied as follows:
