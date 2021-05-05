@@ -111,8 +111,7 @@ In general, the prescribed mixed layer depth for land is smaller than  that for 
 where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specific humidity at the lowest model level, respectively; $C$ is the drag coefficient; and $q_s$ is the saturation specific humidity at the surface temperature \citep{Frierson2006}. Evaporative resistance parameters ($\alpha$ and $\beta$) are used to adjust the surface evaporation flux and their values can be chosen by the users. Typically, one of them might be 1 and the other is between 0 and 1, and such values will reduce evaporation from land regions. As recommended in \cite{Vallis2018}, using $\alpha=1$ and $0<\beta<1$ has the advantage of not allowing $E$ to change sign. In this study, the default values are $\alpha=1$ and $\beta=0.6$. Currently, there is no dynamical ocean in Isca and the slab ocean with prescribed mixed layer depth is adopted in the model. In this way, a closed atmospheric energy budget can be achieved, as the slab ocean responds to the incident fluxes at the sea surface, with no dynamic heat transport. In fact, the horizontal heat transport in the ocean can be achieved in Isca by prescribing the Q-flux, which is the topic of next part.
 
 \subsection{Boundary conditions for Isca}
-
-For the Atmospheric Model Intercomparison Project (AMIP)-type simulations \citep{Gates1999amip} in Isca, the boundary conditions such as sea surface temperature (SST) and sea ice concentration are specified by the files. In this thesis, the monthly sea surface temperature (SST) and sea ice concentration are fixed at their climatology, which are derived from the input4MIPs data sets (input data sets for Model Intercomparison Projects) \citep{Durack2018} over the period from 1979 to 2008, and the scripts to process the input data set are available at \url{https://github.com/lqxyz/input4MIPs}. The annual mean spatial patterns of the derived SST and sea ice concentration are shown in \figref{fig:input_sst_ice}.
+\label{sec:boundary_condition_isca}
 
 \begin{figure}[ht]
 	\centering
@@ -121,11 +120,16 @@ For the Atmospheric Model Intercomparison Project (AMIP)-type simulations \citep
 	\label{fig:input_sst_ice}
 \end{figure}
 
+For the Atmospheric Model Intercomparison Project (AMIP)-type simulations \citep{Gates1999amip} in Isca, the boundary conditions such as sea surface temperature (SST) and sea ice concentration are specified by the files. In this thesis, the monthly sea surface temperature (SST) and sea ice concentration are fixed at their climatology, which are derived from the input4MIPs data sets (input data sets for Model Intercomparison Projects) \citep{Durack2018} over the period from 1979 to 2008, and the scripts to process the input data set are available at \url{https://github.com/lqxyz/input4MIPs}. The annual mean spatial patterns of the derived SST and sea ice concentration are shown in \figref{fig:input_sst_ice}. The SST over the tropical and subtropical Southeast Pacific is cooler than West Pacific.
+
 % Topography file
-The topography and land/sea mask are from the ERA-Interim reanalysis \citep{Dee2011}. The original topography is smoothed to reduce the Gibbs ripples that arise from the truncated spherical harmonic expansion (The method is provided by Greg Colyer and Ruth Geen). The final topography over land is displayed in \figref{fig:input_sst_ice}a.
+The topography and land/sea mask are from the ERA-Interim reanalysis \citep{Dee2011}. The original topography is smoothed to reduce the Gibbs ripples arising from the truncated spherical harmonic expansion (The method is provided by Greg Colyer and Ruth Geen). The final topography over land is displayed in \figref{fig:input_sst_ice}a.
 
 \subsection{Ocean heat transport (Q-flux)}
-The simulations in \chapref{ch:eval_cld_scheme} are the AMIP-type fixed-SST experiments, and the changes in atmosphere could not feedback into the SST changes. To make it more realistic, here we prescribe the derived ocean heat transport flux (the `Q-flux') from a given distribution of SSTs following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. As in \chapref{ch:eval_cld_scheme}, the observed SST is from the input4MIPs data set \citep{Durack2018} over the period from 1979 to 2008. To derive the Q-flux, the aforementioned SST climatology is prescribed in a simulation with the realistic continents and a slab ocean of 20m depth. The energy balance model is applied as follows:
+
+%The simulations in \chapref{ch:eval_cld_scheme} are the AMIP-type fixed-SST experiments, and the changes in atmosphere could not feedback into the SST changes. 
+
+Another feature in Isca is that it can include ocean heat transport (the `Q-flux') from a given distribution of SSTs \citep{Vallis2018}. Here we repeat how to derive the Q-flux following the method from \cite{Russell1985}. After prescribing the Q-flux in simulations, the SST can respond freely to the CO$_2$ forcing. The observed SST climatology is from the input4MIPs data set \citep{Durack2018} over the period from 1979 to 2008 (see \secref{sec:boundary_condition_isca} for details). To derive the Q-flux, the aforementioned SST climatology is prescribed in a simulation with the realistic continents, topography and a slab ocean (mixed layer depth is 20 m). The energy balance model is applied as follows:
 \begin{equation}
     F_Q = C_w\rho_w D \frac{\partial T}{\partial t} - F_s,
     \label{eq:Q_flux}
