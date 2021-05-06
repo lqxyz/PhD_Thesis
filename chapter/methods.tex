@@ -157,6 +157,11 @@ The AMIP fixed-SST experiments with linear cloud scheme described in \tabref{tab
 \section{CFMIP Observation Simulator Package (COSP)}
 \label{sec:cosp}
 
+This section records how the Cloud Feedback Model Intercomparison Project (CFMIP) Observational Simulator Package (COSP) was implemented in Isca. Note that the COSP was not included in Isca simulations in \chapref{ch:simple_cld_scheme}, but as to be introduced in \secref{sec:method_cloud_fbk}, it is a useful tool to calculate cloud feedback and can decompose the cloud feedback into different components, which thus is employed in \chapref{ch:cld_fbk}. 
+
+In this study, the latest version (version 2) of COSP  \citep{Swales2018} is implemented in Isca, which is public available at \url{https://github.com/CFMIP/COSPv2.0}. COSP was originally developed as a satellite simulator package whose aim is to produce virtual satellite observations from atmospheric model fields for a better comparison of model output with observations \citep{Bodas2011}. This approach is needed because the satellite retrievals generally do not directly correspond to the numerical model fields due to the mismatch between their definitions of certain fields. COSP accounts for the limited view of the satellite instrument by calculating radiative transfer through the atmosphere, i.e. attenuation by hydrometeors and air molecules and backscattering \citep{Kuma2020}. Note that multiple instrument simulators, such as MODIS, CALIPSO, CloudSat and ISCCP, have been incorporated in COSP, and it is flexible for users to decide which one to use based on their research purposes. 
+Specifically, several modules have been written in Isca to call COSP, in which the outputs from simple cloud scheme and SOCRATES radiation schemes, such as cloud fraction, effective radius, cloud water content and cloud optical depth, are provided through the interfaces. However, as the cloud scheme is simple and there is not microphysics scheme in Isca, we could not provide some properties about convective clouds and cloud condensate such as ice and graupel. Although this may bring some problems, the outputs from ISCCP simulator are relatively reasonable.
+
 \section{The calculation of cloud feedback}
 \label{sec:method_cloud_fbk}
 
