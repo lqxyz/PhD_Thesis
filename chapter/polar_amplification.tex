@@ -1,4 +1,5 @@
-\chapter{Simple Experiments Under Isca Framework}
+%\chapter{Simple Experiments Under Isca Framework}
+\chapter{The Role of Climate Feedbacks in Polar Amplification}
 \label{ch:polaramplification}
 
 %\epigraph{\textit{"Essentially, all models are wrong, but some are useful."}\\ \textit{George Box}, 1987}{}
@@ -6,22 +7,21 @@
 
 \section{Introduction}
 
-\subsection{Isca model}
+% \subsection{Isca model}
 
-Isca\index{Isca} is an open-source framework for the idealized modeling of global circulation of atmospheres, which provides various options for users to setup experiments for their own interests \citep{Vallis2018}. These options include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres. Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG hereafter;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and a full radiation scheme, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005}. In fact, the plentiful options in Isca offer users an opportunity to explore the models with different levels of complexity under the same experimental setup.
+% Isca\index{Isca} is an open-source framework for the idealized modeling of global circulation of atmospheres, which provides various options for users to setup experiments for their own interests \citep{Vallis2018}. These options include dry and moist models, various convection and radiation schemes, a variety of land/sea configurations and different parameters for other planetary atmospheres. Taking the radiation scheme in Isca as an example, the choices include two gray radiation schemes (gray means that radiation in different wavelength is treated equally), which we call Frierson \citep{Frierson2006} and Byrne \& O'Gorman \citep[BOG hereafter;][]{Byrne2013}; an intermediate scheme with two infrared bands and one solar band, similar to \cite{Geen2016}; and a full radiation scheme, the multiband correlated-$k$ Rapid Radiative Transfer Model \citep[RRTM;][]{Clough2005}. In fact, the plentiful options in Isca offer users an opportunity to explore the models with different levels of complexity under the same experimental setup.
 
-%\citealp{Clough2005}
-%In addition, the Isca model provides a python wrapper for the model to configure and run the experiments easily. 
-%it is to provide a means whereby a complex system may be easily modelled in different ways, with different levels of complexity, thus providing a nearly continuous pathway from comprehensive numerical modelling to conceptual modelling and theory for Earth and planetary atmospheres (Isca paper)
+% %\citealp{Clough2005}
+% %In addition, the Isca model provides a python wrapper for the model to configure and run the experiments easily. 
+% %it is to provide a means whereby a complex system may be easily modelled in different ways, with different levels of complexity, thus providing a nearly continuous pathway from comprehensive numerical modelling to conceptual modelling and theory for Earth and planetary atmospheres (Isca paper)
 
-However, there are no interactive cloud schemes, dynamical ocean and sophisticated land-surface models in Isca currently, compared to the comprehensive climate models. In general, clouds associated with weather and climate phenomena are the essential parts of climate system, but the simulations of clouds and their feedbacks have large uncertainties in current general circulation models (GCMs). For example, as pointed by \cite{Ceppi2017}, cloud feedback\index{cloud feedback} is the largest source of intermodel spread in equilibrium climate sensitivity in the recent Climate Model Intercomparison Project phase 5 (CMIP5). Therefore, it is very important to understand clouds and their feedback to climate systems. Generally, the models are supposed to be as close to the nature as possible for the real simulation results, which will, however, lead to the situation in which the models sometimes are too complicated to fully understand. In this case, it is of great help to employ the simple models to investigate the key mechanisms behind the various phenomena. In this chapter, we will make use of Isca to design some simple experiments investigating the zonal mean surface temperature change especially polar amplification of surface temperature change in aquaplanet simulations.%polar amplification of surface temperature change.
+% However, there are no interactive cloud schemes, dynamical ocean and sophisticated land-surface models in Isca currently, compared to the comprehensive climate models. In general, clouds associated with weather and climate phenomena are the essential parts of climate system, but the simulations of clouds and their feedbacks have large uncertainties in current general circulation models (GCMs). For example, as pointed by \cite{Ceppi2017}, cloud feedback\index{cloud feedback} is the largest source of intermodel spread in equilibrium climate sensitivity in the recent Climate Model Intercomparison Project phase 5 (CMIP5). Therefore, it is very important to understand clouds and their feedback to climate systems. Generally, the models are supposed to be as close to the nature as possible for the real simulation results, which will, however, lead to the situation in which the models sometimes are too complicated to fully understand. In this case, it is of great help to employ the simple models to investigate the key mechanisms behind the various phenomena. In this chapter, we will make use of Isca to design some simple experiments investigating the zonal mean surface temperature change especially polar amplification of surface temperature change in aquaplanet simulations.%polar amplification of surface temperature change.
 
-%One dilemma situation for models is that they have to be as close to nature as possible to get real simulation results, which, however, results in that the models are sometimes too complicated to fully understand. 
+% %One dilemma situation for models is that they have to be as close to nature as possible to get real simulation results, which, however, results in that the models are sometimes too complicated to fully understand. 
 
-%In other words, the aim of my PhD project is to investigate the roles of clouds in climate system by building simple cloud schemes within Isca model. 
+% %In other words, the aim of my PhD project is to investigate the roles of clouds in climate system by building simple cloud schemes within Isca model. 
  
- 
-\subsection{Polar amplification}
+% \subsection{Polar amplification}
 
 Polar amplification\index{polar amplification} is the phenomenon where surface temperature in polar region rises faster than the global average \citep{IPCC2007Synth}, which exists not only in observation where Arctic warming is evident \citep{Johannessen2004,Polyakov2002}, but also confirmed by models at varying levels of complexity \citep[e.g.,][]{Winton2006amplified,Langen2007,Merlis2018,Alexeev2005}.
 
@@ -46,37 +46,43 @@ The Isca model is employed for the simulations. The configuration has 25 vertica
 
 %The albedo ($\alpha$) used in our experiment are 0.27, 0.3, 0.33 and 0.38, where $\alpha =0.3$ is used in the control run.
 
-
 \subsection{Changing forcing through varying albedos}
-The general way to investigate climate sensitivity is to evaluate the degree of warming in response to a doubling of the CO$_2$ concentration in the climate system. Actually, the external forcing can be introduced into climate system through other ways such as adding a ghost forcing  arbitrarily at the TOA \citep{Hansen1997,Alexeev2005}. Given the fact that there is no sea ice in our experiments, changes of albedo will not introduce albedo feedbacks to the climate system. Instead, it provides an simple way to perturb the radiation balance at the TOA without doubling CO$_2$ concentration. Therefore, we will first examine the zonal mean surface temperature change when varying the albedo. Specifically, four albedos, $\alpha=$0.27, 0.3, 0.33 and 0.38, are selected for each radiation scheme in this study, where the $\alpha = 0.3$ is roughly the Earth's global averaged albedo and used in the control run for each radiation scheme. $\alpha=0.27$ (0.33) decreases (increases) $10\%$ from the control run value, which will cause the warming (cooling) response to the climate system. $\alpha=0.38$ increases even more than the albedo in the control run, leading to a much colder climate state. The experiments for BOG, Frierson and RRTM radiation schemes with different albedos are shown in Table \ref{tab:exp_table}.
 
 \begin{table}[ht]
 	%\setlength\extrarowheight{-3pt}
 	\centering
 	\caption{The experiments for BOG, Frierson and RRTM radiation schemes with four different albedos, where $1\times$ indicates the CO$_2$ concentration is not doubled.} % and 2x for the $CO_2 = 720$ppm
 	\vspace{0.5em}
+	\renewcommand{\arraystretch}{1.5}
 	%\begin{tabular}{|c|*{4}{c|}}
+	\begin{threeparttable}
+	%\resizebox{0.8\textwidth}{!}{
 	\begin{tabular}{c|*{4}{c}}
-		\hline		%\toprule
+		\toprule
 		%\diagbox{Scheme}{Albedo} & 0.38 &0.33& 0.3$^*$ & 0.27 \\
-		\diagbox{Scheme}{Albedo} &\makebox[3em]{0.38}&\makebox[3em]{0.33}&\makebox[3em]{0.3$^*$}
+		\diagbox{Scheme}{Albedo} &\makebox[3em]{0.38}&\makebox[3em]{0.33}&\makebox[3em]{0.3\tnote{*}}
 		&\makebox[3em]{0.27}\\
-		\hline %\hline % \midrule
+	    \midrule
 		%Byrne \& O'Gorman &  $1\times$, $2$x & $1\times$, $2$x & $1\times$, $2$x & $1\times$, $2$x \\
 		BOG &  $1\times$ & $1\times$ & $1\times$& $1\times$ \\
 		Frierson & $1\times$ & $1\times$ & $1\times$ & $1\times$ \\ 
 		RRTM & $1\times$ & $1\times$ & $1\times$ & $1\times$ \\
-		\hline%\bottomrule
+		\bottomrule
 	\end{tabular}%
-
-	* indicates the control run for each radiation scheme.
+	\begin{tablenotes}
+      \setstretch{1.3}
+      \item[*] indicates the control run for each radiation scheme.
+     \end{tablenotes}
+	\end{threeparttable}
 	\label{tab:exp_table}
 \end{table}
 
-To estimate the external forcing after changing the albedos, the fixed sea surface temperature (SST) forcing method is applied in this study \citep{Hansen2005,Feldl2013,Kim2018}, which has included the adjustment throughout the atmosphere (\figref{fig:Hansen_forcing}d). For each radiation scheme, the radiative forcing for experiments after changing albedos ($\alpha=0.27, 0.33$ and $0.38$) is calculated from radiation imbalance at TOA when prescribed with the monthly mean SST profiles from control experiment.
+The general way to investigate climate sensitivity is to evaluate the degree of warming in response to a doubling of the CO$_2$ concentration in the climate system. Actually, the external forcing can be introduced into climate system through other ways such as adding a ghost forcing  arbitrarily at the TOA \citep{Hansen1997,Alexeev2005}. Given the fact that there is no sea ice in our experiments, changes of albedo will not introduce albedo feedbacks to the climate system. Instead, it provides an simple way to perturb the radiation balance at the TOA without doubling CO$_2$ concentration. Therefore, we will first examine the zonal mean surface temperature change when varying the albedo. Specifically, four albedos, $\alpha=$0.27, 0.3, 0.33 and 0.38, are selected for each radiation scheme in this study, where the $\alpha = 0.3$ is roughly the Earth's global averaged albedo and used in the control run for each radiation scheme. $\alpha=0.27$ (0.33) decreases (increases) $10\%$ from the control run value, which will cause the warming (cooling) response to the climate system. $\alpha=0.38$ increases even more than the albedo in the control run, leading to a much colder climate state. The experiments for BOG, Frierson and RRTM radiation schemes with different albedos are shown in Table \ref{tab:exp_table}.
+
+To estimate the external forcing after changing the albedos, the fixed sea surface temperature (SST) forcing method is applied in this study \citep{Hansen2005,Feldl2013,Kim2018}, which has included the adjustment throughout the atmosphere (\figref{fig:Hansen_forcing}d). For each radiation scheme, the radiative forcing for experiments after changing albedos ($\alpha=0.27, ~0.33$ and $0.38$) is calculated from radiation imbalance at TOA when prescribed with the monthly mean SST profiles from control experiment.
 
 %As shown in Table \ref{tab:exp_table}, the experiments are also performed for BOG radiation scheme with CO$_2$ concentration doubled to have a reference.
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/Hansen2005_forcings}.png}
 	\caption{ Cartoon comparing (a) $F_i$, instantaneous forcing, (b) $F_a$, adjusted forcing, which allows stratospheric temperature to adjust, (c) $F_g$, fixed $T_g$ forcing, which allows atmospheric temperature to adjust, (d) $F_s$, fixed SST forcing, which allows atmospheric temperature and land temperature to adjust, and (e) $\Delta T_s$, global surface air temperature calculated by the climate model in response to the climate forcing agent. Adapted from Figure 2 of \cite{Hansen2005}.}
