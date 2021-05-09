@@ -39,7 +39,7 @@ In this chapter, we will revisit the polar amplification problem with a hierarch
 
 %With these choices, we can examine some of the mechanisms such as water vapour feedback associated with the polar amplification so as to understand them in further.
 
-\section{Experimental Setups}
+\section{Experimental setup}
 \label{sec:setup}
 
 The Isca model is employed for the simulations. The configuration has 25 vertical levels and is run with spectral dynamical core at T42 horizontal resolution, roughly equivalent to 2.8 degrees in latitude and longitude. The atmosphere is coupled to a slab ocean with a depth of 10m. The insolation conditions for all the experiments are perpetual equinox without seasonal change but with diurnal variations, because the perpetual equinox insolation can cause the most evident polar amplification compared to the seasonal and annual-mean insolations \citep{Kim2018}. Three radiation schemes (i.e. BOG, Frierson and RRTM schemes) are applied in our experiments to calculate the radiative transfer, as BOG and Frierson schemes are relative simple gray radiation schemes and RRTM is a widely used full radiation scheme, which can provide a good reference for the results. The sea ice formation is not enabled in the model even if the surface temperature is below the freezing point. Furthermore, the global uniform albedo is adopted in the model, and thus the surface albedo feedback is disabled. The default CO$_2$ concentration is 360 ppm. All the experiments are run for 20 years following 10 years of spinup.
@@ -137,7 +137,7 @@ where $\lambda_T$, $\lambda_{w}$, $\lambda_\alpha$ and $\lambda_C$ are the feedb
 \subsection{Radiative kernel method}
 In this study, we apply radiative kernel \index{radiative kernel} technique \citep{Soden2008,Shell2008} to calculate the climate feedbacks of Isca model. It should be mentioned that radiative kernel technique is not the only approach to quantify climate feedbacks, other methods such as partial perturbation radiative (PRP) \index{PRP} method \citep{Wetherald1988}, regression method of \cite{Gregory2004} are also used by other studies. Nevertheless, the PRP method is time consuming and the calculations have to be repeated for different simulations \citep{Shell2008}. Furthermore, the interpretation of the results must be cautious for the possible problem associated with correlated variables as pointed by \cite{Bony2006}.  In contrast, the radiative kernels are calculated from the offline version radiative codes and can be used for different experiments and models. For instance, \cite{Soden2008} compare the climate feedbacks in 14 different coupled ocean-atmosphere models from the Fourth Assessment of the Intergovernmental Panel on Climate Change (IPCC AR4) with radiative kernels from three different general circulation models (GCMs) respectively, demonstrating that the strength of global feedbacks is relative insensitive to the choice of kernels (\figref{fig:soden2008_3_kernels}).
 
-\begin{figure}[tbhp] %[ht]%
+\begin{figure}[ht] %[ht]%
 	\centering
 	\includegraphics[width=.8\linewidth]{figs/polar_amp/fig7_Soden2008}
 	\caption{The global-mean water vapor, lapse rate, water vapor$+$lapse rate, surface albedo, and cloud feedbacks computed for 14 coupled ocean–atmosphere models (listed in Table 1 of \cite{Soden2006}) using the GFDL (red), NCAR (green), CAWCR (blue) kernels. Adapted from the Figure 7 of \cite{Soden2008}.}
@@ -230,14 +230,14 @@ and $(\delta \ln e_s)_i$ is estimated by $\left(e_s(T_i+1)-e_s(T_i)\right)/ e_s(
  To calculate the radiative kernels for Isca \index{radiative kernel!of Isca}, a 10-year control experiment ($\alpha= 0.3$) is re-run for each radiation scheme to get corresponding model outputs (e.g. temperature, specific humidity) at 3-hour frequency. Then 1-year climatology computed from the last 5-year period is taken as the basic profiles for the offline radiation codes. Then the perturbation procedure will be carried out for different variables such as surface temperature, temperature and specific humidity to obtain the surface temperature, temperature and water vapor kernels respectively. The radiative kernel results for each radiation scheme are shown below and the data sets are available at Zenodo (\url{http://doi.org/10.5281/zenodo.4282681}).
 
 \subsubsection{Frierson and BOG scheme}
-\begin{figure}[tbhp] %
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_byrne}
 	\caption{Annual-mean and zonal-mean radiative kernel for BOG radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
 	\label{fig:bog_kernels}
 \end{figure}
 
-\begin{figure}[tbhp] %
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_frierson}
 	\caption{As in \figref{fig:bog_kernels}, but only for temperature and surface temperature kernels in Frierson radiation scheme.}
@@ -262,7 +262,7 @@ The water vapor kernel for BOG scheme (\figref{fig:bog_kernels}b) demonstrates t
 
 The surface temperature kernel also contributes partially to the temperature feedback (the Planck feedback), and the warming of surface temperature increase the outgoing longwave radiation, so the surface temperature kernel are negative in all the latitudes as displayed in \figref{fig:bog_kernels}c and \figref{fig:frierson_kernels}b. But the scales of surface temperature kernel in BOG and Frierson radiation schemes are different, and the possible reason for that is the surface temperature came from their own control runs rather than the same ones.
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_rrtm}
 	\caption{As in \figref{fig:bog_kernels}, but for RRTM radiation scheme.}
@@ -271,7 +271,7 @@ The surface temperature kernel also contributes partially to the temperature fee
 
 \subsubsection{RRTM scheme} The offline version of RRTM code is from \textit{pyrrtm} (https://github.com/tomflannaghan /pyrrtm), which provides an user-friendly python wrapper for the single-column version of RRTM scheme. The input profiles for \textit{pyrrtm} are from the Isca outputs in which the albedo is 0.3. Nevertheless, one frustrating fact is that the single-column version of RRTM will consume too much time if we perturb each level and each position every 3 hours. In order to get over this drawback, we employ zonal-mean and monthly mean profiles as the input for the \textit{pyrrtm} to calculate the radiative kernels. As shown in \figref{fig:rrtm_kernels}a, the temperature kernel for RRTM is weaker compared to the results of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}a) computed by \cite{Feldl2017}, and the vertical integration of global and annual mean result is -1.79 W m$^{-2}$ K$^{-1}$, which is almost a half of the clear-sky results (-3.6 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b \citep{Soden2008}, suggesting that the feedbacks depending on this kernel would be small than other GCM's. However, the RRTM surface temperature kernel makes the situation different. It has the similar shape but the strength is much stronger compared to the surface temperature kernel of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}d), making the Planck feedback for RRTM comparable (\figref{fig:all_feedbacks}c). With respect to water vapor kernel for RRTM, the vertical integration of global and annual mean value is 1.65 W m$^{-2}$ K$^{-1}$, which is close to the longwave water vapor kernel results (1.62 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b, meaning that the water vapor kernel is similar to other models. Although the positive values dominate the water vapor kernels, some negative values appear in polar region, as there are temperature inversions near the surface at high latitudes, which will decrease, rather than increase, the net longwave flux in response a increase of water vapor \citep{Soden2008}. However, this does not occur in water vapor kernel for BOG radiation scheme (\figref{fig:bog_kernels}b).
 
-\begin{figure}[tbhp] %
+\begin{figure}[ht] %
 	\centering
 	\includegraphics[width=.8\linewidth]{figs/polar_amp/Feldl2017}
 	\caption{Annual-mean, zonal-mean radiative kernels for
@@ -279,7 +279,7 @@ The surface temperature kernel also contributes partially to the temperature fee
 	\label{fig:feldl_gfdl_am2.1_kernel}
 \end{figure}
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\textwidth]{figs/polar_amp/all_zonalmean_feedbacks}
 	\caption{The zonal and annual mean climate feedback parameters for all the experiments in BOG, Frierson and RRTM radiation schemes, where (a)-(c) are for the Planck feedbacks, (d)-(f) for the lapse rate feedbacks and (g)-(h) for the water vapor feedbacks. Blue, orange and green lines represent the experiments when albedo ($\alpha$) is changed from 0.3 to 0.38, 0.33 and 0.27 respectively.}
@@ -290,7 +290,7 @@ The surface temperature kernel also contributes partially to the temperature fee
 \subsection{Climate feedbacks in Isca}
 For each radiation scheme, the albedo parameter is changed from 0.3 to 0.27, 0.33 and 0.38 to provide an external forcing to the simulation respectively, leading to different degree of climate responses in experiments. Thus in this section, we will use the radiative kernel technique to analyze the feedbacks for these experiment when changing albedos and the resulting Planck feedback, lapse rate feedback and water vapor feedback for each experiments are displayed in \figref{fig:all_feedbacks}.
 
-\begin{table}[tbhp]
+\begin{table}[ht]
 	\centering
 	\caption{Global mean lapse rate feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
 	\vspace{0.5em}
@@ -307,7 +307,7 @@ For each radiation scheme, the albedo parameter is changed from 0.3 to 0.27, 0.3
 \end{table}
 
 
-\begin{table}[tbhp]
+\begin{table}[ht]
 	\centering
 	\caption{Global mean water vapor feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
 	\vspace{0.5em}
@@ -333,7 +333,7 @@ The Planck feedback \index{feedback!Planck} is negative in all latitudes (\figsr
 
 %\subsection{Climate response}
 \subsection{Surface temperature response}
-\begin{figure}[tbhp]%[ht]
+\begin{figure}[ht]%[ht]
 	\centering
 	%\includegraphics[width=1.0\linewidth]{{figs/polar_amp/tsurf_diff_ctrl_m_others_RdBu_kav7}.pdf}
 	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/tsurf_diff_others_m_ctrl_RdBu_kav7_2}.pdf}
@@ -355,21 +355,21 @@ To make the feature more evident, the zonal mean surface temperature responses a
 % The zonal-mean and annual-mean surface temperature changes for each radiation scheme and albedo are presented in the,
 %These results can also be quantified by the ratio between the surface temperature change in Arctic region and the globe or tropical region. 
 
-%\begin{figure}[tbhp] %[ht]
+%\begin{figure}[ht] %[ht]
 %	\centering
 %	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/tsurf_diff_zonal_mean_others_m_ctrl}.pdf}
 %	\captionof{figure}{Temperatue difference when changing the global mean albedos (Annual and Zonal mean).}
 %	\label{fig:tsuf_diff_zonal}
 %\end{figure}
 
-\begin{figure}[tbhp] % [ht]
+\begin{figure}[ht] % [ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{figs/polar_amp/ts_diff.pdf}
 	\caption{The zonal mean and annual mean surface temperature changes for experiments where albedo is changed from 0.3 to (a) 0.38, (b) 0.33 and (c) 0.3 respectively. Correspondingly, (d)-(f) show the ratios of surface temperature change at each latitude to the global mean surface temperature change for different simulations. Each experiment has been run in the BOG (blue dashed line), Frierson (green solid line) and RRTM (purple solid-starred line) radiation schemes respectively. The orange dash-dotted lines denote the experiments in BOG scheme without moisture feedback.}
 	\label{fig:delta_ts}
 \end{figure}
 
-\begin{figure}[tbhp] 
+\begin{figure}[ht] 
 	\centering
 	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/temp_vert_profile_diff_others_m_ctrl_RdBu_symmetric}.pdf}
 	\captionof{figure}{The annual mean atmospheric temperature change profiles for experiments in (a)-(c) BOG, (d)-(f) Frierson and (g)-(i) RRTM radiation schemes. The (a, d, g) left, (b, e, h) middle and (c, f, i) right panels are for the experiments where albedos are altered from	 0.3 (control run) to 0.38, 0.33 and 0.27 respectively.}
@@ -403,7 +403,7 @@ It is worth noting that the sea ice is responsible for the stable atmospheric st
 
 In summary, polar amplification can exist in the aquaplanet model even without the sea ice and surface albedo feedback. Regarding the three radiation schemes we used in this study, the polar amplification of surface temperature is strongest in BOG scheme, moderate in RRTM and weakest in Frierson scheme. As mentioned in \secref{sec:wv_fb_setup}, the crucial distinction between BOG and Frierson is whether there is moisture feedback in their longwave radiation schemes, which will be discussed in further in \secref{sec:wv_feedback}. On the mechanisms about polar amplification, the bottom heavy structure of temperature difference provides some reasonable explanations for the polar amplification via lapse rate feedback, which will be investigated further in \secref{sec:climate_feedbacks_temp_decomp}.
 
-\begin{figure}[tbhp] % [ht]
+\begin{figure}[ht] % [ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figs/polar_amp/temp_profile}
 	\caption{The annual mean profiles of atmospheric temperature change in (a-c) polar (60$^\circ$N northward) and (d-f) tropical (10$^\circ$S-10$^\circ$N) regions, where the left (a and d), middle (b and e) and right (c and f) panels are for the experiments where albedo is changed from 0.3 to 0.38, 0.33 and 0.27 respectively. The blue dashed, green solid and purple solid-starred lines denote BOG, Frierson and RRTM radiation schemes respectively. The orange dash-dotted lines denote the experiments in BOG scheme without moisture feedback.}
@@ -414,7 +414,7 @@ In summary, polar amplification can exist in the aquaplanet model even without t
 \subsection{Water vapor feedback}
 \label{sec:wv_feedback}
 
-\begin{figure}[tbhp] % [ht]
+\begin{figure}[ht] % [ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{figs/polar_amp/sphum_diff}
 	\caption{As \figref{fig:vert_temp_diff}, but for the specific humidity change in experiments with BOG, Frierson and RRTM radiation schemes.}
@@ -431,7 +431,7 @@ The annual and zonal mean change of moisture profiles from different radiation s
 
 %As shown in previous sections, various aspects in BOG scheme, including the change of zonal mean surface temperature, the degree of polar amplification, and the northward heat transport, are all distinct from that from Frierson scheme and one possible reason is that moisture feedback exists in BOG scheme rather than Frierson scheme. 
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{{figs/polar_amp/lw_optical_depth}.pdf}
 	\caption{Annual and zonal mean longwave optical depth in BOG radiation scheme before and after reading the $q$ profile. (a) and (b) are the averaged longwave optical depth from the experiments with moisture feedback where albedo is 0.3 and 0.38. (c) and (d) are similar to (a) and (b), but the $q$ profiles are fixed by reading annual and zonal mean $q$ profile from control experiment (aledo is 0.3), so (c) and (d) are identical with each other.}
@@ -502,7 +502,7 @@ The surface temperature change for BOG radiation scheme without moisture feedbac
 %\end{figure}
 %
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\makebox[\linewidth]{
 	\includegraphics[width=1.1\textwidth]{figs/polar_amp/sfc_q_diff_gradient}}
@@ -591,7 +591,7 @@ The changes of the surface albedo do have influence on the atmopspheric energy t
 	\label{fig:ht_transport_diff}
 \end{figure}
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figs/polar_amp/heat_transport_delta_ts.pdf}
 	\caption{Changes of surface temperature poleward of $70^\circ$ versus changes in atmospheric energy transport (AET) at $70^\circ$ and the blue line is the linear regression of the two variables with the shading area indicating the 95\% confidence interval. The solid circles, stars and triangles denote the BOG, Frierson and RRTM schemes respectively, and red, blue and black markers represent the runs in which the albedos are changed from 0.3 to 0.38, 0.33 and 0.27 respectively.}
@@ -652,7 +652,7 @@ in which $\Delta R_s$ is the radiation change at the surface. It is clear that t
 
 %The stable atmospheric structure in polar region making the lapse rate feedback positive
 
-\begin{figure}[tbhp]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{figs/polar_amp/delta_ts_decomp}
 	%\includegraphics[width=1.0\linewidth]{figs/polar_amp/delta_ts_decomp_q.pdf}
@@ -661,7 +661,7 @@ in which $\Delta R_s$ is the radiation change at the surface. It is clear that t
 \end{figure}
 
 
-\begin{figure}[tbhp] %
+\begin{figure}[ht] %
 	\centering
 	\includegraphics[width=.6\linewidth]{figs/polar_amp/Kim2018_lapserate}
 	\caption{Zonal- and time-mean partial temperature changes (K) attributed to lapse rate feedback in GFDL AM2 under equinox (EQN, green), seasonal (SEA, black), and annual mean (ANN, orange) insolation. Adapted from Figure S1 of \cite{Kim2018}.}
@@ -672,7 +672,7 @@ The heat transport contributes most to the surface temperature change in polar r
 
 The roles of lapse rate feedback, Planck feedback and heat transport in BOG (\figsref{fig:delta_ts_decomp}a-c) and Frierson (\figsref{fig:delta_ts_decomp}d-f) schemes are similar to those in RRTM scheme, except the role of water vapor feedback in BOG scheme, which is much larger at high latitudes compared to others. One strange thing is the sum of these contributions is greater than the actual temperature response at high latitude in BOG scheme, for which a possible reason is that the decomposition of the surface temperature change is linear and some non-linear factors may have an influence at the high latitudes. We can see that after the water vapor feedback being disabled in BOG scheme, the sum of these various components is close to $\Delta T_s$ (\figsref{fig:delta_ts_decomp}j-l), indicating that the non-linear effect is possible associated with water vapor. 
 
-%\begin{figure}[tbhp] %[ht]
+%\begin{figure}[ht] %[ht]
 %	\centering
 %	\includegraphics[width=0.8\linewidth]{figs/polar_amp/ts_decomp/delta_ts_decomp_fixed_q_byrne}
 %	\caption{Zonal and annual mean contributions of surface temperature changes for (a)-(c) BOG radiation scheme without moisture feedbacks.}
