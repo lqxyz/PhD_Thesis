@@ -52,6 +52,66 @@ Clouds usually cover more than half areas of the Earth at any given time \citep{
 \section{Cloud feedback}
 
 \section{Cloud scheme}
+\label{sec:cld_scheme_history}
+\index{cloud scheme}
+
+\subsection{Overview}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\linewidth]{{figs/literature_review/Schematic_partial_cloud_cover_in_gridbox}.pdf}
+	\caption{Schematic showing that partial cloud cover in a grid box (1D) when temperature or humidity fluctuations exist. The blue line shows humidity and the red dashed line indicates saturation mixing ratio of the grid box. The shaded regions are cloudy parts as the humidity exceeds the saturation mixing ratio.}
+	\label{fig:schematic_partial_clouds}
+\end{figure}
+
+At present the typical horizontal resolution of the GCMs is 50-200km, but the clouds usually involve the air motions in mesoscale and convective scale \citep{Houze2014}, which are usually in sub-grid scale both horizontally and vertically, implying that cloud processes are hard to be explicitly resolved by the GCMs. In this case, the ``parameterization" becomes a practical way to build cloud schemes. The parameterization is to represent the effects of the smaller-scale processes (turbulence, cloud microphysics, convection, etc.) in terms of the large-scale states (such as velocity, temperature, pressure, humidity) \citep{Randall2003}, which could be seen as a way to find potential relationships between the unknown and known variables \citep{Randall1989}.
+
+
+\subsection{Relative humidity schemes}
+\index{cloud scheme!RH scheme}
+Previous studies have investigated various ways to represent clouds in climate models. For example, \cite{Holloway1971} prescribed the clouds externally with climatological data without dynamic interplay with the other components of the model. Some early modelling studies made the assumption that a grid box in the model is either fully saturated or totally unsaturated. However, this assumption is not reasonable enough as the humidity can distribute unevenly within a grid box, suggesting that condensation can occur even the relative humidity is less than 100\%. A general idea is to link the cloud cover with the relative humidity, as one can expect that the amount of condensation would increase with the increase of mean humidity of the model grid box, which is the basis for some diagnostic methods.
+
+Diagnostic schemes predict the cloudiness based on the model variables empirically or statistically. In these schemes, the clouds can be linked to atmospheric outputs such as relative humidity, vertical velocity and static stability, among which the linear relationship between cloud fraction against RH could be simplest one. For example, \cite{Smagorinsky1960} found empirically that non-convective cloud amount correlated with the average relative humidity in the respective layers, arguing that the non-precipitating condensation depend only on the accumulated history of vertical motion, which can be reflected by the humidity. \cite{Ricketts1973} obtained roughly linear relationship between cloud amount and observed relative humidity but commented that the relationship is somewhat indefinite. %(\figref{fig:Smagorinsky_RH_cld})
+
+Water vapor generally distributes heterogeneously in the grid box, so the averaged RH within a box should be less than 1 for a partial coverage of clouds. Previous studies usually adopt the critical relative humidity $RH_{crit}$ as the minimum threshold for clouds to form, which is often left as a free parameter that can be tuned during model development (e.g. \citealp{Hourdin2017,Kay2012,Mauritsen2012}). For example, \cite{Sundqvist1978} and \cite{Sundqvist1989} find that cloud fraction can be rewritten as a function of critical RH by assuming the water vapour is uniform distributed within the grid box. In general, $RH_{crit}$ decreases with height, but will vary according to different types of clouds. Although the $RH_{crit}$ doesn't have clear physical meaning, it can be used to modify the cloud amounts in different locations. For example, one can increase $RH_{crit}$ asymptotically to nearly unity to prevent the unrealistic circus clouds \citep{Sundqvist1989}. 
+
+As a unique predictor, RH is very simple and useful to diagnose the cloudiness, and it is still widely used in GCMs \citep[e.g.,][]{Gordon1992,Park2014,Pope2000}. However, it is not valid for all the cases. As we can see, some studies also made use of other variables to diagnose the cloudiness. For instances, \cite{Xu1996} developed a semi-empirical scheme to determine the stratiform cloud fraction based on grid-averaged mixing ratio of condensate (cloud water and cloud ice) and RH. As for the scheme provided by \cite{Slingo1987}, both the RH and vertical velocity were taken into account, in which different empirical relations were used for different clouds including low, middle, high and convective clouds.
+
+In summary, the methods based on relative humidity and other predictors are useful to diagnose the cloudiness, which ensures that the clouds can form before the grid box get saturated. One problem for the diagnostic methods is that in most cases the cloud condensate has to be diagnosed or prognosed via other methods \citep[e.g.,][]{Zhang2003, Park2014}, which could lead to some inconsistencies between cloud fraction and cloud condensate (e.g. \citealp{Gregory2002, Tompkins2005}).
+
+% \begin{figure}
+% 	\vspace{-0.3cm}
+% 	\centering
+% 	\includegraphics[width=0.6\linewidth]{{figs/literature_review/Smagorinsky1960}.png}
+% 	\caption{Empirically determined relation of mean relative humidity $h$ in the layers 1000-800mb, 800-550mb and 550-300mb with cloud amount $c$ classed as low, middle and high clouds. Adapted from Figure 1 of \cite{Smagorinsky1960}.}
+% 	\label{fig:Smagorinsky_RH_cld}
+% \end{figure}
+
+
+\subsection{Statistical schemes}
+\label{sec:PDF_cld_scheme}
+\index{cloud scheme!statistical or PDF scheme}
+
+In contrast, the prognostic approach \citep[e.g.,][]{Tiedtke1993} is to explicitly calculate the clouds related variables, such as cloud water content, in order to pursuing a unification of all clouds processes, which is more realistic in some degree and requires more physical basis and interactions with other parts of the models. Another widely used cloud prediction method is statistical scheme, in which the cloud fraction and in-cloud liquid water/ice are determined based on the assumed probability distributions of subgrid variability of thermodynamic properties. As the cloud related variables such as moisture and temperature are not the same everywhere but distributed randomly within the grid box, it is natural to assume that the cloud cover depends on the distribution of moisture, sometimes on the joint distribution of moisture and temperature. As shown in a very early work, \cite{Sommeria1977} gave up the assumption that a grid is either entirely saturated or unsaturated in the climate models and proposed the idea to use the statistical distribution of moisture within the grid box. For example, given the probability distribution function (PDF) of the total water ($q_t$ is the mixing ratio) in grid box, the cloud fraction ($CF$) can be calculated as 
+\begin{equation}
+    CF=\int_{q_s}^{\infty}\text{PDF}(q_t)\operatorname{d}q_t,
+\end{equation}
+and the cloud water content ($q_c$ is the mixing ratio of cloud water) is
+\begin{equation}
+    q_c=\int_{q_s}^{\infty}(q_t-q_s)\text{PDF}(q_t)\operatorname{d}q_t,
+\end{equation}
+where $q_s$ is the saturation mixing ratio in both formulations.
+
+However, the shapes of subgrid-scale PDF of total water specific
+humidity, saturation deficit, or a combined variable of liquid water and potential temperature are difficult to determine due to limit of observational data, so sometimes the model data are also used \citep{Bony2001}. Additionally, many different forms PDF have been proposed in the previous studies. For example, \cite{LeTreut1991} made use of the uniform distribution of total water in the grid box to calculate the clouds cover and liquid water content. Other symmetrical distributions, such as Gaussian distribution \citep{Sommeria1977}, triangular distribution \citep{Smith1990} and skewed distributions, such as lognormal distribution \citep{Bony2001} and beta distribution \citep{Tompkins2002}, have also been employed in numerical models. However, there are also some problems in the distributions. For example, the Gaussian distribution is unbounded, indicating that the maximum cloud condensate mixing ratio might approach infinity, and cloud cover is always large than zero \citep{Tompkins2002}. In general, complicated forms of the PDF need more parameters to fit. But due to the limitation of the data, it is possibly hard to validate the distributions. Linking the statistical cloud scheme to other physical processes seems a promising way to improve cloud simulations. For example, \cite{Qin2018} developed a Gaussian PDF cloud scheme with the PDF variance diagnosed from the turbulent
+and shallow convective processes, which could improve the simulation of low marine clouds and alleviate double Intertropical Convergence Zone (ITCZ) problem \citep{Qin2018alleviated}.
+
+The statistical cloud schemes may have better performance than the diagnostic ones, but considering the fact that there is no clouds scheme in Isca currently, it would be useful to implement the simple diagnostic schemes in Isca first, which can be seen as the first step to implemented a hierarchy of cloud schemes.
+
+\subsection{Relationship between relative humidity and statistical schemes}
+
+As discussed in previous section, one has to determine the expression of sub-grid variance (i.e. second order moment) or other higher-order moments in the statistical schemes. In doing so there are two general practices in current studies. The simple case is to use the time-invariant variance \citep[e.g.,][]{Sundqvist1978,Smith1990}, and the other approach is to employ time varying variance, which are usually obtained from other physical processes such as boundary layer scheme or shallow convection schemes \citep[e.g.,][]{Qin2018}. The second case usually provides a more realistic link between clouds and other physical processes \citep{Tompkins2002}. 
+
+Note that there is no distinction between the RH schemes and statistical schemes, although they seem different in forms. As a matter of fact, if the subgrid variance in a statistical scheme is assumed to be time-invariant, it can be reduced to a RH scheme \citep{Tompkins2002,Tompkins2005}. The key is to link the variance with the critical relative humidity. That is to say, critical RH value can reflect the level of sub-grid variance in RH schemes \citep{Quaas2012}. Larger critical RH value means the lower subgrid variability and vice versa. For example, the \cite{Sundqvist1978} RH scheme can be derived by assuming a uniform distribution of total water mixing ratio within a grid box, in which the variance is assumed a constant fraction of the saturation water vapor mixing ratio, and this constant is associated with critical RH value (see Appendix A of \cite{Quaas2012} for a full derivation). Another example is the triangular distribution used by \cite{Smith1990} and \cite{Park2014}, they also obtain the equivalent RH formulation by assuming the variance is related to critical RH. As pointed by \cite{Tompkins2002}, the parameterizations such as \cite{Xu1996}, in which cloud fraction is related to RH and cloud condensate, can be viewed as manifestations of a statistical scheme although where the actual PDF of total water is not known. %, but the time-mean statistics of its integral are.
 
 \section{Research questions and thesis outline}
 \label{sec:thesis_layout}
