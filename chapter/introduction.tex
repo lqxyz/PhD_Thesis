@@ -2,7 +2,8 @@
 \label{ch:introduction}
 
 \section{The Earth’s radiation budget}
-The Earth's climate is driven by the energy flow into and out of the system. The incoming solar radiation (yellow fluxes in \figref{fig:earth_energy_budget}) reaches the Earth at the top of the atmosphere (TOA), then goes through the atmosphere and arrives at the Earth surface. During this process, approximately two thirds of this shortwave (SW) radiation is absorbed by the Earth surface and atmosphere, and roughly one third of this energy is reflected back to space. The the surface and atmosphere are heated by this incoming solar radiation, and they also re-emit the longwave (LW) radiation (purple fluxes in \figref{fig:earth_energy_budget}) to keep a relatively stable temperature. Globally, the annual mean incoming solar radiation flux is about 340 Wm$^{-2}$, the reflected solar radiation flux is around 100 Wm$^{-2}$ and the outgoing longwave radiation (OLR) is close to 240 Wm$^{-2}$ at the TOA for period 2000--2010 \citep{Stephens2012update}. These three components balance with each other, with a small positive imbalance (about 0.6 Wm$^{-2}$) at the TOA. A more recent estimate from \cite{Wild2015} (see their Fig. 1) indicates that the gloabl mean OLR is about 239 Wm$^{-2}$, and the TOA energy imbalance is about 1 Wm$^{-2}$.
+\label{sec:earth_rad_budget}
+The Earth's climate is driven by the energy flow into and out of the system. The incoming solar radiation (yellow fluxes in \figref{fig:earth_energy_budget}) reaches the Earth at the top of the atmosphere (TOA)\index{TOA}, then goes through the atmosphere and arrives at the Earth surface. During this process, approximately two thirds of this shortwave (SW) radiation is absorbed by the Earth surface and atmosphere, and roughly one third of this energy is reflected back to space. The the surface and atmosphere are heated by this incoming solar radiation, and they also re-emit the longwave (LW) radiation (purple fluxes in \figref{fig:earth_energy_budget}) to keep a relatively stable temperature. Globally, the annual mean incoming solar radiation flux is about 340 Wm$^{-2}$, the reflected solar radiation flux is around 100 Wm$^{-2}$ and the outgoing longwave radiation (OLR) is close to 240 Wm$^{-2}$ at the TOA for period 2000--2010 \citep{Stephens2012update}. These three components balance with each other, with a small positive imbalance (about 0.6 Wm$^{-2}$) at the TOA. A more recent estimate from \cite{Wild2015} (see their Fig. 1) indicates that the gloabl mean OLR is about 239 Wm$^{-2}$, and the TOA energy imbalance is about 1 Wm$^{-2}$.
 %But due to the accuracy of the observation itself, it is hard to track the causes of these imbalance.
 
 \begin{figure}[ht]
@@ -20,12 +21,38 @@ As shown in \figref{fig:earth_energy_budget}, the energy budget at the Earth's s
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.95\linewidth]{{figs/literature_review/clim_system_feedback2}.png}
-	\caption{Schematic of feedback in climate system. In panel (a), $\Delta R$ is the input disturbance to the climate system, $\Delta T_s$ is the change of surface temperature and $\lambda$ denotes the climate feedback parameter. Panel (b) is modified from Fig. 1 of \cite{Murphy2009}.}
+	\caption{Schematic of feedback in climate system. In panel (a), $\Delta R$ is the input disturbance to the climate system, $\Delta T_s$ is the change of surface temperature and $\lambda$ denotes the climate feedback parameter. Modified from Fig. 2 of \cite{Stephens2005cloud}. Panel (b) is modified from Fig. 1 of \cite{Murphy2009}.}
 	\label{fig:schematic_climate_feedback}
 \end{figure}
 
+
 %What is feedback?
-The idea of feedback\index{feedback} is taken from the control system, which is used to understand the system response to different forcings \citep{Stephens2005cloud}. As shown in \figref{fig:schematic_climate_feedback}, $\Delta R$ is the input to climate system, which can be seen as the radiative forcing produced by changing the content of CO$_2$ or aerosol, or by other factors such as volcanic eruption. Then many features in the climate system (such as surface temperature, specific humidity) would change in response to this forcing. In general, we select the surface temperature ($T_s$) as a key output variable. The change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the top of the atmosphere (TOA)\index{TOA}. That is to say the output response is fed back to the system. The feedback parameter ($\lambda$, units Wm$^{-2}$K$^{-1}$) is a measure of the strength of the feedback.
+As introduced in \secref{sec:earth_rad_budget}, the energy budget at the TOA is balanced by the incoming solar radiation and the OLR (the imbalance is usually small). In this energy balance model, any disturbance imposed to the system is regarded as the forcing ($\Delta F$), which can be aroused from the perturbation of greenhouse gas concentration (e.g., CO$_2$), aerosol, and change in solar cycle or volcanic eruption (\figref{fig:schematic_climate_feedback}). Then climate system will response to this radiative imbalance ($\Delta R$) at the TOA  by changing the surface temperature ($T_s$). As shown in \figref{fig:schematic_climate_feedback}a, the change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the TOA by adjusting the OLR. That is to say the output response is fed back to the system. $\Delta R$ goes to zero during the process when climate system adjusts towards a new equilibrium (\figref{fig:schematic_climate_feedback}b). Using the idea of feedback\index{feedback}, which is taken from the control system and used to understand the system response to different forcings \citep{Stephens2005cloud},
+$\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
+\begin{equation}
+    \Delta R = \Delta F + \lambda \Delta T_s,
+    \label{eq:imbalance_forcing_lambda}
+\end{equation}
+in which $\lambda$ is called the climate feedback parameter \citep{Gregory2004}. 
+At the equilibrium state (i.e., $\Delta R=0$), the total climate feedback is expressed as 
+\begin{equation}
+    \lambda = -\frac{\Delta F}{\Delta T_s}.
+\end{equation}
+Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$, and is a measure of the TOA radiative flux change per degree of surface air temperature change.
+
+In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a feedback that can reduce the initial perturbation is called ``negative feedback". In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
+\begin{equation}
+    \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s} + Re, %\text{high-order terms},
+    %+ \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
+    \label{eq:lambda}
+\end{equation}
+where $x$ represent the climate variable such as temperature, water vapor, surface albedo and cloud properties. $\frac{\partial R}{\partial x}$ can be treated as the feedback parameter due to climate variable $x$. The high-order residual term ($Re$) is usually neglected in the linear framework analysis.
+
+Equilibrium climate sensitivity (ECS) is the equilibrium (i.e., $\Delta R=0$) response of $T_s$ to the radiative forcing from a doubling of CO$_2$ ($F_{2\times CO_2}$):
+\begin{equation}
+    ECS = \frac{F_{2\times CO_2}}{\lambda}
+    \label{eq:ecs}
+\end{equation}
 
 
 \section{Clouds and cloud radiative effect}
