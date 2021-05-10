@@ -18,6 +18,8 @@ As shown in \figref{fig:earth_energy_budget}, the energy budget at the Earth's s
 \section{Climate feedback}
 \label{sec:climate_fbk_intro}
 
+%\subsection{Definition}
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.95\linewidth]{{figs/literature_review/clim_system_feedback2}.png}
@@ -27,7 +29,7 @@ As shown in \figref{fig:earth_energy_budget}, the energy budget at the Earth's s
 
 
 %What is feedback?
-As introduced in \secref{sec:earth_rad_budget}, the energy budget at the TOA is balanced by the incoming solar radiation and the OLR (the imbalance is usually small). In this energy balance model, any disturbance imposed to the system is regarded as the forcing ($\Delta F$), which can be aroused from the perturbation of greenhouse gas concentration (e.g., CO$_2$), aerosol, and change in solar cycle or volcanic eruption (\figref{fig:schematic_climate_feedback}). Then climate system will response to this radiative imbalance ($\Delta R$) at the TOA  by changing the surface temperature ($T_s$). As shown in \figref{fig:schematic_climate_feedback}a, the change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the TOA by adjusting the OLR. That is to say the output response is fed back to the system. $\Delta R$ goes to zero during the process when climate system adjusts towards a new equilibrium (\figref{fig:schematic_climate_feedback}b). Using the idea of feedback\index{feedback}, which is taken from the control system and used to understand the system response to different forcings \citep{Stephens2005cloud},
+As introduced in \secref{sec:earth_rad_budget}, the energy budget at the TOA is balanced by the incoming solar radiation and the OLR (the imbalance is usually small). In this energy balance model, any disturbance imposed to the system is regarded as the forcing ($\Delta F$), which can be aroused from the perturbation of greenhouse gas concentration (e.g., CO$_2$, CH$_4$), aerosol \citep{Ramanathan2001aerosols}, and change in solar cycle \citep{Frohlich2004solar} or volcanic eruption (\figref{fig:schematic_climate_feedback}). Then climate system will response to this radiative imbalance ($\Delta R$) at the TOA  by changing the surface temperature ($T_s$). As shown in \figref{fig:schematic_climate_feedback}a, the change in surface temperature (i.e. $\Delta T_s$) can in turn impact the radiative balance at the TOA. That is to say the output response is fed back to the system. $\Delta R$ goes to zero during the process when climate system adjusts towards a new equilibrium (\figref{fig:schematic_climate_feedback}b). Using the idea of feedback\index{feedback}, which is taken from the control system and used to understand the system response to different forcings \citep{Stephens2005cloud},
 $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
 \begin{equation}
     \Delta R = \Delta F + \lambda \Delta T_s,
@@ -40,7 +42,9 @@ At the equilibrium state (i.e., $\Delta R=0$), the total climate feedback is exp
 \end{equation}
 Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$, and is a measure of the TOA radiative flux change per degree of surface air temperature change.
 
-In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a feedback that can reduce the initial perturbation is called ``negative feedback". In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
+%\subsection{Positive and negative feedbacks}
+% Introduction of different feedbacks?
+In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a ``negative feedback" reduces the initial perturbation. In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
 \begin{equation}
     \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s} + Re, %\text{high-order terms},
     %+ \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
@@ -48,12 +52,34 @@ In climate system, climate feedbacks are the processes that can either amplify o
 \end{equation}
 where $x$ represent the climate variable such as temperature, water vapor, surface albedo and cloud properties. $\frac{\partial R}{\partial x}$ can be treated as the feedback parameter due to climate variable $x$. The high-order residual term ($Re$) is usually neglected in the linear framework analysis.
 
-% Introduction of different feedbacks?
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\linewidth]{{figs/literature_review/lapse_rate_fbk}.pdf}
+	\caption{Schematic representation of positive and negative lapse-rate feedbacks. Modified from Fig. 4.10 of \cite{Goosse2010introduction}.}
+	\label{fig:lapse_rate_fbk_illustration}
+\end{figure}
+
+The temperature feedback in climate system can be decomposed into Planck and lapse rate feedback \citep{Soden2006}. The Planck feedback assumes that the tropospheric temperature change is vertically uniform and equals to the surface temperature change \citep{Bony2006,Soden2006}, and in other words, there is no vertical temperature change in the troposphere (see second panel in \figref{fig:lapse_rate_fbk_illustration}). The Planck feedback is named due to the Planck's blackbody radiation law, which is the basic and the strongest negative feedback in climate system. According to the Stefan--Boltzmann law, the longwave radiation emitted by the Earth’s surface rises with temperature following $OLR=\epsilon\sigma T_s^4$, where $\epsilon$ is the surface emissivity close to unity and $\sigma=5.67\times 10^{-8}\, \mathrm{W\, m^{-2}\,K^{-4}}$ the Stefan--Boltzmann constant \citep{Pithan2014}. Thus, the Planck feedback can be expressed as $\lambda_P = \frac{\partial R}{\partial T_s}=-4\epsilon\sigma T_s^3=-4\frac{OLR}{T_s}$ (assuming $R$ downward positive). As shown in \figref{fig:earth_energy_budget}, the OLR is closed to 240 Wm$^{-2}$, and the observed global mean surface temperature of Earth is about 288K, thus the estimated Planck feedback is about $\lambda_P=-4\times 240/288\approx -3.3$ Wm$^{-2}$K$^{-1}$, closed to the multi-model mean results in \figref{fig:zelinka_global_mean_fbks}. 
+
+In contrast, the lapse rate feedback is associated with the vertical temperature change in troposphere that deviates from the surface temperature change \citep{Bony2006,Soden2006,Feldl2017}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{{figs/literature_review/global_mean_cld_fbk_cmip56}.png}
+	\caption{Estimates of (left) equilibrium climate sensitivity (ECS), (middle) effective radiative forcing (ERF$_{2\times}$), and (right) global mean climate feedbacks, derived from coupled experiments with abrupt quadrupling of CO$_2$ concentration experiments in CMIP5 (blue dots) and CMIP6 (orange dots) models. The black circles indicate the multi-model ensemble mean values. For display purpose, the Planck feedbacks have been added 2.5 Wm$^{-2}$K$^{-1}$ before plotting. LR and WV are lapse-rate and water vapor feedbacks, respectively. Taken from Fig. S3 of \cite{Zelinka2020causes}.}
+	\label{fig:zelinka_global_mean_fbks}
+\end{figure}
+
+%\subsubsection{Water vapor feedback}
+According to the Clausius--Clapeyron, 
+
+%\subsubsection{Surface albedo feedback}
+Surface albedo feedback is a positive feedback that enhances climate change, particularly in regions with snow and ice cover \citep{Winton2006surface}.
 
 
 Equilibrium climate sensitivity (ECS) is the equilibrium (i.e., $\Delta R=0$) response of $T_s$ to the radiative forcing from a doubling of CO$_2$ ($F_{2\times CO_2}$):
 \begin{equation}
-    ECS = \frac{F_{2\times CO_2}}{\lambda}
+    ECS = -\frac{F_{2\times CO_2}}{\lambda}
     \label{eq:ecs}
 \end{equation}
 
@@ -143,8 +169,7 @@ and the cloud water content ($q_c$ is the mixing ratio of cloud water) is
 \end{equation}
 where $q_s$ is the saturation mixing ratio in both formulations.
 
-However, the shapes of subgrid-scale PDF of total water specific
-humidity, saturation deficit, or a combined variable of liquid water and potential temperature are difficult to determine due to limit of observational data, so sometimes the model data are also used \citep{Bony2001}. Additionally, many different forms PDF have been proposed in the previous studies. For example, \cite{LeTreut1991} made use of the uniform distribution of total water in the grid box to calculate the clouds cover and liquid water content. Other symmetrical distributions, such as Gaussian distribution \citep{Sommeria1977}, triangular distribution \citep{Smith1990} and skewed distributions, such as lognormal distribution \citep{Bony2001} and beta distribution \citep{Tompkins2002}, have also been employed in numerical models. However, there are also some problems in the distributions. For example, the Gaussian distribution is unbounded, indicating that the maximum cloud condensate mixing ratio might approach infinity, and cloud cover is always large than zero \citep{Tompkins2002}. In general, complicated forms of the PDF need more parameters to fit. But due to the limitation of the data, it is possibly hard to validate the distributions. Linking the statistical cloud scheme to other physical processes seems a promising way to improve cloud simulations. For example, \cite{Qin2018} developed a Gaussian PDF cloud scheme with the PDF variance diagnosed from the turbulent
+However, the shapes of subgrid-scale PDF of total water specific humidity, saturation deficit, or a combined variable of liquid water and potential temperature are difficult to determine due to limit of observational data, so sometimes the model data are also used \citep{Bony2001}. Additionally, many different PDF forms have been proposed in the previous studies. For example, \cite{LeTreut1991} made use of the uniform distribution of total water in the grid box to calculate the clouds cover and liquid water content. Other symmetrical distributions, such as Gaussian distribution \citep{Sommeria1977}, triangular distribution \citep{Smith1990} and skewed distributions, such as lognormal distribution \citep{Bony2001} and beta distribution \citep{Tompkins2002}, have also been employed in numerical models. However, there are also some problems in the distributions. For example, the Gaussian distribution is unbounded, indicating that the maximum cloud condensate mixing ratio might approach infinity, and cloud cover is always large than zero \citep{Tompkins2002}. In general, complicated forms of the PDF need more parameters to fit. But due to the limitation of the data, it is possibly hard to validate the distributions. Linking the statistical cloud scheme to other physical processes seems a promising way to improve cloud simulations. For example, \cite{Qin2018} developed a Gaussian PDF cloud scheme with the PDF variance diagnosed from the turbulent
 and shallow convective processes, which could improve the simulation of low marine clouds and alleviate double Intertropical Convergence Zone (ITCZ) problem \citep{Qin2018alleviated}.
 
 The statistical cloud schemes may have better performance than the diagnostic ones, but considering the fact that there is no clouds scheme in Isca currently, it would be useful to implement the simple diagnostic schemes in Isca first, which can be seen as the first step to implemented a hierarchy of cloud schemes.
