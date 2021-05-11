@@ -18,7 +18,7 @@ As shown in \figref{fig:earth_energy_budget}, the energy budget at the Earth's s
 \section{Climate feedback}
 \label{sec:climate_fbk_intro}
 
-%\subsection{Definition}
+\subsection{Definition}
 
 \begin{figure}[ht]
 	\centering
@@ -36,22 +36,22 @@ $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as 
     \Delta R = \Delta F + \lambda \Delta T_s,
     \label{eq:imbalance_forcing_lambda}
 \end{equation}
-in which $\lambda$ is called the climate feedback parameter \citep{Gregory2004}. 
-At the equilibrium state (i.e., $\Delta R=0$), the total climate feedback is expressed as 
+which can be viewed as a Taylor expansion in surface temperature change ($\Delta T_s$), but neglecting the high order terms \citep{Feldl2013a}. The second term, $\lambda \Delta T_s$, on right hand side reflects the radiative flux change that is linearly depend on the surface temperature change, and $\lambda$ is called the \textit{feedback parameter} \citep{Gregory2004}. At the equilibrium state (i.e., $\Delta R=0$), the total climate feedback is expressed as 
 \begin{equation}
     \lambda = -\frac{\Delta F}{\Delta T_s}.
 \end{equation}
-Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$, and is a measure of the TOA radiative flux change per degree of surface air temperature change. Conceptually, \Eqref{eq:imbalance_forcing_lambda} states that the TOA energy imbalance can be expressed as the sum of the radiative forcing and the radiative response of the system to a global surface temperature anomaly.
+Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$, and is a measure of the TOA radiative flux change per degree of surface air temperature change. 
+% Conceptually, \Eqref{eq:imbalance_forcing_lambda} states that the TOA energy imbalance can be expressed as the sum of the radiative forcing and the radiative response of the system to a global surface temperature anomaly.
 
-%\subsection{Positive and negative feedbacks}
+\subsection{Individual feedbacks}
 % Introduction of different feedbacks?
-In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a ``negative feedback" reduces the initial perturbation. In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
+In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings \citep{Hansen1984}. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a ``negative feedback" reduces the initial perturbation. In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
 \begin{equation}
     \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s} + Re, %\text{high-order terms},
     %+ \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
     \label{eq:lambda}
 \end{equation}
-where $x$ represent the climate variable such as temperature, water vapor, surface albedo and cloud properties. $\frac{\partial R}{\partial x}$ can be treated as the feedback parameter due to climate variable $x$. The high-order residual term ($Re$) is usually neglected in the linear framework analysis.
+where $x$ represent the climate variable such as temperature, water vapor, surface albedo and cloud properties. $\frac{\partial R}{\partial x}$ can be treated as the feedback parameter due to climate variable $x$. When neglecting the nonlinearities and interactions among different feedbacks, the high-order residual term ($Re$) is usually neglected in analysis. 
 
 \begin{figure}[ht]
 	\centering
@@ -75,11 +75,12 @@ The lapse rate feedback is associated with the vertical temperature change in tr
 %\subsubsection{Water vapor feedback}
 According to the Clausius--Clapeyron relation, the saturated vapor pressure is a quasi-exponential function of temperature. In addition, observations and numerical experiments consistently show that the relative humidity tends to remain more or less constant in response to climate change \citep{Held2000water,Soden2006,Goosse2010introduction}. Thus the warming will cause a significant increase in the amount of water vapor in atmosphere. Since water vapor is the dominant greenhouse gas in the atmosphere \citep{Held2000water}, the increase in water vapor content warms the atmosphere further, which in turn makes the atmosphere hold more water vapor. Thus it is a very strong positive feedback and the multi-model mean value of global mean water vapor feedback in CMIP5/6 models is about 1.8 Wm$^{-2}$K$^{-1}$ (see WV column in \figref{fig:zelinka_global_mean_fbks}).
 
-Despite the large intermodel differences in lapse rate and water vapor feedbacks, the spread in net contribution of both feedbacks is much smaller compared to their individual spread (see LR+WV column in \figref{fig:zelinka_global_mean_fbks}). As pointed by previous studies, the lapse rate feedback and water vapor feedback are closely anti-correlated with each other \citep{Soden2006,PoChedley2018}. \cite{Soden2006} have shown that the models exhibit a nearly constant relative humidity behavior under global warming, suggesting most of the intermodel spread in water vapor feedback does not step from the various response of relative humidity field itself, but from differences in the lapse rate response between models. As temperature and water vapor changes are tightly coupled in models, it is better to combine the lapse rate and water vapor feedbacks together when considering sources of intermodel spread in feedback strength \citep{Soden2006,PoChedley2018}. Another option, proposed by \cite{Held_Shell2012}, is to compute Planck and lapse rate feedbacks assuming relative rather than absolute humidity is constant, and a small feedback from changes in relative humidity quantified separately. This method can remove the cancellation between water and lapse rate feedbacks in models, so that the individual feedbacks have less scatter than in the traditional decomposition (see their Fig. 1 in \citealt{Held_Shell2012}; also see their Fig. 1 and Fig. S3 in \citealt{Zelinka2020causes}).
+Despite the large intermodel differences in lapse rate and water vapor feedbacks, the spread in net contribution of both feedbacks is much smaller compared to their individual spread (see LR+WV column in \figref{fig:zelinka_global_mean_fbks}). As pointed by previous studies, the lapse rate feedback and water vapor feedback are closely anti-correlated with each other \citep{Soden2006,PoChedley2018}. \cite{Soden2006} have shown that the models exhibit a nearly constant relative humidity behavior under global warming, suggesting that most of the intermodel spread in water vapor feedback does not step from the various response of relative humidity field, but from differences in the lapse rate response between models. As temperature and water vapor changes are tightly coupled in models, it is better to combine the lapse rate and water vapor feedbacks together when considering sources of intermodel spread in feedback strength \citep{Soden2006,PoChedley2018}. Another option, proposed by \cite{Held_Shell2012}, is to compute Planck and lapse rate feedbacks assuming relative rather than absolute humidity is constant, and a small feedback from changes in relative humidity quantified separately. This method can remove the cancellation between water and lapse rate feedbacks in models, so that the individual feedbacks have less scatter than in the traditional decomposition (see their Fig. 1 in \citealt{Held_Shell2012}; also see their Fig. 1 and Fig. S3 in \citealt{Zelinka2020causes}).
 
 %\subsubsection{Surface albedo feedback}
 Surface albedo feedback is related to the regions with snow and ice, which is a positive feedback that enhances climate change \citep{Winton2006surface,Goosse2018}. The mechanism is easy to understand: Warmer temperatures lead to the retreat of snow and ice, which makes the surfaces be less reflective than previous snow or ice. This causes an increase in the absorbed solar radiation and thus leads to more warming. The global mean surface albedo feedback is weak positive, and the multi-model mean value in CMIP5/6 models is about 0.5 Wm$^{-2}$K$^{-1}$ (see Albedo column in \figref{fig:zelinka_global_mean_fbks}).
 
+\subsection{Climate sensitivity}
 The concept of forcings and feedbacks...
 Equilibrium climate sensitivity (ECS) is the equilibrium (i.e., $\Delta R=0$) response of $T_s$ to the radiative forcing from a doubling of CO$_2$ ($F_{2\times}$):
 \begin{equation}
