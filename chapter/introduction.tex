@@ -107,9 +107,9 @@ Cloud feedback\index{cloud feedback} is the variation of cloud radiative effect 
 
 \section{Clouds and cloud radiative effect}
 
-To answer the questions proposed at the end of last section, the basic knowledge about clouds and cloud radiative effect is introduced briefly first.
+To answer the questions proposed at the end of last section, the basic knowledge about clouds and their roles in climate system are briefly introduced first.
 
-Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor.
+Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the annual mean cloud amounts are usually larger than or close to 50\% at the selected regions. Also, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor. Clouds play important roles in Earth's radiation budget and hydrological cycle, and this thesis will focus on their effect on radiation.
 
 \begin{table}[htp]
 \centering
@@ -133,13 +133,42 @@ Clouds usually cover more than half areas of the Earth at any given time \citep{
 \label{tab:statistics_cld_amt}
 \end{table}
 
+As shown in \figref{fig:earth_energy_budget}, clouds can exert strong and competing influences on the energy budget of the Earth. In general, we quantify the impact of clouds on planet's radiation budget using cloud radiative effect (CRE), which is defined as the differences in TOA net radiative fluxes between all-sky and clear-sky conditions, or the outgoing (or reflected) radiative fluxes at TOA between clear-sky and all-sky conditions \citep[e.g.,][]{Ramanathan1989,Li2017}. Note that CRE is also called cloud radiative forcing (CRF) in some literatures, and in this study we prefer using CRE.
+
+\begin{equation}
+    \mathrm{LWCRE} = \mathrm{LW}_{clr}^{\uparrow} - \mathrm{LW}_{all}^{\uparrow}
+\end{equation}
+
+\begin{equation}
+    \mathrm{SWCRE} = \mathrm{SW}_{clr}^{\uparrow} - \mathrm{SW}_{all}^{\uparrow}
+\end{equation}
+
+\begin{equation}
+    \mathrm{Net~CRE} = \mathrm{SWCRE} + \mathrm{LWCRE} 
+\end{equation}
+
+
+
+Specifically, clouds cool the Earth by reflecting the incoming shortwave radiation emitted by the sun.
+
+
+%In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface and cloud-free atmosphere, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. The net cooling effect of clouds is about 20 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$ \citep{Zelinka2017,Wild2019}. 
+
+%Part of the reason for the large uncertainty in the future global-mean cloud radiative feedback is that clouds exert strong and competing influences on the climatological energy budget of the Earth.
+
+%To better understand the possible mechanisms of the cloud feedback, we need to introduce the cloud radiative effect first, as clouds have competing effects on Earth's energy budget. 
+
+
+
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/literature_review/spatial_pattern_of_CRE_from_IPCC_ch7}.png}
+	\includegraphics[width=0.9\linewidth]{{figs/literature_review/spatial_pattern_of_CRE_from_IPCC_ch7}.png}
 	\caption{Distribution of annual-mean top of the atmosphere (a) shortwave, (b) longwave, (c) net cloud radiative effects averaged over the period 2001–2011 from the Clouds and the Earth’s Radiant Energy System (CERES) Energy Balanced and Filled (EBAF) Ed2.6r data set. Adapted from Fig. 7.7 of The Fifth Assessment Report (AR5) of the Intergovernmental Panel on Climate Change (IPCC) \citep{Stocker2013}.}
 	\label{fig:CRE_from_IPCC}
 \end{figure}
 
+
+ 
 \section{Cloud feedback}
 
 \section{Cloud scheme}
