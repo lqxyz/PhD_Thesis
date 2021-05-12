@@ -109,8 +109,6 @@ Cloud feedback\index{cloud feedback} is the variation of cloud radiative effect 
 
 To answer the questions proposed at the end of last section, the basic knowledge about clouds and their roles in climate system are briefly introduced first.
 
-Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the annual mean cloud amounts are usually larger than or close to 50\% at the selected regions. Also, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor. Clouds play important roles in Earth's radiation budget and hydrological cycle, and this thesis will focus on their effect on radiation.
-
 \begin{table}[htp]
 \centering
 \small %\scriptsize
@@ -133,23 +131,31 @@ Clouds usually cover more than half areas of the Earth at any given time \citep{
 \label{tab:statistics_cld_amt}
 \end{table}
 
-As shown in \figref{fig:earth_energy_budget}, clouds can exert strong and competing influences on the energy budget of the Earth. In general, we quantify the impact of clouds on planet's radiation budget using cloud radiative effect (CRE), which is defined as the differences in TOA net radiative fluxes between all-sky and clear-sky conditions, or the outgoing (or reflected) radiative fluxes at TOA between clear-sky and all-sky conditions \citep[e.g.,][]{Ramanathan1989,Li2017}. Note that CRE is also called cloud radiative forcing (CRF) in some literatures, and in this study we prefer using CRE.
+Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the annual mean cloud amounts are usually larger than or close to 50\% at the selected regions. Also, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor. Clouds play important roles in Earth's radiation budget and hydrological cycle, and this thesis will focus on their effect on radiation.
 
+As shown in \figref{fig:earth_energy_budget}, clouds can exert competing influences on the energy budget of the Earth. Specifically, clouds cool the Earth by reflecting the incoming shortwave radiation emitted by the sun, and warm the planet by trapping the longwave radiation emitted by the Earth. In general, we quantify the impact of clouds on planet's radiation budget using cloud radiative effect (CRE), which is defined as the differences in TOA net radiative fluxes between all-sky and clear-sky conditions, or the upward radiative fluxes at TOA between clear-sky and all-sky conditions \citep[e.g.,][]{Ramanathan1989,Soden2004,Soden2008,Li2017}. Note that the CRE is also called cloud radiative forcing (CRF) in some literatures, but CRE is more commonly used currently, so we prefer using CRE in this study. According the definition, the shortwave and longwave CRE at TOA can be computed as follows:
 \begin{equation}
-    \mathrm{LWCRE} = \mathrm{LW}_{clr}^{\uparrow} - \mathrm{LW}_{all}^{\uparrow}
+    \mathrm{SWCRE} = \mathrm{SW}_{clr}^{\uparrow} - \mathrm{SW}_{all}^{\uparrow},
+    \label{eq:swcre}
 \end{equation}
 
 \begin{equation}
-    \mathrm{SWCRE} = \mathrm{SW}_{clr}^{\uparrow} - \mathrm{SW}_{all}^{\uparrow}
+    \mathrm{LWCRE} = \mathrm{LW}_{clr}^{\uparrow} - \mathrm{LW}_{all}^{\uparrow},
+    \label{eq:lwcre}
 \end{equation}
-
+in which the subscripts $clr$ and $all$ mean clear-sky and all-sky, respectively, and the arrows indicate the direction of radiation flux. Of course, $\mathrm{SW}^{\uparrow}$ and $\mathrm{LW}^{\uparrow}$ are reflected solar radiation and OLR at the TOA, respectively. The net CRE is the sum of shortwave and longwave CREs, that is:
 \begin{equation}
-    \mathrm{Net~CRE} = \mathrm{SWCRE} + \mathrm{LWCRE} 
+    \mathrm{Net~CRE} = \mathrm{SWCRE} + \mathrm{LWCRE}
+    \label{eq:net_cre}
 \end{equation}
+The global mean shortwave CRE is $\sim-50$ Wm$^{-2}$, and global mean longwave CRE is $\sim30$ Wm$^{-2}$. As the shortwave CRE dominates over the longwave CRE, the net impact of clouds on Earth's energy budget is a cooling effect with a global mean value about $-20$ Wm$^{-2}$, as shown in \figref{fig:earth_energy_budget} and \figref{fig:CRE_from_IPCC}.
 
+The distribution of annual-mean shortwave, longwave and net CREs at TOA is displayed in \figref{fig:CRE_from_IPCC}.
 
-
-Specifically, clouds cool the Earth by reflecting the incoming shortwave radiation emitted by the sun.
+To understand the spatial pattern of the CRE climatology in , we rewrite the CRE equation with more climate variables. First,
+\begin{equation}
+    \mathrm{CRE} = R_{clr}^{\uparrow} - R_{all}^{\uparrow},
+\end{equation}
 
 
 %In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface and cloud-free atmosphere, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. The net cooling effect of clouds is about 20 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$ \citep{Zelinka2017,Wild2019}. 
@@ -157,8 +163,6 @@ Specifically, clouds cool the Earth by reflecting the incoming shortwave radiati
 %Part of the reason for the large uncertainty in the future global-mean cloud radiative feedback is that clouds exert strong and competing influences on the climatological energy budget of the Earth.
 
 %To better understand the possible mechanisms of the cloud feedback, we need to introduce the cloud radiative effect first, as clouds have competing effects on Earth's energy budget. 
-
-
 
 \begin{figure}[ht]
 	\centering
