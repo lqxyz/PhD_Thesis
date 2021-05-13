@@ -148,15 +148,17 @@ in which the subscripts $clr$ and $all$ mean clear-sky and all-sky, respectively
     \mathrm{Net~CRE} = \mathrm{SWCRE} + \mathrm{LWCRE}
     \label{eq:net_cre}
 \end{equation}
-The global mean shortwave CRE is $\sim-50$ Wm$^{-2}$, and global mean longwave CRE is $\sim30$ Wm$^{-2}$. As the shortwave CRE dominates over the longwave CRE, the net impact of clouds on Earth's energy budget is a cooling effect with a global mean value about $-20$ Wm$^{-2}$, as shown in \figref{fig:earth_energy_budget} and \figref{fig:CRE_from_IPCC}.
+The global mean shortwave CRE is approximately -50 Wm$^{-2}$, and global mean longwave CRE is around 30 Wm$^{-2}$. As the shortwave CRE dominates over the longwave CRE, the net impact of clouds on Earth's energy budget is a cooling effect with a global mean value about $-20$ Wm$^{-2}$, as shown in \figref{fig:earth_energy_budget} and \figref{fig:CRE_from_IPCC}.
 
-The distribution of annual-mean shortwave, longwave and net CREs at TOA is displayed in \figref{fig:CRE_from_IPCC}.
-
-To understand the spatial pattern of the CRE climatology in , we rewrite the CRE equation with more climate variables. First,
+The distribution of annual-mean shortwave, longwave and net CREs at TOA is displayed in \figref{fig:CRE_from_IPCC}, adapted from the Fifth Assessment Report (AR5) of the Intergovernmental Panel on Climate Change (IPCC) \citep{Stocker2013}. To better understand the spatial pattern of the CRE climatology, the CRE equations are derived in further following \cite{Ramanathan1989}. First, all-sky radiation ($R_{all}$; $R$ can be SW or LW) is rewritten as
 \begin{equation}
-    \mathrm{CRE} = R_{clr}^{\uparrow} - R_{all}^{\uparrow},
+    R_{all} = (1-C_{tot})R_{clr} + C_{tot} R_{cld} = C_{tot}(R_{cld}-R_{clr}) + R_{clr},
+    \label{eq:R_all_sky}
 \end{equation}
-
+in which $C_{tot}$ is the total cloud fraction and the upward arrows in $R$ are neglected for simplicity. If we replace $R_{all}$ in \Eqref{eq:swcre} or \Eqref{eq:lwcre} with \Eqref{eq:R_all_sky}, then CRE can be expressed as follows
+\begin{equation}
+    \mathrm{CRE} = R_{clr}^{\uparrow} - R_{all}^{\uparrow}=C_{tot}(R_{clr}-R_{cld}).
+\end{equation}
 
 %In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface and cloud-free atmosphere, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. The net cooling effect of clouds is about 20 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$ \citep{Zelinka2017,Wild2019}. 
 
@@ -167,11 +169,16 @@ To understand the spatial pattern of the CRE climatology in , we rewrite the CRE
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{{figs/literature_review/spatial_pattern_of_CRE_from_IPCC_ch7}.png}
-	\caption{Distribution of annual-mean top of the atmosphere (a) shortwave, (b) longwave, (c) net cloud radiative effects averaged over the period 2001–2011 from the Clouds and the Earth’s Radiant Energy System (CERES) Energy Balanced and Filled (EBAF) Ed2.6r data set. Adapted from Fig. 7.7 of The Fifth Assessment Report (AR5) of the Intergovernmental Panel on Climate Change (IPCC) \citep{Stocker2013}.}
+	\caption{Distribution of annual-mean top of the atmosphere (a) shortwave, (b) longwave, (c) net cloud radiative effects averaged over the period 2001–2011 from the Clouds and the Earth’s Radiant Energy System (CERES) Energy Balanced and Filled (EBAF) Ed2.6r data set. Adapted from Fig. 7.7 of the Fifth Assessment Report (AR5) of the Intergovernmental Panel on Climate Change (IPCC) \citep{Stocker2013}.}
 	\label{fig:CRE_from_IPCC}
 \end{figure}
 
-
+For shortwave radiation, we can write $R_{clr}=S_0\alpha_{clr}$ and $R_{cld}=S_0\alpha_{cld}$, such that shorwave CRE becomes
+\begin{equation}
+    \mathrm{SWCRE} = S_0 C_{tot}(\alpha_{clr}-\alpha_{cld}),
+    \label{eq:swcre2}
+\end{equation}
+where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-sky and all-sky albedo respectively. As the clear-sky albedo usually smaller than that in all-sky (i.e. $\alpha_{clr}<\alpha_{cld}$), the shortwave CRE is negative everywhere (\figref{fig:CRE_from_IPCC}a). This means clouds reflect more sunlight back to space than clear-sky conditions, and thus the shortwave effect of clouds is to cool the Earth. In addition, the magnitude of shortwave CRE increases with cloud fraction and albedo contrast between cloudy and clear conditions, as indicated by \Eqref{eq:swcre2}.
  
 \section{Cloud feedback}
 
