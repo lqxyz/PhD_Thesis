@@ -170,7 +170,7 @@ in which $C_{tot}$ is the total cloud fraction and the upward arrows in $R$ are 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.85\linewidth]{{figs/literature_review/isccp_cldamt}.png}
-	\caption{Distribution of annual-mean (a) low cloud amount (below 680 hPa), (b) middle cloud amount (440-680 hPa), (c) high cloud amount (above 440 hPa) and (d) total cloud amount from ISCCP H-series data set from 1984 to 2014.}
+	\caption{Distribution of annual-mean (a) low cloud amount (below 680 hPa), (b) middle cloud amount (440-680 hPa), (c) high cloud amount (above 440 hPa) and (d) total cloud amount from ISCCP H-series data set from 1984 to 2014. The global mean amounts are shown in titles.}
 	\label{fig:cldamt_isccp}
 \end{figure}
 
@@ -190,10 +190,12 @@ where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-s
  
 For longwave CRE, we can write $R_{clr}\approx \sigma T_{clr}^4$ and $R_{cld}\approx \epsilon_{cld}\sigma T_{cld}^4 +  (1-\epsilon_{cld}) \sigma T_{clr}^4$ based on Stefan--Boltzmann law, and after putting them into \Eqref{eq:cre_new}, the longwave CRE becomes
 \begin{equation}
-    \mathrm{LW~CRE}=\epsilon_{cld} \sigma C_{tot}\left(T_{clr}^4-T_{cld}^4\right),
+    \mathrm{LWCRE}=\epsilon_{cld} \sigma C_{tot}\left(T_{clr}^4-T_{cld}^4\right),
     \label{eq:lwcre2}
 \end{equation}
-where $epsilon_{cld}$ is the emissivity of clouds, $\sigma$ is Stefan--Boltzmann constant, and $T_{cld}$ and $T_{clr}$ are emission temperature at cloudy and clear conditions, respectively. From \Eqref{eq:lwcre2} we can judge that longwave CRE is positive as $T_{clr}>T_{cld}$. This indicates that clouds emit less longwave radiation to space than the clear-sky atmosphere, and thus can heat Earth. Additionally, the longwave CRE increases with cloud fraction, emissivity and the emission temperature contrast between clouds and clear atmosphere, in which the last depends on the cloud top temperature.
+where $\epsilon_{cld}$ is the emissivity of clouds, $\sigma$ is Stefan--Boltzmann constant, and $T_{cld}$ and $T_{clr}$ are emission temperature at cloudy and clear conditions, respectively. From \Eqref{eq:lwcre2} we can judge that longwave CRE is positive as $T_{clr}>T_{cld}$. This indicates that clouds emit less longwave radiation to space than the clear-sky atmosphere, and thus can heat Earth. Additionally, the longwave CRE increases with cloud fraction, emissivity and the emission temperature contrast between clouds and clear-sky atmosphere, in which the last depends on the cloud top temperature. In fact, we can find the spatial patterns of longwave CRE (\figref{fig:CRE_from_IPCC}b) and high cloud amount (\figref{fig:cldamt_isccp}c) are similar. For instance, the longwave CREs are large over the areas with much high clouds, such as the Intertropical Convergence Zone (ITCZ); The longwave CRE is smaller where high clouds are rare, such as over the subtropical trade-wind cumulus region.
+
+The net CRE are the competing result of shortwave and longwave CREs, with the spatial pattern shown in \figref{fig:CRE_from_IPCC}c. Clearly, the large negative values over regions of persistent low clouds (see \figref{fig:cldamt_isccp}a), such as Southern Ocean and subtropical eastern Pacific regions, as the shortwave CRE dominates over the longwave CRE in these regions. The net CRE over deep convective regions is near-zero due to the cancellation between shortwave and longwave components.
 
 
 \section{Cloud feedback}
