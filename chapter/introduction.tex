@@ -131,7 +131,7 @@ To answer the questions proposed at the end of last section, the basic knowledge
 \label{tab:statistics_cld_amt}
 \end{table}
 
-Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the annual mean cloud amounts are usually larger than or close to 50\% at the selected regions. Also, the cloud amounts are usually larger over ocean regions than over lands, as the ocean provides a abundance of water vapor. Clouds play important roles in Earth's radiation budget and hydrological cycle, and this thesis will focus on their effect on radiation.
+Clouds usually cover more than half areas of the Earth at any given time \citep{Houze2014,Ramanathan1989}, which is supported by recent International Satellite Cloud Climatology Project (ISCCP)\index{ISCCP} H-series products \citep{Young2018}, as shown in \tabref{tab:statistics_cld_amt}. Although they vary among different regions, the annual mean cloud amounts are usually larger than or close to 50\% at the selected regions. Also, the cloud amounts are usually larger over ocean regions than over lands (\tabref{tab:statistics_cld_amt} and \figref{fig:cldamt_isccp}d), as the ocean provides a abundance of water vapor. The spatial pattern of cloud climatology is shown in \figref{fig:cldamt_isccp}, and their features is to be discussed in detail in comparison with CRE patterns. Clouds play important roles in Earth's radiation budget and hydrological cycle, and this thesis will focus on their effect on radiation.
 
 As shown in \figref{fig:earth_energy_budget}, clouds can exert competing influences on the energy budget of the Earth. Specifically, clouds cool the Earth by reflecting the incoming shortwave radiation emitted by the sun, and warm the planet by trapping the longwave radiation emitted by the Earth. In general, we quantify the impact of clouds on planet's radiation budget using cloud radiative effect (CRE), which is defined as the differences in TOA net radiative fluxes between all-sky and clear-sky conditions, or the upward radiative fluxes at TOA between clear-sky and all-sky conditions \citep[e.g.,][]{Ramanathan1989,Soden2004,Soden2008,Li2017}. Note that the CRE is also called cloud radiative forcing (CRF) in some literatures, but CRE is more commonly used currently, so we prefer using CRE in this study. According the definition, the shortwave and longwave CRE at TOA can be computed as follows:
 \begin{equation}
@@ -168,7 +168,14 @@ in which $C_{tot}$ is the total cloud fraction and the upward arrows in $R$ are 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\linewidth]{{figs/literature_review/spatial_pattern_of_CRE_from_IPCC_ch7}.png}
+	\includegraphics[width=0.85\linewidth]{{figs/literature_review/isccp_cldamt}.png}
+	\caption{Distribution of annual-mean (a) low cloud amount (below 680 hPa), (b) middle cloud amount (440-680 hPa), (c) high cloud amount (above 440 hPa) and (d) total cloud amount from ISCCP H-series data set from 1984 to 2014.}
+	\label{fig:cldamt_isccp}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{{figs/literature_review/spatial_pattern_of_CRE_from_IPCC_ch7}.png}
 	\caption{Distribution of annual-mean top of the atmosphere (a) shortwave, (b) longwave, (c) net cloud radiative effects averaged over the period 2001–2011 from the Clouds and the Earth’s Radiant Energy System (CERES) Energy Balanced and Filled (EBAF) Ed2.6r data set. Adapted from Fig. 7.7 of the Fifth Assessment Report (AR5) of the Intergovernmental Panel on Climate Change (IPCC) \citep{Stocker2013}.}
 	\label{fig:CRE_from_IPCC}
 \end{figure}
@@ -178,7 +185,7 @@ For shortwave radiation, we can write $R_{clr}=S_0\alpha_{clr}$ and $R_{cld}=S_0
     \mathrm{SWCRE} = S_0 C_{tot}(\alpha_{clr}-\alpha_{cld}),
     \label{eq:swcre2}
 \end{equation}
-where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-sky and all-sky albedo respectively. As the clear-sky albedo usually smaller than that in all-sky (i.e. $\alpha_{clr}<\alpha_{cld}$), the shortwave CRE is negative everywhere (\figref{fig:CRE_from_IPCC}a). This means clouds reflect more sunlight back to space than clear-sky conditions, and thus the shortwave effect of clouds is to cool the Earth. In addition, the magnitude of shortwave CRE increases with cloud fraction and albedo contrast between cloudy and clear conditions, as indicated by \Eqref{eq:swcre2}.
+where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-sky and all-sky albedo respectively. As the clear-sky albedo usually smaller than that in all-sky (i.e. $\alpha_{clr}<\alpha_{cld}$), the shortwave CRE is negative everywhere (\figref{fig:CRE_from_IPCC}a). This means clouds reflect more sunlight back to space than clear-sky conditions, and thus the shortwave effect of clouds is to cool the Earth. In addition, the magnitude of shortwave CRE increases with cloud fraction and albedo contrast between cloudy and clear conditions, as indicated by \Eqref{eq:swcre2}. For example, when comparing the distribution of total cloud amount (\figref{fig:cldamt_isccp}d) and shortwave CRE (\figref{fig:CRE_from_IPCC}a), we can find that the magnitude of shortwave CRE are large over regions of persistent cloudiness such as Southern Ocean, and are small over the regions where there is little cloud cover such as subtropical trade cumulus regions. In addition, the shortwave CRE generally has more negative values over ocean than over land, as the surface albedo over land is larger than ocean, thus the contrast between clear and cloudy albedo is smaller. 
  
 \section{Cloud feedback}
 
