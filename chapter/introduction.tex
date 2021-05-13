@@ -158,6 +158,7 @@ The distribution of annual-mean shortwave, longwave and net CREs at TOA is displ
 in which $C_{tot}$ is the total cloud fraction and the upward arrows in $R$ are neglected for simplicity. If we replace $R_{all}$ in \Eqref{eq:swcre} or \Eqref{eq:lwcre} with \Eqref{eq:R_all_sky}, then CRE can be expressed as follows
 \begin{equation}
     \mathrm{CRE} = R_{clr}^{\uparrow} - R_{all}^{\uparrow}=C_{tot}(R_{clr}-R_{cld}).
+    \label{eq:cre_new}
 \end{equation}
 
 %In general, clouds can reflect the sunlight (shortwave radiation) back into space and absorb the longwave radiation emitted from the surface and cloud-free atmosphere, part of which will return to the surface. In general, the net effect of cloud is to cool the earth comparing to the cloud-free conditions. The net cooling effect of clouds is about 20 Wm$^{-2}$, which is roughly five times as large as the heating effect of doubling CO$_2$ \citep{Zelinka2017,Wild2019}. 
@@ -180,13 +181,21 @@ in which $C_{tot}$ is the total cloud fraction and the upward arrows in $R$ are 
 	\label{fig:CRE_from_IPCC}
 \end{figure}
 
-For shortwave radiation, we can write $R_{clr}=S_0\alpha_{clr}$ and $R_{cld}=S_0\alpha_{cld}$, such that shorwave CRE becomes
+For shortwave radiation, we can write $R_{clr}=S_0\alpha_{clr}$ and $R_{cld}=S_0\alpha_{cld}$, such that shortwave CRE becomes
 \begin{equation}
     \mathrm{SWCRE} = S_0 C_{tot}(\alpha_{clr}-\alpha_{cld}),
     \label{eq:swcre2}
 \end{equation}
 where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-sky and all-sky albedo respectively. As the clear-sky albedo usually smaller than that in all-sky (i.e. $\alpha_{clr}<\alpha_{cld}$), the shortwave CRE is negative everywhere (\figref{fig:CRE_from_IPCC}a). This means clouds reflect more sunlight back to space than clear-sky conditions, and thus the shortwave effect of clouds is to cool the Earth. In addition, the magnitude of shortwave CRE increases with cloud fraction and albedo contrast between cloudy and clear conditions, as indicated by \Eqref{eq:swcre2}. For example, when comparing the distribution of total cloud amount (\figref{fig:cldamt_isccp}d) and shortwave CRE (\figref{fig:CRE_from_IPCC}a), we can find that the magnitude of shortwave CRE are large over regions of persistent cloudiness such as Southern Ocean, and are small over the regions where there is little cloud cover such as subtropical trade cumulus regions. In addition, the shortwave CRE generally has more negative values over ocean than over land, as the surface albedo over land is larger than ocean, thus the contrast between clear and cloudy albedo is smaller. 
  
+For longwave CRE, we can write $R_{clr}\approx \sigma T_{clr}^4$ and $R_{cld}\approx \epsilon_{cld}\sigma T_{cld}^4 +  (1-\epsilon_{cld}) \sigma T_{clr}^4$ based on Stefan--Boltzmann law, and after putting them into \Eqref{eq:cre_new}, the longwave CRE becomes
+\begin{equation}
+    \mathrm{LW~CRE}=\epsilon_{cld} \sigma C_{tot}\left(T_{clr}^4-T_{cld}^4\right),
+    \label{eq:lwcre2}
+\end{equation}
+where $epsilon_{cld}$ is the emissivity of clouds, $\sigma$ is Stefan--Boltzmann constant, and $T_{cld}$ and $T_{clr}$ are emission temperature at cloudy and clear conditions, respectively. From \Eqref{eq:lwcre2} we can judge that longwave CRE is positive as $T_{clr}>T_{cld}$. This indicates that clouds emit less longwave radiation to space than the clear-sky atmosphere, and thus can heat Earth. Additionally, the longwave CRE increases with cloud fraction, emissivity and the emission temperature contrast between clouds and clear atmosphere, in which the last depends on the cloud top temperature.
+
+
 \section{Cloud feedback}
 
 \section{Cloud scheme}
