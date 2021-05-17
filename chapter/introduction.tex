@@ -53,6 +53,8 @@ ECS is a measure of the climate sensitivity of a general circulation model (GCM)
 %\cite{Sherwood2020} evaluated the Earth's climate sensitivity based on multiple lines of evidence (feedback process understanding and the historical and paleoclimate records), and find that...
 
 \subsection{Individual feedbacks}
+\label{sec:individual_fbks}
+
 % Introduction of different feedbacks?
 In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings \citep{Hansen1984}. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a ``negative feedback" reduces the initial perturbation. In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
 \begin{equation}
@@ -205,7 +207,10 @@ In summary, different factors have impact on shortwave and longwave CREs, includ
 
 To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system \citep{Zelinka2017}. For example, there are many different types of clouds, which are located at different locations (e.g., low, middle and high clouds) and in different shapes or forms (such as liquid, ice or mixed phase), thus affecting the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the intermodel spread of cloud feedbacks \citep[e.g.,][]{Bony2004,Bony2005,Bony2006,Vial2013,Webb2015,Geoffroy2017,Zelinka2016insights,Myers2021}. 
 
-In general, cloud feedbacks can be grouped into three categories: cloud amount, cloud altitude and cloud opacity feedbacks \citep{Zelinka2012computing2,Zelinka2017,Ceppi2017}.
+\subsubsection{Cloud feedback in GCMs}
+The shortwave, longwave and net cloud feedbacks have been introduced in \secref{sec:individual_fbks}, and their spatial patterns simulated in the first and second phases of Cloud Feedback Model Intercomparison Project \citep[CFMIP;][]{Webb2017cfmip} models are shown in \figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}. The net cloud feedback is positive at nearly every location equatorward of 50$^\circ$, and negative in high latitudes such as Southern Ocean and Artic region (\figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}c). When decomposing the net cloud feedback into shortwave and longwave components, we find that the shortwave cloud feedback is negative in lower and high latitudes, but positive over the subtropics. For instance, the SW cloud feedback is negative in Southern Ocean region (\figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}a). The longwave cloud feedback is positive in topical and high-latitude regions, and especially pronounced in tropical regions (\figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}b). The possible mechanisms for these feedback patterns will be explained below.
+
+In general, cloud feedbacks can be grouped into three categories: cloud amount, cloud altitude and cloud opacity feedbacks \citep{Zelinka2012computing2,Zelinka2017}, due to their different radiative properties. The net cloud feedback can be understood as the sum of these three different components plus a small residual \citep{Zelinka2012computing2}.
 
 \begin{figure}[ht]
 	\centering
