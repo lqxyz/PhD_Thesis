@@ -195,7 +195,7 @@ where $S_0$ is solar constant, and $\alpha_{clr}$ and $\alpha_{cld}$ are clear-s
  
 For longwave CRE, we can write $R_{clr}\approx \sigma T_{clr}^4$ and $R_{cld}\approx \epsilon_{cld}\sigma T_{cld}^4 +  (1-\epsilon_{cld}) \sigma T_{clr}^4$ based on Stefan--Boltzmann law, and after putting them into \Eqref{eq:cre_new}, the longwave CRE becomes
 \begin{equation}
-    \mathrm{LWCRE}=\epsilon_{cld} \sigma C_{tot}\left(T_{clr}^4-T_{cld}^4\right),
+    \mathrm{LWCRE} \approx \epsilon_{cld} \sigma C_{tot}\left(T_{clr}^4-T_{cld}^4\right),
     \label{eq:lwcre2}
 \end{equation}
 where $\epsilon_{cld}$ is the emissivity of clouds, $\sigma$ is Stefan--Boltzmann constant, and $T_{cld}$ and $T_{clr}$ are emission temperature at cloudy and clear conditions, respectively. From \Eqref{eq:lwcre2} we can judge that longwave CRE is positive  (see \figref{fig:CRE_from_IPCC}b) as $T_{clr}>T_{cld}$. This indicates that clouds emit less longwave radiation to space than the clear-sky atmosphere, and thus can heat Earth. Additionally, the longwave CRE increases with cloud fraction, emissivity and the emission temperature contrast between clouds and clear-sky atmosphere, in which the last depends on the cloud top temperature. In fact, we can find the spatial patterns of longwave CRE (\figref{fig:CRE_from_IPCC}b) and high cloud amount (\figref{fig:cldamt_isccp}c) are similar. For instance, the longwave CREs are large over the areas with much high clouds, such as the Intertropical Convergence Zone (ITCZ); The longwave CRE is smaller where high clouds are rare, such as over the subtropical trade-wind cumulus region.
@@ -206,7 +206,7 @@ In summary, different factors have impact on shortwave and longwave CREs, includ
 
 \subsection{Mechanisms of cloud feedback}
 
-To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system \citep{Zelinka2017}. For example, there are many different types of clouds, which are located at different locations (e.g., low, middle and high clouds) and in different shapes or forms (such as liquid, ice or mixed phase), thus affecting the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the intermodel spread of cloud feedbacks \citep[e.g.,][]{Bony2004,Bony2005,Bony2006,Vial2013,Webb2015,Geoffroy2017,Zelinka2016insights,Myers2021}.
+To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system \citep{Zelinka2017}. For example, the clouds are located at different locations (e.g., low, middle and high clouds) and the cloud condensates are in different shapes or forms (such as liquid, ice or mixed phase), so they can affect the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the intermodel spread of cloud feedbacks \citep[e.g.,][]{Bony2004,Bony2005,Bony2006,Vial2013,Webb2015,Geoffroy2017,Zelinka2016insights,Myers2021}.
 
 %\subsubsection{Cloud feedback in GCMs}
 
@@ -244,15 +244,13 @@ Another robust cloud change in response to increasing concentrations of CO$_2$ i
 
 % This negative mechanism can also be understood through \Eqref{eq:swcre2}: more liquid water in clouds increases the optical depth and albedo, and thus a much negative shortwave CRE, if other factors such as cloud amount, solar constant and clear-sky albedo remain unchanged.
 
-However, this negative optical depth feedback from hydrometeor phase change is perhaps overestimated in CMIP5 models due to the poor representation of supercooled liquid cloud in mixed-phase clouds \citep{Tan2016observational,Frey2018influence}. Too much present-day ice in mixed-phase clouds leads to stronger negative optical depth feedback under global warming. The too much ice cloud bias is partly mitigated in CMIP6 models, and thus the negative optical depth feedback over middle to high latitudes weakens, which leads to the increase in net cloud feedback and in ECS in CMIP6 models \citep{Zelinka2020causes}.
+However, this negative optical depth feedback from hydrometeor phase change is perhaps overestimated in CMIP5 models due to the poor representation of supercooled liquid cloud in mixed-phase clouds \citep{Tan2016observational,Frey2018influence}. Too much present-day ice in mixed-phase clouds leads to stronger negative optical depth feedback under global warming. This bias is partly mitigated in CMIP6 models, and thus the negative optical depth feedback over middle to high latitudes weakens, which leads to the increase in net cloud feedback and in ECS in CMIP6 models \citep{Zelinka2020causes}.
 
 \subsubsection{Cloud amount feedback}
 %Compared to the longwave cloud feedback of high anvil clouds, the shortwave cloud feedback still ``lacks a well-accepted theoretical basis" \citep{Stocker2013}.  %From then on, many studies have tried to understand the causes of shortwave cloud feedback.
 %Compared to the positive high clouds feedback and
 %The most uncertain part of cloud feedback is related to the low cloud amount changes under global warming \citep{Stocker2013}.
-For different cloud types, the change in cloud amount has different effect on climate. According to \Eqref{eq:lwcre2}, the increase of cloud amount, especially high cloud amount, leads to the rise of longwave CRE, which is thus a heating effect on climate. Similarly, the increase of cloud amount (especially the low cloud amount) also strengthens the magnitude of shortwave CRE according to \Eqref{eq:swcre2}, but it has cooling effect on climate as the sign of shortwave CRE is negative. Naturally, less low clouds has a warming effect to climate as more incoming solar radiation can reach the surface.
-
-In GCMs, the possible change of low cloud amount in response to the increase of CO$_2$ has the largest uncertainty, 
+For different cloud types, the change in cloud amount has different effect on climate. According to \Eqref{eq:lwcre2}, the increase of cloud amount, especially high cloud amount, leads to the rise of longwave CRE, which is thus a heating effect on climate. Similarly, the increase of cloud amount (especially the low cloud amount) also strengthens the magnitude of shortwave CRE according to \Eqref{eq:swcre2}, but it has cooling effect on climate as the sign of shortwave CRE is negative. Naturally, reduced low cloud amount has a warming effect to climate as more incoming solar radiation can reach the surface. Currently, there is still lack of a well-accepted theoretical basis for the possible changes of low cloud amount, and the GCMs have low confidence in simulating their changes under global warming \citep{Stocker2013}.
 
 %pattern effect
 
