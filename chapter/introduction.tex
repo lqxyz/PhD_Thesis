@@ -44,7 +44,7 @@ Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$, and is a measure of the TOA ra
 % Conceptually, \Eqref{eq:imbalance_forcing_lambda} states that the TOA energy imbalance can be expressed as the sum of the radiative forcing and the radiative response of the system to a global surface temperature anomaly.
 
 %\subsection{Climate sensitivity}
-Based on the forcing and feedback analysis framework, the equilibrium climate sensitivity (ECS), i.e., the the equilibrium response of global mean surface air temperature to the radiative forcing from a doubling of CO$_2$ ($F_{2\times}$), can be estimated as:
+Based on the forcing and feedback analysis framework, the equilibrium climate sensitivity (ECS) i.e., the the equilibrium response of global mean surface air temperature to the radiative forcing from a doubling of CO$_2$ ($F_{2\times}$), can be estimated as:
 \begin{equation}
     ECS = \Delta T_{s\_2\times}=-\frac{F_{2\times}}{\lambda}.
     \label{eq:ecs}
@@ -111,6 +111,7 @@ Cloud feedback\index{cloud feedback} is the variation of cloud radiative effect 
 \section{Cloud radiative effect and cloud feedback}
 
 \subsection{Cloud radiative effect}
+\label{sec:CRE_intro}
 
 To answer the questions proposed at the end of last section, the basic knowledge about clouds and their roles in climate system are briefly introduced first.
 
@@ -225,14 +226,35 @@ The shortwave, longwave and net cloud feedbacks have been introduced in \secref{
 	\label{fig:robust_cld_responses_ar5}
 \end{figure}
 
-One robust cloud change under global warming is the positive longwave cloud feedback in tropical regions (\figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}b), which is believed to be related to the rising of high clouds (\figref{fig:robust_cld_responses_ar5}; e.g., \citealt{Wetherald1988cloud}). This positive longwave cloud height feedback can be explained by the fixed anvil temperature (FAT) hypothesis, which is first proposed by \cite{Hartmann2002FAT}, and used by lots of later studies \cite[e.g.,][]{Kuang2007,Zelinka2010longwave,Yoshimori2020fixed}. The FAT theory holds that the isotherms move up and convection deepens in tropical region as climate warms, but the cloud-top temperature of anvils remains approximately constant. In this case, the cloud-top temperature do not warm in step with the surface warming and the OLR keeps relatively constant, so the tropics become less efficient at radiating the heat away and more heat would be trapped in the Earth, indicating that high clouds act as a positive feedback on climate.
+% Structure from Ceppi et al., 2017 review:
+% What physical mechanisms are involved in the cloud response? To what extent are these mechanisms supported by theory, highresolution modeling, and observations?
+% How well do GCMs represent these mechanisms, and what parameterizations does this depend on?
+% What explains the intermodel spread in cloud responses?
+
+\subsubsection{Altitude feedback}
+
+As introduced in \secref{sec:CRE_intro}, high clouds have much larger longwave cloud radiative effect due to their colder cloud top temperature. As clouds get higher, they will have lower temperature and emit less infrared radiation to space. Therefore, the increase in cloud altitude has a warming effect on climate by reducing the outgoing longwave radiation. 
+
+One robust cloud change under global warming is the positive longwave cloud feedback in tropical regions (\figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}b), which is believed to be related to the rising of high clouds (\figref{fig:robust_cld_responses_ar5}; e.g., \citealt{Wetherald1988cloud}).  
+The positive longwave cloud altitude feedback can be explained by the fixed anvil temperature (FAT) hypothesis, which is first proposed by \cite{Hartmann2002FAT}, and used by lots of later studies \cite[e.g.,][]{Kuang2007,Zelinka2010longwave,Yoshimori2020fixed}. The FAT theory holds that the isotherms move up and convection deepens in tropical region as climate warms, but the cloud-top temperature of anvils remains approximately constant. In this case, according to \Eqref{eq:lwcre2}, the cloud-top temperature do not warm in step with the surface warming and the OLR keeps relatively constant, so the tropics become less efficient at radiating the heat away and more heat would be trapped in the Earth, indicating that high clouds act as a positive feedback on climate.
+
+\subsubsection{Optical depth feedback}
 
 Another robust cloud change in response to increasing concentrations of CO$_2$ is the cloud phase change from the middle to high latitudes \citep[e.g.,][]{Storelvmo2015cloud,Ceppi2016mechanisms,Tan2016observational,McCoy2016relationships}. As the melting level shifts upward and poleward in response to warming (\figref{fig:robust_cld_responses_ar5}), the ice condensate in mixed-phase clouds (i.e., containing both liquid and ice condensate) melts into liquid water; that is to say, the occurrence of liquid water in clouds should increase relative to ice. Therefore, for a fixed cloud condensate amount, this leads to the increase of cloud optical depth \citep{Stephens1978radiation}, due to the smaller effective radius of liquid droplets \citep{Stubenrauch2013}. In addition, given the ice cloud droplets are larger than liquid clouds, ice clouds tend to precipitate more efficiently. That is to say, the cloud life time is longer after cloud phase changing from ice to liquid, making the liquid clouds persist longer than ice clouds and a further optical thickening of the cloud \citep{Storelvmo2015cloud,Ceppi2016mechanisms}. Therefore, more shortwave radiation would be reflected back to space due to this optical depth change, resulting in a negative shortwave feedback \citep[e.g.,][]{Zelinka2012computing1,Zelinka2012computing2,Zelinka2013contributions,Ceppi2016mechanisms,Tan2016observational,McCoy2016relationships,Zelinka2020causes}. As this phase change mechanism can only operate below freezing, its occurrence in low clouds is evident in middle and high latitudes as shown in \figref{fig:spatial_pattern_of_cld_feedbacks_Zelinka}a \citep{Ceppi2017}. 
 
+% This negative mechanism can also be understood through \Eqref{eq:swcre2}: more liquid water in clouds increases the optical depth and albedo, and thus a much negative shortwave CRE, if other factors such as cloud amount, solar constant and clear-sky albedo remain unchanged.
+
 However, this negative optical depth feedback from hydrometeor phase change is perhaps overestimated in CMIP5 models due to the poor representation of supercooled liquid cloud in mixed-phase clouds \citep{Tan2016observational,Frey2018influence}. Too much present-day ice in mixed-phase clouds leads to stronger negative optical depth feedback under global warming. The too much ice cloud bias is partly mitigated in CMIP6 models, and thus the negative optical depth feedback over middle to high latitudes weakens, which leads to the increase in net cloud feedback and in ECS in CMIP6 models \citep{Zelinka2020causes}.
 
+\subsubsection{Cloud amount feedback}
 %Compared to the longwave cloud feedback of high anvil clouds, the shortwave cloud feedback still ``lacks a well-accepted theoretical basis" \citep{Stocker2013}.  %From then on, many studies have tried to understand the causes of shortwave cloud feedback.
 %Compared to the positive high clouds feedback and
+%The most uncertain part of cloud feedback is related to the low cloud amount changes under global warming \citep{Stocker2013}.
+For different cloud types, the change in cloud amount has different effect on climate. According to \Eqref{eq:lwcre2}, the increase of cloud amount, especially high cloud amount, leads to the rise of longwave CRE, which is thus a heating effect on climate. Similarly, the increase of cloud amount (especially the low cloud amount) also strengthens the magnitude of shortwave CRE according to \Eqref{eq:swcre2}, but it has cooling effect on climate as the sign of shortwave CRE is negative. Naturally, less low clouds has a warming effect to climate as more incoming solar radiation can reach the surface.
+
+In GCMs, the possible change of low cloud amount in response to the increase of CO$_2$ has the largest uncertainty, 
+
+%pattern effect
 
 \section{Cloud scheme}
 \label{sec:cld_scheme_history}
