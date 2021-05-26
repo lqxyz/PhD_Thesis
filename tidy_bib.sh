@@ -21,15 +21,17 @@ bibtool -- 'print.deleted.entries = off' -d "$input_bib" -o "$input_bib_no_dup"
 
 # Sync with crossref 
 # https://github.com/nschloe/betterbib
-#
+# install: pip install betterbib
 # -l: use long journal name, default false
 betterbib -l "$input_bib_no_dup" "$input_bib" 
 
 # Compile latex file again to get the latest aux file 
-latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$tex_file".tex
+#latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$tex_file".tex
+latexmk -f -pdf -xelatex -interaction=nonstopmode -use-make "$tex_file".tex
 
 # Extract sub-bibliography based on aux file
 # https://tex.stackexchange.com/questions/41821/creating-bib-file-containing-only-the-cited-references-of-a-bigger-bib-file 
+# bibexport can be installed from tlmgr directly: sudo tlmgr install bibexport 
 bibexport -o "$output_bib" "$tex_file".aux
 
 # Online tool to tidy the bib file 
