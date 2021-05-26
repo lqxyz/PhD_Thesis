@@ -668,6 +668,13 @@ in which $\Delta R_s$ is the radiation change at the surface. It is clear that t
 
 The heat transport contributes most to the surface temperature change in polar region both in cooling and warming case in our study, but it is different from the calculation of \cite{Pithan2014}, where they find that the temperature related feedbacks contribute most to the Arctic warming when there is a surface albedo feedback. When there is a lack of surface albedo feedback, the heat transport is also the largest contributor to the polar amplification under seasonal solar radiation according to \cite{Kim2018}. In the warming case (\figref{fig:delta_ts_decomp}i), the heat transport cools the low latitudes and warms the high latitudes, which decreases the large meridional temperature and energy imbalance gradients. As illustrated in \figsref{fig:delta_ts_decomp}g-i, the water vapor feedbacks contribute more to the tropical warming or cooling rather than to polar regions, which is consistent with the conclusion of \cite{Pithan2014}. But water vapor does have effect on the temperature change due to the enlarged climate sensitivity \citep{Langen2012}. In fact, the temperature responses due to water vapor feedbacks in BOG scheme (black dashed lines in \figsref{fig:delta_ts_decomp}a-c) are different from that in RRTM schemes. They do not tend to zero as latitude increases. Instead, they are relative flat at high latitudes, which could possibly be used to explain the abnormal surface temperature response in BOG scheme. Regarding the forcing (brown lines in \figsref{fig:delta_ts_decomp}g-i) due to the change of albedos, it is larger in low latitudes than in high latitudes as the solar radiation is strong at low latitudes, and hence it will amplify the temperature change at low latitudes.
 
+ \begin{figure}[ht]
+    \centering
+	\includegraphics[width=0.9\textwidth]{figs/polar_amp/contributions_to_polar_amplification.pdf}
+	\caption{The contributions of various factors to polar versus tropical temperature changes from a TOA perspective. The factors are shown in the legend, and those above the 1:1 line contribute to polar amplification, whereas feedbacks below the line oppose polar amplification. The upper and bottom panels are for the warming (subscript 1) and cooling (subscripts 2 and 3) cases respectively. The titles of each figure indicate the radiation schemes used in the runs.}
+	\label{fig:contribution_pole_vs_tropic}
+\end{figure}
+
 The roles of lapse rate feedback, Planck feedback and heat transport in BOG (\figsref{fig:delta_ts_decomp}a-c) and Frierson (\figsref{fig:delta_ts_decomp}d-f) schemes are similar to those in RRTM scheme, except the role of water vapor feedback in BOG scheme, which is much larger at high latitudes compared to others. One strange thing is the sum of these contributions is greater than the actual temperature response at high latitude in BOG scheme, for which a possible reason is that the decomposition of the surface temperature change is linear and some non-linear factors may have an influence at the high latitudes. We can see that after the water vapor feedback being disabled in BOG scheme, the sum of these various components is close to $\Delta T_s$ (\figsref{fig:delta_ts_decomp}j-l), indicating that the non-linear effect is possible associated with water vapor. 
 
 %\begin{figure}[ht] %[ht]
@@ -679,12 +686,7 @@ The roles of lapse rate feedback, Planck feedback and heat transport in BOG (\fi
 
 \section{Discussion and Summary}
 
- \begin{figure}[ht]
-    \centering
-	\includegraphics[width=0.9\textwidth]{figs/polar_amp/contributions_to_polar_amplification.pdf}
-	\caption{The contributions of various factors to polar versus tropical temperature changes from a TOA perspective. The factors are shown in the legend, and those above the 1:1 line contribute to polar amplification, whereas feedbacks below the line oppose polar amplification. The upper and bottom panels are for the warming (subscript 1) and cooling (subscripts 2 and 3) cases respectively. The titles of each figure indicate the radiation schemes used in the runs.}
-	\label{fig:contribution_pole_vs_tropic}
-\end{figure}
+In this chapter, we employ the Isca model to study the zonal mean surface temperature change in aquaplanet simulation with various radiation schemes and albedos in order to quantify the different mechanisms that could lead to polar amplification of surface temperature change under equinox insolation. Two gray radiation schemes, BOG and Frierson, and one full radiation scheme, RRTM, are used in the simulations. The BOG scheme shows the largest surface temperature change and polar amplification, while Frierson scheme shows the weakest surface temperature change when changing albedos. %, which is a way to disturb the radiation balance at TOA.
 
 \begin{figure}[ht]
     \centering
@@ -692,8 +694,6 @@ The roles of lapse rate feedback, Planck feedback and heat transport in BOG (\fi
 	\caption{A schematic diagram to illustrate the various factors that contribute to the polar amplification.}
 	\label{fig:pa_mechanism_schematic}
 \end{figure}
-
-In this chapter, we employ the Isca model to study the zonal mean surface temperature change in aquaplanet simulation with various radiation schemes and albedos in order to quantify the different mechanisms that could lead to polar amplification of surface temperature change under equinox insolation. Two gray radiation schemes, BOG and Frierson, and one full radiation scheme, RRTM, are used in the simulations. The BOG scheme shows the largest surface temperature change and polar amplification, while Frierson scheme shows the weakest surface temperature change when changing albedos. %, which is a way to disturb the radiation balance at TOA.
 
 The comparison of results from BOG and Frierson gives us some insights about the role of water vapor feedback in surface temperature change. After turning off the water vapor feedback in the BOG scheme, the surface temperature responses are much smaller and become close to the simulation results from Frierson scheme. However, there is still the amplified surface temperature change at high latitudes, which is associated with the poleward atmospheric energy transport. Following \cite{Feldl2013} and \cite{Kim2018}, the decomposition of the surface temperature change illustrates the relative importance of various contributions to surface temperature change at high latitudes. Specifically, heat transport, Planck feedback and the positive lapse rate feedback at polar region are all supportive to the polar amplification. However, water vapor feedback and the forcing induced by altering albedo contribute more to the surface temperature change at low latitudes than at high latitudes (\figref{fig:contribution_pole_vs_tropic}). In spite of that, the water vapor feedback is very strong at high latitudes in BOG scheme, which could explain the large temperature response in the experiments. A schematic of the mechanisms that contribute to the polar temperature changes is illustrated in \figref{fig:pa_mechanism_schematic}.
 
