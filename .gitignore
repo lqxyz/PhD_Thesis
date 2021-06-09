@@ -1,6 +1,9 @@
 # neglect output pdf
 thesis.pdf
 
+# temporary ignorance of the fig files
+fig*/
+
 *.nc
 *.o
 *.so*
