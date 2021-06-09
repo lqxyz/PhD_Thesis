@@ -41,10 +41,12 @@ tmp
 *.dvi
 *.xdv
 *-converted-to.*
+
 # these rules might exclude image files for figures etc.
-# *.ps
-# *.eps
-# *.pdf
+*.ps
+*.eps
+*.pdf
+*.png
 
 # Latexmk
 *.fdb_latexmk
