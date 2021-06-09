@@ -109,10 +109,38 @@ As introduced in \secref{sec:Zelinka_method}, one possible way to calculate the 
 
 \section{Results}
 
-\subsection{}
+%\subsection{}
 
-\subsection{Cloud feedback method comparison}
+\subsection{Comparison of cloud feedback calculation}
 
+\cite{Zelinka2013} has summarized the the diagnostic and methodology used in current studies (see their Table 1). In general, the Gregory method that calculates feedback from the slope of $\Delta R$ against $\Delta T_s$ accounts for the rapid adjustments. Here $\Delta R$ is the radiative flux anomaly at the TOA and $\Delta T_s$ is the surface temperature change.  The cloud radiative effect (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) based method is affected by the cloud masking effect, while the cloud radiative kernel method is not affected by this masking effect.
+
+Here I compared the cloud feedback calculated from these four different methods in Isca simulations. \figref{fig:gregory_plot_for_CRE_and_kernel_flux} shows the Gregory plot of the global and annual mean anomalies in cloud-induced TOA radiative flux against the change in global mean surface temperature ($\Delta T_s$). These flux anomalies are estimated from CRE and cloud radiative kernel respectively, so they are corresponding to II and IV categories in \tabref{tab:summary_cld_fbk_diag_methodoly_zelinka}. It is clear that there is a sign change in the slope of longwave (LW) cloud feedback (\figref{fig:gregory_plot_for_CRE_and_kernel_flux}a), where the slope changed from -0.31 Wm$^{-2}$K$^{-1}$ in category II (CRE+Gregory) to 0.35 Wm$^{-2}$K$^{-1}$ in category IV (kernel+Gregory). The LW forcing term in category II is more negative than that in category IV due to the cloud masking effect. For example, \cite{Andrews2012cloud} found that the instantaneous cloud masking effect for LW CRE is about -0.62 Wm$^{-2}$ in response to doubling CO$_2$ (see their Table 2).
+
+The cloud feedback is also calculated according to categories I and III, and the results are in \tabref{tab:four_methods_cldfbk_results}. Focusing on the second row (the radiative kernel based diagnostic) in \tabref{tab:four_methods_cldfbk_results}, we can find that the cloud feedback parameters from two different methods (categories III and IV in \tabref{tab:summary_cld_fbk_diag_methodoly_zelinka}) are much similar, indicating that neglecting the rapid cloud adjustments has relative small impact on cloud feedback. This is also true for CRE based diagnostic (the first row in \tabref{tab:four_methods_cldfbk_results}). For example, the cloud feedback has relative small changes from category I to category II in \tabref{tab:summary_cld_fbk_diag_methodoly_zelinka}. In contrast, comparing to the results from categories I and III (or categories II and IV) suggests that the cloud masking effect do have a large impact on the cloud feedback calculation. For instance, the sign of LW cloud feedback parameter changed from CRE related diagnostic to kernel-derived diagnostic.
+
+\begin{table}[ht]
+%\begin{sidewaystable}
+	\caption{Comparison of cloud feedback estimated from methods and diagnostics shown in Table 1 of \cite{Zelinka2013} (units: Wm$^{-2}$K$^{-1}$)} %from different methods and diagnostics
+	\centering
+	\renewcommand{\arraystretch}{1.1}
+	\begin{tabular}{>{\centering}m{0.4\linewidth} ccc ccc} 
+	% control width, alignment for cells
+	% https://texblog.org/2017/02/06/proper-tables-with-latex/
+		\toprule
+		\multirow{2}{*}{Diagnostic} & \multicolumn{3}{c}{$\Delta R/\Delta T_s$} & \multicolumn{3}{c}{\thead{Slope of $\Delta R$ against $\Delta T_s$ \\(Gregory method)}}\\
+		\cline{2-4}\cline{5-7}
+		 & LW & SW & Net & LW & SW & Net \\
+		\midrule
+		%CRE anomalies & & & & & & \\
+		%Kernel-derived cloud-induced radiation anomalies & & & & & & \\
+		CRE anomalies   &  -0.475 &   0.626 &    0.150 &    -0.317 &     0.706 &      0.389 \\  
+        Kernel-derived cloud-induced radiation anomalies &   0.365 &   0.440 &    0.805 &     0.346 &     0.479 &      0.825 \\  
+        \bottomrule
+	\end{tabular}
+	\label{tab:four_methods_cldfbk_results}
+%\end{sidewaystable}
+\end{table}
 
 
 \begin{figure}[ht]
