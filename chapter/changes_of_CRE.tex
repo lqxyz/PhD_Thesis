@@ -111,6 +111,18 @@ As introduced in \secref{sec:Zelinka_method}, one possible way to calculate the 
 
 %\subsection{}
 
+\subsection{COSP evaluation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/clisccp_cloud_thickness_category_obs_isca_linear_sc}.pdf}
+    \caption{Annual mean cloud frequency from (top row) GCM simulator-oriented ISCCP product (1998-2007) and (bottom row) one Isca simulation, sorted by vertical velocity at 500 hPa ($\omega_{500}$, units: hPa day$^{-1}$) and divided into different cloud thickness categories: (a, e) thin (0.3$\le\tau<$3.6), (b, f) intermediate (3.6$\le\tau<$23), (c, g) thick ($\tau\ge$23), and (d, h) all optical depths. For ISCCP, the $\omega_{500}$ is from ERA-Interim analysis (1998-2007). }
+    \label{fig:tropical_clisccp_obs_isca}
+\end{figure}
+
+The implementation of COSP provides a new tool to compare Isca simulation results with the observations. Here comparison between Isca simulation and GCM simulator-oriented ISCCP cloud product (1998-2007) is shown in \figref{fig:tropical_clisccp_obs_isca}, where the Isca simulation is run with Q-flux with linear and low cloud scheme (shown in \tabref{tab:qflux_ppe_exps_summary}), while the observation data set is derived from the ISCCP D1 dataset \citep{Rossow1999advances} (available at \url{https://climserv.ipsl.polytechnique.fr/cfmip-obs/data/ISCCP}, last access: June 10, 2021). For the Isca simulation with COSP, only ISCCP simulator \citep{Klein1999validation,Webb2001combining} is activated.
+
+
 \subsection{Comparison of cloud feedback calculation}
 
 \cite{Zelinka2013} has summarized the the diagnostic and methodology used in current studies (see their Table 1). In general, the Gregory method \citep{Gregory2004} that calculates feedback from the slope of $\Delta R$ against $\Delta T_s$ accounts for the rapid adjustments. Here $\Delta R$ is the radiative flux anomaly at the TOA and $\Delta T_s$ is the surface temperature change.  The cloud radiative effect (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) based method is affected by the cloud masking effect, while the cloud radiative kernel method is not affected by this masking effect.
