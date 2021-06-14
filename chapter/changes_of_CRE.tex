@@ -179,4 +179,18 @@ The cloud feedback is also calculated according to categories I and III, and the
     \label{fig:global_mean_cld_fbk_scatter}
 \end{figure}
 
+\subsection{Comparison with WCRP assessment}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/WCRP_assessed_cld_fbks_amip-p4K}.pdf}
+    \caption{Cloud feedback components estimated from climate model simulations and as assessed in \cite{Sherwood2020}. For each component, the individual model values are indicated with symbols, the multi-model means are indicated with blue (CMIP5), orange (CMIP6) and green (Isca) bars, and the expert assessed \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals are indicated with thick and thin black errorbars, respectively. Model symbols (only for CMIP5/6) are color-coded by equilibrium climate sensivity (ECS) with color boundaries corresponding to the edges of the \textit{likely} (17\%--83\%) and \textit{very likely} (5\%--95\%) ranges of the Baseline posterior probability density function (PDF) of  ECS from \cite{Sherwood2020}. The results from Isca simulation are added to original Fig. 1 of \cite{Zelinka2021evaluating}.}
+    \label{fig:WCRP_assessment}
+\end{figure}
+
+\cite{Zelinka2021evaluating} evaluated the cloud feedbacks from CMIP5 and CMIP6 models and compared them to the latest World Climate Research Programme (WCRP) assessment of cloud feedbacks reported in \cite{Sherwood2020}. Noted that only 9 CMIP5 and 10 CMIP6 models are used, as only those that have successfully implemented the Cloud
+Feedback Model Intercomparison Project (CFMIP) Observation Simulator Package \citep[COSP; ][]{BodasSalcedo2011} are adopted. Based on the analysis from \cite{Zelinka2021evaluating}, here the perturbed parameter ensemble simulations from Isca are added to this comparison, as shown in \figref{fig:WCRP_assessment}.
+
+\figref{fig:WCRP_assessment} is produced using the software package developed by \cite{Zelinka2021evaluating}, available at \url{https://github.com/mzelinka/assessed-cloud-fbks}.
+
 \section{Summary and discussion}
