@@ -129,14 +129,13 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\linewidth]{{figs/change_of_CRE/cmp_isca_cosp_tot_cld_amt}.png}
-    \caption{Comparison of sum of ISCCP joint histogram and total cloud amount from Isca.}
+    \caption{(a) The annual mean cloud fraction (\%) binned by the joint histogram of cloud top pressure and optical depth from ISCCP simulator implemented in Isca. (b) The sum of the histogram bins for each location from the ISCCP simulator of Isca. (c) The annual mean native total cloud amount from Isca simualtions based on max-random overlap assumption.}
     \label{fig:cmp_isca_and_sum_of_COSP}
 \end{figure}
 
 The implementation of COSP provides a new tool to compare Isca simulation results with the observations. Here comparison between Isca simulation and GCM simulator-oriented ISCCP cloud product (covering the period from 1998 to 2007) is shown in \figref{fig:tropical_clisccp_obs_isca}, where the Isca simulation is run with Q-flux with linear and low cloud scheme (shown in \tabref{tab:qflux_ppe_exps_summary}), while the observed cloud amount frequency distribution product is derived from the ISCCP D1 dataset \citep{Rossow1999advances} (available at \url{https://climserv.ipsl.polytechnique.fr/cfmip-obs/data/ISCCP}, last access: June 10, 2021), which is binned into six optical thickness categories, each of which is further divided into seven cloud-top pressure groups. For the Isca simulation with COSP, only ISCCP simulator \citep{Klein1999validation,Webb2001combining} is activated.
 
-At first, the diagnostics from COSP are compared to the Isca native outputs to make sure it is correctly implemented. To do so, the sum of cloud cover over all bins of the joint histogram is compared with the model diagnostic of total cloud cover which model computes without using the ISCCP simulator \citep[e.g.,][]{Zelinka2012computing1,Klein2013climate}.
-
+The output joint histogram of cloud-top pressure and optical depth from ISCCP simulator of Isca is shown in \figref{fig:cmp_isca_and_sum_of_COSP}a, which bins the cloud fields into 7 CTP and 7 optical depth categories. The value in each bin represents the cloud fraction of that category. To make sure the COSP is correctly implemented in Isca, the diagnostics from COSP are compared to the Isca outputs. Specifically, following the method from \cite{Zelinka2012computing1} and \cite{Klein2013climate}, the sum of cloud cover over all bins of the joint histogram (\figref{fig:cmp_isca_and_sum_of_COSP} b) is compared with the diagnostic of total cloud cover (\figref{fig:cmp_isca_and_sum_of_COSP} c) from Isca that is computed without using the ISCCP simulator. It is noted that the global mean values of the two cloud covers are quite close, and the spatial patterns also match with each other, although we notice that some discrepancies appear over polar regions. The comparison suggests that the COSP is correctly implemented in Isca, and its output can be employed for the later analysis.
 
 \begin{figure}[ht]
     \centering
