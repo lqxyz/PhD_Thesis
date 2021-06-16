@@ -53,7 +53,8 @@ As introduced in \chapref{ch:methods}, the Cloud Feedback Model Intercomparison 
 %% Possible reason for the disagreement between model with observation for thin clouds
 The extremely thin clouds (i.e., $\tau<$0.3) are excluded in the COSP analysis, as the models usually disagree largely with ISCCP observation in this category. One possible reason for this is the impact of the thin clouds on TOA radiation budget is usually difficult to detect by the passive sensors from the ISCCP satellites \citep{Klein2013climate}.
 
-In the AMIP-type simulations or the ones performed with Q-flux (to be introduced in \secref{sec:Q_flux_intro}, the COSP is only run for the last five years, and only the ISCCP simulator is enabled. One key diagnostic output to be acquired from the COSP is the  joint histogram of cloud-top pressure (CTP) and optical depth. In current setup, the histogram segments are obtained separately first, and then the whole histogram is derived directly by concatenating these segments, as they are independent to each other.
+In the AMIP-type simulations or the ones performed with Q-flux (to be introduced in \secref{sec:Q_flux_intro}), the COSP is only run for the last five years, and the ISCCP simulator is enabled alone. One key diagnostic output to be acquired from the COSP is the joint histogram of cloud-top pressure (CTP) and optical depth ($clisccp$ in CFMIP variables). In current setup, the histogram segments are first obtained separately for each CTP category (7 in total), and then the whole histogram is derived directly by concatenating these segments, as they are independent to each other.
+% , boundaries are 1000, 800, 680, 560, 440, 310, 180 hPa
 
 % Possible reason of too much thick  clouds is the treatment of cloud water is not reasonable: e.g., no partition between snow and liquid water?
 % vertical resolution too coarse to simulate the thin clouds?
@@ -127,12 +128,22 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
 
 \begin{figure}[ht]
     \centering
+    \includegraphics[width=1\linewidth]{{figs/change_of_CRE/cmp_isca_cosp_tot_cld_amt}.png}
+    \caption{Comparison of sum of ISCCP joint histogram and total cloud amount from Isca.}
+    \label{fig:cmp_isca_and_sum_of_COSP}
+\end{figure}
+
+The implementation of COSP provides a new tool to compare Isca simulation results with the observations. Here comparison between Isca simulation and GCM simulator-oriented ISCCP cloud product (covering the period from 1998 to 2007) is shown in \figref{fig:tropical_clisccp_obs_isca}, where the Isca simulation is run with Q-flux with linear and low cloud scheme (shown in \tabref{tab:qflux_ppe_exps_summary}), while the observed cloud amount frequency distribution product is derived from the ISCCP D1 dataset \citep{Rossow1999advances} (available at \url{https://climserv.ipsl.polytechnique.fr/cfmip-obs/data/ISCCP}, last access: June 10, 2021), which is binned into six optical thickness categories, each of which is further divided into seven cloud-top pressure groups. For the Isca simulation with COSP, only ISCCP simulator \citep{Klein1999validation,Webb2001combining} is activated.
+
+At first, the diagnostics from COSP are compared to the Isca native outputs to make sure it is correctly implemented. To do so, the sum of cloud cover over all bins of the joint histogram is compared with the model diagnostic of total cloud cover which model computes without using the ISCCP simulator \citep[e.g.,][]{Zelinka2012computing1,Klein2013climate}.
+
+
+\begin{figure}[ht]
+    \centering
     \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/clisccp_cloud_thickness_category_obs_isca_linear_sc}.pdf}
     \caption{Annual mean cloud frequency from (top row) GCM simulator-oriented ISCCP product (1998-2007) and (bottom row) one Isca simulation, sorted by vertical velocity at 500 hPa ($\omega_{500}$, units: hPa day$^{-1}$) and divided into different cloud thickness categories: (a, e) thin (0.3$\le\tau<$3.6), (b, f) intermediate (3.6$\le\tau<$23), (c, g) thick ($\tau\ge$23), and (d, h) all optical depths. For ISCCP, the $\omega_{500}$ is from ERA-Interim analysis (1998-2007). }
     \label{fig:tropical_clisccp_obs_isca}
 \end{figure}
-
-The implementation of COSP provides a new tool to compare Isca simulation results with the observations. Here comparison between Isca simulation and GCM simulator-oriented ISCCP cloud product (covering the period from 1998 to 2007) is shown in \figref{fig:tropical_clisccp_obs_isca}, where the Isca simulation is run with Q-flux with linear and low cloud scheme (shown in \tabref{tab:qflux_ppe_exps_summary}), while the observed cloud amount frequency distribution product is derived from the ISCCP D1 dataset \citep{Rossow1999advances} (available at \url{https://climserv.ipsl.polytechnique.fr/cfmip-obs/data/ISCCP}, last access: June 10, 2021), which is binned into six optical thickness categories, each of which is further divided into seven cloud-top pressure groups. For the Isca simulation with COSP, only ISCCP simulator \citep{Klein1999validation,Webb2001combining} is activated.
 
 \subsection{Comparison of cloud feedback calculation}
 
