@@ -106,13 +106,17 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
 		1 & Linear & Default values in \tabref{tab:cld_scheme_summary} & Simulations with Q-flux; Control (1$\times$CO$_2$) and perturbed (4$\times$CO$_2$) experiments \\
 		2 & a\_surf & $a_{s}: 42 \rightarrow 20$ & Equivalent to decrease the critical relative humidity at the surface \\
 		3 & a\_top & $a_{t}: 13 \rightarrow 10$ & Equivalent to decrease the critical relative humidity at the upper troposphere \\
-		4 & Sc\_coeff & $c: -0.1 \rightarrow -0.3$ & The added stratocumulus clouds should decrease \\
-		5 & Tmax &  $T_{max}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase)\\
-		6 & Tmin & $T_{min}: -40\rightarrow -20~^\circ$C & Increase the temperature threshold of the fraction of ice cloud\\
-		7 & Reff\_ice & $r_{e_ice}:25\rightarrow 50~\mu$m & Increase th default effective radius for ice cloud (Reff would increase)\\
-		%rcl\_height &  & In-cloud liquid water mixing ratio is specified as a function of height, rather than as temperature\\
-		8 & freezedry & On & Use the freezedry method \\
-		9 & Sundqvist & Default values & Change the default cloud fraction scheme from linear to Sundqvist\\
+		4 & Sc\_coeff\_c & $c: -0.1 \rightarrow -0.3$ & The added stratocumulus clouds should decrease \\
+		5 & Sc\_coeff\_b & $b: 1.3 \rightarrow 1$ & The added stratocumulus clouds should decrease \\
+		6 & Tmax &  $T_{max}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase) \\
+		7 & Tmin & $T_{min}: -40\rightarrow -35~^\circ$C & Increase the temperature threshold of the fraction of ice cloud \\
+		8 & Reff\_ice & $r_{e_ice}:25\rightarrow 50~\mu$m & Increase the default effective radius for ice cloud \\
+		9 & Reff\_liq & $r_{e_ice}:14\rightarrow 12~\mu$m & Decrease the default effective radius for liquid cloud \\
+		%rcl\_height &  & In-cloud liquid water mixing ratio is specified as a function of height, rather than as temperature \\
+		10 & freezedry & On & Use the freezedry method \\
+		11 & Sundqvist & On & Change the default cloud fraction scheme from linear to Sundqvist \\
+		12 & cld\_water & $m_{l}=0.2$ & Increase the maximum of in-cloud water mixing ratio a box can reach \\
+		%12 & qcl\_T & $q_{l}=0.2$ & In-cloud water mixing ratio as a function of height \\
 		\bottomrule
 	\end{tabular}
 	}
