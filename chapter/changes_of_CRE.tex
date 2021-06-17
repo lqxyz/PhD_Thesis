@@ -97,22 +97,22 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
 	\centering
 	\renewcommand{\arraystretch}{1.5}
 	\resizebox{\textwidth}{!}{
-	\begin{tabular}{c >{\raggedright}m{0.26\linewidth} m{0.6\linewidth}} 
+	\begin{tabular}{cc >{\raggedright}m{0.26\linewidth} m{0.6\linewidth}} 
 	% control width, alignment for cells
 	% https://texblog.org/2017/02/06/proper-tables-with-latex/
 		\toprule
-	    Experiment & Parameter / Switch & Description \\
+	    Index & Experiment & Parameter change & Description \\
 		\midrule
-		Linear & Default values in \tabref{tab:cld_scheme_summary} & Simulations with Q-flux; Control (1$\times$CO$_2$) and perturbed (4$\times$CO$_2$) experiments \\
-		a\_surf & $a_{s}: 42 \rightarrow 20$ & Equivalent to decrease the critical relative humidity at the surface \\
-		a\_top & $a_{t}: 13 \rightarrow 10$ & Equivalent to decrease the critical relative humidity at the upper troposphere \\
-		Sc\_coeff & $c: -0.1 \rightarrow -0.3$ & The added stratocumulus clouds should decrease \\
-		Tmax &  $T_{max}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase)\\
-		Tmin & $T_{min}: -40\rightarrow -20~^\circ$C & Increase the temperature threshold of the fraction of ice cloud\\
-		Reff\_ice & $r_{e_ice}:25\rightarrow 50~\mu$m & Increase th default effective radius for ice cloud (Reff would increase)\\
+		1 & Linear & Default values in \tabref{tab:cld_scheme_summary} & Simulations with Q-flux; Control (1$\times$CO$_2$) and perturbed (4$\times$CO$_2$) experiments \\
+		2 & a\_surf & $a_{s}: 42 \rightarrow 20$ & Equivalent to decrease the critical relative humidity at the surface \\
+		3 & a\_top & $a_{t}: 13 \rightarrow 10$ & Equivalent to decrease the critical relative humidity at the upper troposphere \\
+		4 & Sc\_coeff & $c: -0.1 \rightarrow -0.3$ & The added stratocumulus clouds should decrease \\
+		5 & Tmax &  $T_{max}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase)\\
+		6 & Tmin & $T_{min}: -40\rightarrow -20~^\circ$C & Increase the temperature threshold of the fraction of ice cloud\\
+		7 & Reff\_ice & $r_{e_ice}:25\rightarrow 50~\mu$m & Increase th default effective radius for ice cloud (Reff would increase)\\
 		%rcl\_height &  & In-cloud liquid water mixing ratio is specified as a function of height, rather than as temperature\\
-		freezedry & On & Use the freezedry method \\
-		Sundqvist & Default values & Change the default cloud fraction scheme from linear to Sundqvist\\
+		8 & freezedry & On & Use the freezedry method \\
+		9 & Sundqvist & Default values & Change the default cloud fraction scheme from linear to Sundqvist\\
 		\bottomrule
 	\end{tabular}
 	}
