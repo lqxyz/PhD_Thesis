@@ -46,10 +46,16 @@ Another followed question is whether we could reproduce certain spread of cloud 
 
 %The chapter is to be organized as follows: in the section...
 
+The outline of this chapter is as follows. \secref{sec:simulation_setup_cld_fbk} describes the basic simulation setups in this chapter, including the implementation of observation satellite simulator package, the perturbed physics ensemble in Isca, and how the Q-flux is prescribed in the simulations. In \secref{sec:results_cld_fbk}, we first check the behaviors of satellite simulator to make sure it is correctly implemented (\secref{sec:eval_cosp}). Then based on the satellite simulator outputs and the cloud radiative kernel method, we compared the several different methods to compute the cloud feedbacks (\secref{sec:cmp_cld_fbk_method_result}), which is the basis for our future analysis. The simulated spatial pattern and zonal mean structures of cloud feedbacks from the PPEs are also examined. Next the spread of global mean longwave, shortwave and net cloud feedbacks and their components decomposed by altitude and types are examined in Section xxx, and the relative contributions of these components to spread of net cloud feedbacks are quantified. Also, these feedbacks are also evaluated against the expert assessment based on multi-line evidence from \cite{Sherwood2020}, and the reasons for the agreement and disagreement with these expert assessment are analyzed. The contributions to the spread of cloud feedback from tropical and extra-tropical regions are quantified in Section xxxx. 
 
+Finally, the relationship between cloud feedback and the equilibrium climate sensitivity is investigated in Section xxx.
+
+
+%In addition, the different components of cloud feedbacks are obtained from the cloud
 
 
 \section{Simulation setup}
+\label{sec:simulation_setup_cld_fbk}
 %Similar to the setups in \secref{sec:eval_cld_exp_setup}, here the SST has a uniform 4K warming.
 
 \subsection{Implementation of the COSP}
@@ -135,11 +141,14 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
  The simulations in \chapref{ch:simple_cld_scheme} are the AMIP-type fixed-SST experiments, and the changes in atmosphere could not feedback into the SST changes. To make it more realistic, here we prescribe the derived ocean heat transport flux (the `Q-flux') from a given distribution of SSTs following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. The detailed description of how Q-flux is calculated can be found in \secref{sec:Q_flux_method}. 
 
 \section{Results}
+\label{sec:results_cld_fbk}
+
 In this section, the simulated cloud feedbacks from Isca are to be introduced.
 
 %\subsection{}
 
 \subsection{COSP evaluation}
+\label{sec:eval_cosp}
 
 \begin{figure}[ht]
     \centering
@@ -160,6 +169,7 @@ The output joint histogram of cloud-top pressure and optical depth from ISCCP si
 \end{figure}
 
 \subsection{Comparison of cloud feedback calculation}
+\label{sec:cmp_cld_fbk_method_result}
 
 \cite{Zelinka2013} has summarized the the diagnostic and methodology used in current studies (see their Table 1). In general, the Gregory method \citep{Gregory2004} that calculates feedback from the slope of $\Delta R$ against $\Delta T_s$ accounts for the rapid adjustments. Here $\Delta R$ is the radiative flux anomaly at the TOA and $\Delta T_s$ is the surface temperature change.  The cloud radiative effect (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) based method is affected by the cloud masking effect, while the cloud radiative kernel method is not affected by this masking effect.
 
