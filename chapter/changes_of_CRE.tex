@@ -46,10 +46,7 @@ Another followed question is whether we could reproduce certain spread of cloud 
 
 %The chapter is to be organized as follows: in the section...
 
-The outline of this chapter is as follows. \secref{sec:simulation_setup_cld_fbk} describes the basic simulation setups in this chapter, including the implementation of observation satellite simulator package, the perturbed physics ensemble in Isca, and how the Q-flux is prescribed in the simulations. In \secref{sec:results_cld_fbk}, we first check the behaviors of satellite simulator to make sure it is correctly implemented (\secref{sec:eval_cosp}). Then based on the satellite simulator outputs and the cloud radiative kernel method, we compared the several different methods to compute the cloud feedbacks (\secref{sec:cmp_cld_fbk_method_result}), which is the basis for our future analysis. The simulated spatial pattern and zonal mean structures of cloud feedbacks from the PPEs are also examined. Next the spread of global mean longwave, shortwave and net cloud feedbacks and their components decomposed by altitude and types are examined in Section xxx, and the relative contributions of these components to spread of net cloud feedbacks are quantified. Also, these feedbacks are also evaluated against the expert assessment based on multi-line evidence from \cite{Sherwood2020}, and the reasons for the agreement and disagreement with these expert assessment are analyzed. The contributions to the spread of cloud feedback from tropical and extra-tropical regions are quantified in Section xxxx. 
-
-Finally, the relationship between cloud feedback and the equilibrium climate sensitivity is investigated in Section xxx.
-
+The outline of this chapter is as follows. \secref{sec:simulation_setup_cld_fbk} describes the basic simulation setups in this chapter, including the implementation of observation satellite simulator package, the perturbed physics ensemble in Isca, and how the Q-flux is prescribed in the simulations. In \secref{sec:eval_cosp}, the behaviors of satellite simulator is examined to make sure it is correctly implemented. Then based on the satellite simulator outputs and the cloud radiative kernel method, we compared the several different methods to compute the cloud feedbacks in \secref{sec:cmp_cld_fbk_method_result}, which is the basis for our future analysis. In \secref{sec:simu_cld_fbk}, we present the simulated spatial pattern and zonal mean structures of cloud feedbacks from the PPEs, and explain the possible mechanisms for the feedbacks. The spread of cloud feedbacks from PPE of Isca simulations and the underlying causes for the spread are investigated in \secref{sec:spread_of_cld_fbk_in_PPE}. In this section, at first the global mean longwave, shortwave and net cloud feedbacks and their components decomposed by altitude and types are examined in \secref{sec:spread_of_gm_cld_fbks_PPE}, and the relative contributions of these components to spread of net cloud feedbacks are quantified. Also, these feedbacks are also evaluated against the expert assessment based on multi-line evidence from \cite{Sherwood2020}, and the reasons for the agreement and disagreement with these expert assessment are analyzed (\secref{sec:cmp_with_Sherwood_assessment}). The contributions to the spread of cloud feedback from tropical and extra-tropical regions are quantified in \secref{sec:reg_contri_to_spread_of_cldfbk}, and the possible reasons are explored by the cloud controlling factor analysis in \secref{sec:cld_control_factor}. Finally, the relationship between cloud feedback and the equilibrium climate sensitivity is investigated briefly in \secref{sec:implification_for_ECS}.
 
 %In addition, the different components of cloud feedbacks are obtained from the cloud
 
@@ -140,14 +137,14 @@ In the AMIP-type simulations or the ones performed with Q-flux (to be introduced
 
  The simulations in \chapref{ch:simple_cld_scheme} are the AMIP-type fixed-SST experiments, and the changes in atmosphere could not feedback into the SST changes. To make it more realistic, here we prescribe the derived ocean heat transport flux (the `Q-flux') from a given distribution of SSTs following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. The detailed description of how Q-flux is calculated can be found in \secref{sec:Q_flux_method}. 
 
-\section{Results}
-\label{sec:results_cld_fbk}
+%\section{Results}
+%\label{sec:results_cld_fbk}
 
-In this section, the simulated cloud feedbacks from Isca are to be introduced.
+%In this section, the simulated cloud feedbacks from Isca are to be introduced.
 
 %\subsection{}
 
-\subsection{COSP evaluation}
+\section{COSP evaluation}
 \label{sec:eval_cosp}
 
 \begin{figure}[ht]
@@ -168,7 +165,7 @@ The output joint histogram of cloud-top pressure and optical depth from ISCCP si
     \label{fig:tropical_clisccp_obs_isca}
 \end{figure}
 
-\subsection{Comparison of cloud feedback calculation}
+\section{Comparison of cloud feedback calculation}
 \label{sec:cmp_cld_fbk_method_result}
 
 \cite{Zelinka2013} has summarized the the diagnostic and methodology used in current studies (see their Table 1). In general, the Gregory method \citep{Gregory2004} that calculates feedback from the slope of $\Delta R$ against $\Delta T_s$ accounts for the rapid adjustments. Here $\Delta R$ is the radiative flux anomaly at the TOA and $\Delta T_s$ is the surface temperature change.  The cloud radiative effect (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) based method is affected by the cloud masking effect, while the cloud radiative kernel method is not affected by this masking effect.
@@ -209,6 +206,12 @@ The cloud feedback is also calculated according to categories I and III, and the
     %\end{sidewaystable}
 \end{table}
 
+\section{Simulated cloud feedbacks}
+\label{sec:simu_cld_fbk}
+
+\subsection{Spatial pattern}
+
+\subsection{Zonal mean}
 
 \begin{figure}[ht]
     \centering
@@ -217,6 +220,13 @@ The cloud feedback is also calculated according to categories I and III, and the
     \label{fig:zonal_mean_cld_fbk_ensemble}
 \end{figure}
 
+
+\section{Spread of cloud feedback}
+\label{sec:spread_of_cld_fbk_in_PPE}
+
+\subsection{Spread of global mean cloud feedbacks}
+\label{sec:spread_of_gm_cld_fbks_PPE}
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/global_mean_cld_fbk_decomp_scatter}.pdf}
@@ -224,7 +234,9 @@ The cloud feedback is also calculated according to categories I and III, and the
     \label{fig:global_mean_cld_fbk_scatter}
 \end{figure}
 
+
 \subsection{Comparison with WCRP assessment}
+\label{sec:cmp_with_Sherwood_assessment}
 
 \begin{figure}[ht]
     \centering
@@ -242,5 +254,16 @@ Regarding to the tropical marine low cloud feedback, the ensemble mean feedback 
 %In addition, the \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals from expert assessments of cloud feedbacks \citep[see Table 1 of][]{Sherwood2020} are indicated by the 
 
 \figref{fig:WCRP_assessment} is produced using the software package developed by \cite{Zelinka2021evaluating}, available at \url{https://github.com/mzelinka/assessed-cloud-fbks}.
+
+\subsection{Regional contributions}
+\label{sec:reg_contri_to_spread_of_cldfbk}
+
+\subsection{Cloud controlling factor analysis}
+\label{sec:cld_control_factor}
+
+
+\section{Implications for equilibrium climate sensitivity}
+\label{sec:implification_for_ECS}
+
 
 \section{Summary and discussion}
