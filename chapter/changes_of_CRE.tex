@@ -14,6 +14,7 @@ The major findings of this chapter are
 \end{enumerate}
 
 \section{Introduction}
+\label{sec:cld_fbk_chap_intro}
 
 % What is cloud feedback and why it is important
 As introduced in \chapref{ch:introduction} and \chapref{ch:simple_cld_scheme}, clouds heat the Earth by absorbing and re-emitting the longwave radiation, and cool the Earth by reflecting the incoming solar radiation, the so called cloud radiative effect. In total, the net radiative effect of clouds is to cool the Earth at the magnitude about 20 Wm$^2$ (\figref{fig:CRE_from_IPCC}). But the problem about how the cloud radiative effect would change under global warming (i.e., cloud feedback) has haunted climate community for decades. For example, in early 1990s, \cite{Cess1990intercomparison} evaluated the climate feedback processes in 19 Atmospheric General Circulation Models (AGCMs), and found that the broad spectrum of cloud feedbacks (from modest negative to strong positive) is the consequence of the models' different responses to sea surface temperature warming. Also, models may have similar responses if their net cloud feedbacks are similar, despite of large difference in their compensating solar or infrared components. Later, an updated analysis in AGCMs suggest that the models have moderate net cloud feedbacks compared to their predecessors, but these changes can be traced to different treatments of clouds in the respective models, and the spread of shortwave and longwave cloud feedback components is still substantial, indicating that the models still have physical disagreements \citep{Cess1996cloud}. Other studies such as \cite{Colman2003comparison}, \cite{Webb2006contribution} and \cite{Vial2013} also concluded that differences in cloud feedback make a large contribution to differences in climate sensitivity in GCMs. In recent CMIP6 models, the mutli-model mean net cloud feedback is positive \citep[see \figref{fig:zelinka_global_mean_fbks};][]{Zelinka2020causes}, meaning that the cloud would cool the planet less than before as the planet warms. Nevertheless, the cloud feedback still has the largest uncertainty among all the climate feedback parameters,  remaining the leading cause for the inter-model spread of equilibrium climate sensitivity (ECS) in climate models \citep{Zelinka2020causes,Sherwood2020}. %Cess1990intercomparison,Cess1996cloud,Webb2006contribution,Vial2013,
@@ -94,10 +95,9 @@ One key diagnostic output to be acquired from the COSP is the joint histogram of
 \subsection{Perturbed parameter ensemble}
 \label{sec:PPE_setup}
  
- In this chapter, the parameters of the simple cloud scheme are perturbed to
+ As introduced in \secref{sec:cld_fbk_chap_intro}, the perturbed physics ensemble is a possible way to explore the sensitivity of GCM and examine the plausible spread of climate feedbacks. This method is adopted in this chapter to investigate the possible uncertainty of cloud feedbacks simulated from Isca with the simple cloud scheme from \chapref{ch:simple_cld_scheme}. In specific, a subset of parameters of the simple cloud scheme (see \tabref{tab:cld_scheme_summary}) are perturbed to get the members of PPE in Isca. There are many different options to vary the parameters to get the parameter space, but only one parameter is varied each time in our current perturbation. In this case, the set of the parameters could be limited.
  
-
- \begin{table}
+ \begin{table}[ht]
 %\begin{sidewaystable}
 	\caption{Design of the perturbed parameter experiments (PPEs). All simulations are run in T42 horizontal resolution.}
 	\centering
