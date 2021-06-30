@@ -173,7 +173,7 @@ Here we compute and compare the cloud feedback from Isca simulations with variou
 \begin{equation}
     \Delta R_{C}=\sum_{p=1}^{7} \sum_{\tau=1}^{7}\left(K_{p \tau} \Delta C_{p \tau}\right),
 \end{equation}
-where $K_{p\tau}$ is the cloud radiative kernel at each CTP-optical depth bin of ISCCP histogram. There are 7 bins for CTP and optical depth categories respectively. In this calculation, the cloud radiative kernels are multiplied by changes in ISCCP simulator-diagnosed cloud fraction $\Delta C_{p\tau}$ between a perturbed and unperturbed climate and summed over all CTP and optical depth categories. It is clear that there is a sign change in the slope of longwave cloud feedback (\figref{fig:gregory_plot_for_CRE_and_kernel_flux}a), where the slope changed from -0.31 Wm$^{-2}$K$^{-1}$ in category II (CRE + Gregory) to 0.35 Wm$^{-2}$K$^{-1}$ in category IV (kernel + Gregory). The longwave forcing term in category II is more negative than that in category IV due to the cloud masking effect. For example, \cite{Andrews2012cloud} found that the instantaneous cloud masking effect for longwave CRE is about -0.62 Wm$^{-2}$ in response to doubling CO$_2$ (see their Table 2).
+where $K_{p\tau}$ is the cloud radiative kernel at each CTP-optical depth bin of ISCCP histogram, in which both the CTP and optical depth ($\tau$) categories have 7 bins. In this calculation, the cloud radiative kernels are multiplied by changes in ISCCP simulator-diagnosed cloud fraction $\Delta C_{p\tau}$ between a perturbed and control climate and summed over all CTP and optical depth categories. It is clear that there is a sign change in the slope of longwave cloud feedback (\figref{fig:gregory_plot_for_CRE_and_kernel_flux}a), where the slope changed from -0.31 Wm$^{-2}$K$^{-1}$ in category II (CRE + Gregory) to 0.35 Wm$^{-2}$K$^{-1}$ in category IV (kernel + Gregory). The longwave forcing term in category II is more negative than that in category IV due to the cloud masking effect. For example, \cite{Andrews2012cloud} found that the instantaneous cloud masking effect for longwave CRE is about -0.62 Wm$^{-2}$ in response to doubling CO$_2$ (see their Table 2).
 
 \begin{figure}[ht]
     \centering
@@ -230,6 +230,7 @@ In summary, from this comparison we can find that the CRE based diagnostics can 
     \label{fig:zonal_mean_cld_fbk_ensemble}
 \end{figure}
 
+The ensemble and zonal mean longwave, shortwave and net cloud feedbacks from the PPE of Isca are displayed in \figref{fig:zonal_mean_cld_fbk_ensemble}. If the total cloud feedback is decomposed into non-low (above 680 hPa) and low (below 680 hPa) components, 
 
 \section{Spread of cloud feedback}
 \label{sec:spread_of_cld_fbk_in_PPE}
