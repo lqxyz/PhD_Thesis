@@ -178,6 +178,12 @@ To analyze the simulation results, we first consider the mean and range of simul
 
 % a poleward shift of clouds in midlatitudes, 
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/change_of_cld_fraction_view_from_clisccp}.png}
+    \caption{The cloud fraction changes for different optical depth categories.}
+    \label{fig:change_of_cld_from_isccp_perspective}
+\end{figure}
 
 \subsection{Comparison of cloud feedback calculation}
 \label{sec:cmp_cld_fbk_method_result}
@@ -190,7 +196,7 @@ Here we compute and compare the cloud feedback from Isca simulations with variou
 \begin{equation}
     \Delta R_{C}=\sum_{p=1}^{7} \sum_{\tau=1}^{7}\left(K_{p \tau} \Delta C_{p \tau}\right),
 \end{equation}
-where $K_{p\tau}$ is the cloud radiative kernel at each CTP-optical depth bin of ISCCP histogram, in which both the CTP and optical depth ($\tau$) categories have 7 bins. In this calculation, the cloud radiative kernels are multiplied by changes in ISCCP simulator-diagnosed cloud fraction $\Delta C_{p\tau}$ between a perturbed and control climate and summed over all CTP and optical depth categories. It is clear that there is a sign change in the slope of longwave cloud feedback (\figref{fig:gregory_plot_for_CRE_and_kernel_flux}a), where the slope changed from -0.31 Wm$^{-2}$K$^{-1}$ in category II (CRE + Gregory) to 0.35 Wm$^{-2}$K$^{-1}$ in category IV (kernel + Gregory). The longwave forcing term in category II is more negative than that in category IV due to the cloud masking effect. For example, \cite{Andrews2012cloud} found that the instantaneous cloud masking effect for longwave CRE is about -0.62 Wm$^{-2}$ in response to doubling CO$_2$ (see their Table 2).
+where $K_{p\tau}$ is the cloud radiative kernel at each CTP-optical depth bin of ISCCP histogram, in which both the CTP and optical depth ($\tau$) categories have 7 bins. In this calculation, the cloud radiative kernels are multiplied by changes in ISCCP simulator-diagnosed cloud fraction $\Delta C_{p\tau}$ between a perturbed and control climate and summed over all CTP and optical depth categories. It is clear that there is a sign change in the slope of longwave cloud feedback (\figref{fig:gregory_plot_for_CRE_and_kernel_flux}a), where the slope changed from -0.31 Wm$^{-2}$K$^{-1}$ in category II (CRE + Gregory) to 0.35 Wm$^{-2}$K$^{-1}$ in category IV (kernel + Gregory). The longwave forcing term in category II is more negative than that in category IV due to the cloud masking effect. For example, \cite{Andrews2012cloud} found that the instantaneous cloud masking effect for longwave CRE is about -0.62 Wm$^{-2}$ in response to doubling CO$_2$ (see their Table 2). Similarly, \cite{Soden2004} got a better estimation of cloud longwave feedback by assuming the cloud-masking effect is uniform and about 0.69 Wm$^{-2}$.
 
 \begin{figure}[ht]
     \centering
