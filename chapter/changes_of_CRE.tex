@@ -180,15 +180,22 @@ To analyze the simulation results, we first consider the mean and range of simul
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/change_of_cld_fraction_view_from_clisccp}.png}
-    \caption{The cloud fraction changes for different optical depth categories.}
-    \label{fig:change_of_cld_from_isccp_perspective}
+    \includegraphics[width=1\linewidth]{{figs/change_of_CRE/global_multi_mean_profiles_for_PPE_full}.pdf}
+    \caption{}
+    \label{fig:global_mean_profiles_from_ctrl_4xco2}
 \end{figure}
+
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/change_of_cld_fraction_view_from_clisccp}.png}
+%     \caption{The cloud fraction changes for different optical depth categories.}
+%     \label{fig:change_of_cld_from_isccp_perspective}
+% \end{figure}
 
 \subsection{Comparison of cloud feedback calculation}
 \label{sec:cmp_cld_fbk_method_result}
 
-One goal of this chapter is to evaluate the cloud feedabcks from Isca simulations. The methods used in previous studies to estimate cloud feedback are introduced in \secref{sec:method_cloud_fbk}, including the estimation from cloud radiative effect  (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) and the partial radiative perturbation (or PRP) methods. An alternative to the PRP method is the kernel method, which is more efficient than the PRP method, and can be widely used among different models \citep{Soden2006,Soden2008}. The traditional radiative kernel method can account for the masking effect of clouds via the difference between the all-sky and clear-sky kernels when calculating the cloud feedback, but it is hard to decompose the bulk cloud feedback into different components. The cloud kernel method proposed by \cite{Zelinka2012computing1,Zelinka2012computing2} calculates the cloud feedback in the space of the ISCCP joint histogram of CTP and cloud optical depth, which facilitates the diagnosis of cloud changes consistently across the different models and can track the cloud feedback to the changes in cloud altitude, amount or optical thickness, and thus to different cloud types \citep{Siebesma2020clouds}. 
+One goal of this chapter is to evaluate the cloud feedabcks from Isca simulations. The methods used in previous studies to estimate cloud feedback are introduced in \secref{sec:method_cloud_fbk}, including the estimation from cloud radiative effect (CRE; i.e. the all-sky minus clear-sky downward radiative flux at TOA) and the partial radiative perturbation (or PRP) methods. An alternative to the PRP method is the kernel method, which is more efficient than the PRP method, and can be widely used among different models \citep{Soden2006,Soden2008}. The traditional radiative kernel method can account for the masking effect of clouds via the difference between the all-sky and clear-sky kernels when calculating the cloud feedback, but it is hard to decompose the bulk cloud feedback into different components. The cloud kernel method proposed by \cite{Zelinka2012computing1,Zelinka2012computing2} calculates the cloud feedback in the space of the ISCCP joint histogram of CTP and cloud optical depth, which facilitates the diagnosis of cloud changes consistently across the different models and can track the cloud feedback to the changes in cloud altitude, amount or optical thickness, and thus to different cloud types \citep{Siebesma2020clouds}. 
 
 Here we compute and compare the cloud feedback from Isca simulations with various diagnostics and methods. As summarized by \cite{Zelinka2013} (see their Table 1), based on the CRE or the kernel derived cloud-induced radiation anomalies diagnostics, there still two ways using them to estimate the cloud feedback. One is to calculate the cloud feedback by normalizing the CRE or cloud-induced radiation anomalies by the change of surface temperature between perturbed and control simulations; The other is to use the Gregory method \citep{Gregory2004}, which regresses the time series of radiation anomalies against the surface temperature changes and the slope is the feedback we wanted. The advantage of the Gregory method is that it accounts for the rapid adjustments, which is usually considered as part of radiative forcing \citep{Andrews2012cloud,Siebesma2020clouds}. In addition, the CRE based diagnostic is affected by the cloud masking effect, while the cloud-induced radiation anomalies derived from cloud radiative kernel method is not affected by the masking effect \citep{Zelinka2013}.
 
@@ -239,15 +246,22 @@ The cloud feedback is also calculated by the change of CRE directly, as shown in
 
 In summary, from this comparison we can find that the CRE based diagnostics can be impacted by the cloud masking effect, especially for the longwave components; while the kernel-derived diagnostics are nearly not impacted by the masking effect. Also, comparing to the $\Delta R/\Delta T_s$ method with the Gregory method, we find the rapid adjustment has little influence on the feedback calculation when using kernel-based diagnostics. As the COSP needs to be active from the start of the simulation when employing the Gregory method, it is time consumptive if all the simulations in PPE use this method. Therefore we adopt the kernel-derived diagnostics but estimate the cloud feedback from $\Delta R/\Delta T_s$ in current study.
 
-
 \subsection{Spatial pattern}
 \label{sec:spatial_pattern_cld_fbk}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/annual_mean_net_cld_fbk_map}.png}
+    \caption{The ensemble and annual mean net cloud feedback and its amount, altitude, and optical depth components from Isca perturbed paramerter ensemble for all clouds (left), non-low clouds (cloud top pressure, CTP ≤ 680 hPa; middle), and only low clouds (CTP > 680 hPa; right). Global mean values (in Wm$^{-2}$K$^{-1}$) are shown in brackets in the title of each panel.}
+    \label{fig:net_cld_fbk_components_map}
+\end{figure}
 
 As we know, the cloud feedback can arise from changes in different cloud properties such as cloud amount, location and optical thickness, as well as the coupling between clouds and circulation \citep[see Fig. 7.11 in ][]{Stocker2013}. How to 
 
 \citep[e.g.][]{Zelinka2017}.
 
 The partition of cloud feedbacks into different components
+
 
 
 \subsection{Zonal mean structure}
