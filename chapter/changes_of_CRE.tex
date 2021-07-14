@@ -313,7 +313,27 @@ In all the runs of Isca PPE, the net non-low cloud altitude and net low cloud am
 
 % On the contrary, the longwave component usually plays a more important role than the shortwave component for high clouds, 
 
-The spread of net cloud feedback in Isca PPE is about 0.076 Wm$^{-2}$K$^{-1}$ (1 $\sigma$), which is about 1/3 of the inter-model spread of CFMIP models \citep{Zelinka2016insights}. There are two possible reasons why the spread is lesser than the CFMIP inter-model uncertainty: First, the perturbation is limited to one parameter each time, and the parameter is limited within the simple cloud scheme itself. The range of the parameter space is rather narrow in current PPE of Isca. Second, only one model, Isca, is employed for the PPE, which is different from the CFMIP where models from multiple institutions are involved. In this case, the cloud schemes and other parameterization schemes may also contribute to the potential spread of cloud feedbacks. That is why replacing the cloud scheme in GCMs can reduce the inter-model spread of cloud feedback of CMIP5 models \citep{Geoffroy2017}.
+The spread of net cloud feedback in Isca PPE is about 0.076 Wm$^{-2}$K$^{-1}$ (1$\sigma$), which is about 1/3 of the inter-model spread of CFMIP models \citep{Zelinka2016insights}. There are two possible reasons why the spread is lesser than the CFMIP inter-model uncertainty: First, the perturbation is limited to one parameter each time, and the parameter is limited within the simple cloud scheme itself. The range of the parameter space is rather narrow in current PPE of Isca. Second, only one model, Isca, is employed for the PPE, which is different from the CFMIP where models from multiple institutions are involved. In this case, the cloud schemes and other parameterization schemes may also contribute to the potential spread of cloud feedbacks. As previous study has pointed out that the responses in cloud fields are different for models with different cloud scheme \citep[e.g.,][]{Qu2014}, and replacing the cloud scheme in GCMs can reduce the inter-model spread of cloud feedback for CMIP5 models \citep{Geoffroy2017}. 
+
+% Quantify the uncertainty of the spread of cloud feedbacks among the PPE
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{{figs/change_of_CRE/covariance_contribution_breakdown_with_err}.pdf}
+    \caption{The fractional contributions to the Isca perturbed physical ensemble variance in net cloud feedback are broken down to different altitudes and types, including low/non-low cloud amount, altitude, optical depth feedbacks and residuals.}
+    \label{fig:variance_contribution_to_cld_fbks}
+\end{figure}
+
+Following \cite{Caldwell2016quantifying} and \cite{Zelinka2016insights}, we quantify the contribution of cloud types to the spread of net cloud cloud feedback as follows:
+
+\begin{equation}
+    \begin{aligned}
+    \operatorname{var}\left(\sum_{i=1}^{N} X_{i}\right) &=\sum_{i=1}^{N} \sum_{j=1}^{N} \operatorname{cov}\left(X_{i}, X_{j}\right) \\
+    &=\sum_{i=1}^{N} \operatorname{var}\left(X_{i}\right)+2 \sum_{j=1}^{N} \sum_{k=j+1}^{N} \operatorname{cov}\left(X_{i}, X_{j}\right),
+    \end{aligned}
+\end{equation}
+where $X_i$ are low/non-low cloud amount,  altitude, optical depth feedbacks and residuals.
+
 
 \subsection{Comparison with WCRP assessment}
 \label{sec:cmp_with_Sherwood_assessment}
