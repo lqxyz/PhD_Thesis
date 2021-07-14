@@ -301,7 +301,7 @@ The net cloud feedabck (right column of \figref{fig:zonal_mean_cld_fbk_ensemble}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/global_mean_cld_fbk_decomp_scatter}.pdf}
+    \includegraphics[width=0.7\linewidth]{{figs/change_of_CRE/global_mean_cld_fbk_decomp_scatter}.pdf}
     \caption{Global mean (orange) shortwave (SW), (blue) longwave (LW), and (black) net cloud feedbacks decomposed into amount, altitude, optical depth, and residual components for (a) all clouds, (b) non-low clouds (cloud top pressure, CTP$\le$680 hPa ), and (c) low clouds (CTP > 680hPa). The mean feedbacks of perturbed parameter ensemble are shown as empty bars.}
     \label{fig:global_mean_cld_fbk_scatter}
 \end{figure}
@@ -319,12 +319,12 @@ The spread of net cloud feedback in Isca PPE is about 0.076 Wm$^{-2}$K$^{-1}$ (1
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\linewidth]{{figs/change_of_CRE/covariance_contribution_breakdown_with_err}.pdf}
+    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/covariance_contribution_breakdown_with_err}.pdf}
     \caption{The fractional contributions to the Isca perturbed physical ensemble variance in net cloud feedback are broken down to different altitudes and types, including low/non-low cloud amount, altitude, optical depth feedbacks and residuals.}
     \label{fig:variance_contribution_to_cld_fbks}
 \end{figure}
 
-Following \cite{Caldwell2016quantifying} and \cite{Zelinka2016insights}, we quantify the contribution of cloud types to the spread of net cloud cloud feedback as follows:
+Following \cite{Caldwell2016quantifying} and \cite{Zelinka2016insights}, the contribution of cloud types to the spread of net cloud cloud feedback is quantified as follows:
 
 \begin{equation}
     \begin{aligned}
@@ -332,7 +332,7 @@ Following \cite{Caldwell2016quantifying} and \cite{Zelinka2016insights}, we quan
     &=\sum_{i=1}^{N} \operatorname{var}\left(X_{i}\right)+2 \sum_{j=1}^{N} \sum_{k=j+1}^{N} \operatorname{cov}\left(X_{i}, X_{j}\right),
     \end{aligned}
 \end{equation}
-where $X_i$ are low/non-low cloud amount,  altitude, optical depth feedbacks and residuals.
+where $X_i$ are low/non-low cloud amount, altitude, optical depth feedbacks and residuals. Then the ratios of these components to total variance are obtained and plotted in \figref{fig:variance_contribution_to_cld_fbks}. The diagonal terms are for the variances of each component, and the values below the diagonal are for the covariances of these components. Here the covariance terms are multiplied by 2, so the upper diagonal part in \figref{fig:variance_contribution_to_cld_fbks} is neglected.
 
 
 \subsection{Comparison with WCRP assessment}
