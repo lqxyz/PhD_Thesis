@@ -512,9 +512,14 @@ Similarly, when the analysis is repeated for ocean region only, we find that the
 \section{Summary and discussion}
 
 Cloud feedback has the largest intermodel spread among all the feedback parameters in CMIP5/6 models \citep{Zelinka2020causes}, one of the largest sources of uncertainty in ECS among GCMs \citep{Stocker2013,Ceppi2017,Zelinka2020causes}, but the underlying causes for cloud feedback uncertainty are still not fully understood \citep[e.g.,][]{Bony2005,Vial2013,Qu2014,Qu2015positive,Webb2015,Zelinka2016insights,Geoffroy2017,Zelinka2020causes}. Narrowing down the cloud feedback uncertainty is key to constrain the range of ECS \citep[e.g.,][]{Myers2021,Ceppi2021observational} and to help us better understand the responses of climate system to global warming. In this chapter, we try to use the simple cloud scheme developed in \chapref{ch:simple_cld_scheme} to understand the spread of cloud feedbacks. 
-At first, we try to evaluate the simulated cloud feedback from the simple diagnostic cloud scheme (described in \chapref{ch:simple_cld_scheme}) of Isca. To do so, 
+
+At first, we try to evaluate the simulated cloud feedback from the simple diagnostic cloud scheme (described in \chapref{ch:simple_cld_scheme}) of Isca. To do so, the CFMIP observation simulator pacakage (COSP) is implemented in Isca to get the necessary outputs to be used for the cloud feedback calculation and decomposition. The COSP output was evaluated first to make sure it is successfully implemented. Then,  the cloud radiative kernel method \citep{Zelinka2012computing1,Zelinka2012computing2} is employed
 
 At first, the simulated cloud feedbacks, including their spatial pattern and zonal mean structure, as well as their various components, are evaluated. Then the spread of cloud feedbacks in Isca PPE and the possible underlying causes 
 
 
-With the cloud simulator package (i.e., COSP) implemented in Isca, the cloud feedback cloud radiative kernel method,
+With the implemented in Isca, the cloud feedback cloud radiative kernel method,
+
+Conclusions
+
+To do next?
