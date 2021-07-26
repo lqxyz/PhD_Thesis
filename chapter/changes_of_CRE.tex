@@ -477,14 +477,11 @@ In fact, despite the prediction from the multiple linear regression model is not
     qcl\_T\_0.2      &    2.79 &   -0.76 &        0.81 &           0.42 &           0.39 & 3.68 \\
     reffliq\_12     &    2.63 &   -0.85 &        0.82 &           0.29 &           0.53 & 3.08 \\
     \bottomrule
-    \end{tabular}
     \label{tab:ECS_forcing_feedback}
+    \end{tabular}
 \end{table}
 
-The simulations from Isca PPE have produced a certain range in cloud feebdacks, as discussed in \secref{sec:spread_of_cld_fbk_in_PPE}, so what are the implications for the ECS? To answer this question, we first evaluate the ECS from Isca simulations based on the method proposed by \cite{Gregory2004}. That is to say, the TOA radiation imbalances are plotted versus the surface air temperature anomalies between control and quadruple CO$_2$ simulations, in which the half of the x-axis intercept is the ECS, as the effective radiative forcing is defined in double CO$_2$ situation. The other derived parameters, climate feedback parameter ($\lambda$; slope) and effective radiative forcing (half of the y-axis intercept), are shown in \tabref{tab:ECS_forcing_feedback}. The Gregory type calculation is possible in current Q-flux setup as the SST can vary in response to the changes in radiative forcing. In Isca PPE, the estimated effective forcing and climate feedback parameters vary due to the changes in parameters of cloud scheme, and thus the derived ECS values also show certain spread. The smallest ECS is 3.08 K in \textit{reffliq\_12} run, while the largest is 4.91 K in \textit{sc\_park\_a\_1} run. The PPE mean of ECS is 4.12 $\pm$ 0.54 K (1-$\sigma$), within the 5\%--95\% percentile range of the expert assessed range \citep{Sherwood2020}.
-
-% as shown in \figref{fig:ECS_forcing_feedback_in_Isca_PPE}.
-% 4.118714382110627 0.5351870699913492
+The Isca PPE simulations have produced a certain range in cloud feedbacks, as discussed in \secref{sec:spread_of_cld_fbk_in_PPE} and also in \tabref{tab:ECS_forcing_feedback}, so what are the implications for the ECS? To answer this question, we first evaluate the ECS from Isca simulations based on the method proposed by \cite{Gregory2004}. That is to say, the TOA radiation imbalances are plotted versus the surface air temperature anomalies between control and quadruple CO$_2$ simulations, in which the half of the x-axis intercept is the ECS, as the effective radiative forcing is defined in double CO$_2$ situation. The other derived parameters, climate feedback parameter ($\lambda$; slope) and effective radiative forcing (half of the y-axis intercept), are shown in \tabref{tab:ECS_forcing_feedback}. The Gregory type calculation is possible in current Q-flux setup as the SST can vary in response to the changes in radiative forcing. In Isca PPE, the estimated effective forcing and climate feedback parameters vary due to the changes in parameters of cloud scheme, and thus the derived ECS values also show certain spread. The smallest ECS is 3.08 K in \textit{reffliq\_12} run, while the largest is 4.91 K in \textit{sc\_park\_a\_1} run. The PPE mean of ECS is 4.12 $\pm$ 0.54 K (1$\sigma$), within the 5\%--95\% percentile range of the expert assessed range \citep{Sherwood2020}. 
 
 \begin{figure}[ht]
     \centering
@@ -493,7 +490,7 @@ The simulations from Isca PPE have produced a certain range in cloud feebdacks, 
     \label{fig:ECS_vs_cld_fbk_from_diff_regions}
 \end{figure}
 
-\cite{Lutsko2021emergent} 
+As both feedbacks and ECS display certain range (\tabref{tab:ECS_forcing_feedback}), is there any relationship between the spread in ECS and the spread in cloud feedbacks in Isca PPE simulations? Previous studies have confirmed that the cloud feedback uncertainty is the largest source of intermodel spread of ECS in CMIP models \cite[e.g.,][]{Ceppi2017,Zelinka2020causes}. In addition, \cite{Zelinka2020causes} find the inter-model spread of ECS in CMIP5/6 models is well related the spread of global mean cloud feedbacks (see their Fig. S4). However, this linear relationship may not be robust across all the regions or across models with different ECS \citep{Lutsko2021emergent}. Therefore, here we check the relationship between the spread of ECS and cloud feedback in Isca PPE simulations.
 
 \begin{figure}[ht]
     \centering
