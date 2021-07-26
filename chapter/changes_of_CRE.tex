@@ -446,19 +446,50 @@ In fact, despite the prediction from the multiple linear regression model is not
 \section{Implications for equilibrium climate sensitivity}
 \label{sec:implification_for_ECS}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/forcing_slope_ECS_for_qflux_PPE_nyr_30_12}.pdf}
-    \caption{The effective radiative forcing, climate feedback and equilibrium climate sensitivity (ECS) in Isca perturbed parameter ensemble, estimated from the \cite{Gregory2004} method based on 30-year outputs.}
-    \label{fig:ECS_forcing_feedback_in_Isca_PPE}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/forcing_slope_ECS_for_qflux_PPE_nyr_30_12}.pdf}
+%     \caption{The effective radiative forcing, climate feedback and equilibrium climate sensitivity (ECS) in Isca perturbed parameter ensemble, estimated from the \cite{Gregory2004} method based on 30-year outputs.}
+%     \label{fig:ECS_forcing_feedback_in_Isca_PPE}
+% \end{figure}
 
-The simulations from Isca PPE have produced a certain range in cloud feebdacks, as discussed in \secref{sec:spread_of_cld_fbk_in_PPE}, so what are the implications for the ECS? To answer this question, we first evaluate the ECS from Isca simulations based on the method proposed by \cite{Gregory2004}, as shown in \figref{fig:ECS_forcing_feedback_in_Isca_PPE}. The TOA radiation imbalances are plotted versus the surface air temperature anomalies between control and quadruple CO$_2$ simulations, in which the half of the x-axis intercept is the ECS, as the effective radiative forcing is defined in double CO$_2$ situation. The other derived parameters, climate feedback parameter ($\lambda$; slope) and effective radiative forcing (half of the y-axis intercept), are also labeled in the figure. The Gregory type calculation is possible in current Q-flux setup as the SST can vary in response to the changes in radiative forcing. In Isca PPE, the estimated effective forcing and climate feedback parameters vary a lot due to the changes in parameters of cloud scheme, so the derived ECS values also distribute in a range. The smallest ECS is 3.08 K in `reffliq\_12` run, while the largest is 4.91 K in `sc\_park\_a\_1` run. 
+
+ \begin{table}[ht]
+    %\begin{sidewaystable}
+	\caption{Effective radiative forcing (ERF$_{2x}$, Wm$^{-2}$), equilibrium climate sensitivity (ECS, K) and climate feedback parameters ($\lambda$, Wm$^{-2}$K$^{-1}$) for Isca perturbed parameter ensemble simulations.}
+	\centering
+	\renewcommand{\arraystretch}{1.2}
+
+    \begin{tabular}{lrrrrrr}
+    \toprule
+    {PPE} &  ERF$_{2x}$ &  $\lambda$ &  $\lambda_{cld}$ &  $\lambda_{cld\_SW}$ &  $\lambda_{cld\_LW}$ &  ECS \\
+    \midrule
+    linear         &    3.09 &   -0.68 &        0.81 &           0.39 &           0.42 & 4.54 \\
+    reffice\_50     &    2.79 &   -0.80 &        0.88 &           0.32 &           0.56 & 3.50 \\
+    a\_surf\_20      &    2.69 &   -0.70 &        0.85 &           0.48 &           0.37 & 3.83 \\
+    a\_top\_10       &    2.64 &   -0.71 &        0.85 &           0.41 &           0.44 & 3.74 \\
+    sc\_park\_b\_m0.3 &    3.14 &   -0.66 &        0.98 &           0.54 &           0.45 & 4.77 \\
+    sc\_park\_a\_1    &    2.82 &   -0.57 &        1.00 &           0.50 &           0.50 & 4.91 \\
+    freezedry      &    3.21 &   -0.74 &        0.81 &           0.31 &           0.50 & 4.34 \\
+    sundqvist      &    3.04 &   -0.75 &        0.78 &           0.46 &           0.32 & 4.05 \\
+    Tmax\_0         &    2.65 &   -0.60 &        0.82 &           0.43 &           0.39 & 4.45 \\
+    Tmin\_m35       &    2.63 &   -0.58 &        0.80 &           0.39 &           0.41 & 4.52 \\
+    qcl\_T\_0.2      &    2.79 &   -0.76 &        0.81 &           0.42 &           0.39 & 3.68 \\
+    reffliq\_12     &    2.63 &   -0.85 &        0.82 &           0.29 &           0.53 & 3.08 \\
+    \bottomrule
+    \end{tabular}
+    \label{tab:ECS_forcing_feedback}
+\end{table}
+
+The simulations from Isca PPE have produced a certain range in cloud feebdacks, as discussed in \secref{sec:spread_of_cld_fbk_in_PPE}, so what are the implications for the ECS? To answer this question, we first evaluate the ECS from Isca simulations based on the method proposed by \cite{Gregory2004}. That is to say, the TOA radiation imbalances are plotted versus the surface air temperature anomalies between control and quadruple CO$_2$ simulations, in which the half of the x-axis intercept is the ECS, as the effective radiative forcing is defined in double CO$_2$ situation. The other derived parameters, climate feedback parameter ($\lambda$; slope) and effective radiative forcing (half of the y-axis intercept), are shown in \tabref{tab:ECS_forcing_feedback}. The Gregory type calculation is possible in current Q-flux setup as the SST can vary in response to the changes in radiative forcing. In Isca PPE, the estimated effective forcing and climate feedback parameters vary due to the changes in parameters of cloud scheme, and thus the derived ECS values also show certain spread. The smallest ECS is 3.08 K in `reffliq\_12` run, while the largest is 4.91 K in `sc\_park\_a\_1` run. 
+
+% as shown in \figref{fig:ECS_forcing_feedback_in_Isca_PPE}.
+% 4.118714382110627 0.5351870699913492
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/ECS_vs_cldfbk_all_ALL_cmip56_isca}.png}
-    \caption{The scatter plot of equilibrium climate sensitivity (ECS; K) against the net cloud feedbacks (Wm$^{-2}$K$^{-1}$) from different models and different regions. Rows from top to bottom are for Isca (green), CMIP5 (blue), CMIP6 (orange) models and all of them, respectively. From left to right, the columns are for global, tropical (30$^\circ$S--30$^\circ$N), midlatitude (30-60$^\circ$), and high latitude (60-90$^\circ$) regions, respectively. The shaded indicates the 17th and 83rd percentile range of the Baseline probability density function of ECS from \cite{Sherwood2020}. The dashed lines are liner regression of ECS against cloud feedbacks, and the the correlation coefficient ($R$) with asterisk is above 95\% confidence interval. }
+    \caption{The scatter plot of equilibrium climate sensitivity (ECS; K) against the net cloud feedbacks (Wm$^{-2}$K$^{-1}$) from different models and different regions. Rows from top to bottom are for Isca (green), CMIP5 (blue), CMIP6 (orange) models and all of them, respectively. From left to right, the columns are for global, tropical (30$^\circ$S--30$^\circ$N), midlatitude (30-60$^\circ$), and high latitude (60-90$^\circ$) regions, respectively. The shaded indicates the 17th and 83rd percentile range of the Baseline probability density function of ECS from \cite{Sherwood2020}. The dashed lines are liner regression of ECS against cloud feedbacks, and the the correlation coefficient ($R$) with asterisk is above 95\% confidence interval.}
     \label{fig:ECS_vs_cld_fbk_from_diff_regions}
 \end{figure}
 
