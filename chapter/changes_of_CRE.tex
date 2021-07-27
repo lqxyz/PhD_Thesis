@@ -1,16 +1,17 @@
 \chapter{Changes of Cloud Radiative Effect to Global Warming}
 \label{ch:cld_fbk}
 
-In \chapref{ch:simple_cld_scheme}, we have introduced how the simple cloud scheme is constructed, and have evaluated the simulated climatology when it is implemented in Isca. The simulations have shown that it can grasp the basic features of cloud climatology. In this chapter, the simulated cloud feedbacks under global warming are to be examined. Also, based on this simple cloud scheme, a series of perturbed parameter ensemble (PPE) experiments are carried out to investigate whether they can `reproduce' the inter-model spread of cloud feedbacks among CMIP models. Based on the results, the sensitivities of the corresponding parameters, components and processes are analyzed. The cloud controlling factor analysis are employed to identify the possible causes for the cloud responses.
+In \chapref{ch:simple_cld_scheme}, we have introduced how the simple cloud scheme is constructed, and have evaluated the simulated climatology when it is implemented in Isca. The simulations have shown that it can grasp the basic features of cloud climatology. In this chapter, the simulated cloud feedbacks under global warming are to be examined. Also, based on this simple cloud scheme, a series of perturbed parameter ensemble (PPE) experiments are carried out to investigate whether they can `reproduce' the inter-model spread of cloud feedbacks among CMIP models. Based on the results, the sensitivities of the corresponding parameters, components and processes are analyzed. The cloud controlling factor analysis are employed to identify the possible causes for the cloud responses under global warming. Finally, the implications for equilibirium climate sensitivity (ECS) are discussed.
 
-The major findings of this chapter are
-
+The major findings of this chapter are:
 \begin{enumerate}
-    \item The simulated cloud feedback from the simple cloud scheme is generally reasonable, but failed to grasp the strong negative optical depth feedback in Southern Ocean regions, as the ice condensate is not explicitly represented in the simple cloud scheme.
-    \item The low cloud amount feedback is the single largest contributor to the net cloud feedback spread of the PPE, which is consistent with the inter-model spread of CMIP models.
+    \item The simple cloud scheme can capture two robust positive cloud feedbacks, low cloud amount feedback and high cloud altitude feedback, but fails to grasp the strong negative optical depth feedback in Southern Ocean region, as the mixed-phase clouds not explicitly represented in the simple cloud scheme.
+    \item Despite the perturbation space might be narrow, the PPE of a single model still a valuable tool to investigate the underlying causes of cloud feedback uncertainty.
+    \item In the Isca PPE simulations, the low cloud amount feedback is the largest single contributor to the spread of global mean net cloud feedback, consistent with the conclusion drawn from CMIP models.
     % consistent with previous studies such as \cite{Bony2005, Zelinka2016insights}.
-    \item The regions abundant of stratocumulus clouds show negative feedback in the simulations, as the low cloud component of the simple cloud scheme depends too strongly on the inversion strength.
-    \item For ECS, ...
+    %\item The regions abundant of stratocumulus clouds show negative feedback in the simulations, as the low cloud component of the simple cloud scheme depends too strongly on the inversion strength.
+    \item For the regional contributions, the tropical low clouds over the subsidence region are at the heart of tropical cloud feedback uncertainties in Isca PPE simulations.
+    \item The perturbation related to marine low clouds produces the largest cloud feedback and ECS, and the range of ECS perhaps can be constraint by the tropical cloud feedback over subsidence regimes, as they show a robust linear relationship in Isca PPE and CMIP6 models.
 \end{enumerate}
 
 \section{Introduction}
@@ -172,7 +173,7 @@ One goal of this chapter is to investigate the underlying causes of the uncertai
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/zonal_mean_profile_change_basic_fields_ensemble_mean}.pdf}
+    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/zonal_mean_profile_change_basic_fields_ensemble_mean}.pdf}
     \caption{Zonal mean profiles (contour) for (a) temperature, (b) specific humidity, (c) relative humidity, (d) cloud fraction, (e) cloud water content and (f) effective radius and their responses (shading) to warming due to quadruple of CO$_2$ from Isca perturbed parameter ensemble.}
     \label{fig:zonal_mean_profile_change_ensemble_mean_for_cld}
 \end{figure}
@@ -342,29 +343,28 @@ The low cloud amount feedback is by far the largest single contributor to the sp
 \subsection{Comparison with WCRP assessment}
 \label{sec:cmp_with_Sherwood_assessment}
 
+\cite{Zelinka2021evaluating} evaluated the cloud feedbacks from CMIP5 and CMIP6 models and compared them to the latest World Climate Research Programme (WCRP) assessment of cloud feedbacks reported in \cite{Sherwood2020}. Note that only 9 CMIP5 and 10 CMIP6 models are used, as only those that have successfully implemented the COSP \citep{BodasSalcedo2011} are adopted. Based on the analysis from \cite{Zelinka2021evaluating}, here the perturbed parameter ensemble simulations from Isca simulations are also added to this comparison, as shown in \figref{fig:WCRP_assessment} (produced using the package developed by \cite{Zelinka2021evaluating}, available at \url{https://github.com/mzelinka/assessed-cloud-fbks}). In this figure, the feedback values from each category are weighted averaged according to their area fractions, so that the values shown in the last row of the figure are the direct sum of these categories. 
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.81\linewidth]{{figs/change_of_CRE/WCRP_assessed_cld_fbks_amip-p4K}.pdf}
+    \includegraphics[width=0.69\linewidth]{{figs/change_of_CRE/WCRP_assessed_cld_fbks_amip-p4K}.pdf}
     \caption{Cloud feedback components estimated from climate model simulations and as assessed in \cite{Sherwood2020}. For each component, the individual model values are indicated with symbols, the multi-model means are indicated with blue (CMIP5), orange (CMIP6) and green (Isca) bars, and the expert assessed \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals are indicated with thick and thin black errorbars, respectively. Model symbols (only for CMIP5/6) are color-coded by equilibrium climate sensivity (ECS) with color boundaries corresponding to the edges of the \textit{likely} (17\%--83\%) and \textit{very likely} (5\%--95\%) ranges of the Baseline posterior probability density function (PDF) of  ECS from \cite{Sherwood2020}. The results from Isca simulation are added to original Fig. 1 of \cite{Zelinka2021evaluating}.}
     \label{fig:WCRP_assessment}
 \end{figure}
 
-\cite{Zelinka2021evaluating} evaluated the cloud feedbacks from CMIP5 and CMIP6 models and compared them to the latest World Climate Research Programme (WCRP) assessment of cloud feedbacks reported in \cite{Sherwood2020}. Note that only 9 CMIP5 and 10 CMIP6 models are used, as only those that have successfully implemented the COSP \citep{BodasSalcedo2011} are adopted. Based on the analysis from \cite{Zelinka2021evaluating}, here the perturbed parameter ensemble simulations from Isca simulations are also added to this comparison, as shown in \figref{fig:WCRP_assessment}. In this figure, the feedback values from each category are weighted averaged according to their area fractions, so that the values shown in the last row of the figure are the direct sum of these categories. 
+All the simulated cloud feedbacks from Isca are with the \textit{very likely} (90\%, or 5\%--95\%; thin black line of WCRP assessment) confidence intervals of expert assessment, except the ones related to tropical anvil cloud area and tropical marine low cloud. In Isca simulations, the tropical anvil cloud area feedback (third row) is computed as the sum of non-altitude related feedbacks from both low and high clouds in tropical deep convection region. Specifically, the sum includes low and high cloud mount and optical depth feedbacks. This feedback is strongly positive with the mean value larger than 0.3 Wm$^{-2}$K$^{-1}$, while the mean value of expert assessment is -0.2 Wm$^{-2}$K$^{-1}$ (1-$\sigma$ uncertainty is 0.2 Wm$^{-2}$K$^{-1}$). This feature makes the total cloud feedback from Isca simulations much positive, and are located at the right end of expert assessment (last row). Note that the CMIP5 and CMIP6 models also underestimate the magnitude of tropical anvil cloud area feedback, and some also produce the positive feedback parameters for this category. Nevertheless, their ensemble mean has the same negative sign as the expert assessment, although we notice it is very weak and close to zero. Regarding to the tropical marine low cloud feedback, the ensemble mean feedback from Isca simulation is much weaker than the expert assessed, and also weaker than the ensemble mean of CMIP5/6 models. Another feature of Isca simulation for this category is that the spread is quite large, and some member even produce the negative marine low cloud feedback. 
 
-All the simulated cloud feedbacks from Isca are with the \textit{very likely} (90\%, or 5\%--95\%; thin black line of WCRP assessment) confidence intervals of expert assessment, except the ones related to tropical anvil cloud area and tropical marine low cloud. In Isca simulations, the tropical anvil cloud area feedback (third row) is computed as the sum of non-altitude related feedbacks from both low and high clouds in tropical deep convection region. Specifically, the sum includes low and high cloud mount and optical depth feedbacks. This feedback is strongly positive with the mean value larger than 0.3 Wm$^{-2}$K$^{-1}$, while the mean value of expert assessment is -0.2 Wm$^{-2}$K$^{-1}$ (1-$\sigma$ uncertainty is 0.2 Wm$^{-2}$K$^{-1}$). This feature makes the total cloud feedback from Isca simulations much positive, and are located at the right end of expert assessment (last row). Note that the CMIP5 and CMIP6 models also underestimate the magnitude of tropical anvil cloud area feedback, and some also produce the positive feedback parameters for this category. Nevertheless, their ensemble mean has the same negative sign as the expert assessment, although we notice it is very weak and close to zero. 
-
-Regarding to the tropical marine low cloud feedback, the ensemble mean feedback from Isca simulation is much weaker than the expert assessed, and also weaker than the ensemble mean of CMIP5/6 models. Another feature of Isca simulation for this category is that the spread is quite large, and some member even produce the negative marine low cloud feedback. This is possibly due to...
+%This is possibly due to...
 
 %In addition, the \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals from expert assessments of cloud feedbacks \citep[see Table 1 of][]{Sherwood2020} are indicated by the 
-
-\figref{fig:WCRP_assessment} is produced using the software package developed by \cite{Zelinka2021evaluating}, available at \url{https://github.com/mzelinka/assessed-cloud-fbks}.
+%\figref{fig:WCRP_assessment} is produced using the software package developed by \cite{Zelinka2021evaluating}, available at \url{https://github.com/mzelinka/assessed-cloud-fbks}.
 
 \subsection{Regional contributions}
 \label{sec:reg_contri_to_spread_of_cldfbk}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\linewidth]{{figs/change_of_CRE/region_mean_cld_fbk_decomp_scatter_LO680}.pdf}
+    \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/region_mean_cld_fbk_decomp_scatter_LO680}.pdf}
     \caption{The scatter plot of total low cloud feedback (first column) and its amount (second column), altitude (third column) and optical depth (fourth column) components for different regions from Isca PPE. The top, middle and bottom rows are for the shortwave, longwave and net cloud feedbacks, respectively. }
     \label{fig:regional_low_cld_fbk_components}
 \end{figure}
@@ -424,7 +424,7 @@ According to \cite{Wood2006}, $\Delta$EIS is close to zero if the vertical profi
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\linewidth]{{figs/change_of_CRE/CCF_analysis_for_diff_cld_types_low_cld_amt_EIS}.pdf}
+    \includegraphics[width=0.53\linewidth]{{figs/change_of_CRE/CCF_analysis_for_diff_cld_types_low_cld_amt_EIS}.pdf}
     \caption{(a) Sensitivities of trade-wind cumulus (Cu; brown box), stratocumulus (Sc; blue box) and all low cloud amounts (green box) to cloud controlling factors (CCF), including sea surface temperature (SST), estimated inversion strength (EIS), surface temperature advection (T$_{adv}$), relative humidity at 700 hPa (RH$_{700}$), and vertical velocity at 700 hPa ($\omega_{700}$) estimated from climate variability over low-latitude oceans (35$^\circ$S--35$^\circ$N) the in the control simulations of Isca perturbed parameter ensemble. (b) The changes in these factors per unit global warming from the 4xCO2 simulations of Isca. (c) Predicted and actual changes in low cloud amount due to each cloud controlling factor. Boxes extend from the 25th to 75th percentiles of the model values, with a dashed line at the median value. Outliers are denoted by gray empty circles. Anomalies in cloud controlling factors are normalized by the standard deviation of their interannual variations in ERA5 data set and are therefore expressed in $\sigma$ units.} % , estimated as the product of the sensitivities shown in (a) with the responses of the quantities in (b)
     \label{fig:CCF_analysis_low_cld_amt}
 \end{figure}
