@@ -511,12 +511,28 @@ Similarly, when the analysis is repeated for ocean region only, we find that the
 
 \section{Summary and discussion}
 
-Cloud feedback has the largest intermodel spread among all the feedback parameters in CMIP5/6 models \citep{Zelinka2020causes}, one of the largest sources of uncertainty in ECS among GCMs \citep{Stocker2013,Ceppi2017,Zelinka2020causes}, but the underlying causes for cloud feedback uncertainty are still not fully understood \citep[e.g.,][]{Bony2005,Vial2013,Qu2014,Qu2015positive,Webb2015,Zelinka2016insights,Geoffroy2017,Zelinka2020causes}. Narrowing down the cloud feedback uncertainty is key to constrain the range of ECS \citep[e.g.,][]{Myers2021,Ceppi2021observational} and to help us better understand the responses of climate system to global warming. In this chapter, we try to use the simple cloud scheme developed in \chapref{ch:simple_cld_scheme} to understand the spread of cloud feedbacks. 
+Cloud feedback has the largest intermodel spread among all the feedback parameters in CMIP5/6 models \citep{Zelinka2020causes}, one of the largest sources of uncertainty in ECS among GCMs \citep{Stocker2013,Ceppi2017,Zelinka2020causes}, but the underlying causes for cloud feedback uncertainty are still not fully understood \citep[e.g.,][]{Bony2005,Vial2013,Qu2014,Qu2015positive,Webb2015,Zelinka2016insights,Geoffroy2017,Zelinka2020causes}. Narrowing down the cloud feedback uncertainty is key to constrain the range of ECS \citep[e.g.,][]{Myers2021,Ceppi2021observational} and to help us better understand the responses of climate system to global warming. In this chapter, we try to use the simple cloud scheme developed in \chapref{ch:simple_cld_scheme} to understand the spread of cloud feedbacks. In doing so, a series of perturbed parameter ensemble (PPE) simulations under control (CO$_2=$300 ppm) and global warming (CO$_2=$1200 ppm) situations are performed in Isca, but the perturbation is limited to the simple diagnosed cloud scheme and only a single parameter is perturbed for each simulation (\tabref{tab:qflux_ppe_exps_summary}). In addition, Q-flux is prescribed in these simulations to make the SST more realistic. 
 
-At first, we try to evaluate the simulated cloud feedback from the simple diagnostic cloud scheme (described in \chapref{ch:simple_cld_scheme}) of Isca. To do so, the CFMIP observation simulator pacakage (COSP) is implemented in Isca to get the necessary outputs to be used for the cloud feedback calculation and decomposition. The COSP output was evaluated first to make sure it is successfully implemented. Then,  the cloud radiative kernel method \citep{Zelinka2012computing1,Zelinka2012computing2} is employed
+Based on the PPE simulation results of Isca, the first question we tried to answer is whether the simple cloud scheme in Isca could grasp the mechanisms and basic features of cloud feedbacks. As summarized in \secref{sec:method_cloud_fbk}, several methods have been employed in previous studies to estimate the cloud feedbacks simulated from GCMs, and one method using the cloud radiative kernel method \citep{Zelinka2012computing1,Zelinka2012computing2} requires that the COSP \citep{BodasSalcedo2011,Swales2018} to be implemented. Therefore at the beginning, the COSP was implemented in Isca to get the necessary outputs for the cloud feedback calculation and decomposition \secref{sec:implementation_of_cosp}). Then the diagnosis from COSP was compared with the Isca native outputs to make sure it has been successfully implemented (\secref{sec:eval_cosp}). Based on these results, different diagnostics and methods to compute cloud feedbacks were compared in \secref{sec:cmp_cld_fbk_method_result}, and we found the following two conclusions: First the diagnostics, the CRE based diagnostic can be impacted by the non-cloud effects, while the cloud radiative kernel derived diagnostics can overcome this caveat; Second for the method, while the  \cite{Gregory2004} method (i.e., calculate the slope of radiative imbalance at TOA against temperature change) is more accurate than the method directly normalizing the changes of TOA imbalance by the global mean surface temperature changes, it is more expensive as it requires the COSP to be enabled all the time during the simulation.
+
+
+we intend to evaluate the simulated cloud feedback from the simple diagnostic cloud scheme (described in \chapref{ch:simple_cld_scheme}) of Isca, 
+
+But the first question is how to calculate the cloud feedbacks in GCMs? 
+
+
+
+As we intend to compare these different methods first, the
+
+As we going to compare them
+
+Therefore, at the beginning of the evaluation, we use two different diagnostics
+
+
+
+Then, these COSP outputs were combined with the cloud radiative kernel propose by \cite{Zelinka2012computing1,Zelinka2012computing2} to compute cloud feedback and decompose it into longwave/shortwave cloud amount, altitude and optical depth components for low and non-low clouds. The decomposition offers some insights for us to understand the spatial pattern and zonal mean structure of various cloud feedbacks (\secref{sec:}).
 
 At first, the simulated cloud feedbacks, including their spatial pattern and zonal mean structure, as well as their various components, are evaluated. Then the spread of cloud feedbacks in Isca PPE and the possible underlying causes 
-
 
 With the implemented in Isca, the cloud feedback cloud radiative kernel method,
 
