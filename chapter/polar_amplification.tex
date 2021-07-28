@@ -232,15 +232,15 @@ and $(\delta \ln e_s)_i$ is estimated by $\left(e_s(T_i+1)-e_s(T_i)\right)/ e_s(
 \subsubsection{Frierson and BOG scheme}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_byrne}
-	\caption{Annual-mean and zonal-mean radiative kernel for BOG radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
+	\includegraphics[width=0.45\linewidth]{figs/polar_amp/kernels_byrne}
+	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for BOG radiation scheme]{Annual-mean and zonal-mean radiative kernel for BOG radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
 	\label{fig:bog_kernels}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_frierson}
-	\caption{As in \figref{fig:bog_kernels}, but only for temperature and surface temperature kernels in Frierson radiation scheme.}
+	\includegraphics[width=0.45\linewidth]{figs/polar_amp/kernels_frierson}
+	\caption[Annual-mean and zonal-mean temperature and surface temperature radiative kernels for Frierson radiation scheme]{As in \figref{fig:bog_kernels}, but only for temperature and surface temperature kernels in Frierson radiation scheme.}
 	\label{fig:frierson_kernels}
 \end{figure}
 
@@ -264,14 +264,14 @@ The surface temperature kernel also contributes partially to the temperature fee
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.6\linewidth]{figs/polar_amp/kernels_rrtm}
-	\caption{As in \figref{fig:bog_kernels}, but for RRTM radiation scheme.}
+	\includegraphics[width=0.45\linewidth]{figs/polar_amp/kernels_rrtm}
+	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for RRTM radiation scheme]{As in \figref{fig:bog_kernels}, but for RRTM radiation scheme.}
 	\label{fig:rrtm_kernels}
 \end{figure}
 
 \subsubsection{RRTM scheme} The offline version of RRTM code is from \textit{pyrrtm} (https://github.com/tomflannaghan /pyrrtm), which provides an user-friendly python wrapper for the single-column version of RRTM scheme. The input profiles for \textit{pyrrtm} are from the Isca outputs in which the albedo is 0.3. Nevertheless, one frustrating fact is that the single-column version of RRTM will consume too much time if we perturb each level and each position every 3 hours. In order to get over this drawback, we employ zonal-mean and monthly mean profiles as the input for the \textit{pyrrtm} to calculate the radiative kernels. As shown in \figref{fig:rrtm_kernels}a, the temperature kernel for RRTM is weaker compared to the results of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}a) computed by \cite{Feldl2017}, and the vertical integration of global and annual mean result is -1.79 W m$^{-2}$ K$^{-1}$, which is almost a half of the clear-sky results (-3.6 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b \citep{Soden2008}, suggesting that the feedbacks depending on this kernel would be small than other GCM's. However, the RRTM surface temperature kernel makes the situation different. It has the similar shape but the strength is much stronger compared to the surface temperature kernel of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}d), making the Planck feedback for RRTM comparable (\figref{fig:all_feedbacks}c). With respect to water vapor kernel for RRTM, the vertical integration of global and annual mean value is 1.65 W m$^{-2}$ K$^{-1}$, which is close to the longwave water vapor kernel results (1.62 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b, meaning that the water vapor kernel is similar to other models. Although the positive values dominate the water vapor kernels, some negative values appear in polar region, as there are temperature inversions near the surface at high latitudes, which will decrease, rather than increase, the net longwave flux in response a increase of water vapor \citep{Soden2008}. However, this does not occur in water vapor kernel for BOG radiation scheme (\figref{fig:bog_kernels}b).
 
-\begin{figure}[ht] %
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=.8\linewidth]{figs/polar_amp/Feldl2017}
 	\caption{Annual-mean, zonal-mean radiative kernels for
@@ -289,40 +289,59 @@ The surface temperature kernel also contributes partially to the temperature fee
 \subsection{Climate feedbacks in Isca}
 For each radiation scheme, the albedo parameter is changed from 0.3 to 0.27, 0.33 and 0.38 to provide an external forcing to the simulation respectively, leading to different degree of climate responses in experiments. Thus in this section, we will use the radiative kernel technique to analyze the feedbacks for these experiment when changing albedos and the resulting Planck feedback, lapse rate feedback and water vapor feedback for each experiments are displayed in \figref{fig:all_feedbacks}.
 
+% \begin{table}[ht]
+% 	\centering
+% 	\small
+% 	\caption{Global mean lapse rate feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
+% 	\vspace{0.5em}
+% 	\label{tab:lapserate_fb}
+% 	\begin{tabular}{cccc}
+% 		\toprule
+% 		Experiment & BOG & Frierson & RRTM \\
+% 		\midrule
+% 		$\alpha=$0.38 $-$ $\alpha=$0.3 & -0.33 & -1.23 & -0.51 \\
+% 		$\alpha=$0.33 $-$ $\alpha=$0.3 & -0.84 & -1.28 & -0.61 \\
+% 		$\alpha=$0.27 $-$ $\alpha=$0.3 & -1.15 & -1.32 & -0.72\\
+% 		\bottomrule
+% 	\end{tabular}
+% \end{table}
+
+% \begin{table}[ht]
+% 	\centering
+% 	\small
+% 	\caption{Global mean water vapor feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
+% 	\vspace{0.5em}
+% 	\label{tab:wv_fb}
+% 	\begin{tabular}{ccc}
+% 		\toprule
+% 		Experiment & BOG & RRTM \\
+% 		\midrule
+% 		$\alpha=$0.38 $-$ $\alpha=$0.3 & 3.38 & 2.14\\
+% 		$\alpha=$0.33 $-$ $\alpha=$0.3 & 4.21 & 2.23 \\
+% 		$\alpha=$0.27 $-$ $\alpha=$0.3 & 5.03 & 2.41\\
+% 		\bottomrule
+% 	\end{tabular}
+% \end{table}
+
 \begin{table}[ht]
 	\centering
-	\caption{Global mean lapse rate feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
+	\small
+	\caption{Global mean lapse rate and water vapor feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
 	\vspace{0.5em}
-	\label{tab:lapserate_fb}
-	\begin{tabular}{cccc}
+	\label{tab:lapserate_and_wv_fb}
+	\begin{tabular}{cccccc}
 		\toprule
-		Experiment & BOG & Frierson & RRTM \\
+		\multirow{2}{*}{Experiment} & \multicolumn{3}{c}{Lapse rate} & \multicolumn{2}{c}{Water vapor} \\\cline{2-4}\cline{5-6}
+		{} & BOG & Frierson & RRTM & BOG & RRTM\\
 		\midrule
-		$\alpha=$0.38 $-$ $\alpha=$0.3 & -0.33 & -1.23 & -0.51 \\
-		$\alpha=$0.33 $-$ $\alpha=$0.3 & -0.84 & -1.28 & -0.61 \\
-		$\alpha=$0.27 $-$ $\alpha=$0.3 & -1.15 & -1.32 & -0.72\\
+		$\alpha=$0.38 $-$ $\alpha=$0.3 & -0.33 & -1.23 & -0.51 & 3.38 & 2.14 \\
+		$\alpha=$0.33 $-$ $\alpha=$0.3 & -0.84 & -1.28 & -0.61 & 4.21 & 2.23 \\
+		$\alpha=$0.27 $-$ $\alpha=$0.3 & -1.15 & -1.32 & -0.72 & 5.03 & 2.41 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\begin{table}[ht]
-	\centering
-	\caption{Global mean water vapor feedback parameters (Units: W m$^{-2}$ K$^{-1}$).}
-	\vspace{0.5em}
-	\label{tab:wv_fb}
-	\begin{tabular}{ccc}
-		\toprule
-		Experiment & BOG & RRTM \\
-		\midrule
-		$\alpha=$0.38 $-$ $\alpha=$0.3 & 3.38 & 2.14\\
-		$\alpha=$0.33 $-$ $\alpha=$0.3 & 4.21 & 2.23 \\
-		$\alpha=$0.27 $-$ $\alpha=$0.3 & 5.03 & 2.41\\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-The Planck feedback \index{feedback!Planck} is negative in all latitudes (\figsref{fig:all_feedbacks}a-c), meaning that an increase in temperature can increase the outgoing longwave radiation. In addition, the strength of Planck feedback in polar region is weaker than the tropical region due to smaller blackbody emissions per unit warming at lower temperatures according to Stefan-Boltzmann law \citep{Goosse2018}. The global mean Planck feedback parameters are -3.82, -3.79 and -3.41 W m$^{-2}$ K$^{-1}$ for BOG, Frierson and RRTM radiation schemes respectively, showing that the differences of Planck feedbacks in different radiation schemes are small. Regarding the lapse rate feedbacks, they are negative in low latitudes but positive in high latitudes, which is due to the different vertical distribution of temperature change in polar region compared to the tropics, as the temperature change is bottom heavy in polar regions \citep{Pithan2014}. The global mean lapse rate feedback parameters for all experiments and all radiation schemes are listed in Table \ref{tab:lapserate_fb}. It is clear that the difference of global mean lapse rate feedbacks among different radiation schemes is large, but is small within the experiments with same radiation schemes, except the one where albedo is 0.38 in BOG radiation scheme. As for water vapor feedback, it is positive in all experiments, implying that the net incoming longwave radiation increase in response to temperature warming. However, the spatial distribution of water vapor feedback is nonuniform, with high feedback in tropics and small values in polar regions (\figsref{fig:all_feedbacks}g and \ref{fig:all_feedbacks}h). This is because of the nonlinear effect of water vapor in response to warming.  In addition, the global mean water vapor feedback parameters are displayed in Table \ref{tab:wv_fb}, where the water vapor feedback in BOG schemes is almost twice of feedbacks in RRTM scheme and the later is close to the water vapor feedback (2.01 W m$^{-2}$ K$^{-1}$) estimated by \cite{Soden2008} in GFDL AM2p12b, indicating that the water vapor feedback is much stronger in BOG radiation scheme.
-
+The Planck feedback \index{feedback!Planck} is negative in all latitudes (\figsref{fig:all_feedbacks}a-c), meaning that an increase in temperature can increase the outgoing longwave radiation. In addition, the strength of Planck feedback in polar region is weaker than the tropical region due to smaller blackbody emissions per unit warming at lower temperatures according to Stefan-Boltzmann law \citep{Goosse2018}. The global mean Planck feedback parameters are -3.82, -3.79 and -3.41 W m$^{-2}$ K$^{-1}$ for BOG, Frierson and RRTM radiation schemes respectively, showing that the differences of Planck feedbacks in different radiation schemes are small. Regarding the lapse rate feedbacks, they are negative in low latitudes but positive in high latitudes, which is due to the different vertical distribution of temperature change in polar region compared to the tropics, as the temperature change is bottom heavy in polar regions \citep{Pithan2014}. The global mean lapse rate feedback parameters for all experiments and all radiation schemes are listed in Table \ref{tab:lapserate_and_wv_fb}. It is clear that the difference of global mean lapse rate feedbacks among different radiation schemes is large, but is small within the experiments with same radiation schemes, except the one where albedo is 0.38 in BOG radiation scheme. As for water vapor feedback, it is positive in all experiments, implying that the net incoming longwave radiation increase in response to temperature warming. However, the spatial distribution of water vapor feedback is nonuniform, with high feedback in tropics and small values in polar regions (\figsref{fig:all_feedbacks}g and \ref{fig:all_feedbacks}h). This is because of the nonlinear effect of water vapor in response to warming. In addition, the global mean water vapor feedback parameters are displayed in Table \ref{tab:lapserate_and_wv_fb}, where the water vapor feedback in BOG schemes is almost twice of feedbacks in RRTM scheme and the later is close to the water vapor feedback (2.01 W m$^{-2}$ K$^{-1}$) estimated by \cite{Soden2008} in GFDL AM2p12b, indicating that the water vapor feedback is much stronger in BOG radiation scheme.
 
 %%%%%%%%%%%%%%%%%%%%%% New section %%%%%%%%%%%%%%%%%%%%%%
 
