@@ -27,7 +27,7 @@ In order to have a cloud scheme that interacts with the radiation, we need to pr
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figs/simple_cld_scheme/diag_cld_scheme_summary.pdf}
-	\caption{A sketch of the simple cloud scheme components, which include the cloud fraction, effective radius of cloud droplet and in-cloud liquid water mixing ratio. At any given location, the maximum of the cloud fractions from large-scale cloud scheme and marine low stratocumulus cloud scheme is applied if both of them are used.} 
+	\caption[Illustration of simple cloud scheme]{A sketch of the simple cloud scheme components, which include the cloud fraction, effective radius of cloud droplet and in-cloud liquid water mixing ratio. At any given location, the maximum of the cloud fractions from large-scale cloud scheme and marine low stratocumulus cloud scheme is applied if both of them are used.} 
 	\label{fig:cld_scheme_summary}
 \end{figure}
 
@@ -59,7 +59,7 @@ where $p$ is the pressure, $p_s$ is the surface pressure, $a_s$ and $a_t$ are th
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{{figs/simple_cld_scheme/fit_linear_coeff_profile}.pdf}
-	\caption{(a) Vertical profiles of the linear coefficient for the relative humidity-based cloud diagnostic scheme, with cloud fraction as a piecewise linear function of relative humidity as shown in \Eqref{eq:linear_cf_rh}. The dashed lines with different colors are profiles of $a$ obtained from ERA5 data with various horizontal resolutions. The solid pale blue line denotes the fitted profile used in the model based on the form of \Eqref{eq:linear_coeff_a}. (b) is the same as (a), but for the critical relative humidity ($H_{c}$) profiles.}
+	\caption[Linear coefficients and the corresponding critical relative humidity profiles]{(a) Vertical profiles of the linear coefficient for the relative humidity-based cloud diagnostic scheme, with cloud fraction as a piecewise linear function of relative humidity as shown in \Eqref{eq:linear_cf_rh}. The dashed lines with different colors are profiles of $a$ obtained from ERA5 data with various horizontal resolutions. The solid pale blue line denotes the fitted profile used in the model based on the form of \Eqref{eq:linear_coeff_a}. (b) is the same as (a), but for the critical relative humidity ($H_{c}$) profiles.}
 	\label{fig:linear_coeff_profile}
 \end{figure}
 
@@ -81,7 +81,7 @@ where $a$ and $b$ vary with height and are determined from the least squares fit
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/simple_cld_scheme/cmp_sundqvist_linear_with_ecmwf_cc_t_12_lev_20}.png}
-	\caption{(a) A snapshot of cloud fraction from ERA5 reanalysis at 450 hPa on 12:00 January 01, 2017. Diagnosed cloud fraction from ERA5 relative humidity field at the same time and level based on the (b) Sundqvist formula, and two linear formulas (c) using \Eqref{eq:linear2} and (d) using \Eqref{eq:linear_cf_rh}. Note that \Eqref{eq:linear_cf_rh} is the form used to determine the large-scale clouds in this study. The global mean cloud fractions are given in the titles.} 
+	\caption[Offline diagnosis of cloud fraction from different methods]{(a) A snapshot of cloud fraction from ERA5 reanalysis at 450 hPa on 12:00 January 01, 2017. Diagnosed cloud fraction from ERA5 relative humidity field at the same time and level based on the (b) Sundqvist formula, and two linear formulas (c) using \Eqref{eq:linear2} and (d) using \Eqref{eq:linear_cf_rh}. Note that \Eqref{eq:linear_cf_rh} is the form used to determine the large-scale clouds in this study. The global mean cloud fractions are given in the titles.} 
 	% [$\min\left(1, ~\max \left(0, ~ a \cdot H + b \right)\right)$],  [i.e., $\min\left(1, ~\max \left(0, ~ a \cdot (H -1) + 1 \right)\right)$]
 	\label{fig:offline_cld_fraction_test}
 \end{figure}
@@ -343,7 +343,7 @@ In addition to the cloud fraction profiles, the geographic patterns of cloud amo
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/low_cld_amt_isca_obs_calipso}.png}
-	\caption{The annual mean geographic patterns of low cloud amount (\%) from the (a) LS, (b) FD, (c) ALL simulations with the linear scheme as well as (d) observation (CALIPSO-GOCCP), and the differences between the (e) FD and LS, (f) ALL and FD, (g) LS and observation, (h) FD and observation, and (i) ALL and observation. Note that (a-d) use the upper color scale, (e-f) use the middle one, and (g-i) use the one at the bottom.}
+	\caption[Comparison of low cloud amount spatial pattern with observation]{The annual mean geographic patterns of low cloud amount (\%) from the (a) LS, (b) FD, (c) ALL simulations with the linear scheme as well as (d) observation (CALIPSO-GOCCP), and the differences between the (e) FD and LS, (f) ALL and FD, (g) LS and observation, (h) FD and observation, and (i) ALL and observation. Note that (a-d) use the upper color scale, (e-f) use the middle one, and (g-i) use the one at the bottom.}
 	\label{fig:low_cld_amt}
 \end{figure}
 
@@ -354,7 +354,7 @@ In contrast, the cloud fractions in the FD and ALL simulations are adjusted by t
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{{figs/evaluation_of_cld_scheme/cloud_amount_in_arctic_region}.pdf}
-	\caption{The seasonal cycle of (a) low and (b) total cloud amount (\%) over the Arctic region ($60^\circ$-$90^\circ$N) from the LS (solid lines) and FD (dashed lines) simulations, where the freeze-dry adjustment method is applied in the FD simulations. The green and pink colors denote the experiments performed with the linear and Sundqvist cloud schemes respectively.}
+	\caption[Seasonal cycle of low and total cloud amounts over Arctic region]{The seasonal cycle of (a) low and (b) total cloud amount (\%) over the Arctic region ($60^\circ$-$90^\circ$N) from the LS (solid lines) and FD (dashed lines) simulations, where the freeze-dry adjustment method is applied in the FD simulations. The green and pink colors denote the experiments performed with the linear and Sundqvist cloud schemes respectively.}
 	\label{fig:cld_amt_freeze-dry}
 \end{figure}
 
@@ -367,7 +367,7 @@ The above analyses have shown that the freeze-dry method can improve the spatial
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/cwp_isca_obs}.png}
-	\caption{The same as \figref{fig:low_cld_amt}, but for the spatial patterns of total cloud water path (CWP; gm$^{-2}$). The observed climatology of CWP is derived from the CloudSat data set.}
+	\caption[Comparison of cloud water path spatial pattern with observation]{The same as \figref{fig:low_cld_amt}, but for the spatial patterns of total cloud water path (CWP; gm$^{-2}$). The observed climatology of CWP is derived from the CloudSat data set.}
 	\label{fig:cwp}
 \end{figure}
 
@@ -384,14 +384,14 @@ where $w_l$ is the in-cloud liquid water mixing ratio specified in Equation (\re
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/toa_sw_cre_isca_obs}.png}
-	\caption{The same as \figref{fig:low_cld_amt}, but for shortwave (SW) cloud radiative effect (CRE) (Wm$^{-2}$) at TOA. The observed SW CRE is from CERES-EBAF data set.}
+	\caption[Comparison of shortwave CRE spatial pattern with observation]{The same as \figref{fig:low_cld_amt}, but for shortwave (SW) cloud radiative effect (CRE) (Wm$^{-2}$) at TOA. The observed SW CRE is from CERES-EBAF data set.}
 	\label{fig:toa_sw_cre}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/SW_CREs_improvement_linear}.pdf}
-	\caption{(a) The regional mean SW CRE biases from the FD and ALL simulations with with linear RH scheme in five different subtropical ocean regions off the west coast of continents, whose ranges are defined in the caption of \figref{fig:fit_low_cld_proxy}. (b) The relationship of regional mean SW CRE and low cloud amount changes in the FD and ALL simulations, and the changes are calculated as their differences (i.e., ALL-FD).}
+	\caption[Evaluation of low cloud scheme]{(a) The regional mean SW CRE biases from the FD and ALL simulations with with linear RH scheme in five different subtropical ocean regions off the west coast of continents, whose ranges are defined in the caption of \figref{fig:fit_low_cld_proxy}. (b) The relationship of regional mean SW CRE and low cloud amount changes in the FD and ALL simulations, and the changes are calculated as their differences (i.e., ALL-FD).}
 	\label{fig:swcre_marine_sc}
 \end{figure}
 
@@ -406,7 +406,7 @@ Another problem of the SW CRE in the LS simulation is that it is too negative in
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/toa_lw_cre_isca_obs}.png}
-	\caption{The same as \figref{fig:toa_sw_cre}, but for LW CRE (Wm$^{-2}$) at TOA. }
+	\caption[Comparison of longwave CRE spatial pattern with observation]{The same as \figref{fig:toa_sw_cre}, but for LW CRE (Wm$^{-2}$) at TOA. }
 	\label{fig:toa_lw_cre}
 \end{figure}
 
@@ -415,7 +415,7 @@ The LS simulation reproduces the general spatial pattern of the observed LW CRE 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{{figs/evaluation_of_cld_scheme/linear_cldamt_lwcre_binned_by_omega_year_ocean}.png}
-	\caption{(a) The vertical pressure velocity field at 500 hPa ($\omega_{500}$) over tropical oceans between 30$^\circ$S and 30$^\circ$N from the linear\_LS simulation. (b) The probability density functions (PDFs) of the 500 hPa large-scale vertical velocity ($\omega_{500}$) over the tropical ocean regions defined in (a), where the vertical bars indicate one standard deviation of the annual mean data. (c) The low, high cloud amounts and (d) the TOA LW CRE in different dynamical regimes binned by $\omega_{500}$. The The 9-year (2007-2015) observed cloud amounts from CALIPSO-GOCCP and the LW CRE from CERES-EBAF are binned by $\omega_{500}$ from ERA-Interim reanalysis data set (black lines). The results from the LS, FD and ALL simulations with the linear RH scheme are represented by blue, orange and green lines, respectively.}
+	\caption[Evaluation high cloud amount and longwave CRE over tropical regions]{(a) The vertical pressure velocity field at 500 hPa ($\omega_{500}$) over tropical oceans between 30$^\circ$S and 30$^\circ$N from the linear\_LS simulation. (b) The probability density functions (PDFs) of the 500 hPa large-scale vertical velocity ($\omega_{500}$) over the tropical ocean regions defined in (a), where the vertical bars indicate one standard deviation of the annual mean data. (c) The low, high cloud amounts and (d) the TOA LW CRE in different dynamical regimes binned by $\omega_{500}$. The The 9-year (2007-2015) observed cloud amounts from CALIPSO-GOCCP and the LW CRE from CERES-EBAF are binned by $\omega_{500}$ from ERA-Interim reanalysis data set (black lines). The results from the LS, FD and ALL simulations with the linear RH scheme are represented by blue, orange and green lines, respectively.}
 	\label{fig:pdf_lw_cre}
 \end{figure}
 
@@ -426,7 +426,7 @@ Figures \ref{fig:pdf_lw_cre}c and \ref{fig:pdf_lw_cre}d illustrate the high/low 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/toa_net_cre_isca_obs}.png}
-	\caption{The same as \figref{fig:toa_sw_cre}, but for net CRE (Wm$^{-2}$) at TOA.}
+	\caption[Comparison of net CRE spatial pattern with observation]{The same as \figref{fig:toa_sw_cre}, but for net CRE (Wm$^{-2}$) at TOA.}
 	\label{fig:toa_net_cre}
 \end{figure}
 
@@ -439,7 +439,7 @@ To further study their latitudinal variations, the zonally averaged SW, LW and n
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{{figs/evaluation_of_cld_scheme/cmp_zonal_toa_CRE_cmip_isca}.pdf}
-	\caption{Zonally averaged distribution of the TOA (a) SW, (b) LW and (c) net CREs from CERES-EBAF Ed4.1 (blue solid line), ERA-Interim reanalysis (orange solid line), CMIP5 models (thin gray solid lines for each model and black solid line for multimodel mean) and different Isca simulations (dashed/dotted color lines, listed in legend).}
+	\caption[Comparison of zonal mean CRE with observations]{Zonally averaged distribution of the TOA (a) SW, (b) LW and (c) net CREs from CERES-EBAF Ed4.1 (blue solid line), ERA-Interim reanalysis (orange solid line), CMIP5 models (thin gray solid lines for each model and black solid line for multimodel mean) and different Isca simulations (dashed/dotted color lines, listed in legend).}
 	\label{fig:zonal_mean_cre}
 \end{figure}
 
@@ -453,13 +453,12 @@ In addition, compared to the zonal mean variation of the SW, LW and net CREs fro
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/isca_linear_amip_seasonal_cycle_map}.pdf}
-	\caption{The zonal mean annual cycle of TOA LW (top), SW (middle) and net (bottom) CREs from observation (CERES-EBAF), LS and ALL simulations with the linear RH scheme in Isca.}
+	\caption[Zonal mean seasonal cycle of cloud radiative effects]{The zonal mean annual cycle of TOA LW (top), SW (middle) and net (bottom) CREs from observation (CERES-EBAF), LS and ALL simulations with the linear RH scheme in Isca.}
 	\label{fig:cre_seasonal_cycle}
 \end{figure}
 
 The zonal mean seasonal cycles of CREs from CERES-EBAF and Isca simulations (LS and ALL) with the linear RH scheme are displayed in \figref{fig:cre_seasonal_cycle}. In the Arctic region, the observed LW CRE is weak during boreal winter and early spring, and has a maximum in summer (\figref{fig:cre_seasonal_cycle}a). The simulated LW CRE tends to be overestimated throughout the year in the LS run (\figref{fig:cre_seasonal_cycle}b), but the biases are alleviated by the freeze-dry adjustment (in the ALL run), particularly in winter (also see \figref{fig:cld_amt_freeze-dry}), leading to an overall improvement in the representation of the high-latitude seasonal cycle of the CRE. The existing problem for
 the seasonal cycle of LW CRE is that the band in tropical region is too broad compared to the observations, which might relate to the too-broad high cloud pattern in tropical and subtropical regions (see \figref{fig:cld_fraction_profile}f). 
-
 The seasonal cycle of SW CRE in the LS simulation is realistic, except that it is too strong during boreal summer near $60^\circ$N (\figsref{fig:cre_seasonal_cycle}d and \ref{fig:cre_seasonal_cycle}e). This effect is slightly mitigated in the ALL simulation (\ref{fig:cre_seasonal_cycle}f) because of the improvement of cloud amount. Similar to the LW CRE, the positive biases of net CRE in winter over polar regions are also alleviated due to the improvement of LW CRE in winter (\figsref{fig:cre_seasonal_cycle}h and \ref{fig:cre_seasonal_cycle}i). In summary, the seasonal cycles of LW, SW and net CREs in simulations with freeze-dry and inversion-based adjustments compare well to observations (left and right columns of \figref{fig:cre_seasonal_cycle}), indicating that the cloud scheme does reproduce a reasonably realistic seasonal cycle of CREs.
 
 
@@ -468,7 +467,7 @@ The seasonal cycle of SW CRE in the LS simulation is realistic, except that it i
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{{figs/evaluation_of_cld_scheme/global_mean_toa_CREs_4.1}.png}
-	\caption{Globally averaged TOA (a) shortwave (SW), (b) longwave (LW) and (c) net cloud radiative effects (CREs, Wm$^{-2}$) from 21 CMIP5 models historical runs (1996-2005, gray bars) and Isca simulations with different setups (orange bars for linear scheme and cyan bars for Sundqvist scheme). The horizontal lines are annual and global mean CREs from CERES-EBAF (green dashed lines, covering from 2001 to 2018) and the multimodel ensemble mean results (orange dotted lines) of CMIP5 models, whose names are listed on right for reference.}
+	\caption[Comparison of global mean CRE from simple cloud scheme with observation and CMIP5 models]{Globally averaged TOA (a) shortwave (SW), (b) longwave (LW) and (c) net cloud radiative effects (CREs, Wm$^{-2}$) from 21 CMIP5 models historical runs (1996-2005, gray bars) and Isca simulations with different setups (orange bars for linear scheme and cyan bars for Sundqvist scheme). The horizontal lines are annual and global mean CREs from CERES-EBAF (green dashed lines, covering from 2001 to 2018) and the multimodel ensemble mean results (orange dotted lines) of CMIP5 models, whose names are listed on right for reference.}
 	\label{fig:global_mean_cres}
 \end{figure}
 
@@ -477,7 +476,7 @@ To evaluate the simulated CREs further, Isca simulations are compared with CMIP5
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{{figs/evaluation_of_cld_scheme/cmp_cmip5_isca_CRE_taylor_obs_v4.1_sundqvist_linear}.pdf}
-	\caption{Taylor diagrams showing standard deviation (Wm$^{-2}$), root mean square error (RMSE; Wm$^{-2}$) and spatial pattern correlation for the observed and simulated (a) LW, (b) SW and (c) net CREs at TOA in CMIP5 models and Isca simulations (LS, FD and ALL). The statistics of these variables are calculated based on annual mean data, where  the monthly data (1996-2005) from historical simulation is used for analysis of CMIP5 models. The observed field is as a reference and denoted by a black star. Contour of the standard deviation from observed field is shown by the black dashed line and contours of RMSE are displayed in gray with labels.}
+	\caption[Comparison of simulated CREs with observation and CMIP5 models with Taylor diagrams ]{Taylor diagrams showing standard deviation (Wm$^{-2}$), root mean square error (RMSE; Wm$^{-2}$) and spatial pattern correlation for the observed and simulated (a) LW, (b) SW and (c) net CREs at TOA in CMIP5 models and Isca simulations (LS, FD and ALL). The statistics of these variables are calculated based on annual mean data, where  the monthly data (1996-2005) from historical simulation is used for analysis of CMIP5 models. The observed field is as a reference and denoted by a black star. Contour of the standard deviation from observed field is shown by the black dashed line and contours of RMSE are displayed in gray with labels.}
 	\label{fig:taylor_diagram}
 \end{figure}
 
