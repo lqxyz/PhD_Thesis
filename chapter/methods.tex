@@ -60,14 +60,14 @@ The CALIPSO-GOCCP products include the vertical distribution of cloud fraction, 
 %\subsection{Reanalysis data sets}
 \subsection{Other climatology variables}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\linewidth]{{figs/methods/reanalysis_ecmwf}.pdf}
-    \caption[A schematic of the reanalysis process]{A schematic of the reanalysis process, taken from the European Centre for Medium-Range Weather Forecasting (ECMWF) website (see \url{https://www.ecmwf.int/en/about/media-centre/focus/2020/fact-sheet-reanalysis}, last accessed: April 30, 2021).}
-    \label{fig:reanalysis}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{{figs/methods/reanalysis_ecmwf}.pdf}
+%     \caption[A schematic of the reanalysis process]{A schematic of the reanalysis process, taken from the European Centre for Medium-Range Weather Forecasting (ECMWF) website (see \url{https://www.ecmwf.int/en/about/media-centre/focus/2020/fact-sheet-reanalysis}, last accessed: April 30, 2021).}
+%     \label{fig:reanalysis}
+% \end{figure}
 
-In this thesis, the basic climate state variables such as temperature, specific humidity, relative humidity and dynamical fields such as zonal and meridional winds, pressure velocity (e.g., $\omega_{500}$) and mean sea level pressure are taken from the reanalysis data sets. As shown in \figref{fig:reanalysis}, the reanalysis is produced by combing the past short-range weather forecasts with observations through data assimilation, which can provide multi-variate, globally complete, consistent record of the atmosphere. The reanalysis has some advantages over the observation. For example, the observations are not always evenly distributed, and even in the satellite era, observations alone cannot provide a complete picture of the state of the Earth system across the globe at a given point in time. Also, the reanalysis is usually the best choice currently  when there is no complete observation of a certain variable, or when data sets which are consistent with each other are required.
+In this thesis, the basic climate state variables such as temperature, specific humidity, relative humidity and dynamical fields such as zonal and meridional winds, pressure velocity (e.g., $\omega_{500}$) and mean sea level pressure are taken from the reanalysis data sets. The reanalysis is produced by combing the past short-range weather forecasts with observations through data assimilation, which can provide multi-variate, globally complete, consistent record of the atmosphere. The reanalysis has some advantages over the observation. For example, the observations are not always evenly distributed, and even in the satellite era, observations alone cannot provide a complete picture of the state of the Earth system across the globe at a given point in time. Also, the reanalysis is usually the best choice currently  when there is no complete observation of a certain variable, or when data sets which are consistent with each other are required.
 
 In this thesis, the European Centre for Medium-Range Weather Forecasting (ECMWF) Interim Reanalysis \citep[ERA-Interim;][]{Dee2011} and the latest ERA5 \citep{era5} reanalysis are used. The ERA-Interim is produced by the data assimilation system based on Cy31r2 of the Integrated Forecasting System (IFS), which includes a 4-dimensional variational analysis (4D-Var) with a 12-hour analysis window. The spatial resolution of the data set is approximately 80 km (T255 spectral) on 60 levels in the vertical from the surface up to 0.1 hPa \citep{Dee2011}. This ERA-Interim is available from 1 January 1979 to 31 August 2019, and now is replaced by the ERA5. ERA5 is the latest reanalysis product from ECMWF, which is based on the IFS Cy41r2 and covers the period from 1950 to present. The atmospheric variables from ERA5 has a regular latitude-longitude grid (0.25$^\circ \times$0.25$^\circ$) with 37 pressure levels from 1000 to 1 hPa \citep{Hersbach2020era5}.
 
@@ -115,7 +115,7 @@ where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specif
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{{figs/methods/input_sst_sic_annual_mean}.png}
+	\includegraphics[width=0.6\linewidth]{{figs/methods/input_sst_sic_annual_mean}.png}
 	\caption[Boundary conditions for Isca, including sea surface temperature, sea ice concentration and topography.]{Boundary conditions for Isca, including (a) the annual mean sea surface temperature (SST, units: K; orange) and topography over land (altitude, units: m), and (b) annual mean sea ice concentration (SIC; units: \%). The SST and SIC are derived from input4MIPs data sets \citep{Durack2018} over the period from 1979 to 2008, and the topography is derived from ERA-Interim reanalysis \citep{Dee2011}.}
 	\label{fig:input_sst_ice}
 \end{figure}
@@ -151,8 +151,7 @@ where $F_Q$ is the Q-flux to be derived, which distributes energy globally to ma
 
 The AMIP fixed-SST experiments with linear cloud scheme described in \tabref{tab:exps} and a new fixed-SST simulation without clouds are used to derived the Q-flux, and the results are shown in \figref{fig:Q_flux_cmp}. The spatial patterns of Q-flux from different cloud schemes are similar, and have some differences from the simulation without cloud in subtropical and Southern Ocean regions. Q-flux can capture the ocean currents such as the Gulf Stream and cold tongue in the eastern tropical Pacific (\figref{fig:Q_flux_cmp}), and the positive value compensates for too little heating to the slab ocean by the surface flux from the `prescribed-SST’ run compared to the SST climatology. In this case, the Q-flux obtained from the run with the linear cloud scheme only is used in the following simulations. Also, the Q-flux remains the same in the control and perturbed experiments, but it is noted that the SST can change freely in response to different CO$_2$ forcing. 
 
-\subsection{Experiments}
-
+%\subsection{Experiments}
 
 %\section{Climate feedback}
 \section{CFMIP Observation Simulator Package (COSP)}
@@ -210,33 +209,33 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
     It is clear that this method can not separate the clear-sky climate feedback components into temperature, water vapor and surface albedo ones in further. As we will discuss in \secref{sec:CRE_or_PRP}, the cloud feedback parameter (second term in \eqref{eq:CRE_approach}) obtained from this approach depends on changes in both clear-sky and cloudy properties, which in fact can not separate the cloud feedback completely from the clear-sky components. Nevertheless, the calculation of this method is straightforward and still valuable in GCM evaluations.
     
     \item \textbf{The radiative kernel method}\\
-    The radiative kernel method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008} decompose each climate feedback into two parts. The first is the `radiative kernel' ($\partial R/\partial x$), which describes the change of TOA fluxes in response to a standard change in property $x$ and depends on the radiative properties and base state of the model. The second term is the climate response of feedback varaible normalized by surface temperature change ($\mathrm{d} x/\mathrm{d} T_s$). Most importantly, \cite{Soden2008} has shown the climate feedbacks calculated from three different radiative kernels are quite similar, although the radiative transfer code is different, indicating that a single kernel can be used to perform a first-order comparison of feedbacks across mutliple models \citep{Shell2008}. One problem is that the kernel calculation is also computationally expensive as it requres running the offline radiative transfer code for perturbation at each model level and time step, but luckily it just needs one-time calculation and the kernel can be applied for different experiments and models. Currently, more radiative kernels from different GCMs are available as summarized in \tabref{tab:rad_kernels}.
+    The radiative kernel method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008} decompose each climate feedback into two parts. The first is the `radiative kernel' ($\partial R/\partial x$), which describes the change of TOA fluxes in response to a standard change in property $x$ and depends on the radiative properties and base state of the model. The second term is the climate response of feedback varaible normalized by surface temperature change ($\mathrm{d} x/\mathrm{d} T_s$). Most importantly, \cite{Soden2008} has shown the climate feedbacks calculated from three different radiative kernels are quite similar, although the radiative transfer code is different, indicating that a single kernel can be used to perform a first-order comparison of feedbacks across mutliple models \citep{Shell2008}. One problem is that the kernel calculation is also computationally expensive as it requres running the offline radiative transfer code for perturbation at each model level and time step, but luckily it just needs one-time calculation and the kernel can be applied for different experiments and models. % Currently, more radiative kernels from different GCMs are available as summarized in \tabref{tab:rad_kernels}.
 \end{enumerate}   
     
-\begin{table}
-	\caption{Summary of available radiative kernels for several GCMs}
-	% %(Part from \url{https://climate.rsmas.miami.edu/data/radiative-kernels/index.html})
-	\vspace{0.5em}
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\resizebox{\textwidth}{!}{
-	\begin{tabular}{lccll}
-		\hline
-		Source & TOA & Surface & Reference & Note (Data link) \\
-		\hline
-        GFDL & $\checkmark$ & $\checkmark$ & \cite{Soden2008}  & \\
-        CESM-CAM3 & $\checkmark$ & $\checkmark$ & \cite{Shell2008} & \url{http://people.oregonstate.edu/~shellk/kernel.html}\\
-        \multirow{2}{*}{CESM-CAM5} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \cite{Pendergrass2018}  & \url{https://github.com/apendergrass/cam5-kernels}\\
-         & & & or \cite{Huang2017}  & \url{https://huanggroup.wordpress.com/publication/} \\
-        %{CESM-CAM5} &{$\checkmark$} & {$\checkmark$} & \cite{Pendergrass2018} or \cite{Huang2017}  \\
-        HadGEM3-GA7.1 & $\checkmark$ & $\checkmark$ & \cite{Smith2020} & \url{https://doi.org/10.5281/zenodo.3594673}  \\
-        \multirow{2}{*}{CloudSat} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{\cite{Kramer2019}} & \multirow{2}{*}{Derived from the CloudSat fluxes and } \\
-         & & & & heating rates data product.\\
-		\hline
-	\end{tabular}}
-	\label{tab:rad_kernels}
-\end{table}
+% \begin{table}
+% 	\caption{Summary of available radiative kernels for several GCMs}
+% 	% %(Part from \url{https://climate.rsmas.miami.edu/data/radiative-kernels/index.html})
+% 	\vspace{0.5em}
+% 	\centering
+% 	\small
+% 	\renewcommand{\arraystretch}{1.2}
+% 	\resizebox{\textwidth}{!}{
+% 	\begin{tabular}{lccll}
+% 		\hline
+% 		Source & TOA & Surface & Reference & Note (Data link) \\
+% 		\hline
+%         GFDL & $\checkmark$ & $\checkmark$ & \cite{Soden2008}  & \\
+%         CESM-CAM3 & $\checkmark$ & $\checkmark$ & \cite{Shell2008} & \url{http://people.oregonstate.edu/~shellk/kernel.html}\\
+%         \multirow{2}{*}{CESM-CAM5} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \cite{Pendergrass2018}  & \url{https://github.com/apendergrass/cam5-kernels}\\
+%          & & & or \cite{Huang2017}  & \url{https://huanggroup.wordpress.com/publication/} \\
+%         %{CESM-CAM5} &{$\checkmark$} & {$\checkmark$} & \cite{Pendergrass2018} or \cite{Huang2017}  \\
+%         HadGEM3-GA7.1 & $\checkmark$ & $\checkmark$ & \cite{Smith2020} & \url{https://doi.org/10.5281/zenodo.3594673}  \\
+%         \multirow{2}{*}{CloudSat} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{$\checkmark$} & \multirow{2}{*}{\cite{Kramer2019}} & \multirow{2}{*}{Derived from the CloudSat fluxes and } \\
+%          & & & & heating rates data product.\\
+% 		\hline
+% 	\end{tabular}}
+% 	\label{tab:rad_kernels}
+% \end{table}
 
 %These approaches summarized above are proposed for general climate feedback parameters, which of course can be used to diagnose cloud feedbacks. for the cloud feedback
 
@@ -355,10 +354,10 @@ which quantifies the sensitivity of TOA radiative flux to cloud fraction changes
     \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the SW reflection exceeds LW trapping; while for higher and thinner clouds, the net cloud radiative kenrel are positive, as LW trapping exceeds SW reflection.
 \end{enumerate}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=1\linewidth]{{figs/methods/cld_kernel_Zelinka}.pdf}
-    \caption{Global, annual, and ensemble mean (a) LW, (b) SW, and (c) net cloud radiative kernels. Adapted from Fig. 1 of \cite{Zelinka2012computing1}}
+    \includegraphics[width=0.8\linewidth]{{figs/methods/cld_kernel_Zelinka}.pdf}
+    \caption{Global, annual, and ensemble mean (a) longwave, (b) shortwave and (c) net cloud radiative kernels. Adapted from Fig. 1 of \cite{Zelinka2012computing1}}
     % In each model, the kernels have been mapped to the control climate's clear-sky surface albedo distribution before averaging in space; thus, the average kernels are weighted by the actual global distribution of clear-sky surface albedo in each model.
     \label{fig:cld_rad_kernel_Zelinka}
 \end{figure}
@@ -385,9 +384,9 @@ Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of
 
 \subsubsection{Estimate inversion strength}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\linewidth]{{figs/methods/Wood_EIS}.png}
+    \includegraphics[width=0.6\linewidth]{{figs/methods/Wood_EIS}.png}
     \caption{Idealized profile (thick solid line) of lower-tropospheric structure during periods of undisturbed flow. Moist adiabats are shown as light dotted lines. Adapted from \cite{Wood2006}.}
     \label{fig:wood_eis_atm_profile}
 \end{figure}

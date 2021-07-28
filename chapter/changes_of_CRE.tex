@@ -48,7 +48,6 @@ Another followed question is whether we could reproduce a certain level of sprea
 
 The outline of this chapter is as follows. \secref{sec:simulation_setup_cld_fbk} describes the basic simulation setups in this chapter, including the implementation of observation satellite simulator package, the perturbed physics ensemble in Isca, and how the Q-flux is prescribed in the simulations. In \secref{sec:eval_cosp}, the behaviors of satellite simulator is examined to make sure it is correctly implemented. Then based on the satellite simulator outputs and the cloud radiative kernel method, we compared the several different methods to compute the cloud feedbacks in \secref{sec:cmp_cld_fbk_method_result}, which is the basis for our future analysis. In \secref{sec:simu_cld_fbk}, we present the simulated spatial pattern and zonal mean structures of cloud feedbacks from the PPEs, and explain the possible mechanisms for the feedbacks. The spread of cloud feedbacks from PPE of Isca simulations and the underlying causes for the spread are investigated in \secref{sec:spread_of_cld_fbk_in_PPE}. In this section, at first the global mean longwave, shortwave and net cloud feedbacks and their components decomposed by altitude and types are examined in \secref{sec:spread_of_gm_cld_fbks_PPE}, and the relative contributions of these components to spread of net cloud feedbacks are quantified. Also, these feedbacks are also evaluated against the expert assessment based on multi-line evidence from \cite{Sherwood2020}, and the reasons for the agreement and disagreement with these expert assessment are analyzed (\secref{sec:cmp_with_Sherwood_assessment}). The contributions to the spread of cloud feedback from tropical and extra-tropical regions are quantified in \secref{sec:reg_contri_to_spread_of_cldfbk}, and the possible reasons are explored by the cloud controlling factor analysis in \secref{sec:cld_control_factor}. Finally, the relationship between cloud feedback and the equilibrium climate sensitivity is investigated briefly in \secref{sec:implification_for_ECS}.
 
-
 \section{Simulation setup}
 \label{sec:simulation_setup_cld_fbk}
 %Similar to the setups in \secref{sec:eval_cld_exp_setup}, here the SST has a uniform 4K warming.
@@ -89,7 +88,7 @@ One key diagnostic output to be acquired from the COSP is the joint histogram of
 % \begin{figure}[ht]
 % 	\centering
 % 	\includegraphics[width=1\linewidth]{{figs/change_of_CRE/Q-flux_cmp}.png}
-% 	\caption[Comparison of spatial pattern of ocean heat transport (Q-flux).]{Annual mean Q-flux pattern (in W m$^{-2}$) derived from AMIP fixed-SST experiments with realistic continents and topography. The cloud schemes used are (a) linear, (b) linear\_FD and (c) linear\_ALL as in \tabref{tab:exps} and (d) no cloud scheme.}
+% 	\caption[Comparison of spatial pattern of ocean heat transport (Q-flux)]{Annual mean Q-flux pattern (in W m$^{-2}$) derived from AMIP fixed-SST experiments with realistic continents and topography. The cloud schemes used are (a) linear, (b) linear\_FD and (c) linear\_ALL as in \tabref{tab:exps} and (d) no cloud scheme.}
 % 	\label{fig:Q_flux_cmp}
 % \end{figure}
 
@@ -146,7 +145,7 @@ For each simulation with perturbed parameter, two runs are performed: one with C
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\linewidth]{{figs/change_of_CRE/cmp_isca_cosp_tot_cld_amt}.png}
-    \caption{(a) The annual mean cloud fraction (\%) binned by the joint histogram of cloud top pressure and optical depth from ISCCP simulator implemented in Isca. (b) The sum of the histogram bins for each location from the ISCCP simulator of Isca. (c) The annual mean native total cloud amount from Isca simualtions based on max-random overlap assumption.}
+    \caption[Compare the COSP diagnostics with Isac native output]{(a) The annual mean cloud fraction (\%) binned by the joint histogram of cloud top pressure and optical depth from ISCCP simulator implemented in Isca. (b) The sum of the histogram bins for each location from the ISCCP simulator of Isca. (c) The annual mean native total cloud amount from Isca simualtions based on max-random overlap assumption.}
     \label{fig:cmp_isca_and_sum_of_COSP}
 \end{figure}
 
@@ -155,7 +154,7 @@ The implementation of COSP provides a new tool to compare Isca simulation result
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/clisccp_cloud_thickness_category_obs_isca_linear_sc}.pdf}
-    \caption{Annual mean cloud frequency from (top row) GCM simulator-oriented ISCCP product (1998-2007) and (bottom row) one Isca simulation, sorted by vertical velocity at 500 hPa ($\omega_{500}$, units: hPa day$^{-1}$) and divided into different cloud thickness categories: (a, e) thin (0.3$\le\tau<$3.6), (b, f) intermediate (3.6$\le\tau<$23), (c, g) thick ($\tau\ge$23), and (d, h) all optical depths. For ISCCP, the $\omega_{500}$ is from ERA-Interim reanalysis (1998-2007). }
+    \caption[Evaluate COSP outputs from different tropical dynamical regimes]{Annual mean cloud frequency from (top row) GCM simulator-oriented ISCCP product (1998-2007) and (bottom row) one Isca simulation, sorted by vertical velocity at 500 hPa ($\omega_{500}$, units: hPa day$^{-1}$) and divided into different cloud thickness categories: (a, e) thin (0.3$\le\tau<$3.6), (b, f) intermediate (3.6$\le\tau<$23), (c, g) thick ($\tau\ge$23), and (d, h) all optical depths. For ISCCP, the $\omega_{500}$ is from ERA-Interim reanalysis (1998-2007). }
     \label{fig:tropical_clisccp_obs_isca}
 \end{figure}
 
@@ -175,7 +174,7 @@ One goal of this chapter is to investigate the underlying causes of the uncertai
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/zonal_mean_profile_change_basic_fields_ensemble_mean}.pdf}
-    \caption{Zonal mean profiles (contour) for (a) temperature, (b) specific humidity, (c) relative humidity, (d) cloud fraction, (e) cloud water content and (f) effective radius and their responses (shading) to warming due to quadruple of CO$_2$ from Isca perturbed parameter ensemble.}
+    \caption[Zonal mean profile changes from basic fields under global warming in Isca simulations]{Zonal mean profiles (contour) for (a) temperature, (b) specific humidity, (c) relative humidity, (d) cloud fraction, (e) cloud water content and (f) effective radius and their responses (shading) to warming due to quadruple of CO$_2$ from Isca perturbed parameter ensemble.}
     \label{fig:zonal_mean_profile_change_ensemble_mean_for_cld}
 \end{figure}
 
@@ -186,7 +185,7 @@ The mean and range of simulations of both present-day zonal mean profiles of som
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\linewidth]{{figs/change_of_CRE/global_multi_mean_profiles_for_PPE_full}.pdf}
-    \caption{The ensemble and global mean profiles for (a) relative humidity, (b) temperature, (c) cloud fraction and (d) cloud water content in control (1$\times$CO$_2$) and global warming (4$\times$CO$_2$) experiments in Isca perturbed parameter ensemble.}
+    \caption[Global mean profile changes from basic fields under global warming in Isca simulations]{The ensemble and global mean profiles for (a) relative humidity, (b) temperature, (c) cloud fraction and (d) cloud water content in control (1$\times$CO$_2$) and global warming (4$\times$CO$_2$) experiments in Isca perturbed parameter ensemble.}
     \label{fig:global_mean_profiles_from_ctrl_4xco2}
 \end{figure}
 
@@ -215,7 +214,7 @@ where $K_{p\tau}$ is the cloud radiative kernel at each CTP-optical depth bin of
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\linewidth]{{figs/change_of_CRE/gregory_plot_all_cld_fbk_v2}.pdf}
-    \caption{Global and annual mean anomalies in cloud-induced TOA (a) longwave (LW), (b) shortwave (SW) and (c) net radiative flux against global mean surface temperature change ($\Delta T_s$). The black dots and lines are fluxes derived from cloud radiative kernel method \citep{Zelinka2012computing1}, while the gray ones are for the cloud radiative effect (CRE).}
+    \caption[Compare the approaches to calculate cloud feedback with different diagnostics and methods]{Global and annual mean anomalies in cloud-induced TOA (a) longwave (LW), (b) shortwave (SW) and (c) net radiative flux against global mean surface temperature change ($\Delta T_s$). The black dots and lines are fluxes derived from cloud radiative kernel method \citep{Zelinka2012computing1}, while the gray ones are for the cloud radiative effect (CRE).}
     \label{fig:gregory_plot_for_CRE_and_kernel_flux}
 \end{figure}
 
@@ -259,7 +258,7 @@ In summary, from this comparison we conclude that the CRE based diagnostics can 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/annual_mean_net_cld_fbk_map}.png}
-    \caption{The ensemble and annual mean net cloud feedback and its amount, altitude, and optical depth components from Isca perturbed paramerter ensemble for all clouds (left), non-low clouds (cloud top pressure, CTP ≤ 680 hPa; middle), and only low clouds (CTP > 680 hPa; right). Global mean values (in Wm$^{-2}$K$^{-1}$) are shown in brackets in the title of each panel.}
+    \caption[Spatial patterns of net cloud feedback components]{The ensemble and annual mean net cloud feedback and its amount, altitude, and optical depth components from Isca perturbed paramerter ensemble for all clouds (left), non-low clouds (cloud top pressure, CTP ≤ 680 hPa; middle), and only low clouds (CTP > 680 hPa; right). Global mean values (in Wm$^{-2}$K$^{-1}$) are shown in brackets in the title of each panel.}
     \label{fig:net_cld_fbk_components_map}
 \end{figure}
 
@@ -281,7 +280,7 @@ In fact, compared to the cloud feedback in CFMIP1/2 models (see their Fig. 2 of 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.0\linewidth]{{figs/change_of_CRE/annual_and_zonal_mean_cld_fbk}.pdf}
-    \caption{Zonal and ensemble mean (left column) longwave, (middle column) shortwave, and (right column) net cloud feedbacks from Isca perturbed parameter ensemble. (a-c) Total cloud feedbacks and their separate contributions from non-low (red) and low (green) clouds. Total cloud feedbacks (black) and their amount (orange), altitude (purple), and optical depth (green) components for (d-f) all clouds, (g-i) non-low clouds only, and (j-l) low clouds only.}
+    \caption[Zonal mean of cloud feedback components]{Zonal and ensemble mean (left column) longwave, (middle column) shortwave, and (right column) net cloud feedbacks from Isca perturbed parameter ensemble. (a-c) Total cloud feedbacks and their separate contributions from non-low (red) and low (green) clouds. Total cloud feedbacks (black) and their amount (orange), altitude (purple), and optical depth (green) components for (d-f) all clouds, (g-i) non-low clouds only, and (j-l) low clouds only.}
     \label{fig:zonal_mean_cld_fbk_ensemble}
 \end{figure}
 
@@ -304,7 +303,7 @@ The net cloud feedabck (right column of \figref{fig:zonal_mean_cld_fbk_ensemble}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\linewidth]{{figs/change_of_CRE/global_mean_cld_fbk_decomp_scatter}.pdf}
-    \caption{Global mean (orange) shortwave (SW), (blue) longwave (LW), and (black) net cloud feedbacks decomposed into amount, altitude, optical depth, and residual components for (a) all clouds, (b) non-low clouds (cloud top pressure, CTP$\le$680 hPa ), and (c) low clouds (CTP > 680hPa). The mean feedbacks of perturbed parameter ensemble are shown as empty bars.}
+    \caption[Scatter plot of global mean cloud feedback components (LW, SW and net) for low and non-low clouds]{Global mean (orange) shortwave (SW), (blue) longwave (LW), and (black) net cloud feedbacks decomposed into amount, altitude, optical depth, and residual components for (a) all clouds, (b) non-low clouds (cloud top pressure, CTP$\le$680 hPa ), and (c) low clouds (CTP > 680hPa). The mean feedbacks of perturbed parameter ensemble are shown as empty bars.}
     \label{fig:global_mean_cld_fbk_scatter}
 \end{figure}
 
@@ -321,7 +320,7 @@ The spread of net cloud feedback in Isca PPE is about 0.076 Wm$^{-2}$K$^{-1}$ (1
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/covariance_contribution_breakdown_with_err}.pdf}
-    \caption{The fractional contributions to the Isca perturbed physical ensemble variance in net cloud feedback are broken down to different altitudes and types, including low/non-low cloud amount, altitude, optical depth feedbacks and residuals.}
+    \caption[Fractional contributions from different cloud feedback components to variance of net cloud feedback in Isca perturbed parameter ensemble]{The fractional contributions to the Isca perturbed physical ensemble variance in net cloud feedback are broken down to different altitudes and types, including low/non-low cloud amount, altitude, optical depth feedbacks and residuals.}
     \label{fig:variance_contribution_to_cld_fbks}
 \end{figure}
 
@@ -349,7 +348,7 @@ The low cloud amount feedback is by far the largest single contributor to the sp
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.69\linewidth]{{figs/change_of_CRE/WCRP_assessed_cld_fbks_amip-p4K}.pdf}
-    \caption{Cloud feedback components estimated from climate model simulations and as assessed in \cite{Sherwood2020}. For each component, the individual model values are indicated with symbols, the multi-model means are indicated with blue (CMIP5), orange (CMIP6) and green (Isca) bars, and the expert assessed \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals are indicated with thick and thin black errorbars, respectively. Model symbols (only for CMIP5/6) are color-coded by equilibrium climate sensivity (ECS) with color boundaries corresponding to the edges of the \textit{likely} (17\%--83\%) and \textit{very likely} (5\%--95\%) ranges of the Baseline posterior probability density function (PDF) of  ECS from \cite{Sherwood2020}. The results from Isca simulation are added to original Fig. 1 of \cite{Zelinka2021evaluating}.}
+    \caption[Evaluation against the WCRP expert assessment of cloud feedbacks]{Cloud feedback components estimated from climate model simulations and as assessed in \cite{Sherwood2020}. For each component, the individual model values are indicated with symbols, the multi-model means are indicated with blue (CMIP5), orange (CMIP6) and green (Isca) bars, and the expert assessed \textit{likely} (66\%, or 17\%--83\%) and \textit{very likely} (90\%, or 5\%--95\%) confidence intervals are indicated with thick and thin black errorbars, respectively. Model symbols (only for CMIP5/6) are color-coded by equilibrium climate sensivity (ECS) with color boundaries corresponding to the edges of the \textit{likely} (17\%--83\%) and \textit{very likely} (5\%--95\%) ranges of the Baseline posterior probability density function (PDF) of  ECS from \cite{Sherwood2020}. The results from Isca simulation are added to original Fig. 1 of \cite{Zelinka2021evaluating}.}
     \label{fig:WCRP_assessment}
 \end{figure}
 
@@ -366,7 +365,7 @@ All the simulated cloud feedbacks from Isca are with the \textit{very likely} (9
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/region_mean_cld_fbk_decomp_scatter_LO680}.pdf}
-    \caption{The scatter plot of total low cloud feedback (first column) and its amount (second column), altitude (third column) and optical depth (fourth column) components for different regions from Isca PPE. The top, middle and bottom rows are for the shortwave, longwave and net cloud feedbacks, respectively. }
+    \caption[Regional contributions to net cloud feedback spread]{The scatter plot of total low cloud feedback (first column) and its amount (second column), altitude (third column) and optical depth (fourth column) components for different regions from Isca PPE. The top, middle and bottom rows are for the shortwave, longwave and net cloud feedbacks, respectively. }
     \label{fig:regional_low_cld_fbk_components}
 \end{figure}
 
@@ -375,14 +374,14 @@ All the simulated cloud feedbacks from Isca are with the \textit{very likely} (9
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/cld_fbk_composited_by_omega500_percentile}.pdf}
-    \caption{Composites of (a) net, (b) shortwave and (c) longwave cloud feedbacks over low-latitude oceans (30$^\circ$S--30$^\circ$N) in the Isca perturbed parameter ensemble, sorted by percentiles of the vertical velocity at 500 hPa ($\omega_{500}$). }
+    \caption[Composites of net, shortwave and longwave cloud feedbacks over tropical ocean regions]{Composites of (a) net, (b) shortwave and (c) longwave cloud feedbacks over low-latitude oceans (30$^\circ$S--30$^\circ$N) in the Isca perturbed parameter ensemble, sorted by percentiles of the vertical velocity at 500 hPa ($\omega_{500}$). }
     \label{fig:cld_fbk_composite_w500_percentile}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/low_cld_fbk_composited_by_omega500_percentile}.pdf}
-    \caption{Similar to \figref{fig:cld_fbk_composite_w500_percentile}, but the composites for (a) the total low cloud feedback and its (b) amount, (c) altitude and (d) optical depth components.}
+    \caption[Composites of low cloud feedback components over tropical ocean regions]{Similar to \figref{fig:cld_fbk_composite_w500_percentile}, but the composites for (a) the total low cloud feedback and its (b) amount, (c) altitude and (d) optical depth components.}
     \label{fig:low_cld_fbk_composite_w500_percentile}
 \end{figure}
 
@@ -398,7 +397,7 @@ Why does the low cloud amount feedback have the largest uncertainty over the sub
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/regime_and_profiles_EIS_4.0}.png}
-    \caption{(a) The frequency of occurrence for (blue) trade-wind cumulus clouds and (red) stratocumulus clouds in low-latitude (35$^\circ$S--35$^\circ$N) ocean regions. Stippled regions indicate both types of cloud regimes can occur, but the color is chosen as the more frequent one. (b--e) The vertical profile changes in (b) relative humidity, (c) temperature, (d) cloud fraction and (e) cloud water content in trade-wind cumulus cloud regions under global warming in Isca perturbed parameter ensemble simulations. (f--i) As in (b--e), but for stratocumulus regions.}
+    \caption[Profile changes over trade-wind cumulus and stratocumulus cloud regimes]{(a) The frequency of occurrence for (blue) trade-wind cumulus clouds and (red) stratocumulus clouds in low-latitude (35$^\circ$S--35$^\circ$N) ocean regions. Stippled regions indicate both types of cloud regimes can occur, but the color is chosen as the more frequent one. (b--e) The vertical profile changes in (b) relative humidity, (c) temperature, (d) cloud fraction and (e) cloud water content in trade-wind cumulus cloud regions under global warming in Isca perturbed parameter ensemble simulations. (f--i) As in (b--e), but for stratocumulus regions.}
     \label{fig:trade_wind_Cu_and_Sc_region_partition_and_change_of_profs}
 \end{figure}
 
@@ -410,7 +409,7 @@ Under global warming, the changes of lower tropospheric cloud fraction profiles 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.85\linewidth]{{figs/change_of_CRE/EIS_change_pattern_and_estimation}.png}
-    \caption{The annual and ensemble mean changes in (a) surface air temperature ($T_{0}$), (b) temperature at 700 hPa ($T_{700}$) and (c) estimate inversion strength (EIS) in Isca perturbed parameter ensemble (PPE) simulations, and these changes are normalized by the global mean surface air temperature. (e) The seasonal mean changes in EIS are estimated by the changes in surface temperature and temperature at 700 hPa for five marine low cloud regions in Isca simulation. The annual and regional mean EIS changes, the ratio between changes in $T_{700}$ and $T_0$, and surface temperature changes for each member of Isca PPE are shown in (d), (f) and (g), respectively. The ranges of the five locations are the same as those used in \figref{fig:fit_low_cld_proxy}. }
+    \caption[Changes of estimated inversion strength (EIS) under global warming in Isca simulations]{The annual and ensemble mean changes in (a) surface air temperature ($T_{0}$), (b) temperature at 700 hPa ($T_{700}$) and (c) estimate inversion strength (EIS) in Isca perturbed parameter ensemble (PPE) simulations, and these changes are normalized by the global mean surface air temperature. (e) The seasonal mean changes in EIS are estimated by the changes in surface temperature and temperature at 700 hPa for five marine low cloud regions in Isca simulation. The annual and regional mean EIS changes, the ratio between changes in $T_{700}$ and $T_0$, and surface temperature changes for each member of Isca PPE are shown in (d), (f) and (g), respectively. The ranges of the five locations are the same as those used in \figref{fig:fit_low_cld_proxy}. }
     \label{fig:EIS_changes_in_Isca_PPE}
 \end{figure}
 
@@ -426,7 +425,7 @@ According to \cite{Wood2006}, $\Delta$EIS is close to zero if the vertical profi
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.53\linewidth]{{figs/change_of_CRE/CCF_analysis_for_diff_cld_types_low_cld_amt_EIS}.pdf}
-    \caption{(a) Sensitivities of trade-wind cumulus (Cu; brown box), stratocumulus (Sc; blue box) and all low cloud amounts (green box) to cloud controlling factors (CCF), including sea surface temperature (SST), estimated inversion strength (EIS), surface temperature advection (T$_{adv}$), relative humidity at 700 hPa (RH$_{700}$), and vertical velocity at 700 hPa ($\omega_{700}$) estimated from climate variability over low-latitude oceans (35$^\circ$S--35$^\circ$N) the in the control simulations of Isca perturbed parameter ensemble. (b) The changes in these factors per unit global warming from the 4xCO2 simulations of Isca. (c) Predicted and actual changes in low cloud amount due to each cloud controlling factor. Boxes extend from the 25th to 75th percentiles of the model values, with a dashed line at the median value. Outliers are denoted by gray empty circles. Anomalies in cloud controlling factors are normalized by the standard deviation of their interannual variations in ERA5 data set and are therefore expressed in $\sigma$ units.} % , estimated as the product of the sensitivities shown in (a) with the responses of the quantities in (b)
+    \caption[Cloud controlling factor analysis]{(a) Sensitivities of trade-wind cumulus (Cu; brown box), stratocumulus (Sc; blue box) and all low cloud amounts (green box) to cloud controlling factors (CCF), including sea surface temperature (SST), estimated inversion strength (EIS), surface temperature advection (T$_{adv}$), relative humidity at 700 hPa (RH$_{700}$), and vertical velocity at 700 hPa ($\omega_{700}$) estimated from climate variability over low-latitude oceans (35$^\circ$S--35$^\circ$N) the in the control simulations of Isca perturbed parameter ensemble. (b) The changes in these factors per unit global warming from the 4xCO2 simulations of Isca. (c) Predicted and actual changes in low cloud amount due to each cloud controlling factor. Boxes extend from the 25th to 75th percentiles of the model values, with a dashed line at the median value. Outliers are denoted by gray empty circles. Anomalies in cloud controlling factors are normalized by the standard deviation of their interannual variations in ERA5 data set and are therefore expressed in $\sigma$ units.} % , estimated as the product of the sensitivities shown in (a) with the responses of the quantities in (b)
     \label{fig:CCF_analysis_low_cld_amt}
 \end{figure}
 
@@ -486,14 +485,14 @@ The Isca PPE simulations have produced a certain range in cloud feedbacks, as di
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/ECS_vs_cldfbk_all_ALL_cmip56_isca}.png}
-    \caption{The scatter plot of equilibrium climate sensitivity (ECS; K) against the net cloud feedbacks (Wm$^{-2}$K$^{-1}$) from different models and different regions. Rows from top to bottom are for Isca (green), CMIP5 (blue), CMIP6 (orange) models and all of them, respectively. From left to right, the columns are for global, tropical (30$^\circ$S--30$^\circ$N), midlatitude (30-60$^\circ$), and high latitude (60-90$^\circ$) regions, respectively. The blue shaded indicates the 17th and 83rd percentile range of the Baseline probability density function of ECS from \cite{Sherwood2020}, while the orange shaded indicates the 5th to 95th percentile range. The dashed lines are liner regression of ECS against cloud feedbacks, and the the correlation coefficient ($R$) with asterisk is above 95\% confidence interval.}
+    \caption[Scatter plot of ECS against cloud feedback over different regions and models]{The scatter plot of equilibrium climate sensitivity (ECS; K) against the net cloud feedbacks (Wm$^{-2}$K$^{-1}$) from different models and different regions. Rows from top to bottom are for Isca (green), CMIP5 (blue), CMIP6 (orange) models and all of them, respectively. From left to right, the columns are for global, tropical (30$^\circ$S--30$^\circ$N), midlatitude (30-60$^\circ$), and high latitude (60-90$^\circ$) regions, respectively. The blue shaded indicates the 17th and 83rd percentile range of the Baseline probability density function of ECS from \cite{Sherwood2020}, while the orange shaded indicates the 5th to 95th percentile range. The dashed lines are liner regression of ECS against cloud feedbacks, and the the correlation coefficient ($R$) with asterisk is above 95\% confidence interval.}
     \label{fig:ECS_vs_cld_fbk_from_diff_regions}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{{figs/change_of_CRE/ECS_vs_cldfbk_ocean_ALL_cmip56_isca_no_legend}.png}
-    \caption{As in \figref{fig:ECS_vs_cld_fbk_from_diff_regions}, but for cloud feedbacks from ocean regions only. Symbols are the same as \figref{fig:ECS_vs_cld_fbk_from_diff_regions}.}
+    \caption[Scatter plot of ECS against cloud feedback over different models in various ocean regions]{As in \figref{fig:ECS_vs_cld_fbk_from_diff_regions}, but for cloud feedbacks from ocean regions only. Symbols are the same as \figref{fig:ECS_vs_cld_fbk_from_diff_regions}.}
     \label{fig:ECS_vs_cld_fbk_from_diff_ocn_regions}
 \end{figure}
 
@@ -502,7 +501,7 @@ As both feedbacks and ECS display certain range (\tabref{tab:ECS_forcing_feedbac
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\linewidth]{{figs/change_of_CRE/ECS_vs_cldfbk_ALL_cmip56_isca_tropical_asc_dsc_no_legend}.png}
-    \caption{As in \figref{fig:ECS_vs_cld_fbk_from_diff_regions}, but for cloud feedbacks from tropical (top) ascending and (bottom) descending regions respectively, and the regimes are decomposed based on vertical velocity at 500 hPa. Symbols keep the same as \figref{fig:ECS_vs_cld_fbk_from_diff_regions}.}
+    \caption[Scatter plot of ECS against cloud feedback over different models in tropical ascending and descending ocean regions]{As in \figref{fig:ECS_vs_cld_fbk_from_diff_regions}, but for cloud feedbacks from tropical (top) ascending and (bottom) descending regions respectively, and the regimes are decomposed based on vertical velocity at 500 hPa. Symbols keep the same as \figref{fig:ECS_vs_cld_fbk_from_diff_regions}.}
     \label{fig:ECS_vs_cld_fbk_from_diff_ocn_asc_dsc_regions}
 \end{figure}
 

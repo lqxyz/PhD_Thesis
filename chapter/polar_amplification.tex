@@ -80,15 +80,15 @@ The Isca model is employed for the simulations. The configuration has 25 vertica
 
 The general way to investigate climate sensitivity is to evaluate the degree of warming in response to a doubling of the CO$_2$ concentration in the climate system. Actually, the external forcing can be introduced into climate system through other ways such as adding a ghost forcing  arbitrarily at the TOA \citep{Hansen1997,Alexeev2005}. Given the fact that there is no sea ice in our experiments, changes of albedo will not introduce albedo feedbacks to the climate system. Instead, it provides an simple way to perturb the radiation balance at the TOA without doubling CO$_2$ concentration. Therefore, we will first examine the zonal mean surface temperature change when varying the albedo. Specifically, four albedos, $\alpha=$0.27, 0.3, 0.33 and 0.38, are selected for each radiation scheme in this study, where the $\alpha = 0.3$ is roughly the Earth's global averaged albedo and used in the control run for each radiation scheme. $\alpha=0.27$ (0.33) decreases (increases) $10\%$ from the control run value, which will cause the warming (cooling) response to the climate system. $\alpha=0.38$ increases even more than the albedo in the control run, leading to a much colder climate state. The experiments for BOG, Frierson and RRTM radiation schemes with different albedos are shown in Table \ref{tab:exp_table}.
 
-To estimate the external forcing after changing the albedos, the fixed sea surface temperature (SST) forcing method is applied in this study \citep{Hansen2005,Feldl2013,Kim2018}, which has included the adjustment throughout the atmosphere (\figref{fig:Hansen_forcing}d). For each radiation scheme, the radiative forcing for experiments after changing albedos ($\alpha=0.27, ~0.33$ and $0.38$) is calculated from radiation imbalance at TOA when prescribed with the monthly mean SST profiles from control experiment.
+To estimate the external forcing after changing the albedos, the fixed sea surface temperature (SST) forcing method is applied in this study \citep{Hansen2005,Feldl2013,Kim2018}, which has included the adjustment throughout the atmosphere. For each radiation scheme, the radiative forcing for experiments after changing albedos ($\alpha=0.27, ~0.33$ and $0.38$) is calculated from radiation imbalance at TOA when prescribed with the monthly mean SST profiles from control experiment.
 
 %As shown in Table \ref{tab:exp_table}, the experiments are also performed for BOG radiation scheme with CO$_2$ concentration doubled to have a reference.
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/Hansen2005_forcings}.png}
-	\caption{ Cartoon comparing (a) $F_i$, instantaneous forcing, (b) $F_a$, adjusted forcing, which allows stratospheric temperature to adjust, (c) $F_g$, fixed $T_g$ forcing, which allows atmospheric temperature to adjust, (d) $F_s$, fixed SST forcing, which allows atmospheric temperature and land temperature to adjust, and (e) $\Delta T_s$, global surface air temperature calculated by the climate model in response to the climate forcing agent. Adapted from Figure 2 of \cite{Hansen2005}.}
-	\label{fig:Hansen_forcing}
-\end{figure}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/Hansen2005_forcings}.png}
+% 	\caption{ Cartoon comparing (a) $F_i$, instantaneous forcing, (b) $F_a$, adjusted forcing, which allows stratospheric temperature to adjust, (c) $F_g$, fixed $T_g$ forcing, which allows atmospheric temperature to adjust, (d) $F_s$, fixed SST forcing, which allows atmospheric temperature and land temperature to adjust, and (e) $\Delta T_s$, global surface air temperature calculated by the climate model in response to the climate forcing agent. Adapted from Figure 2 of \cite{Hansen2005}.}
+% 	\label{fig:Hansen_forcing}
+% \end{figure}
 
 \subsection{Water vapor feedback in radiation scheme} \label{sec:wv_fb_setup}
 %\vspace{-1.6cm}
@@ -123,7 +123,7 @@ In order to quantify the relative importance of various contributions to polar a
 \Delta R = \Delta \mathscr{F}+\lambda \Delta T_s + \mathcal{O}\left( \Delta T_s^2 \right),
 \label{eq:delta_R_relation}
 \end{equation}
-which can be viewed as a Taylor expansion in surface temperature change ($\Delta T_s$) \citep{Feldl2013a}. The first term, $\Delta \mathscr{F}$, in \eqref{eq:delta_R_relation} is the climate forcing, which is estimated by the fixed-SST method \citep{Hansen2005, Feldl2013a, Kim2018} as shown in \figref{fig:Hansen_forcing}. The second term,  $\lambda \Delta T_s$, reflects the radiative flux change that is linearly depend on the surface temperature change, and $\lambda$ is the total \textit{feedback parameter}. The third term (or residual term) $ \mathcal{O}\left( \Delta T_s^2 \right)$ represents the high-order components, reflecting the non-linear interactions among different processes, which we consider to be neglected in our analysis. It should be pointed out that variables in \eqref{eq:delta_R_relation} can be a global mean value or a function of the latitude \citep{Feldl2013a}. When neglecting the nonlinearities and interactions among the feedbacks, the feedback parameter $\lambda$ can be decomposed into the sum of different components:
+which can be viewed as a Taylor expansion in surface temperature change ($\Delta T_s$) \citep{Feldl2013a}. The first term, $\Delta \mathscr{F}$, in \eqref{eq:delta_R_relation} is the climate forcing, which is estimated by the fixed-SST method \citep{Hansen2005, Feldl2013a, Kim2018}. The second term, $\lambda \Delta T_s$, reflects the radiative flux change that is linearly depend on the surface temperature change, and $\lambda$ is the total \textit{feedback parameter}. The third term (or residual term) $ \mathcal{O}\left( \Delta T_s^2 \right)$ represents the high-order components, reflecting the non-linear interactions among different processes, which we consider to be neglected in our analysis. It should be pointed out that variables in \eqref{eq:delta_R_relation} can be a global mean value or a function of the latitude \citep{Feldl2013a}. When neglecting the nonlinearities and interactions among the feedbacks, the feedback parameter $\lambda$ can be decomposed into the sum of different components:
 \begin{equation}
 \lambda=\lambda_T+\lambda_{w} +\lambda_\alpha+\lambda_C,
 \label{eq:fb_decmop}
@@ -135,14 +135,14 @@ where $\lambda_T$, $\lambda_{w}$, $\lambda_\alpha$ and $\lambda_C$ are the feedb
 \section{Method} \label{sec:method_radiative_kernel}
 
 \subsection{Radiative kernel method}
-In this study, we apply radiative kernel \index{radiative kernel} technique \citep{Soden2008,Shell2008} to calculate the climate feedbacks of Isca model. It should be mentioned that radiative kernel technique is not the only approach to quantify climate feedbacks, other methods such as partial perturbation radiative (PRP) \index{PRP} method \citep{Wetherald1988cloud}, regression method of \cite{Gregory2004} are also used by other studies. Nevertheless, the PRP method is time consuming and the calculations have to be repeated for different simulations \citep{Shell2008}. Furthermore, the interpretation of the results must be cautious for the possible problem associated with correlated variables as pointed by \cite{Bony2006}.  In contrast, the radiative kernels are calculated from the offline version radiative codes and can be used for different experiments and models. For instance, \cite{Soden2008} compare the climate feedbacks in 14 different coupled ocean-atmosphere models from the Fourth Assessment of the Intergovernmental Panel on Climate Change (IPCC AR4) with radiative kernels from three different general circulation models (GCMs) respectively, demonstrating that the strength of global feedbacks is relative insensitive to the choice of kernels (\figref{fig:soden2008_3_kernels}).
+In this study, we apply radiative kernel \index{radiative kernel} technique \citep{Soden2008,Shell2008} to calculate the climate feedbacks of Isca model. It should be mentioned that radiative kernel technique is not the only approach to quantify climate feedbacks, other methods such as partial perturbation radiative (PRP) \index{PRP} method \citep{Wetherald1988cloud}, regression method of \cite{Gregory2004} are also used by other studies. Nevertheless, the PRP method is time consuming and the calculations have to be repeated for different simulations \citep{Shell2008}. Furthermore, the interpretation of the results must be cautious for the possible problem associated with correlated variables as pointed by \cite{Bony2006}.  In contrast, the radiative kernels are calculated from the offline version radiative codes and can be used for different experiments and models. For instance, \cite{Soden2008} compare the climate feedbacks in 14 different coupled ocean-atmosphere models from the Fourth Assessment of the Intergovernmental Panel on Climate Change (IPCC AR4) with radiative kernels from three different general circulation models (GCMs) respectively, demonstrating that the strength of global feedbacks is relative insensitive to the choice of kernels.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=.8\linewidth]{figs/polar_amp/fig7_Soden2008}
-	\caption{The global-mean water vapor, lapse rate, water vapor$+$lapse rate, surface albedo, and cloud feedbacks computed for 14 coupled ocean–atmosphere models (listed in Table 1 of \cite{Soden2006}) using the GFDL (red), NCAR (green), CAWCR (blue) kernels. Adapted from the Figure 7 of \cite{Soden2008}.}
-	\label{fig:soden2008_3_kernels}
-\end{figure}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.8\linewidth]{figs/polar_amp/fig7_Soden2008}
+% 	\caption{The global-mean water vapor, lapse rate, water vapor$+$lapse rate, surface albedo, and cloud feedbacks computed for 14 coupled ocean–atmosphere models (listed in Table 1 of \cite{Soden2006}) using the GFDL (red), NCAR (green), CAWCR (blue) kernels. Adapted from the Figure 7 of \cite{Soden2008}.}
+% 	\label{fig:soden2008_3_kernels}
+% \end{figure}
 %What's more, the radiative kernel can satisfy the goal to estimate the linearity of different climate feedbacks as the use of small differential changes is close to the "tangent linear" approximation that is the formal basis for the Taylor series expansion in Eq. (1) \citep{Feldl2013a}. 
 
 To get the radiative kernels for one model, the model should produce high-frequency (typically either every time step or every 3 hours) output in order to get the instantaneous fields for the various variables that are needed. Initially, the model is performed with profiles without perturbation in order to get the original TOA radiation fluxes, then run with profiles where certain variable is perturbed at each level and each time step (e.g. 3 hours) to obtain the new TOA radiation fluxes corresponding to that perturbation. Specifically, the small perturbations are applied to surface temperature (+1 K), atmospheric temperature (+1 K) and specific humidity (the change amount is determined when temperature increases by 1 K but assuming relative humidity is constant) at each vertical level at each time step (e.g. 3 hours), respectively. In particular, the change of specific humidity $\Delta q$ for one layer is given by
@@ -281,11 +281,10 @@ The surface temperature kernel also contributes partially to the temperature fee
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\textwidth]{figs/polar_amp/all_zonalmean_feedbacks}
+	\includegraphics[width=0.8\textwidth]{figs/polar_amp/all_zonalmean_feedbacks}
 	\caption{The zonal and annual mean climate feedback parameters for all the experiments in BOG, Frierson and RRTM radiation schemes, where (a)-(c) are for the Planck feedbacks, (d)-(f) for the lapse rate feedbacks and (g)-(h) for the water vapor feedbacks. Blue, orange and green lines represent the experiments when albedo ($\alpha$) is changed from 0.3 to 0.38, 0.33 and 0.27 respectively.}
 	\label{fig:all_feedbacks}
 \end{figure}
-
 
 \subsection{Climate feedbacks in Isca}
 For each radiation scheme, the albedo parameter is changed from 0.3 to 0.27, 0.33 and 0.38 to provide an external forcing to the simulation respectively, leading to different degree of climate responses in experiments. Thus in this section, we will use the radiative kernel technique to analyze the feedbacks for these experiment when changing albedos and the resulting Planck feedback, lapse rate feedback and water vapor feedback for each experiments are displayed in \figref{fig:all_feedbacks}.
@@ -305,7 +304,6 @@ For each radiation scheme, the albedo parameter is changed from 0.3 to 0.27, 0.3
 		\bottomrule
 	\end{tabular}
 \end{table}
-
 
 \begin{table}[ht]
 	\centering
@@ -584,9 +582,9 @@ The changes of the surface albedo do have influence on the atmopspheric energy t
 
 \begin{figure}[ht]
 	\centering
-	\hspace{-1cm}
+	%\hspace{-1cm}
 	%\includegraphics[width=1.\linewidth]{{figs/polar_amp/heat_transport_bog_frierson_components_diff_test}.pdf}
-	\includegraphics[width=1.0\linewidth]{{figs/polar_amp/heat_transport_bog_frierson_components_diff_test}.pdf}
+	\includegraphics[width=0.9\linewidth]{{figs/polar_amp/heat_transport_bog_frierson_components_diff_test}.pdf}
 	\caption{As in \figref{fig:ht_transport}, but for the difference in heat transport between  in the experiments with different radiation schemes and various albedos. Blue, black and green solid lines indicates the difference between experiments where albedo is 0.38, 0.33 and 0.27 and the control experiment respectively.}
 	\label{fig:ht_transport_diff}
 \end{figure}
