@@ -26,7 +26,6 @@ Satellites play important roles in observing the Earth over the past decades, an
 %     \item \textbf{Level 4}:	Model output or variables derived from multiple measurements.
 % \end{itemize}
 
-
 \subsubsection{Clouds and the Earth’s Radiant Energy System  Top-of-Atmosphere (TOA) data product}
 % Energy Balanced and Filled (EBAF)
 
@@ -277,22 +276,23 @@ as the CRE at TOA is computed from the radiation flux difference between total- 
     \label{eq:delta_CRE_no_cld_fbk}
 \end{equation}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{{figs/methods/fig2_Soden2004_PRP_CRF_comparison}.pdf}
-    \caption{Comparison of the (a) shortwave, (b) longwave, and (c) net cloud feedback parameters from the PRP and $\Delta$CRF (or $\Delta$CRE) methods. Adapted from Fig. 2 of \cite{Soden2004}.}
-    \label{fig:cmp_PRP_CRE_Soden}
-\end{figure}
-If we assume that $\Delta T$, $\Delta w$, and  $\Delta \alpha_s$ are not zero (i.e. $T'\neq T$,  $w'\neq w$, and  $\alpha_s'\neq \alpha_s$), the only way to get $\Delta {CRE}_{net}=0$ would be the changes in total-sky flux (term within first bracket in \eqref{eq:delta_CRE_no_cld_fbk}) and clear-sky flux (term within second bracket in \eqref{eq:delta_CRE_no_cld_fbk}) due to non-cloud feedbacks are equal. However, this is not always the case. An explanation with a simple model is presented in \secref{sec:cld_masking_effect}, but here we provide some simulation results from GCMs first.
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=1\linewidth]{{figs/methods/fig2_Soden2004_PRP_CRF_comparison}.pdf}
+%     \caption{Comparison of the (a) shortwave, (b) longwave, and (c) net cloud feedback parameters from the PRP and $\Delta$CRF (or $\Delta$CRE) methods. Adapted from Fig. 2 of \cite{Soden2004}.}
+%     \label{fig:cmp_PRP_CRE_Soden}
+% \end{figure}
 
-Taking the results from \cite{Soden2004} as an example, shortwave (SW), longwave (LW) and net cloud feedback parameters estimated from PRP and $\Delta$CRE mthods from several GFDL AM2 (version numbers denoted as p\#) models are shown in \figref{fig:cmp_PRP_CRE_Soden}. The SW cloud feedback calculated from PRP method is smaller than the ones from $\Delta$CRE method, while the LW cloud feedback from PRP method is larger than that from $\Delta$CRE approach. In total, the magnitude of net cloud feedback from $\Delta$CRE method is underestimated ranges from 0.3 to 0.4 Wm$^{-2}$K$^{-1}$ in AM2 models compared to PRP method. 
+If we assume that $\Delta T$, $\Delta w$, and  $\Delta \alpha_s$ are not zero (i.e. $T'\neq T$,  $w'\neq w$, and  $\alpha_s'\neq \alpha_s$), the only way to get $\Delta {CRE}_{net}=0$ would be the changes in total-sky flux (term within first bracket in \eqref{eq:delta_CRE_no_cld_fbk}) and clear-sky flux (term within second bracket in \eqref{eq:delta_CRE_no_cld_fbk}) due to non-cloud feedbacks are equal. However, this is not always the case. An explanation with a simple model is presented in \secref{sec:cld_masking_effect}. %, but here we provide some simulation results from GCMs first.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.65\linewidth]{{figs/methods/Soden_Held_cld_fbk_and_delta_CRF}.png}
-    \caption{The cloud feedback parameter plotted as a function of the change in global-mean net cloud radiative forcing per degree change in global surface temperature. Adapted from Fig. 4 of \cite{Soden2006}.}
-    \label{fig:cld_fbk_and_CRE_Soden_Held}
-\end{figure}
+% Taking the results from \cite{Soden2004} as an example, shortwave (SW), longwave (LW) and net cloud feedback parameters estimated from PRP and $\Delta$CRE mthods from several GFDL AM2 (version numbers denoted as p\#) models are shown in \figref{fig:cmp_PRP_CRE_Soden}. The SW cloud feedback calculated from PRP method is smaller than the ones from $\Delta$CRE method, while the LW cloud feedback from PRP method is larger than that from $\Delta$CRE approach. In total, the magnitude of net cloud feedback from $\Delta$CRE method is underestimated ranges from 0.3 to 0.4 Wm$^{-2}$K$^{-1}$ in AM2 models compared to PRP method. 
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{{figs/methods/Soden_Held_cld_fbk_and_delta_CRF}.png}
+%     \caption{The cloud feedback parameter plotted as a function of the change in global-mean net cloud radiative forcing per degree change in global surface temperature. Adapted from Fig. 4 of \cite{Soden2006}.}
+%     \label{fig:cld_fbk_and_CRE_Soden_Held}
+% \end{figure}
 
 % \begin{figure}
 %     \centering
@@ -301,8 +301,8 @@ Taking the results from \cite{Soden2004} as an example, shortwave (SW), longwave
 %     %  Only those models for which both the cloud feedback and CRE were available are included in the ensemble mean.
 %     \label{fig:cld_fbk_and_CRE_pattern}
 % \end{figure}
-
-Similarly, as shown in \figref{fig:cld_fbk_and_CRE_Soden_Held}, \cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different (\figref{fig:cmp_PRP_CRE_Soden}c and \figref{fig:cld_fbk_and_CRE_Soden_Held}). However, it is noted that the cloud feedback is correlated with the change in net CRE as displayed in \figref{fig:cld_fbk_and_CRE_Soden_Held}, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
+%Similarly, as shown in \figref{fig:cld_fbk_and_CRE_Soden_Held}, 
+\cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different. However, it is noted that the cloud feedback is correlated with the change in net CRE, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
 
 \subsection{Cloud masking effect}
 \label{sec:cld_masking_effect}
@@ -311,7 +311,7 @@ A modified simple thought experiment from \cite{Soden2008} is adopted here to ex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.65\linewidth]{{figs/methods/cloud_masking_effect}.pdf}
+    \includegraphics[width=0.55\linewidth]{{figs/methods/cloud_masking_effect}.pdf}
     \caption{Illustration of cloud masking effect on noncloud feedbacks in a grid box.}
     \label{fig:cld_masking_effect}
 \end{figure}
@@ -357,7 +357,7 @@ which quantifies the sensitivity of TOA radiative flux to cloud fraction changes
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{{figs/methods/cld_kernel_Zelinka}.pdf}
-    \caption{Global, annual, and ensemble mean (a) longwave, (b) shortwave and (c) net cloud radiative kernels. Adapted from Fig. 1 of \cite{Zelinka2012computing1}}
+    \caption[Global and annual mean of longwave, shortwave and net cloud radiative kernels]{Global, annual, and ensemble mean (a) longwave, (b) shortwave and (c) net cloud radiative kernels. Adapted from Fig. 1 of \cite{Zelinka2012computing1}}
     % In each model, the kernels have been mapped to the control climate's clear-sky surface albedo distribution before averaging in space; thus, the average kernels are weighted by the actual global distribution of clear-sky surface albedo in each model.
     \label{fig:cld_rad_kernel_Zelinka}
 \end{figure}
@@ -371,7 +371,6 @@ and hence the cloud feedback is calculated as follows:
     \lambda_c = K \frac{\Delta C}{\Delta T_s} = \frac{\Delta R}{\Delta {T}_s}.
 \end{equation}
 Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$).
-
 
 \section{Low cloud amount proxy}
 
@@ -387,13 +386,12 @@ Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\linewidth]{{figs/methods/Wood_EIS}.png}
-    \caption{Idealized profile (thick solid line) of lower-tropospheric structure during periods of undisturbed flow. Moist adiabats are shown as light dotted lines. Adapted from \cite{Wood2006}.}
+    \caption[Idealized profile of lower-tropospheric structure]{Idealized profile (thick solid line) of lower-tropospheric structure during periods of undisturbed flow. Moist adiabats are shown as light dotted lines. Adapted from \cite{Wood2006}.}
     \label{fig:wood_eis_atm_profile}
 \end{figure}
 
 Despite the widely use of LTS in climate models, \cite{Wood2006} argued that it has yet to be demonstrated
-whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) to represent the planetary boundary
-layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
+whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) to represent the planetary boundary layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
 \begin{equation}
     EIS=LTS-\Gamma_{m}^{700} z_{700}+\Gamma_{m}^{LCL} z_{LCL},
     \label{eq:eis}
@@ -418,7 +416,6 @@ In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gra
 \subsubsection{Estimated cloud-top entrainment index}
 
 The recent proposed predictors of low cloud amount are also considered in this study: one is the estimated cloud-top entrainment index (ECTEI) by \cite{Kawai2017} and the other is the estimated low-level cloud fraction (ELF) by \cite{Park2019}. 
-
 The ECTEI is a modification of estimated inversion strength (EIS) and takes into account a cloud-top entrainment criterion and is defined as
 \begin{equation}
     \mathrm{ECTEI} \equiv \mathrm{EIS} - \beta\left(L_v / c_{p}\right)\left(q_{surf}-q_{700}\right),
@@ -432,4 +429,4 @@ In \Eqref{eq:ectei_Kawai}, $L_v$ is latent heat of vaporization, and $c_p$ is th
 the inversion and the $q$ difference between the surface
 and 700 hPa. \cite{Kawai2017} estimated the $C_{q\_gap} = 0.76, k=0.70 $ and $\beta = 0.23$ based on radiosonde observation data off the coast of Peru. 
 \cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited
-due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}. 
+due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}.
