@@ -1,11 +1,9 @@
 \chapter{Data and Methods}
 \label{ch:methods}
 
-In this thesis, several different observational and reanalysis data sets, as well as model simulations, are used. For example, the reanalysis data sets are employed in \chapref{ch:simple_cld_scheme} to derive the linear formula between cloud fraction and relative humidity, and to evaluate the relationship between low cloud amount and its possible proxies. The satellite products about clouds and radiation fields are used in \chapref{ch:simple_cld_scheme} to evaluate the performance of the simple cloud scheme. To make it clear, these data sets are briefly summarized in this chapter.
+In this thesis, several different observational and reanalysis data sets, as well as model simulations, are used. For example, the reanalysis data sets are employed in \chapref{ch:simple_cld_scheme} to derive the linear formula between cloud fraction and relative humidity, and to evaluate the relationship between low cloud amount and its possible proxies. The satellite products about clouds and radiation fields are used in \chapref{ch:simple_cld_scheme} to evaluate the performance of the simple cloud scheme. To make it clear, these data sets are briefly summarized in this chapter. One major topic of this thesis is about the cloud feedback, and the main tool used to simulate it is the idealized climate model, Isca \citep{Vallis2018}. Therefore, the features of this climate model and the advantages of using the idealized models are discussed here. However, how to calculate or estimate cloud feedback in climate models is not so evident, and the direct estimate from the change of cloud radiative effect might be impacted by the cloud masking effect. Therefore, it is necessary to discuss the pros and cons of the several different methods to estimate cloud feedback in this chapter. %Also, based on these discussion, it would be much easier for Isca to calculate the cloud feedback and decompose it into different components if the cloud simulator is implemented there, so the topic about this is also presented in this chapter. 
 
-The major topic of this thesis is about the cloud feedback, and the main tool used to simulate it is the idealized climate model, Isca \citep{Vallis2018}. Therefore, the features of this climate model and the advantages of using the idealized models are discussed here. However, how to calculate or estimate cloud feedback in climate models is not so evident, and the direct estimate from the change of cloud radiative effect might be impacted by the cloud masking effect. Therefore, it is necessary to discuss the pros and cons of the several different methods to estimate cloud feedback in this chapter. Also, based on these discussion, it would be much easier for Isca to calculate the cloud feedback and decompose it into different components if the cloud simulator is implemented there, so the topic about this is also presented in this chapter. 
-
-The chapter is organized as follows: The satellite data sets related to radiation and cloud fields are introduced in \secref{sec:obs_reanalysis_dataset}. The idealized general circulation model employed throughout this thesis is briefly described in \secref{sec:isca_intro}. In \secref{sec:cosp}, how the cloud observation simulator package is implemented in Isca is documented. \secref{sec:method_cloud_fbk} summarizes the possible methods to calculate the cloud feedback.
+The chapter is organized as follows: The satellite data sets related to radiation and cloud fields are introduced in \secref{sec:obs_reanalysis_dataset}. The idealized general circulation model employed throughout this thesis is briefly described in \secref{sec:isca_intro}. In \secref{sec:cosp}, how the cloud observation simulator package is implemented in Isca is documented. \secref{sec:method_cloud_fbk} summarizes the possible methods to calculate the cloud feedback. The low cloud amount proxies used in \chapref{ch:simple_cld_scheme} are listed in \secref{sec:method_low_cld_amount_proxy} for reference.
 
 \section{Observational and reanalysis datasets}
 \label{sec:obs_reanalysis_dataset}
@@ -114,7 +112,7 @@ where $\rho_a$, $|\bold{v}_a|$ and $q_a$ are the density, wind speed, and specif
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{{figs/methods/input_sst_sic_annual_mean}.png}
+	\includegraphics[width=0.5\linewidth]{{figs/methods/input_sst_sic_annual_mean}.png}
 	\caption[Boundary conditions for Isca, including sea surface temperature, sea ice concentration and topography.]{Boundary conditions for Isca, including (a) the annual mean sea surface temperature (SST, units: K; orange) and topography over land (altitude, units: m), and (b) annual mean sea ice concentration (SIC; units: \%). The SST and SIC are derived from input4MIPs data sets \citep{Durack2018} over the period from 1979 to 2008, and the topography is derived from ERA-Interim reanalysis \citep{Dee2011}.}
 	\label{fig:input_sst_ice}
 \end{figure}
@@ -143,7 +141,7 @@ where $F_Q$ is the Q-flux to be derived, which distributes energy globally to ma
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/change_of_CRE/Q-flux_cmp}.png}
+	\includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/Q-flux_cmp}.png}
 	\caption[Comparison of spatial pattern of ocean heat transport (Q-flux).]{Annual mean Q-flux pattern (in W m$^{-2}$) derived from AMIP fixed-SST experiments with realistic continents and topography. The cloud schemes used are (a) linear, (b) linear\_FD and (c) linear\_ALL as in \tabref{tab:exps} and (d) no cloud scheme.}
 	\label{fig:Q_flux_cmp}
 \end{figure}
@@ -373,6 +371,9 @@ and hence the cloud feedback is calculated as follows:
 Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$).
 
 \section{Low cloud amount proxy}
+\label{sec:method_low_cld_amount_proxy}
+
+Several low cloud amount proxies have been proposed in previous studies and used for low cloud amount predictions \citep[e.g.,][]{Kawai2006, Joshi2015, Collins2004, Guo2014, Kawai2019}. Here we list the expressions of these proxies for reference, as they are used in \chapref{ch:simple_cld_scheme}.
 
 \subsubsection{Low-tropospheric stability}
 

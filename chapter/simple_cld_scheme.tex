@@ -80,7 +80,7 @@ where $a$ and $b$ vary with height and are determined from the least squares fit
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{{figs/simple_cld_scheme/cmp_sundqvist_linear_with_ecmwf_cc_t_12_lev_20}.png}
+	\includegraphics[width=0.8\linewidth]{{figs/simple_cld_scheme/cmp_sundqvist_linear_with_ecmwf_cc_t_12_lev_20}.png}
 	\caption[Offline diagnosis of cloud fraction from different methods]{(a) A snapshot of cloud fraction from ERA5 reanalysis at 450 hPa on 12:00 January 01, 2017. Diagnosed cloud fraction from ERA5 relative humidity field at the same time and level based on the (b) Sundqvist formula, and two linear formulas (c) using \Eqref{eq:linear2} and (d) using \Eqref{eq:linear_cf_rh}. Note that \Eqref{eq:linear_cf_rh} is the form used to determine the large-scale clouds in this study. The global mean cloud fractions are given in the titles.} 
 	% [$\min\left(1, ~\max \left(0, ~ a \cdot H + b \right)\right)$],  [i.e., $\min\left(1, ~\max \left(0, ~ a \cdot (H -1) + 1 \right)\right)$]
 	\label{fig:offline_cld_fraction_test}
@@ -341,7 +341,7 @@ The global mean cloud fraction profiles from CALIPSO-GOCCP, ERA-Interim reanalys
 	\label{fig:cld_fraction_profile}
 \end{figure}
 
-In addition to the cloud fraction profiles, the geographic patterns of cloud amount, diagnosed from the random-maximum overlap assumption (\secref{sec:cld_amt_diag}), are also compared with observations. For example, the annual mean spatial patterns of low cloud amount from three different simulations (LS, FD and ALL) with linear RH cloud scheme, CALIPSO-GOCCP data set, and the differences between them are shown in \figref{fig:low_cld_amt}. It should be pointed out that in this chapter we do not compare the simulated cloud amount with satellite retrievals directly, as the cloud simulator \citep[e.g.,][]{Bodas2011} has not been implemented in Isca.
+In addition to the cloud fraction profiles, the geographic patterns of cloud amount, diagnosed from the random-maximum overlap assumption (\secref{sec:cld_amt_diag}), are also compared with observations. For example, the annual mean spatial patterns of low cloud amount from three different simulations (LS, FD and ALL) with linear RH cloud scheme, CALIPSO-GOCCP data set, and the differences between them are shown in \figref{fig:low_cld_amt}. It should be pointed out that in this chapter we do not compare the simulated cloud amount with satellite retrievals directly, as the cloud simulator \citep[e.g.,][]{BodasSalcedo2011} has not been implemented in Isca.
 
 \begin{figure}[ht]
 	\centering
@@ -356,7 +356,7 @@ In contrast, the cloud fractions in the FD and ALL simulations are adjusted by t
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{{figs/evaluation_of_cld_scheme/cloud_amount_in_arctic_region}.pdf}
+	\includegraphics[width=0.9\linewidth]{{figs/evaluation_of_cld_scheme/cloud_amount_in_arctic_region}.pdf}
 	\caption[Seasonal cycle of low and total cloud amounts over Arctic region]{The seasonal cycle of (a) low and (b) total cloud amount (\%) over the Arctic region ($60^\circ$-$90^\circ$N) from the LS (solid lines) and FD (dashed lines) simulations, where the freeze-dry adjustment method is applied in the FD simulations. The green and pink colors denote the experiments performed with the linear and Sundqvist cloud schemes respectively.}
 	\label{fig:cld_amt_freeze-dry}
 \end{figure}
@@ -393,7 +393,7 @@ where $w_l$ is the in-cloud liquid water mixing ratio specified in Equation (\re
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1.\linewidth]{{figs/evaluation_of_cld_scheme/SW_CREs_improvement_linear}.pdf}
+	\includegraphics[width=0.9\linewidth]{{figs/evaluation_of_cld_scheme/SW_CREs_improvement_linear}.pdf}
 	\caption[Evaluation of low cloud scheme]{(a) The regional mean SW CRE biases from the FD and ALL simulations with with linear RH scheme in five different subtropical ocean regions off the west coast of continents, whose ranges are defined in the caption of \figref{fig:fit_low_cld_proxy}. (b) The relationship of regional mean SW CRE and low cloud amount changes in the FD and ALL simulations, and the changes are calculated as their differences (i.e., ALL-FD).}
 	\label{fig:swcre_marine_sc}
 \end{figure}
