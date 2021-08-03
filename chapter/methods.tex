@@ -164,7 +164,7 @@ In this study, the latest version (version 2) of COSP  \citep{Swales2018} is imp
 \subsection{Introduction}
 
 As introduced in \chapref{ch:introduction}, 
-the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external foring $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
+the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external forcing $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
 \begin{equation}
     \Delta R = \Delta Q + \lambda \Delta T_s,
     \label{eq:imbalance_forcing_lambda}
@@ -180,7 +180,7 @@ where $x$ represent the climate variable such as temperature, water vapor, albed
 \subsection{Short summary of three approaches}
 \label{sec:three_climate_fbk_methods}
 
-Several different methods have been proposed to diagnose climate feedbacks in gerenal ciculation models (GCMs). Three main approaches are summarized below. Readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
+Several different methods have been proposed to diagnose climate feedbacks in general circulation models (GCMs). Three main approaches are summarized below. Readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
 
 \begin{enumerate}[label={(\arabic*)}]
     \item \textbf{The PRP approach}\\
@@ -190,7 +190,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
         \delta_x R = R(a,b,...,x') - R(a,b,...,x),
         \label{eq:delta_R_x}
     \end{equation}
-    where $a$, $b$ etc are climate variables except $x$ and they are kept unchanged during calculation. $x'$ is the value of $x$ from perturbed climate state. In doing so, $\frac{\partial R}{\partial x}$ in \eqref{eq:lambda} can be obtained from this offline calculation. The feedback parameter associated with $x$ is finally computed from $\lambda_x = \frac{\partial R}{\partial x}\frac{\mathrm{d} x}{\mathrm{d} T_s}$, and $\frac{\mathrm{d} x}{\mathrm{d} T_s}$ is calculated by differencing the simulation outputs from two experiments or from different time periods. Note that a more accurate two-sided PRP method \citep{Colman1997} is also used to estimate the partial radiative responses at TOA, so \eqref{eq:delta_R_x} can be rewritten as
+    where $a$, $b$ etc are climate variables except $x$ and they are kept unchanged during calculation. $x'$ is the value of $x$ from perturbed climate state. In doing so, $\frac{\partial R}{\partial x}$ in \eqref{eq:lambda} can be obtained from this offline calculation. The feedback parameter associated with $x$ is finally computed from $\lambda_x = \frac{\partial R}{\partial x}\frac{\mathrm{d} x}{\mathrm{d} T_s}$, and $\frac{\mathrm{d} x}{\mathrm{d} T_s}$ is calculated by differentiating the simulation outputs from two experiments or from different time periods. Note that a more accurate two-sided PRP method \citep{Colman1997} is also used to estimate the partial radiative responses at TOA, so \eqref{eq:delta_R_x} can be rewritten as
     \begin{equation}
         \delta_x R = \frac{1}{2} \left[R(a,b,...,x') - R(a,b,...,x) + R(a',b',...,x') - R(a',b',...,x) \right].
     \end{equation}
@@ -206,7 +206,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
     It is clear that this method can not separate the clear-sky climate feedback components into temperature, water vapor and surface albedo ones in further. As we will discuss in \secref{sec:CRE_or_PRP}, the cloud feedback parameter (second term in \eqref{eq:CRE_approach}) obtained from this approach depends on changes in both clear-sky and cloudy properties, which in fact can not separate the cloud feedback completely from the clear-sky components. Nevertheless, the calculation of this method is straightforward and still valuable in GCM evaluations.
     
     \item \textbf{The radiative kernel method}\\
-    The radiative kernel method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008} decompose each climate feedback into two parts. The first is the `radiative kernel' ($\partial R/\partial x$), which describes the change of TOA fluxes in response to a standard change in property $x$ and depends on the radiative properties and base state of the model. The second term is the climate response of feedback varaible normalized by surface temperature change ($\mathrm{d} x/\mathrm{d} T_s$). Most importantly, \cite{Soden2008} has shown the climate feedbacks calculated from three different radiative kernels are quite similar, although the radiative transfer code is different, indicating that a single kernel can be used to perform a first-order comparison of feedbacks across mutliple models \citep{Shell2008}. One problem is that the kernel calculation is also computationally expensive as it requres running the offline radiative transfer code for perturbation at each model level and time step, but luckily it just needs one-time calculation and the kernel can be applied for different experiments and models. % Currently, more radiative kernels from different GCMs are available as summarized in \tabref{tab:rad_kernels}.
+    The radiative kernel method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008} decompose each climate feedback into two parts. The first is the `radiative kernel' ($\partial R/\partial x$), which describes the change of TOA fluxes in response to a standard change in property $x$ and depends on the radiative properties and base state of the model. The second term is the climate response of feedback variable normalized by surface temperature change ($\mathrm{d} x/\mathrm{d} T_s$). Most importantly, \cite{Soden2008} has shown the climate feedbacks calculated from three different radiative kernels are quite similar, although the radiative transfer code is different, indicating that a single kernel can be used to perform a first-order comparison of feedbacks across multiple models \citep{Shell2008}. One problem is that the kernel calculation is also computationally expensive as it requires running the offline radiative transfer code for perturbation at each model level and time step, but luckily it just needs one-time calculation and the kernel can be applied for different experiments and models. % Currently, more radiative kernels from different GCMs are available as summarized in \tabref{tab:rad_kernels}.
 \end{enumerate}   
     
 % \begin{table}
@@ -236,7 +236,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
 
 %These approaches summarized above are proposed for general climate feedback parameters, which of course can be used to diagnose cloud feedbacks. for the cloud feedback
 
-As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the histogram of cloud fraction partitioned into cloud-top ressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedback into different components such as cloud amount, height and optical depth. This will discussed further in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
+As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the histogram of cloud fraction partitioned into cloud-top pressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedback into different components such as cloud amount, height and optical depth. This will discussed further in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
 
 \subsection{Using $\Delta$CRE to estimate cloud feedback?}
 \label{sec:CRE_or_PRP}
@@ -339,7 +339,8 @@ This simple thought experiment has illustrated that the presence of clouds can h
 
 \subsection{Cloud radiative kernel method}
 \label{sec:Zelinka_method}
-In genreal, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} propose a new technique based on cloud radiative kernel and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
+
+In general, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} propose a new technique based on cloud radiative kernel \index{radiative kernel!cloud} and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
 
 In this method, the cloud kernel $K$ in each histogram bin of \figref{fig:cld_rad_kernel_Zelinka} is defined as
 \begin{equation}
@@ -349,7 +350,7 @@ which quantifies the sensitivity of TOA radiative flux to cloud fraction changes
 \begin{enumerate}
     \item The LW cloud radiative kernel is positive for all bins, as the LW CRE is positive. It increases dramatically with cloud top height, and is small near surface as the cloud top temperature contrast with surface is small.
     \item The SW cloud radiative kernel is negative for all bins, as the SW CRE is negative. Its magnitude increases dramatically with optical depth, and almost insensitive to cloud top height.
-    \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the SW reflection exceeds LW trapping; while for higher and thinner clouds, the net cloud radiative kenrel are positive, as LW trapping exceeds SW reflection.
+    \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the SW reflection exceeds LW trapping; while for higher and thinner clouds, the net cloud radiative kernel are positive, as LW trapping exceeds SW reflection.
 \end{enumerate}
 
 \begin{figure}[ht]
