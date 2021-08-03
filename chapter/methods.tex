@@ -190,7 +190,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
         \delta_x R = R(a,b,...,x') - R(a,b,...,x),
         \label{eq:delta_R_x}
     \end{equation}
-    where $a$, $b$ etc are climate variables except $x$ and they are kept unchanged during calculation. $x'$ is the value of $x$ from perturbed climate state. In doing so, $\frac{\partial R}{\partial x}$ in \eqref{eq:lambda} can be obtained from this offline calculation. The feedback parameter associated with $x$ is finally computed from $\lambda_x = \frac{\partial R}{\partial x}\frac{\mathrm{d} x}{\mathrm{d} T_s}$, and $\frac{\mathrm{d} x}{\mathrm{d} T_s}$ is calculated by differentiating the simulation outputs from two experiments or from different time periods. Note that a more accurate two-sided PRP method \citep{Colman1997} is also used to estimate the partial radiative responses at TOA, so \eqref{eq:delta_R_x} can be rewritten as
+    where $a$, $b$ etc are climate variables except $x$ and they are kept unchanged during calculation. $x'$ is the value of $x$ from perturbed climate state. In doing so, $\frac{\partial R}{\partial x}$ in \eqref{eq:lambda} can be obtained from this offline calculation. The feedback parameter associated with $x$ is finally computed from $\lambda_x = \frac{\partial R}{\partial x}\frac{\mathrm{d} x}{\mathrm{d} T_s}$, and $\frac{\mathrm{d} x}{\mathrm{d} T_s}$ is calculated by differencing the simulation outputs from two experiments or from different time periods. Note that a more accurate two-sided PRP method \citep{Colman1997} is also used to estimate the partial radiative responses at TOA, so \eqref{eq:delta_R_x} can be rewritten as
     \begin{equation}
         \delta_x R = \frac{1}{2} \left[R(a,b,...,x') - R(a,b,...,x) + R(a',b',...,x') - R(a',b',...,x) \right].
     \end{equation}
@@ -392,8 +392,7 @@ Several low cloud amount proxies have been proposed in previous studies and used
     \label{fig:wood_eis_atm_profile}
 \end{figure}
 
-Despite the widely use of LTS in climate models, \cite{Wood2006} argued that it has yet to be demonstrated
-whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) to represent the planetary boundary layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
+Despite the widely use of LTS in climate models, \cite{Wood2006} argued that it has yet to be demonstrated whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) to represent the planetary boundary layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
 \begin{equation}
     EIS=LTS-\Gamma_{m}^{700} z_{700}+\Gamma_{m}^{LCL} z_{LCL},
     \label{eq:eis}
@@ -430,5 +429,4 @@ where
 In \Eqref{eq:ectei_Kawai}, $L_v$ is latent heat of vaporization, and $c_p$ is the specific heat of air at constant pressure. The values of both parameters are the same as the ones in  \Eqref{eq:gamma_m}. $q_{surf}$ and $q_{700}$ are the specific humidity at surface and 700 hPa respectively. The coefficient $C_{q\_gap}$ is the ratio of the total water specific humidity ($q_t$) gap at
 the inversion and the $q$ difference between the surface
 and 700 hPa. \cite{Kawai2017} estimated the $C_{q\_gap} = 0.76, k=0.70 $ and $\beta = 0.23$ based on radiosonde observation data off the coast of Peru. 
-\cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited
-due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}.
+\cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}.
