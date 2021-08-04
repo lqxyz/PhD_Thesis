@@ -1,4 +1,4 @@
-name: 'Build LaTex Document with Tectonic and Biber'
+name: 'Build LaTex Document with Tectonic'
 
 on:
   push:
@@ -41,10 +41,10 @@ jobs:
       - name: Run Tectonic + makeindex
         run: |
           tectonic --keep-intermediates --reruns 0 thesis.tex
-          makeindex thesis
+          makeindex thesis # makeindex not installed...
           tectonic thesis.tex
 
-      - name: compress pdf
+      - name: Compress pdf
         run: |
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
             -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesis_compressed.pdf thesis.pdf

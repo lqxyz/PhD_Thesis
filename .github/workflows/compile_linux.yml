@@ -1,4 +1,4 @@
-name: 'Build LaTex Document with Tectonic and Biber'
+name: 'Build LaTex Document with Tectonic'
 
 on:
   push:
@@ -27,14 +27,23 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           biber-version: "latest"
 
-      - name: Run Tectonic + makeindex + Biber
+      - name: Install Arial font
+        run: |
+          sudo apt install ttf-mscorefonts-installer
+          sudo fc-cache -f
+
+      - name: Install Texlive-binaries
+        run: |
+          sudo apt-get install texlive-binaries
+
+      - name: Run Tectonic + makeindex #+ Biber
         run: |
           tectonic --keep-intermediates --reruns 0 thesis.tex
-          biber thesis
+          # biber thesis
           makeindex thesis
           tectonic thesis.tex
 
-      - name: compress pdf
+      - name: Compress pdf
         run: |
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
             -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesis_compressed.pdf thesis.pdf
