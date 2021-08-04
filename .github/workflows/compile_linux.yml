@@ -39,10 +39,9 @@ jobs:
           sudo apt-get install texlive-binaries
           sudo apt-get install ghostscript
 
-      - name: Run Tectonic + makeindex #+ Biber
+      - name: Run Tectonic + makeindex
         run: |
           tectonic --keep-intermediates --reruns 0 thesis.tex
-          # biber thesis
           makeindex thesis
           tectonic thesis.tex
 
@@ -54,8 +53,8 @@ jobs:
           echo "Compressed file size: $(du -sh thesis_compressed.pdf)"
           mv thesis_compressed.pdf thesis.pdf
 
-      - name: Upload pdf
-        uses: actions/upload-artifact@v2
-        with:
-          name: thesis.pdf
-          path: thesis.pdf
+      # - name: Upload pdf
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: thesis.pdf
+      #     path: thesis.pdf
