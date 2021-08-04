@@ -1,0 +1,40 @@
+name: 'Build LaTex Document with Tectonic and Biber'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Tectonic Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+           ${{ runner.os }}-tectonic-
+
+      - name: Use wtfjoke/setup-tectonic@v1
+        uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          biber-version: "latest"
+
+      - name: Run Tectonic + makeindex + Biber
+        run: |
+          tectonic --keep-intermediates --reruns 0 thesis.tex
+          biber thesis
+          makeindex thesis
+          tectonic thesis.tex
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: thesis.pdf
+          path: thesis.pdf
