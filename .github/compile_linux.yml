@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-      runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -16,7 +16,7 @@ jobs:
       - name: Tectonic Cache
         uses: actions/cache@v2
         with:
-          path: ~/Library/Caches/Tectonic
+          path: ~/.cache/Tectonic
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
            ${{ runner.os }}-tectonic-
@@ -26,17 +26,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           biber-version: "latest"
-
-      - name: Install homebrew on Mac
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-      - name: Install ghostscript on Mac
-        run: |
-          brew update
-          brew upgrade
-          brew install ghostscript
-          brew cleanup
 
       - name: Run Tectonic + makeindex + Biber
         run: |
