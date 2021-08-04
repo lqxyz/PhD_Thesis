@@ -34,9 +34,10 @@ jobs:
           sudo apt-get install ttf-mscorefonts-installer
           sudo fc-cache -f
 
-      - name: Install Texlive-binaries
+      - name: Install Texlive-binaries and ghostscript
         run: |
           sudo apt-get install texlive-binaries
+          sudo apt-get install ghostscript
 
       - name: Run Tectonic + makeindex #+ Biber
         run: |
