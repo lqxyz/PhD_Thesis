@@ -33,15 +33,14 @@ jobs:
 
       - name: Install ghostscript on Mac
         run: |
-          brew update
-          brew upgrade
+          # brew update
+          # brew upgrade
           brew install ghostscript
-          brew cleanup
+          # brew cleanup
 
-      - name: Run Tectonic + makeindex + Biber
+      - name: Run Tectonic + makeindex
         run: |
           tectonic --keep-intermediates --reruns 0 thesis.tex
-          biber thesis
           makeindex thesis
           tectonic thesis.tex
 
