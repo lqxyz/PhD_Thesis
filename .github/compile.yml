@@ -33,6 +33,15 @@ jobs:
           biber thesis
           makeindex thesis
           tectonic thesis.tex
+
+      - name: compress pdf
+        run: |
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+            -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesis_compressed.pdf thesis.pdf
+          echo "Original file size: $(du -sh thesis.pdf)"
+          echo "Compressed file size: $(du -sh thesis_compressed.pdf)"
+          mv thesis_compressed.pdf thesis.pdf
+
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
