@@ -47,7 +47,7 @@ jobs:
           # Make index manually
           makeindex ${TEXFN}
           # Download nomencl.ist manually
-          https://github.com/telekom/oslic/blob/master/btexmat/nomencl.ist
+          wget https://raw.githubusercontent.com/telekom/oslic/master/btexmat/nomencl.ist
           # Produce nomenclature manually
           makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
