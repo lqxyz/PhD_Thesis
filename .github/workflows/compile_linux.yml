@@ -41,6 +41,7 @@ jobs:
           sudo apt-get install texlive-binaries
           sudo apt-get install ghostscript
           # Install nomencl package for nomenclature
+          sudo tlmgr init-usertree
           sudo tlmgr install nomencl
 
       - name: Run Tectonic + makeindex
