@@ -232,12 +232,24 @@ and $(\delta \ln e_s)_i$ is estimated by $\left(e_s(T_i+1)-e_s(T_i)\right)/ e_s(
 To calculate the radiative kernels for Isca \index{Radiative kernel!of Isca}, a 10-year control experiment ($\alpha= 0.3$) is re-run for each radiation scheme to get corresponding model outputs (e.g. temperature, specific humidity) at 3-hour frequency. Then 1-year climatology computed from the last 5-year period is taken as the basic profiles for the offline radiation codes. Then the perturbation procedure will be carried out for different variables such as surface temperature, temperature and specific humidity to obtain the surface temperature, temperature and water vapor kernels respectively. The radiative kernel results for each radiation scheme are shown below and the data sets are available at Zenodo (\url{http://doi.org/10.5281/zenodo.4282681}).
 
 \subsubsection{Frierson and BOG scheme}
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.45\linewidth]{figs/polar_amp/kernels_byrne}
-	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for BOG radiation scheme]{Annual-mean and zonal-mean radiative kernel for BOG radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
+	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for BOG radiation scheme]{Annual-mean and zonal-mean radiative kernel for the Byrne and O'Gorman (BOG) radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
 	\label{fig:bog_kernels}
 \end{figure}
+
+% \begin{figure}[ht]
+%   \begin{minipage}[c]{0.6\textwidth}
+%     \includegraphics[width=\linewidth]{figs/polar_amp/kernels_byrne}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}[c]{0.35\textwidth}
+%     \caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for BOG radiation scheme]{Annual-mean and zonal-mean radiative kernel for the Byrne and O'Gorman (BOG) radiation scheme: (a) temperature kernel with respect to 1-K increase in atmospheric temperature, (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase with relative humidity unchanged, (c) surface temperature kernel for 1-K perturbation in surface temperature.}
+%     \label{fig:bog_kernels}
+%   \end{minipage}
+% \end{figure}
 
 \begin{figure}[ht]
 	\centering
@@ -271,14 +283,14 @@ The surface temperature kernel also contributes partially to the temperature fee
 	\label{fig:rrtm_kernels}
 \end{figure}
 
-\subsubsection{RRTM scheme} The offline version of RRTM code is from \textit{pyrrtm} (https://github.com/tomflannaghan /pyrrtm), which provides an user-friendly python wrapper for the single-column version of RRTM scheme. The input profiles for \textit{pyrrtm} are from the Isca outputs in which the albedo is 0.3. Nevertheless, one frustrating fact is that the single-column version of RRTM will consume too much time if we perturb each level and each position every 3 hours. In order to get over this drawback, we employ zonal-mean and monthly mean profiles as the input for the \textit{pyrrtm} to calculate the radiative kernels. As shown in \figref{fig:rrtm_kernels}a, the temperature kernel for RRTM is weaker compared to the results of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}a) computed by \cite{Feldl2017coupled}, and the vertical integration of global and annual mean result is -1.79 W m$^{-2}$ K$^{-1}$, which is almost a half of the clear-sky results (-3.6 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b \citep{Soden2008}, suggesting that the feedbacks depending on this kernel would be small than other GCM's. However, the RRTM surface temperature kernel makes the situation different. It has the similar shape but the strength is much stronger compared to the surface temperature kernel of GFDL AM2.1 (\figref{fig:feldl_gfdl_am2.1_kernel}d), making the Planck feedback for RRTM comparable (\figref{fig:all_feedbacks}c). With respect to water vapor kernel for RRTM, the vertical integration of global and annual mean value is 1.65 W m$^{-2}$ K$^{-1}$, which is close to the longwave water vapor kernel results (1.62 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b, meaning that the water vapor kernel is similar to other models. Although the positive values dominate the water vapor kernels, some negative values appear in polar region, as there are temperature inversions near the surface at high latitudes, which will decrease, rather than increase, the net longwave flux in response a increase of water vapor \citep{Soden2008}. However, this does not occur in water vapor kernel for BOG radiation scheme (\figref{fig:bog_kernels}b).
+\subsubsection{RRTM scheme} The offline version of RRTM code is from \textit{pyrrtm} (https://github.com/tomflannaghan /pyrrtm), which provides an user-friendly python wrapper for the single-column version of RRTM scheme. The input profiles for \textit{pyrrtm} are from the Isca outputs in which the albedo is 0.3. Nevertheless, one frustrating fact is that the single-column version of RRTM will consume too much time if we perturb each level and each position every 3 hours. In order to get over this drawback, we employ zonal-mean and monthly mean profiles as the input for the \textit{pyrrtm} to calculate the radiative kernels. As shown in \figref{fig:rrtm_kernels}a, the temperature kernel for RRTM is weaker compared to the results of GFDL AM2.1 \citep[see their Fig. A1 of][]{Feldl2017coupled}, and the vertical integration of global and annual mean result is -1.79 W m$^{-2}$ K$^{-1}$, which is almost a half of the clear-sky results (-3.6 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b \citep{Soden2008}, suggesting that the feedbacks depending on this kernel would be small than other GCM's. However, the RRTM surface temperature kernel makes the situation different. It has the similar shape but the strength is much stronger compared to the surface temperature kernel of GFDL AM2.1 \citep[see their Fig. A1 of][]{Feldl2017coupled}, making the Planck feedback for RRTM comparable (\figref{fig:all_feedbacks}c). With respect to water vapor kernel for RRTM, the vertical integration of global and annual mean value is 1.65 W m$^{-2}$ K$^{-1}$, which is close to the longwave water vapor kernel results (1.62 W m$^{-2}$ K$^{-1}$) of GFDL AM2p12b, meaning that the water vapor kernel is similar to other models. Although the positive values dominate the water vapor kernels, some negative values appear in polar region, as there are temperature inversions near the surface at high latitudes, which will decrease, rather than increase, the net longwave flux in response a increase of water vapor \citep{Soden2008}. However, this does not occur in water vapor kernel for BOG radiation scheme (\figref{fig:bog_kernels}b).
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=.8\linewidth]{figs/polar_amp/Feldl2017}
-	\caption[Annual-mean, zonal-mean radiative kernels for the GFDL AM2.1]{Annual-mean, zonal-mean radiative kernels for the GFDL AM2.1 aquaplanet based on a $4\times$ CO$_2$ simulation with daily mean solar zenith angle: (a) temperature kernel [W m$^{-2}$ K$^{-1}$ / 100 hPa], (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase and fixed relative humidity, (c) surface albedo kernel, and (d) surface component of the temperature kernel. Adapted from Figure A1 of \cite{Feldl2017coupled}.}
-	\label{fig:feldl_gfdl_am2.1_kernel}
-\end{figure}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=.8\linewidth]{figs/polar_amp/Feldl2017}
+% 	\caption[Annual-mean, zonal-mean radiative kernels for the GFDL AM2.1]{Annual-mean, zonal-mean radiative kernels for the GFDL AM2.1 aquaplanet based on a $4\times$ CO$_2$ simulation with daily mean solar zenith angle: (a) temperature kernel [W m$^{-2}$ K$^{-1}$ / 100 hPa], (b) water vapor kernel for a specific humidity perturbation corresponding to a 1-K temperature increase and fixed relative humidity, (c) surface albedo kernel, and (d) surface component of the temperature kernel. Adapted from Figure A1 of \cite{Feldl2017coupled}.}
+% 	\label{fig:feldl_gfdl_am2.1_kernel}
+% \end{figure}
 
 \begin{figure}[ht]
 	\centering
