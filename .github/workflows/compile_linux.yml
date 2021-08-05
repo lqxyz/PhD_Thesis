@@ -46,10 +46,10 @@ jobs:
           # Install nomencl package for nomenclature
           echo "Init..."
           sudo tlmgr init-usertree
-          echo "Update..."
-          sudo tlmgr update --all
+          #echo "Update..."
+          #sudo tlmgr update --all
           echo "Install..."
-          sudo tlmgr install nomencl
+          sudo tlmgr install nomencl --no-verify-downloads
 
       - name: Run Tectonic + makeindex
         run: |
