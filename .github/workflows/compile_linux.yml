@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TEXFN: thesis
 
     steps:
       - name: Checkout
@@ -41,20 +43,23 @@ jobs:
 
       - name: Run Tectonic + makeindex
         run: |
-          tectonic --keep-intermediates --reruns 0 thesis.tex
-          makeindex thesis
-          tectonic thesis.tex
+          tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
+          # Make index manually
+          makeindex ${TEXFN}
+          # Produce nomenclature manually
+          makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
+          tectonic ${TEXFN}.tex
 
       - name: Compress pdf
         run: |
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
-            -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesis_compressed.pdf thesis.pdf
-          echo "Original file size: $(du -sh thesis.pdf)"
-          echo "Compressed file size: $(du -sh thesis_compressed.pdf)"
-          mv thesis_compressed.pdf thesis.pdf
+            -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${TEXFN}_compressed.pdf ${TEXFN}.pdf
+          echo "Original file size: $(du -sh ${TEXFN}.pdf)"
+          echo "Compressed file size: $(du -sh ${TEXFN}_compressed.pdf)"
+          mv ${TEXFN}_compressed.pdf ${TEXFN}.pdf
 
-      # - name: Upload pdf
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: thesis.pdf
-      #     path: thesis.pdf
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${TEXFN}.pdf
+          path: ${TEXFN}.pdf
