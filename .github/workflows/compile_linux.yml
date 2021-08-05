@@ -46,8 +46,8 @@ jobs:
           tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
           # Make index manually
           makeindex ${TEXFN}
-          # Download nomencl.ins manually
-          wget http://mirrors.ctan.org/macros/latex/contrib/nomencl/nomencl.ins
+          # Download nomencl.ist manually
+          https://github.com/telekom/oslic/blob/master/btexmat/nomencl.ist
           # Produce nomenclature manually
           makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
