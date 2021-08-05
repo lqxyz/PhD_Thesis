@@ -3,6 +3,7 @@
 # 	https://tex.stackexchange.com/questions/318569/makefile-for-a-latex-report
 
 LATEXMK = latexmk
+RM = rm -f
 TEXFN = thesis
 
 all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
@@ -22,15 +23,15 @@ ${TEXFN}.pdf: ${TEXFN}.tex
 
 ${TEXFN}_compressed.pdf: ${TEXFN}.pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
-		-dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" "$<"
-
-cleanall:
-	$(LATEXMK) -silent -CA
-	# rm *.bbl *.nlo *.nls
+	   -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" "$<"
 
 clean:
 	$(LATEXMK) -silent -c
-	# rm *.bbl *.nlo *.nls
+	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
+
+cleanall:
+	$(LATEXMK) -silent -CA
+	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
 
 .PHONY: all clean cleanall
 
