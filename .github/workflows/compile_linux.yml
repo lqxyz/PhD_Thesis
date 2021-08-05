@@ -46,10 +46,7 @@ jobs:
           tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
           # Make index manually
           makeindex ${TEXFN}
-          # Download nomencl.ist manually
-          wget https://raw.githubusercontent.com/telekom/oslic/master/btexmat/nomencl.ist
-          # Produce nomenclature manually
-          makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
+          makeindex ${TEXFN}.nlo -s $(kpsewhich nomencl.ist) -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
 
       - name: Compress pdf
