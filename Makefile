@@ -3,8 +3,9 @@
 # 	https://tex.stackexchange.com/questions/318569/makefile-for-a-latex-report
 
 LATEXMK = latexmk
+TEXFN = thesis
 
-all: thesis.pdf
+all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
 
 # MAIN LATEXMK RULE
 #
@@ -14,18 +15,22 @@ all: thesis.pdf
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 #    missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex
-	#$(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
-	#$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
-	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode thesis.tex
+${TEXFN}.pdf: ${TEXFN}.tex
+	#$(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$<"
+	#$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$<"
+	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode "$<"
+
+${TEXFN}_compressed.pdf: ${TEXFN}.pdf
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+		-dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" "$<"
 
 cleanall:
 	$(LATEXMK) -silent -CA
-	rm *.bbl *.nlo
+	# rm *.bbl *.nlo *.nls
 
 clean:
 	$(LATEXMK) -silent -c
-	rm *.bbl *.nlo
+	# rm *.bbl *.nlo *.nls
 
-.PHONY: thesis.pdf all clean cleanall
+.PHONY: all clean cleanall
 
