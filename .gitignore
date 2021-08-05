@@ -1,5 +1,6 @@
 # neglect output pdf
 thesis.pdf
+thesis_compressed.pdf
 
 # temporary ignorance of the fig files
 fig*/
@@ -36,6 +37,8 @@ tmp
 *.cb
 *.cb2
 *.nlo
+*.ilg
+*.ind
 
 ## Intermediate documents:
 *.dvi
