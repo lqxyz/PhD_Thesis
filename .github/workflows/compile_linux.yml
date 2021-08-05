@@ -50,7 +50,7 @@ jobs:
           #sudo tlmgr update --all
           echo "Install..."
           wget https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-          /bin/bash update-tlmgr-latest.sh
+          sudo /bin/bash update-tlmgr-latest.sh
           sudo tlmgr install nomencl --verify-repo=none
 
       - name: Run Tectonic + makeindex
