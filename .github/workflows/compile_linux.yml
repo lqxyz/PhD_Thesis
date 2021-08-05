@@ -46,10 +46,10 @@ jobs:
           tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
           # Make index manually
           makeindex ${TEXFN}
-          # Find the nomencl.ist with kpsewhich, already included in texlive-binaries
-          sty_fn=$(kpsewhich nomencl.ist)
-          echo ${sty_fn}
-          makeindex ${TEXFN}.nlo -s ${sty_fn} -o ${TEXFN}.nls
+          # Download nomencl.ist manually
+          wget https://raw.githubusercontent.com/telekom/oslic/master/btexmat/nomencl.ist
+          # Produce nomenclature manually
+          makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
 
       - name: Compress pdf
@@ -60,8 +60,8 @@ jobs:
           echo "Compressed file size: $(du -sh ${TEXFN}_compressed.pdf)"
           mv ${TEXFN}_compressed.pdf ${TEXFN}.pdf
 
-      # - name: Upload pdf
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: ${{ env.TEXFN }}.pdf
-      #     path: ${{ env.TEXFN }}.pdf
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.TEXFN }}.pdf
+          path: ${{ env.TEXFN }}.pdf
