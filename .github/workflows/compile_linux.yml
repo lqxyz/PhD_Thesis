@@ -52,13 +52,13 @@ jobs:
           makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
 
-      - name: Compress pdf
-        run: |
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
-            -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${TEXFN}_compressed.pdf ${TEXFN}.pdf
-          echo "Original file size: $(du -sh ${TEXFN}.pdf)"
-          echo "Compressed file size: $(du -sh ${TEXFN}_compressed.pdf)"
-          mv ${TEXFN}_compressed.pdf ${TEXFN}.pdf
+      # - name: Compress pdf
+      #   run: |
+      #     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+      #       -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${TEXFN}_compressed.pdf ${TEXFN}.pdf
+      #     echo "Original file size: $(du -sh ${TEXFN}.pdf)"
+      #     echo "Compressed file size: $(du -sh ${TEXFN}_compressed.pdf)"
+      #     mv ${TEXFN}_compressed.pdf ${TEXFN}.pdf
 
       # - name: Upload pdf
       #   uses: actions/upload-artifact@v2
