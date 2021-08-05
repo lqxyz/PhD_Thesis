@@ -46,7 +46,10 @@ jobs:
           tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
           # Make index manually
           makeindex ${TEXFN}
-          makeindex ${TEXFN}.nlo -s $(kpsewhich nomencl.ist) -o ${TEXFN}.nls
+          # Find the nomencl.ist with kpsewhich, already included in texlive-binaries
+          sty_fn=$(kpsewhich nomencl.ist)
+          echo ${sty_fn}
+          makeindex ${TEXFN}.nlo -s ${sty_fn} -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
 
       - name: Compress pdf
