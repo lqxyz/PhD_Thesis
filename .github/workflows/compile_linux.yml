@@ -45,7 +45,7 @@ jobs:
         run: |
           # Install nomencl package for nomenclature
           echo "Init..."
-          tlmgr init-usertree
+          sudo tlmgr init-usertree
           echo "Update..."
           sudo tlmgr update --all
           echo "Install..."
