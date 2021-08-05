@@ -41,23 +41,13 @@ jobs:
           sudo apt-get install texlive-binaries
           sudo apt-get install ghostscript
 
-      - name: Install Texlive packages
-        run: |
-          # Install nomencl package for nomenclature
-          echo "Init..."
-          sudo tlmgr init-usertree
-          #echo "Update..."
-          #sudo tlmgr update --all
-          echo "Install..."
-          wget https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-          sudo /bin/bash update-tlmgr-latest.sh
-          sudo tlmgr install nomencl --verify-repo=none
-
       - name: Run Tectonic + makeindex
         run: |
           tectonic --keep-intermediates --reruns 0 ${TEXFN}.tex
           # Make index manually
           makeindex ${TEXFN}
+          # Download nomencl.ins manually
+          wget http://mirrors.ctan.org/macros/latex/contrib/nomencl/nomencl.ins
           # Produce nomenclature manually
           makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
           tectonic ${TEXFN}.tex
