@@ -1,8 +1,20 @@
 \chapter{Introduction}
 \label{ch:introduction}
 
+\section{Motivation}
+\label{sec:motivation_of_thesis}
+
+% Outline
+
+The global mean surface temperature change in response to greenhouse gas emissions, namely the climate sensitivity, is one of the key problems of climate change studies \citep[e.g.][]{Bony2006,Stocker2013,Sherwood2020,Zelinka2020causes}.
+
+The estimates of climate sensitivity depend critically on the climate feedbacks, the processes that can either amplify or dampen the responses of climate system to the external perturbations. The goal of this thesis is to to understand the climate feedbacks through the idealized climate models.
+
+In this chapter, the background knowledge to understand climate feedback is briefly introduced. \secref{sec:earth_rad_budget} describes the Earth's radiation budget, which is the basis for us to understand the energy balance of climate system. In \secref{sec:climate_fbk_intro}, the framework to understand climate feedback is presented, including its definition and the key individual feedbacks in climate system. In addition, the basic mechanisms of these feedbacks are also briefly summarized. As the cloud feedbacks have the largest uncertainty among all the climate feedbacks in current climate models \citep{Ceppi2017,Zelinka2020causes}, the necessary knowledge to understand cloud feedback is presented in \secref{sec:cre_and_cld_fbk_intro}, including the essential features of cloud radiative effect (\secref{sec:CRE_intro}) and the major mechanisms for cloud feedbacks (\secref{sec:intro_cld_fbk_mechanism}). \secref{sec:cld_scheme_history} briefly reviews the development of cloud parameterization schemes, as this study intends to understand the cloud feedback through a simple cloud scheme. Finally, the outline of whole thesis is described in \secref{sec:thesis_layout}.
+
 \section{The Earth’s radiation budget}
 \label{sec:earth_rad_budget}
+
 The Earth's climate is driven by the energy flow into and out of the system. The incoming solar radiation (yellow fluxes in \figref{fig:earth_energy_budget}) reaches the Earth at the top of the atmosphere (TOA), then goes through the atmosphere and arrives at the Earth surface. During this process, approximately two thirds of the shortwave (SW) radiation is absorbed by the Earth surface and atmosphere, and roughly one third of this energy is reflected back to space. The surface and atmosphere are heated by this incoming solar radiation, and they also re-emit the longwave (LW) radiation (purple fluxes in \figref{fig:earth_energy_budget}) to keep a relatively stable temperature. Globally, the annual mean incoming solar radiation flux is about 340 Wm$^{-2}$, the reflected solar radiation flux is around 100 Wm$^{-2}$ and the outgoing longwave radiation (OLR) is close to 240 Wm$^{-2}$ at the TOA for period 2000--2010 \citep{Stephens2012update}. These three components balance with each other, with a small positive imbalance (about 0.6 Wm$^{-2}$) at the TOA. A more recent estimate from \cite{Wild2015} (see their Fig. 1) indicates that the global mean OLR is about 239 Wm$^{-2}$, and the TOA energy imbalance is about 1 Wm$^{-2}$.
 %But due to the accuracy of the observation itself, it is hard to track the causes of these imbalance.
 
@@ -109,6 +121,7 @@ Cloud feedback\index{Cloud feedback} is the variation of cloud radiative effect 
 
 %\section{Clouds and cloud radiative effect}
 \section{Cloud radiative effect and cloud feedback}
+\label{sec:cre_and_cld_fbk_intro}
 
 \subsection{Cloud radiative effect}
 \label{sec:CRE_intro}
@@ -205,6 +218,7 @@ The net CRE\index{Cloud radiative effect!net} is the competing result of shortwa
 In summary, different factors have impact on shortwave and longwave CREs, including both macrophysical (e.g., cloud fraction, cloud water content) and microphysical properties (e.g., cloud condensate shape and size). The net effect depends on its shortwave and longwave components, which have opposite signs and different magnitudes. For shortwave CRE, cloud amount and cloud albedo (or optical depth) are important factors to determine its strength; while for longwave CRE, the cloud amount (especially high cloud amount), cloud emissivity and the contrast of cloud top temperature with clear-sky atmosphere are important contributors to its magnitude. To better understand how cloud radiative properties change in response to the increase of greenhouse gas concentration, we need to investigate how these factors might change under global warming.
 
 \subsection{Mechanisms of cloud feedback}
+\label{sec:intro_cld_fbk_mechanism}
 
 To fully understand cloud feedback is a challenging job, partly due to the diversity of clouds in climate system \citep{Ceppi2017,Zelinka2017}. For example, the clouds are located at different locations (e.g., low, middle and high clouds) and the cloud condensates are in different shapes or forms (such as liquid, ice or mixed phase), so they can affect the radiation in different ways. In addition, these clouds are usually controlled by different meteorological factors, therefore it is hard to predict the responses of clouds under climate change. Nevertheless, lots of efforts have been paid by previous studies to pin down the intermodel spread of cloud feedbacks \citep[e.g.,][]{Bony2004,Bony2005,Bony2006,Vial2013,Webb2015,Geoffroy2017,Zelinka2016insights,Myers2021,Ceppi2021observational}.
 
@@ -276,7 +290,7 @@ In CMIP models, the low cloud amount feedback is the largest single contributor 
 %\subsection{Overview}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{{figs/literature_review/Schematic_partial_cloud_cover_in_gridbox}.pdf}
+	\includegraphics[width=0.5\linewidth]{{figs/literature_review/Schematic_partial_cloud_cover_in_gridbox}.pdf}
 	\caption[Schematic showing that partial cloud cover in a grid box (1D) when temperature or humidity fluctuations exist]{Schematic showing that partial cloud cover in a grid box (1D) when temperature or humidity fluctuations exist. The blue line shows humidity and the red dashed line indicates saturation mixing ratio of the grid box. The shaded regions are cloudy parts as the humidity exceeds the saturation mixing ratio.}
 	\label{fig:schematic_partial_clouds}
 \end{figure}
