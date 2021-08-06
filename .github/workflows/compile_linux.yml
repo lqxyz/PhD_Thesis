@@ -39,7 +39,8 @@ jobs:
       - name: Install Texlive-binaries and ghostscript
         run: |
           sudo apt-get install texlive-binaries
-          sudo apt-get install ghostscript
+          # # Install ghostscript to copress the pdf
+          # sudo apt-get install ghostscript
 
       - name: Run Tectonic + makeindex
         run: |
