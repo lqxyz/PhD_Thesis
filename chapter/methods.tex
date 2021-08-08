@@ -52,7 +52,7 @@ In this study, we choose to use the CloudSat 2B-CWC-RO product for cloud water p
 
 \subsubsection{GCM-Oriented CALIPSO Cloud Product}
 
-The GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) \citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010} is designed to evaluate the cloudiness simulated by general circulation models (GCMs). It contains observational cloud diagnostics fully consistent with the ones simulated by the GCM plus the lidar simulator, that is they have similar spatial resolution, same criteria used for cloud detection and same statistical cloud diagnostics. In doing so, the Cloud-Aerosol Lidar with Orthogonal Polarization (CALIOP) Level 1 data (raw data but annotated with ancillary information) are processed following the steps in a lidar simulator to diagnose the model cloud cover that CALIPSO would observe from space if the satellite was flying above the atmosphere similar to that predicted by the GCM. 
+The General Circulation Model (GCM)-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP) \citep[CALIPSO-GOCCP hereafter;][]{Chepfer2010} is designed to evaluate the cloudiness simulated by GCMs. It contains observational cloud diagnostics fully consistent with the ones simulated by the GCM plus the lidar simulator, that is they have similar spatial resolution, same criteria used for cloud detection and same statistical cloud diagnostics. In doing so, the Cloud-Aerosol Lidar with Orthogonal Polarization (CALIOP) Level 1 data (raw data but annotated with ancillary information) are processed following the steps in a lidar simulator to diagnose the model cloud cover that CALIPSO would observe from space if the satellite was flying above the atmosphere similar to that predicted by the GCM. 
 
 The CALIPSO-GOCCP products include the vertical distribution of cloud fraction, horizontal distribution of low, middle, high, and total cloud fractions, instantaneous lidar scattering ratio profiles, and scattering ratio histograms as a function of height. Hence, the cloud cover outputs from GCM can be compared directly with this product when the cloud simulator was not implemented. More importantly, the CALIPSO-GOCCP data can be used to evaluate the cloud fraction profiles simulated from climate models. In this thesis, the CALIPSO-GOCCP is used in \chapref{ch:simple_cld_scheme}.
 
@@ -183,7 +183,7 @@ As introduced in \chapref{ch:introduction}, the concept of climate feedback is u
 \subsection{Short summary of three approaches}
 \label{sec:three_climate_fbk_methods}
 
-Several different methods have been proposed to diagnose climate feedbacks in general circulation models (GCMs). Three main approaches are summarized below, and readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
+Several different methods have been proposed to diagnose climate feedbacks in GCMs. Three main approaches are summarized below, and readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
 
 \begin{enumerate}[label={(\arabic*)}]
     \item \textbf{The PRP approach}\\
@@ -239,7 +239,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
 
 %These approaches summarized above are proposed for general climate feedback parameters, which of course can be used to diagnose cloud feedbacks. for the cloud feedback
 
-As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the histogram of cloud fraction partitioned into cloud-top pressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedback into different components such as cloud amount, height and optical depth. This will discussed further in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
+As for the cloud feedback, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new method combing the cloud radiative kernel and the ISCCP-type histogram of cloud fraction partitioned into cloud-top pressure (CTP) and optical depth ($\tau$) bins, which can quantify the cloud feedbacks from different components such as cloud amount, height and optical depth, as further discussed in \secref{sec:Zelinka_method}. %Next I try to answer the question that whether the CRE method is a proper method used to diagnose cloud feedback parameter.
 
 \subsection{Using $\Delta$CRE to estimate cloud feedback?}
 \label{sec:CRE_or_PRP}
@@ -249,10 +249,10 @@ In this section, we try to answer the question whether we could use the change o
 % \begin{equation}
 %     \lambda_C = - \frac{\partial \overline{R}}{\partial C}\frac{\text{d}C}{\text{d}T_s}
 % \end{equation}
-In PRP method the change of radiation flux at TOA due to clouds ($\delta_C {R}$) is calculated as follows:
+According to \cite{Soden2004}, in the PRP method the change of radiation flux at TOA due to clouds ($\delta_C {R}$) is calculated as follows:
 \begin{equation}
     %\delta_C \overline{R} = \overline{R}(T, C', w, \alpha_s)  - \overline{R}(T, C, w, \alpha_s),
-    \delta_C R = {R}(T, C', w, \alpha_s)  - {R}(T, C, w, \alpha_s),
+    \delta_C R = {R}(T, C', w, \alpha_s) - {R}(T, C, w, \alpha_s),
     \label{eq:prp_delta_Rc}
 \end{equation}
 %  $R$ is the net upward radiation flux at tropopause,
@@ -262,7 +262,7 @@ where $T$, $C$, $w$ and $\alpha_s$ are temperature, cloud properties (e.g., clou
 In contrast, the change in net CRE at TOA from control and perturbed simulations is defined as
 % As the CRE at TOA is defined as the radiation difference between total- and clear-sky conditions, 
 \begin{equation}
-    \Delta CRE_{net} = \underbrace{\left[~{R}(T', C', w', \alpha'_s)  - {R}(T', 0, w', \alpha'_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in perturbed climate}} - 
+    \Delta CRE_{net} = \underbrace{\left[~{R}(T', C', w', \alpha'_s) - {R}(T', 0, w', \alpha'_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in perturbed climate}} - 
     \underbrace{\left[~{R}(T, C, w, \alpha_s)  - {R}(T, 0, w, \alpha_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in control climate}},
     %\overline{CRE}_2 - \overline{CRE}_1
     \label{eq:delta_CRE}
@@ -303,7 +303,7 @@ If we assume that $\Delta T$, $\Delta w$, and  $\Delta \alpha_s$ are not zero (i
 %     \label{fig:cld_fbk_and_CRE_pattern}
 % \end{figure}
 %Similarly, as shown in \figref{fig:cld_fbk_and_CRE_Soden_Held}, 
-\cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different. However, it is noted that the cloud feedback is correlated with the change in net CRE, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
+\cite{Soden2006} found that all the models from IPCC Fourth Assessment (AR4) have a positive cloud feedback in 21-century climate change experiments, but roughly half the models show a reduction in net CRE (or CRF; and normalized by surface temperature change) in response to climate change. In their study the cloud feedback is estimated by the radiative kernel method. This apparent discrepancy is possibly due to the influence of noncloud feedbacks on the CRE term \citep{Zhang1994,Soden2004}. Therefore, the change of net CRE is not a reliable measure of cloud feedback, as the signs of them are sometimes different. However, it is noted that the cloud feedback is correlated with the change in net CRE, indicating that intermodel differences in cloud feedback can be estimated by the intermodel differences in the changes of CRE \citep{Soden2006,Bony2006,Vial2013}. %In addition, the spatial patterns of cloud feedback from radiative kernel and $\Delta$CRE approaches are similar, although the magnitude shows large difference (\figsref{fig:cld_fbk_and_CRE_pattern}b and \ref{fig:cld_fbk_and_CRE_pattern}c), implying that the $\Delta$CRE method is still valuable to have a quick look of the cloud feedback pattern.
 
 \subsection{Cloud masking effect}
 \label{sec:cld_masking_effect}
@@ -336,7 +336,7 @@ and
     \delta R_q = -(1-f)\beta~\delta q_1.
     \label{eq:lw_change_due_to_q}
 \end{equation}
-Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there is no cloud feedback ($\delta f=0$), so the LW radiation change at TOA due to clouds is also zero, namely $\delta R_f=0$ in \eqref{eq:lw_change_due_to_cld}. However, as for the  LW radiation flux change due to water vapor perturbation, the cloud fraction $f$ is also included as in \eqref{eq:lw_change_due_to_q}, indicating that clouds have masking effect on the water vapor feedback and the $\delta R_q$ under clear-sky should be different from the one under cloudy condition. 
+Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there is no cloud feedback ($\delta f=0$), so the LW radiation change at TOA due to clouds is also zero, namely $\delta R_f=0$ in \eqref{eq:lw_change_due_to_cld}. However, as for the LW radiation flux change due to water vapor perturbation, the cloud fraction $f$ is also included as in \eqref{eq:lw_change_due_to_q}, indicating that clouds have masking effect on the water vapor feedback and the $\delta R_q$ under clear-sky should be different from the one under cloudy condition. 
 
 This simple thought experiment has illustrated that the presence of clouds can have impact on the radiation associated with noncloud variables. That is why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other, and it also implies that estimating cloud feedback from changes of cloud radiative effect is probably not a good option due to the cloud masking effect.
 
