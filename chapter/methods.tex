@@ -143,12 +143,12 @@ where $F_Q$ is the Q-flux to be derived, which distributes energy globally to ma
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{{figs/change_of_CRE/Q-flux_cmp}.png}
+	\includegraphics[width=0.8\linewidth]{{figs/methods/Q-flux_cmp}.png}
 	\caption[Comparison of spatial pattern of ocean heat transport (Q-flux).]{Annual mean Q-flux pattern (in W m$^{-2}$) derived from AMIP fixed-SST experiments with realistic continents and topography. The cloud schemes used are (a) linear, (b) linear\_FD and (c) linear\_ALL as in \tabref{tab:exps} and (d) no cloud scheme.}
 	\label{fig:Q_flux_cmp}
 \end{figure}
 
-The AMIP fixed-SST experiments with linear cloud scheme described in \tabref{tab:exps} and a new fixed-SST simulation without clouds are used to derived the Q-flux, and the results are shown in \figref{fig:Q_flux_cmp}. The spatial patterns of Q-flux from different cloud schemes are similar, and have some differences from the simulation without cloud in subtropical and Southern Ocean regions. Q-flux can capture the ocean currents such as the Gulf Stream and cold tongue in the eastern tropical Pacific (\figref{fig:Q_flux_cmp}), and the positive value compensates for too little heating to the slab ocean by the surface flux from the `prescribed-SST’ run compared to the SST climatology. In this case, the Q-flux obtained from the run with the linear cloud scheme only is used in the following simulations. Also, the Q-flux remains the same in the control and perturbed experiments, but it is noted that the SST can change freely in response to different CO$_2$ forcing. \index{Q-flux|)}
+The AMIP fixed-SST experiments with linear cloud scheme described in \tabref{tab:exps} and a new fixed-SST simulation without clouds are used to derived the Q-flux, and the results are shown in \figref{fig:Q_flux_cmp}. The spatial patterns of Q-flux from different cloud schemes are similar, and have some differences from the simulation without cloud in subtropical and Southern Ocean regions. Q-flux can capture the ocean currents such as the Gulf Stream and cold tongue in the eastern tropical Pacific (\figref{fig:Q_flux_cmp}), and the positive value compensates for too little heating to the slab ocean by the surface flux from the `prescribed-SST’ run compared to the SST climatology. In this case, the Q-flux obtained from the run with the linear cloud scheme only is used in the following simulations. In addition, the Q-flux remains the same in the control and perturbed experiments, but it is noted that the SST can change freely in response to different CO$_2$ forcing. \index{Q-flux|)}
 
 %\subsection{Experiments}
 
@@ -157,33 +157,33 @@ The AMIP fixed-SST experiments with linear cloud scheme described in \tabref{tab
 \label{sec:cosp}
 \index{CFMIP Observation Simulator Package}
 
-This section records how the Cloud Feedback Model Intercomparison Project (CFMIP) Observational Simulator Package (COSP)\index{COSP} was implemented in Isca. Note that the COSP was not included in Isca simulations in \chapref{ch:simple_cld_scheme}, but as to be introduced in \secref{sec:method_cloud_fbk}, it is a useful tool to calculate cloud feedback and can decompose the cloud feedback into different components, which thus is employed in \chapref{ch:cld_fbk}. 
+This section records how the Cloud Feedback Model Intercomparison Project (CFMIP) Observational Simulator Package (COSP)\index{COSP} was implemented in Isca. Note that the COSP was not included in Isca simulations in \chapref{ch:simple_cld_scheme}, but as to be introduced in \secref{sec:method_cloud_fbk}, it is useful to calculate cloud feedback and to decompose the cloud feedback into different components. The outputs from the COSP are employed in \chapref{ch:cld_fbk}. 
 
 In this study, the latest version (version 2) of COSP \citep{Swales2018} is implemented in Isca, which is public available at \url{https://github.com/CFMIP/COSPv2.0}. COSP was originally developed as a satellite simulator package whose aim is to produce virtual satellite observations from atmospheric model fields for a better comparison of model output with observations \citep{BodasSalcedo2011}. This approach is needed because the satellite retrievals generally do not directly correspond to the numerical model fields due to the mismatch between their definitions of certain fields. COSP accounts for the limited view of the satellite instrument by calculating radiative transfer through the atmosphere, i.e. attenuation by hydrometeors and air molecules and backscattering \citep{Kuma2020}. Note that multiple instrument simulators, such as MODIS, CALIPSO, CloudSat and ISCCP, have been incorporated in COSP, and it is flexible for users to decide which one to use based on their research purposes. Specifically, several modules have been written in Isca to call COSP, in which the outputs from simple cloud scheme and SOCRATES radiation schemes, such as cloud fraction, effective radius, cloud water content and cloud optical depth, are provided through the interfaces. However, as the cloud scheme is simple and there is not microphysics scheme in Isca, we could not provide some properties about convective clouds and cloud condensate such as ice and graupel. Although this may bring some problems, the outputs from ISCCP simulator are relatively reasonable.
 
 \section{The calculation of cloud feedback}
 \label{sec:method_cloud_fbk}
 
-\subsection{Introduction}
+% \subsection{Introduction}
+% As introduced in \chapref{ch:introduction}, the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external forcing $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
+% \begin{equation}
+%     \Delta R = \Delta Q + \lambda \Delta T_s,
+%     \label{eq:imbalance_forcing_lambda}
+% \end{equation}
+%in which $\lambda$ is called climate feedback parameter. Besides surface temperature, other variables such as atmospheric temperature, water vapor, albedo and cloud properties may also change, and thus might have an impact on $\lambda$ as well. In theory, the climate feedback parameter $\lambda$ can be evaluated as follows
+% \begin{equation}
+%     \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s}  + Re, %\text{high-order terms},
+%     %+  \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
+%     \label{eq:lambda}
+% \end{equation}
+% where $x$ represent the climate variable such as temperature, water vapor, albedo and cloud properties. The high-order residual term ($Re$) is usually neglected in analysis.
 
-As introduced in \chapref{ch:introduction}, 
-the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external forcing $\Delta Q$ is imposed to the climate system, which can be aroused from the perturbation of CO$_2$ concentration, change in solar constant, or volcanic eruption, the climate system will response to this radiative imbalance at the top of the atmosphere (TOA) by changing the surface temperature ($T_s$). Let $R$ be the radiation budget at TOA, and the radiation imbalance ($\Delta R$) goes to zero during the climate system adjusts towards a new equilibrium. Using the idea of feedback, $\Delta R$ can be linked to the change of surface temperature ($\Delta T_s$) as follows:
-\begin{equation}
-    \Delta R = \Delta Q + \lambda \Delta T_s,
-    \label{eq:imbalance_forcing_lambda}
-\end{equation}
-in which $\lambda$ is called climate feedback parameter. Besides surface temperature, other variables such as atmospheric temperature, water vapor, albedo and cloud properties may also change, and thus might have an impact on $\lambda$ as well. In theory, the climate feedback parameter $\lambda$ can be evaluated as follows
-\begin{equation}
-    \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s}  + Re, %\text{high-order terms},
-    %+  \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
-    \label{eq:lambda}
-\end{equation}
-where $x$ represent the climate variable such as temperature, water vapor, albedo and cloud properties. The high-order residual term ($Re$) is usually neglected in analysis.
+As introduced in \chapref{ch:introduction}, the concept of climate feedback is used to characterize the response of climate system to external radiative forcing. If we assume the climate system is at equilibrium state, and when an external forcing $\Delta F$ is imposed to it, the system will response to this perturbation by a series of feedback processes. When the climate system adjusts towards a new equilibrium, the relationship among the radiation imbalance ($\Delta R$) at the top of the atmosphere (TOA), the forcing and surface temperature change  ($\Delta T_s$) can be expressed in \Eqref{eq:imbalance_forcing_lambda}, with climate feedback ($\lambda$) in \Eqref{eq:lambda}.
 
 \subsection{Short summary of three approaches}
 \label{sec:three_climate_fbk_methods}
 
-Several different methods have been proposed to diagnose climate feedbacks in general circulation models (GCMs). Three main approaches are summarized below. Readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
+Several different methods have been proposed to diagnose climate feedbacks in general circulation models (GCMs). Three main approaches are summarized below, and readers may refer to Appendix B of \cite{Bony2006} for a clear summary of the first two methods.% and refer to several pioneering papers from Soden, Held and others for a detailed description of the third method  \citep[e.g.,][]{Soden2006,Soden2008,Shell2008}.
 
 \begin{enumerate}[label={(\arabic*)}]
     \item \textbf{The PRP approach}\\
@@ -203,7 +203,7 @@ Several different methods have been proposed to diagnose climate feedbacks in ge
     \item \textbf{The CRE approach}\\
     The `cloud radiative effect' (CRE) approach \citep[or CRF in][]{Cess1990intercomparison, Cess1996cloud} decompose the climate feedback into clear-sky and cloudy components. They do so by decompose the total TOA radiation budget $R$ as the sum clear-sky component ($R_{clear}$) and CRE ($\mathrm{CRE}=R-R_{clear}$), so \eqref{eq:imbalance_forcing_lambda} can be written as
     \begin{equation}
-        \lambda = \frac{\Delta R - \Delta Q}{\Delta T_s} = \underbrace{\frac{\Delta R_{clear} - \Delta Q}{\Delta T_s}}_{\text{clear-sky climate feedback}} + \underbrace{\frac{\Delta\mathrm{CRE}}{\Delta T_s}}_{\text{cloud feedback}}.
+        \lambda = \frac{\Delta R - \Delta F}{\Delta T_s} = \underbrace{\frac{\Delta R_{clear} - \Delta F}{\Delta T_s}}_{\text{clear-sky climate feedback}} + \underbrace{\frac{\Delta\mathrm{CRE}}{\Delta T_s}}_{\text{cloud feedback}}.
         \label{eq:CRE_approach}
     \end{equation}
     It is clear that this method can not separate the clear-sky climate feedback components into temperature, water vapor and surface albedo ones in further. As we will discuss in \secref{sec:CRE_or_PRP}, the cloud feedback parameter (second term in \eqref{eq:CRE_approach}) obtained from this approach depends on changes in both clear-sky and cloudy properties, which in fact can not separate the cloud feedback completely from the clear-sky components. Nevertheless, the calculation of this method is straightforward and still valuable in GCM evaluations.
@@ -312,7 +312,7 @@ A modified simple thought experiment from \cite{Soden2008} is adopted here to ex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.55\linewidth]{{figs/methods/cloud_masking_effect}.pdf}
+    \includegraphics[width=0.5\linewidth]{{figs/methods/cloud_masking_effect}.pdf}
     \caption[Illustration of cloud masking effect]{Illustration of cloud masking effect on noncloud feedbacks in a grid box.}
     \label{fig:cld_masking_effect}
 \end{figure}
