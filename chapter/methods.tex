@@ -308,7 +308,7 @@ If we assume that $\Delta T$, $\Delta w$, and  $\Delta \alpha_s$ are not zero (i
 \subsection{Cloud masking effect}
 \label{sec:cld_masking_effect}
 
-A modified simple thought experiment from \cite{Soden2008} is adopted here to explain what cloud masking effect is and why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other. As illustrated in \figref{fig:cld_masking_effect}, we assume part of the grid is covered by high clouds (cloud fraction is $f$), and the water vapor contents are $q_1$ and $q_2$ for clear and cloudy subgrid regions, respectively. Here we focus on LW radiation only and assume the LW radiation emitted by water vapor is a linear function of its content, that is $\alpha + \beta q$, where $\alpha$ and $\beta$ are assumed linear coefficients and $\beta$ is negative so that the outgoing LW radiation decreases with the increase of water vapor. The outgoing LW radiation emitted from clouds is regarded as a constant $W$.
+A modified simple thought experiment from \cite{Soden2008} is adopted here to explain what cloud masking effect is and why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other. As illustrated in \figref{fig:cld_masking_effect}, we assume part of the grid is covered by high clouds (cloud fraction is $f$), and the water vapor contents are $q_1$ and $q_2$ for clear and cloudy subgrid regions, respectively. Here we focus on longwave radiation only and assume the longwave radiation emitted by water vapor is a linear function of its content, that is $\alpha + \beta q$, where $\alpha$ and $\beta$ are assumed linear coefficients and $\beta$ is negative so that the outgoing longwave radiation decreases with the increase of water vapor. The outgoing longwave radiation emitted from clouds is regarded as a constant $W$.
 
 \begin{figure}
     \centering
@@ -317,12 +317,12 @@ A modified simple thought experiment from \cite{Soden2008} is adopted here to ex
     \label{fig:cld_masking_effect}
 \end{figure}
 
-If there is no clouds in this grid (i.e. $f=0$), the net LW radiation flux at TOA (downward positive) is $-[\alpha + \beta(q_1+q_2)]$. When clouds are present, the grid averaged net LW flux at TOA becomes
+If there is no clouds in this grid (i.e. $f=0$), the net longwave radiation flux at TOA (downward positive) is $-[\alpha + \beta(q_1+q_2)]$. When clouds are present, the grid averaged net longwave flux at TOA becomes
 \begin{equation}
     R = - (\alpha + \beta q_1)(1-f)- Wf,
     \label{eq:cld_masking}
 \end{equation}
-as the LW raditation emitted from water vapor $q_2$ is masked by clouds. Consider a climate change case in which the water vapor and cloud fraction change a bit, and the change in $R$ can be written as follows by differencing \eqref{eq:cld_masking}:
+as the longwave raditation emitted from water vapor $q_2$ is masked by clouds. Consider a climate change case in which the water vapor and cloud fraction change a bit, and the change in $R$ can be written as follows by differencing \eqref{eq:cld_masking}:
 \begin{equation}
     \delta R = \delta R_f + \delta R_q,
 \end{equation}
@@ -336,25 +336,14 @@ and
     \delta R_q = -(1-f)\beta~\delta q_1.
     \label{eq:lw_change_due_to_q}
 \end{equation}
-Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there is no cloud feedback ($\delta f=0$), so the LW radiation change at TOA due to clouds is also zero, namely $\delta R_f=0$ in \eqref{eq:lw_change_due_to_cld}. However, as for the LW radiation flux change due to water vapor perturbation, the cloud fraction $f$ is also included as in \eqref{eq:lw_change_due_to_q}, indicating that clouds have masking effect on the water vapor feedback and the $\delta R_q$ under clear-sky should be different from the one under cloudy condition. 
+Now reconsider the situation in \eqref{eq:delta_CRE_no_cld_fbk}, in which there is no cloud feedback ($\delta f=0$), so the longwave radiation change at TOA due to clouds is also zero, namely $\delta R_f=0$ in \eqref{eq:lw_change_due_to_cld}. However, as for the longwave radiation flux change due to water vapor perturbation, the cloud fraction $f$ is also included as in \eqref{eq:lw_change_due_to_q}, indicating that clouds have masking effect on the water vapor feedback and the $\delta R_q$ under clear-sky should be different from the one under cloudy condition. 
 
 This simple thought experiment has illustrated that the presence of clouds can have impact on the radiation associated with noncloud variables. That is why the two right-hand terms in \eqref{eq:delta_CRE_no_cld_fbk} are usually not equal with each other, and it also implies that estimating cloud feedback from changes of cloud radiative effect is probably not a good option due to the cloud masking effect.
 
 \subsection{Cloud radiative kernel method}
 \label{sec:Zelinka_method}
 
-In general, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} propose a new technique based on cloud radiative kernel \index{Radiative kernel!cloud} and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
-
-In this method, the cloud radiative kernel $K$\index{Cloud radiative kernel} in each histogram bin of \figref{fig:cld_rad_kernel_Zelinka} is defined as
-\begin{equation}
-    K = \frac{\partial R}{\partial C},
-\end{equation}
-which quantifies the sensitivity of TOA radiative flux to cloud fraction changes ($\Delta C$), and is estimated offline from radiation transfer code for each CTP-$\tau$ bin. The process is complicated and detailed description can be found from \cite{Zelinka2012computing1}. The LW, SW and net cloud radiative kernel results are shown in \figref{fig:cld_rad_kernel_Zelinka}, and the major features are:
-\begin{enumerate}
-    \item The LW cloud radiative kernel is positive for all bins, as the LW CRE is positive. It increases dramatically with cloud top height, and is small near surface as the cloud top temperature contrast with surface is small.
-    \item The SW cloud radiative kernel is negative for all bins, as the SW CRE is negative. Its magnitude increases dramatically with optical depth, and almost insensitive to cloud top height.
-    \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the SW reflection exceeds LW trapping; while for higher and thinner clouds, the net cloud radiative kernel are positive, as LW trapping exceeds SW reflection.
-\end{enumerate}
+In general, previous methods introduced in \secref{sec:three_climate_fbk_methods} can give us an estimate of integrated quantity of cloud feedback. Of course, the method such as the PRP and radiative kernel can also generate other types of cloud feedbacks by perturbing the corresponding properties, but it is usually hard to do so. To solve this problem, \cite{Zelinka2012computing1,Zelinka2012computing2} proposed a new technique based on cloud radiative kernel \index{Radiative kernel!cloud} and the histograms of cloud fraction partitioned by CTP and $\tau$, which can easily attribute the contributions of specific types of cloud changes to cloud feedback.
 
 \begin{figure}[ht]
     \centering
@@ -364,6 +353,16 @@ which quantifies the sensitivity of TOA radiative flux to cloud fraction changes
     \label{fig:cld_rad_kernel_Zelinka}
 \end{figure}
 
+In this method, the cloud radiative kernel $K$\index{Cloud radiative kernel} in each histogram bin of \figref{fig:cld_rad_kernel_Zelinka} is defined as
+\begin{equation}
+    K = \frac{\partial R}{\partial C},
+\end{equation}
+which quantifies the sensitivity of TOA radiative flux to cloud fraction changes ($\Delta C$), and is estimated offline from radiation transfer code for each CTP-$\tau$ bin. The process is complicated and detailed description can be found from \cite{Zelinka2012computing1}. The longwave, shortwave and net cloud radiative kernel results are shown in \figref{fig:cld_rad_kernel_Zelinka}, and the major features are:
+\begin{enumerate}
+    \item The longwave cloud radiative kernel is positive for all bins, as the longwave CRE is positive. It increases dramatically with cloud top height, and is small near surface as the cloud top temperature contrast with surface is small.
+    \item The shortwave cloud radiative kernel is negative for all bins, as the shortwave CRE is negative. Its magnitude increases dramatically with optical depth, and almost insensitive to cloud top height.
+    \item The net cloud radiative kernels for the lower and thicker clouds are negative, as the shortwave reflection exceeds longwave trapping; while for higher and thinner clouds, the net cloud radiative kernel are positive, as longwave trapping exceeds shortwave reflection.
+\end{enumerate}
 Multiplying the cloud radiative kernel $K$ by the change in cloud fraction histogram ($\Delta C$, differencing the histogram outputs from cloud simulator) can estimate the contribution of each cloud type to the change in TOA radiation associated with climate change:
 \begin{equation}
     \Delta R = K \Delta C
@@ -372,7 +371,7 @@ and hence the cloud feedback is calculated as follows:
 \begin{equation}
     \lambda_c = K \frac{\Delta C}{\Delta T_s} = \frac{\Delta R}{\Delta {T}_s}.
 \end{equation}
-Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$).
+Note that the $\Delta R$ and cloud feedback paramter $\lambda_c$ are function of CTP, $\tau$, latitude, longitude and time, so it can be used to estimate cloud feedback from certain cloud types (according to CTP and $\tau$). The cloud radiative method, combining with the ISCCP histogram outputs from COSP, will be used in \chapref{ch:cld_fbk}.
 
 \section{Low cloud amount proxy}
 \label{sec:method_low_cld_amount_proxy}
