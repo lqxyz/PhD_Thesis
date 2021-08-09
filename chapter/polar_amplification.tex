@@ -42,12 +42,16 @@ This chapter is structured as follows. \secref{sec:polar_amiplicaiton_setup} des
 \section{Experiment setup}
 \label{sec:polar_amiplicaiton_setup}
 
+\subsection{Basic setup}
+
 The Isca model is employed for the simulations. The configuration has 25 vertical levels and is run with spectral dynamical core at T42 horizontal resolution, roughly equivalent to 2.8 degrees in latitude and longitude. The atmosphere is coupled to a slab ocean with a depth of 10m. The insolation conditions for all the experiments are perpetual equinox without seasonal change but with diurnal variations, because the perpetual equinox insolation can cause the most evident polar amplification compared to the seasonal and annual-mean insolations \citep{Kim2018}. Three radiation schemes (i.e. BOG, Frierson and RRTM schemes) are applied in our experiments to calculate the radiative transfer, as BOG and Frierson schemes are relative simple gray radiation schemes and RRTM is a widely used full radiation scheme, which can provide a good reference for the results. The sea ice formation is not enabled in the model even if the surface temperature is below the freezing point. Furthermore, the global uniform albedo is adopted in the model, and thus the surface albedo feedback is disabled. The default CO$_2$ concentration is 360 ppm. All the experiments are run for 20 years following 10 years of spinup.
 %  Oceanic heat transport is prescribed with symmetric Q-flux with respect to equator. 
 
 %The albedo ($\alpha$) used in our experiment are 0.27, 0.3, 0.33 and 0.38, where $\alpha =0.3$ is used in the control run.
 
 \subsection{Changing forcing through varying albedos}
+
+The general way to investigate climate sensitivity is to evaluate the degree of warming in response to a doubling of the CO$_2$ concentration in the climate system. Actually, the external forcing can be introduced into climate system through other ways such as adding a ghost forcing  arbitrarily at the TOA \citep{Hansen1997,Alexeev2005}. Given the fact that there is no sea ice in our experiments, changes of albedo will not introduce albedo feedbacks to the climate system. Instead, it provides an simple way to perturb the radiation balance at the TOA without doubling CO$_2$ concentration. Therefore, we will first examine the zonal mean surface temperature change when varying the albedo. Specifically, four albedos, $\alpha=$0.27, 0.3, 0.33 and 0.38, are selected for each radiation scheme in this study, where the $\alpha = 0.3$ is roughly the Earth's global averaged albedo and used in the control run for each radiation scheme. $\alpha=0.27$ (0.33) decreases (increases) $10\%$ from the control run value, which will cause the warming (cooling) response to the climate system. $\alpha=0.38$ increases even more than the albedo in the control run, leading to a much colder climate state. The experiments for BOG, Frierson and RRTM radiation schemes with different albedos are shown in \tabref{tab:exp_table}.
 
 \begin{table}[ht]
 	%\setlength\extrarowheight{-3pt}
@@ -78,8 +82,6 @@ The Isca model is employed for the simulations. The configuration has 25 vertica
 	\end{threeparttable}
 	\label{tab:exp_table}
 \end{table}
-
-The general way to investigate climate sensitivity is to evaluate the degree of warming in response to a doubling of the CO$_2$ concentration in the climate system. Actually, the external forcing can be introduced into climate system through other ways such as adding a ghost forcing  arbitrarily at the TOA \citep{Hansen1997,Alexeev2005}. Given the fact that there is no sea ice in our experiments, changes of albedo will not introduce albedo feedbacks to the climate system. Instead, it provides an simple way to perturb the radiation balance at the TOA without doubling CO$_2$ concentration. Therefore, we will first examine the zonal mean surface temperature change when varying the albedo. Specifically, four albedos, $\alpha=$0.27, 0.3, 0.33 and 0.38, are selected for each radiation scheme in this study, where the $\alpha = 0.3$ is roughly the Earth's global averaged albedo and used in the control run for each radiation scheme. $\alpha=0.27$ (0.33) decreases (increases) $10\%$ from the control run value, which will cause the warming (cooling) response to the climate system. $\alpha=0.38$ increases even more than the albedo in the control run, leading to a much colder climate state. The experiments for BOG, Frierson and RRTM radiation schemes with different albedos are shown in \tabref{tab:exp_table}.
 
 To estimate the external forcing after changing the albedos, the fixed sea surface temperature (SST) forcing method is applied in this study \citep{Hansen2005,Feldl2013,Kim2018}, which has included the adjustment throughout the atmosphere. For each radiation scheme, the radiative forcing for experiments after changing albedos ($\alpha=0.27, ~0.33$ and $0.38$) is calculated from radiation imbalance at TOA when prescribed with the monthly mean SST profiles from control experiment.
 
@@ -125,7 +127,7 @@ where $p_s$ is sea level pressure and coefficient $f_l$ is set to 0.1 in the equ
 
 \subsection{Introduction}
 
-In order to quantify the relative importance of various contributions to polar amplification, the radiative kernel technique \citep{Soden2008,Shell2008} is used to calculate various climate feedbacks (see \secref{sec:method_radiative_kernel}). In general, climate feedback is used to characterize the response of climate system to an external radiative forcing, which can either amplify or diminish the effect of the forcings \citep{Hansen1984}. The change of net radiative flux at TOA between two different climate states, $\Delta R$, can be represented by
+In order to quantify the relative importance of various contributions to polar amplification, the radiative kernel technique \citep{Soden2008,Shell2008} is used to calculate various climate feedbacks (see \secref{sec:rad_kernel_method_for_pa}). In general, climate feedback is used to characterize the response of climate system to an external radiative forcing, which can either amplify or diminish the effect of the forcings \citep{Hansen1984}. The change of net radiative flux at TOA between two different climate states, $\Delta R$, can be represented by
 \begin{equation}
     \Delta R = \Delta F+\lambda \Delta T_s + \mathcal{O}\left( \Delta T_s^2 \right),
 \label{eq:delta_R_relation}
@@ -135,9 +137,10 @@ which can be viewed as a Taylor expansion in surface temperature change ($\Delta
 \lambda=\lambda_T+\lambda_{w} +\lambda_\alpha+\lambda_C,
 \label{eq:fb_decmop}
 \end{equation}
-where $\lambda_T$, $\lambda_{w}$, $\lambda_\alpha$ and $\lambda_C$ are the feedback parameters related to temperature, water vapor, surface albedo and cloud, respectively. In further, the temperature feedback can be divided into Planck feedback ($\lambda_P$) and lapse rate  feedback ($\lambda_L$) \citep{Soden2006}, that is $\lambda_T=\lambda_P+\lambda_L$, where the Planck feedback assumes that the tropospheric temperature change is vertically uniform and equals to the surface temperature change (in other words, there is no vertical temperature change in the troposphere) and the lapse rate feedback is associated with the vertical temperature change in troposphere that deviates from the surface temperature change \citep{Bony2006,Soden2006,Feldl2017coupled}. In our analysis, the surface albedo feedback ($\lambda_\alpha$) and cloud feedback ($\lambda_C$) are automatically neglected as there are no sea ice and cloud schemes in Isca model currently. The calculation of these feedbacks for Isca model is described in \secref{sec:method_radiative_kernel} and the analysis of the contributions to polar amplification from these feedbacks will be presented in \secref{sec:polar_amiplification_results}.
+where $\lambda_T$, $\lambda_{w}$, $\lambda_\alpha$ and $\lambda_C$ are the feedback parameters related to temperature, water vapor, surface albedo and cloud, respectively. In further, the temperature feedback can be divided into Planck feedback ($\lambda_P$) and lapse rate  feedback ($\lambda_L$) \citep{Soden2006}, that is $\lambda_T=\lambda_P+\lambda_L$, where the Planck feedback assumes that the tropospheric temperature change is vertically uniform and equals to the surface temperature change (in other words, there is no vertical temperature change in the troposphere) and the lapse rate feedback is associated with the vertical temperature change in troposphere that deviates from the surface temperature change \citep{Bony2006,Soden2006,Feldl2017coupled}. In our analysis, the surface albedo feedback ($\lambda_\alpha$) and cloud feedback ($\lambda_C$) are automatically neglected as there are no sea ice and cloud schemes in Isca model currently. The calculation of these feedbacks for Isca model is described in \secref{sec:rad_kernel_method_for_pa} and the analysis of the contributions to polar amplification from these feedbacks will be presented in \secref{sec:polar_amiplification_results}.
 
 \subsection{Radiative kernel method}
+\label{sec:rad_kernel_method_for_pa}
 
 In this study, we apply radiative kernel \index{Radiative kernel} technique \citep{Soden2008,Shell2008} to calculate the climate feedbacks of Isca model. It should be mentioned that radiative kernel technique is not the only approach to quantify climate feedbacks, other methods such as partial perturbation radiative (PRP) method \citep{Wetherald1988cloud}, regression method of \cite{Gregory2004} are also used by other studies. Nevertheless, the PRP method is time consuming and the calculations have to be repeated for different simulations \citep{Shell2008}. Furthermore, the interpretation of the results must be cautious for the possible problem associated with correlated variables as pointed by \cite{Bony2006}. In contrast, the radiative kernels are calculated from the offline version radiative codes and can be used for different experiments and models. For instance, \cite{Soden2008} compare the climate feedbacks in 14 different coupled ocean-atmosphere models from the Fourth Assessment of the Intergovernmental Panel on Climate Change (IPCC AR4) with radiative kernels from three different general circulation models (GCMs) respectively, demonstrating that the strength of global feedbacks is relative insensitive to the choice of kernels.
 
@@ -281,7 +284,7 @@ The surface temperature kernel also contributes partially to the temperature fee
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.45\linewidth]{figs/polar_amp/kernels_rrtm}
-	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for RRTM radiation scheme]{As in \figref{fig:bog_kernels}, but for RRTM radiation scheme.}
+	\caption[Annual-mean and zonal-mean temperature, water vapor and surface temperature radiative kernels for RRTM radiation scheme]{As in \figref{fig:bog_kernels}, but for the RRTM radiation scheme.}
 	\label{fig:rrtm_kernels}
 \end{figure}
 
