@@ -17,7 +17,6 @@ all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
 #    missing file reference and interactively asking you for an alternative.
 
 ${TEXFN}.pdf: *.tex chapter/*.tex
-	# $(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
 	# $(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
 	xelatex --interaction=nonstopmode ${TEXFN}.tex
 	# Generatre nomenclature and glossory
@@ -37,4 +36,3 @@ cleanall:
 	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
 
 .PHONY: all clean cleanall
-
