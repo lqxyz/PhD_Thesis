@@ -19,6 +19,9 @@ all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
 ${TEXFN}.pdf: *.tex chapter/*.tex
 	# $(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
 	# $(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
+	xelatex --interaction=nonstopmode ${TEXFN}.tex
+	# Generatre nomenclature and glossory
+	makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
 	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode ${TEXFN}.tex
 
 ${TEXFN}_compressed.pdf: ${TEXFN}.pdf
