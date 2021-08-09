@@ -16,10 +16,10 @@ all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 #    missing file reference and interactively asking you for an alternative.
 
-${TEXFN}.pdf: ${TEXFN}.tex
-	#$(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$<"
-	#$(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make "$<"
-	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode "$<"
+${TEXFN}.pdf: *.tex chapter/*.tex
+	# $(LATEXMK) -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
+	# $(LATEXMK) -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make ${TEXFN}.tex
+	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode ${TEXFN}.tex
 
 ${TEXFN}_compressed.pdf: ${TEXFN}.pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
