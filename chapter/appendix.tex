@@ -6,7 +6,7 @@
 \subsection{Introduction}
 The simple cloud scheme diagnoses cloud fraction based on relative humidity (RH) and specifies the in-cloud water mixing ratio and effective radius of the cloud condensate as function of temperature. It has been implemented and tested under Isca framework \citep{Vallis2018} and can be ported to other climate models if needed.
 
-\subsection{Code Structure}
+\subsection{Code structure}
 
 The simple cloud scheme code can be accessed at \url{https://doi.org/10.5281/zenodo.4382536}, and the updates can be found at \url{https://github.com/lqxyz/Isca/tree/simple_clouds}. It will be merged with the Isca master repository (\url{https://github.com/ExeClim/Isca}) in the future. Specifically, they are in \url{src/atmos\_param/cloud\_simple} directory and are called by the file \normalfont{\url{src/atmos\_spectral/driver/solo/idealized\_moist\_phys.F90}}.
 
