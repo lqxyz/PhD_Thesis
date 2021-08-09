@@ -5,8 +5,9 @@
 LATEXMK = latexmk
 RM = rm -f
 TEXFN = thesis
+TEXFN_COMPRESSED_PDF = ${TEXFN}_compressed.pdf
 
-all: ${TEXFN}.pdf ${TEXFN}_compressed.pdf
+all: ${TEXFN}.pdf ${TEXFN_COMPRESSED_PDF}
 
 # MAIN LATEXMK RULE
 #
@@ -23,16 +24,16 @@ ${TEXFN}.pdf: *.tex chapter/*.tex
 	makeindex ${TEXFN}.nlo -s nomencl.ist -o ${TEXFN}.nls
 	$(LATEXMK) -f -pdf -xelatex -interaction=nonstopmode ${TEXFN}.tex
 
-${TEXFN}_compressed.pdf: ${TEXFN}.pdf
+${TEXFN_COMPRESSED_PDF}: ${TEXFN}.pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 	   -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" "$<"
 
 clean:
 	$(LATEXMK) -silent -c
-	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
+	$(RM) *.pdf *.bbl *.nlo *.nls *.xdv chapter/*.aux
 
 cleanall:
 	$(LATEXMK) -silent -CA
-	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
+	$(RM) ${TEXFN_COMPRESSED_PDF} *.bbl *.nlo *.nls *.xdv chapter/*.aux
 
 .PHONY: all clean cleanall
