@@ -30,7 +30,7 @@ ${TEXFN_COMPRESSED_PDF}: ${TEXFN}.pdf
 
 clean:
 	$(LATEXMK) -silent -c
-	$(RM) *.pdf *.bbl *.nlo *.nls *.xdv chapter/*.aux
+	$(RM) *.bbl *.nlo *.nls *.xdv chapter/*.aux
 
 cleanall:
 	$(LATEXMK) -silent -CA
