@@ -47,13 +47,15 @@
 % % Glossary
 % % MakeIndex command line: makeindex thesis.nlo -s nomencl.ist -o thesis.nls
  \newpage
- \renewcommand{\nomname}{Nomenclature and Abbreviations}
+ %\renewcommand{\nomname}{Nomenclature and Abbreviations}
+ \renewcommand{\nomname}{Acronyms, Abbreviations and Symbols}
  %\chapter*{Nomenclature and Abbreviations}
  \setlength{\nomlabelwidth}{2.5cm}
  \setlength{\nomitemsep}{-\parsep}
  \input{glossary}
  \printnomenclature
- \addcontentsline{toc}{chapter}{Nomenclature and Abbreviations}
+ %\addcontentsline{toc}{chapter}{Nomenclature and Abbreviations}
+ \addcontentsline{toc}{chapter}{Acronyms, Abbreviations and Symbols}
  \label{glossary}
 
 %\clearpage
