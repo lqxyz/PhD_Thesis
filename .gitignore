@@ -39,6 +39,7 @@ tmp
 *.nlo
 *.ilg
 *.ind
+*.nls
 
 ## Intermediate documents:
 *.dvi
