@@ -20,6 +20,7 @@
 \nomenclature[aISCCP]{ISCCP}{International Satellite Cloud Climatology Project}
 \nomenclature[aITCZ]{ITCZ}{Intertropical Convergence Zone}
 \nomenclature[aLTS]{LTS}{Low Tropospheric Stability}
+\nomenclature[aLCL]{LCL}{Lifting Condensation Level}
 \nomenclature[aOLR]{OLR}{Outgoing Longwave Radiation}
 \nomenclature[aPDF]{PDF}{Probability Density Function}
 \nomenclature[aPPE]{PPE}{Perturbed Parameter (or Physics) Ensemble}
@@ -37,7 +38,7 @@
 %\nomenclature[bb]{$\bm x_j$}{A column vector; the $j$th column of matrix $\bm X$; sometimes written as $\bm x_{:,j}$. There is one exception to this rule: the precision matrix $\bm B$ in chapter \ref{chap:2} retains its capitalisation to avoid confusion with other variables.}
 
 % Roman letters
-\nomenclature[ra]{$a$ }{Earth radius; linear coefficient}
+\nomenclature[ra]{$a$ }{Earth radius in \chapref{ch:polaramplification}; linear coefficient in \chapref{ch:simple_cld_scheme}}
 \nomenclature[rC]{$C$ }{Cloud fraction}
 \nomenclature[rCw]{$C_w$ }{Specific heat capacity of ocean water (J kg$^{-1}$ K$^{-1}$)}
 \nomenclature[rD]{$D$ }{Depth of mixed-layer (m)}
@@ -46,11 +47,13 @@
 \nomenclature[rK]{$K$}{Radiative kernel (W m$^{-2}$ K$^{-1}$)}
 \nomenclature[rTs]{$T_s$, $T_0$}{Surface temperature or reference temperature (K)}
 \nomenclature[rT]{$T$}{Temperature (K)}
-\nomenclature[rS0]{$S_0$}{Solar constant}
+\nomenclature[rS0]{$S_0$}{Solar constant  (W m$^{-2}$)}
 \nomenclature[rg]{$g$}{Gravitational acceleration ($9.8$ m s$^{-2}$)}
 \nomenclature[rq]{$q$}{Specific humidity (kg kg$^{-1}$)}
 \nomenclature[rqs]{$q_s$}{Saturation mixing ratio or specific humidity (kg kg$^{-1}$)}
-\nomenclature[rH]{$H$}{Relative humidity}
+\nomenclature[rqsurf]{$q_0$, $q_{700}$}{Specific humidity at surface or 700 hPa (kg kg$^{-1}$)}
+\nomenclature[rqt]{$q_t$, $q_c$}{Total water or cloud water mixing ratio (kg kg$^{-1}$)}
+\nomenclature[rH]{$H$}{Relative humidity in \chapref{ch:simple_cld_scheme}; heat transport in \chapref{ch:polaramplification}}
 \nomenclature[rHc]{$H_c$}{Critical relative humidity}
 \nomenclature[res]{$e_s$}{Saturated water vapor pressure}
 \nomenclature[rcp]{$c_p$}{Dry air specific heat capacity at constant pressure (1006 J kg$^{-1}$ K$^{-1}$)}
@@ -61,7 +64,7 @@
 \nomenclature[rp]{$p$}{Pressure (hPa)}
 \nomenclature[rp0]{$p_0$, $p_s$}{Reference pressure or sea level pressure (hPa)}
 \nomenclature[rz]{$z_{700}$, $z_{LCL}$, $z_{inv}$}{Heights of 700 hPa, lifting condensation level (LCL) or inversion layer (m)}
-\nomenclature[rre]{$r_e$}{Effective radius ($\mu$m)}
+\nomenclature[rre]{$r_e$}{Effective radius of cloud condensate ($\mu$m)}
 \nomenclature[rwl]{$w_l$}{In-cloud liquid water mixing ratio (g kg$^{-1}$)}
 \nomenclature[rfl]{$f_l$}{Liquid cloud fraction}
 
@@ -72,12 +75,12 @@
 \nomenclature[gl]{$\lambda$}{Climate feedback parameter}
 \nomenclature[gw]{$\omega$}{Vertical pressure velocity (Pa s$^{-1}$ or hPa day$^{-1}$)}
 \nomenclature[gr]{$\rho$, $\rho_w$}{Density; density of water (kg m$^{-3}$)}
-\nomenclature[ge]{$\epsilon$}{Emissivity}
+\nomenclature[ge]{$\epsilon$}{Surface emissivity}
 \nomenclature[gs]{$\sigma$}{Stefan--Boltzmann constant ($5.67\times 10^{-8}$ W m$^{-2}$ K$^{-4}$)}
 \nomenclature[gh]{$\theta$}{Potential temperature (K)}
-\nomenclature[ghs]{$\theta_{700}$, $\theta_s$}{Potential temperature at 700 hPa and surface (K)}
+\nomenclature[ghs]{$\theta_s$, $\theta_{700}$}{Potential temperature at surface or 700 hPa (K)}
 \nomenclature[gt]{$\tau$}{Optical depth}
-\nomenclature[gv]{$\phi$}{Latitude}
+\nomenclature[gv]{$\varphi$}{Latitude}
 
 % Greek alphabet ordering
 % a alpha
