@@ -75,7 +75,7 @@ Thus, $\lambda$ is in units of Wm$^{-2}$K$^{-1}$ and is a measure of the TOA rad
 %\subsection{Climate sensitivity}
 Based on the forcing and feedback analysis framework, the equilibrium climate sensitivity (ECS) \index{Equilibrium climate sensitivity}\index{ECS}, i.e., the equilibrium response of global mean surface air temperature to the radiative forcing from a doubling of CO$_2$ ($F_{2\times}$), can be estimated as:
 \begin{equation}
-    ECS = \Delta T_{s\_2\times}=-\frac{F_{2\times}}{\lambda}.
+    \text{ECS} = \Delta T_{s\_2\times}=-\frac{F_{2\times}}{\lambda}.
     \label{eq:ecs}
 \end{equation}
 ECS is a measure of the climate sensitivity of the GCM to the forcing, and has a quite large range ($\sim$1.5--4.5K) among the fifth phase of the Coupled Model Intercomparison Project \citep[CMIP5;][]{Taylor2012overview} models \citep[e.g.,][]{Andrews2012forcing,Ceppi2017}. In addition, such spread (see the first panel in \figref{fig:zelinka_global_mean_fbks}) does not reduce in recent sixth phase of the Coupled Model Intercomparison Project \citep[CMIP6;][]{Eyring2016overview} models \citep{Zelinka2020causes}. Evidence from historical and paleoclimate records perhaps can help narrow down the uncertainty of ECS \citep{Sherwood2020}, but more work still needed to understand the underlying causes of the uncertainty.
@@ -87,7 +87,7 @@ ECS is a measure of the climate sensitivity of the GCM to the forcing, and has a
 % Introduction of different feedbacks?
 In climate system, climate feedbacks are the processes that can either amplify or dampen the effects of climate forcings \citep{Hansen1984}. A feedback that amplifies the initial perturbation is called a ``positive feedback", while a ``negative feedback" reduces the initial perturbation. In general, $\lambda$ can be decomposed into feedbacks from different physical processes, such as temperature (Planck and lapse rate), water vapor, surface albedo, clouds, etc. These climate feedback parameters can be evaluated as follows
 \begin{equation}
-    \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s} + Re, %\text{high-order terms},
+    \lambda = \frac{\partial R}{\partial T_s} = \sum_x \frac{\partial R}{\partial x}\frac{\partial x}{\partial T_s} + \text{Re}, %\text{high-order terms},
     %+ \sum_x\sum_y \frac{\partial^2 R}{\partial x\partial y}\frac{\partial x\partial y}{\partial^2 T_s}+\dots 
     \label{eq:lambda}
 \end{equation}
