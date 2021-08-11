@@ -1,5 +1,7 @@
 
-\usepackage{fontspec}
+%\usepackage{fontspec}
+% https://tex.stackexchange.com/questions/544868/why-doesnt-newtxsf-typeset-all-mathematical-symbols-in-sans-serif
+\usepackage[no-math]{fontspec}
 \setmainfont{Arial}
 %% \setsansfont{Arial}
 %% \setmainfont{Times New Roman}
@@ -13,8 +15,8 @@
 % \geometry{verbose,a4paper,textwidth=6.in,textheight=9.8in}
 % \documentclass[twocolumn,journal]{IEEEtran}
 
-%\usepackage{amsmath}
-%\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[scaled=1.0]{newtxsf}
 \usepackage{graphicx}
 % \usepackage{epstopdf}
@@ -190,7 +192,7 @@
 \usepackage{multirow}
 \usepackage{adjustbox}
 \usepackage{diagbox}
-\usepackage{mathrsfs}
+%\usepackage{mathrsfs}
 
 % https://tex.stackexchange.com/questions/329206/multicolumn-with-line-break-does-not-center-properly
 \usepackage{array}

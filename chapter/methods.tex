@@ -136,7 +136,7 @@ Another feature in Isca is that it can include ocean heat transport (the `Q-flux
 \end{equation}
 
 \begin{equation}
-    F_s = SW-LH-SH-LW,
+    F_s = \mathrm{SW}-\mathrm{LH}-\mathrm{SH}-\mathrm{LW},
     \label{eq:surface_flux}
 \end{equation}
 where $F_Q$ is the Q-flux to be derived, which distributes energy globally to match the prescribed SST distribution. The $C_w$ (3989.24 J kg$^{-1}$ K$^{-1}$) and $\rho_w$ (1035 kg m$^{-3}$) are the specific heat capacity and density of ocean water, respectively. $D$ is the depth of mixed layer. The rate of change in mixed layer temperature ($\frac{\partial T}{\partial t}$, in units of K s$^{-1}$) is calculated by the prescribed SST. The surface flux ($F_s$, positive downward, units Wm$^{-2}$) in \Eqref{eq:Q_flux} is calculated from the upward latent and sensible heat fluxes ($LH$ and $SH$, respectively), the net longwave radiation ($LW$, positive upward) and net shortwave radiation ($SW$, positive downward), as indicated by \Eqref{eq:surface_flux}.
@@ -202,9 +202,9 @@ Several different methods have been proposed to diagnose climate feedbacks in GC
     % The parameters  from control and perturbed climate states are substituted one by one into radiation code to obtain the partial responses at TOA.
     
     \item \textbf{The CRE approach}\\
-    The `cloud radiative effect' (CRE) approach \citep[or CRF in][]{Cess1990intercomparison, Cess1996cloud} decompose the climate feedback into clear-sky and cloudy components. They do so by decompose the total TOA radiation budget $R$ as the sum clear-sky component ($R_{clear}$) and CRE ($\mathrm{CRE}=R-R_{clear}$), so \eqref{eq:imbalance_forcing_lambda} can be written as
+    The `cloud radiative effect' (CRE) approach \citep[or CRF in][]{Cess1990intercomparison, Cess1996cloud} decompose the climate feedback into clear-sky and cloudy components. They do so by decompose the total TOA radiation budget $R$ as the sum clear-sky component ($R_{\text{clear}}$) and CRE ($\mathrm{CRE}=R-R_{\text{clear}}$), so \eqref{eq:imbalance_forcing_lambda} can be written as
     \begin{equation}
-        \lambda = \frac{\Delta R - \Delta F}{\Delta T_s} = \underbrace{\frac{\Delta R_{clear} - \Delta F}{\Delta T_s}}_{\text{clear-sky climate feedback}} + \underbrace{\frac{\Delta\mathrm{CRE}}{\Delta T_s}}_{\text{cloud feedback}}.
+        \lambda = \frac{\Delta R - \Delta F}{\Delta T_s} = \underbrace{\frac{\Delta R_{\text{clear}} - \Delta F}{\Delta T_s}}_{\text{clear-sky climate feedback}} + \underbrace{\frac{\Delta\mathrm{CRE}}{\Delta T_s}}_{\text{cloud feedback}}.
         \label{eq:CRE_approach}
     \end{equation}
     It is clear that this method can not separate the clear-sky climate feedback components into temperature, water vapor and surface albedo ones in further. As we will discuss in \secref{sec:CRE_or_PRP}, the cloud feedback parameter (second term in \eqref{eq:CRE_approach}) obtained from this approach depends on changes in both clear-sky and cloudy properties, which in fact can not separate the cloud feedback completely from the clear-sky components. Nevertheless, the calculation of this method is straightforward and still valuable in GCM evaluations.
@@ -263,15 +263,15 @@ where $T$, $C$, $w$ and $\alpha_s$ are temperature, cloud properties (e.g., clou
 In contrast, the change in net CRE at TOA from control and perturbed simulations is defined as
 % As the CRE at TOA is defined as the radiation difference between total- and clear-sky conditions, 
 \begin{equation}
-    \Delta CRE_{net} = \underbrace{\left[~{R}(T', C', w', \alpha'_s) - {R}(T', 0, w', \alpha'_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in perturbed climate}} - 
-    \underbrace{\left[~{R}(T, C, w, \alpha_s)  - {R}(T, 0, w, \alpha_s) ~\right]}_\text{\textcolor{black}{Net $CRE$ in control climate}},
+    \Delta \mathrm{CRE}_{\text{net}} = \underbrace{\left[~{R}(T', C', w', \alpha'_s) - {R}(T', 0, w', \alpha'_s) ~\right]}_\text{\textcolor{black}{Net $\mathrm{CRE}$ in perturbed climate}} - 
+    \underbrace{\left[~{R}(T, C, w, \alpha_s)  - {R}(T, 0, w, \alpha_s) ~\right]}_\text{\textcolor{black}{Net $\mathrm{CRE}$ in control climate}},
     %\overline{CRE}_2 - \overline{CRE}_1
     \label{eq:delta_CRE}
 \end{equation}
 as the CRE at TOA is computed from the radiation flux difference between total- and clear-sky conditions. For the case there is no cloud feedback $\Delta C=0$, thus $C'=C$ and $\delta_C {R}=0$ in \eqref{eq:prp_delta_Rc}. The change in net CRE in \eqref{eq:delta_CRE} becomes
 \begin{equation}
     \begin{aligned}
-        \Delta {CRE}_{net} &= \left[~{R}(T', C, w', \alpha'_s)  - {R}(T', 0, w', \alpha'_s) ~\right] - 
+        \Delta \mathrm{CRE}_{\text{net}} &= \left[~{R}(T', C, w', \alpha'_s)  - {R}(T', 0, w', \alpha'_s) ~\right] - 
         \left[~{R}(T, C, w, \alpha_s) - {R}(T, 0, w, \alpha_s) ~\right] \\
          & = \underbrace{\left[~{R}(T', C, w', \alpha'_s)  - {R}(T, C, w, \alpha_s)  ~\right]}_\text{Change in total-sky flux} - \underbrace{\left[~ {R}(T', 0, w', \alpha'_s) - {R}(T, 0, w, \alpha_s) ~\right].}_\text{Change in clear-sky flux} \\
     \end{aligned}
@@ -400,12 +400,12 @@ Several low cloud amount proxies have been proposed in previous studies and used
 
 Despite the widely use of LTS in climate models, \cite{Wood2006} argued that it has yet to be demonstrated whether the observationally derived LTS-CF relationships will hold in a changed climate. They proposed a new proxy called estimate inversion strength (EIS) \index{EIS} to represent the planetary boundary layer inversion strength and proved that it is better to indicate the low stratiform cloud cover. An idealized profile of lower-tropospheric structure is shown by a thick solid line in Figure \ref{fig:wood_eis_atm_profile}, where the atmospheric conditions roughly follow a dry adiabat below the lifting condensation level (LCL), and then a moist adiabat above. The EIS is defined as
 \begin{equation}
-    EIS=LTS-\Gamma_{m}^{700} z_{700}+\Gamma_{m}^{LCL} z_{LCL},
+    \mathrm{EIS}=\mathrm{LTS}-\Gamma_{m}^{700} z_{700}+\Gamma_{m}^{\mathrm{LCL}} z_{\mathrm{LCL}},
     \label{eq:eis}
 \end{equation}
 or simplified as
 \begin{equation}
-    EIS=LTS-\Gamma_{m}^{850}\left(z_{700}-z_{LCL}\right),
+    \mathrm{EIS}=\mathrm{LTS}-\Gamma_{m}^{850}\left(z_{700}-z_{\mathrm{LCL}}\right),
 \end{equation}
 where 
 \begin{equation}
@@ -418,7 +418,7 @@ where
 	z_{700}=\frac{R_{a} T_{0}}{g} \ln \left(\frac{p_{0}}{700~ \mathrm{hPa}}\right).
 	\label{eq:z700}
 \end{equation}
-In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gradient, $z_{700}$ is the height of 700 hPa, $z_{LCL}$ is the height of the lifting condensation level. In \Eqref{eq:gamma_m}, $L_v=2.47\times 10^6$ J kg$^{-1}$ is the latent heat of vaporization. $q_s(T,p)$ is the saturation mixing ratio, and is a function of temperature and pressure derived from the Clausius-Clapeyron equation. $R_a=287.04$ J kg$^{-1}$ K$^{-1}$ and $R_v=461.50$ J kg$^{-1}$ K$^{-1}$ are the gas constants for dry and water vapor, respectively, $g=9.8$ m s$^{-2}$ is the gravitational acceleration, and $c_p=1006$ J kg$^{-1}$ K$^{-1}$ is the specific heat of air at constant pressure. In \Eqref{eq:z700}, $T_0$ and $p_0$ (in units of hPa) are the surface temperature and pressure respectively.
+In \Eqref{eq:eis}, $\Gamma_{m}$ is the moist-adiabatic potential temperature gradient, $z_{700}$ is the height of 700 hPa, $z_{\mathrm{LCL}}$ is the height of the lifting condensation level. In \Eqref{eq:gamma_m}, $L_v=2.47\times 10^6$ J kg$^{-1}$ is the latent heat of vaporization. $q_s(T,p)$ is the saturation mixing ratio, and is a function of temperature and pressure derived from the Clausius-Clapeyron equation. $R_a=287.04$ J kg$^{-1}$ K$^{-1}$ and $R_v=461.50$ J kg$^{-1}$ K$^{-1}$ are the gas constants for dry and water vapor, respectively, $g=9.8$ m s$^{-2}$ is the gravitational acceleration, and $c_p=1006$ J kg$^{-1}$ K$^{-1}$ is the specific heat of air at constant pressure. In \Eqref{eq:z700}, $T_0$ and $p_0$ (in units of hPa) are the surface temperature and pressure respectively.
 
 \subsubsection{Estimated cloud-top entrainment index}
 \index{Estimated cloud-top entrainment index}
@@ -431,9 +431,6 @@ The ECTEI is a modification of estimated inversion strength (EIS) and takes into
 \end{equation}
 where
 \begin{equation}
-    \beta=(1-k) C_{q\_gap}.
+    \beta=(1-k) C_{\mathrm{q\_gap}}.
 \end{equation}
-In \Eqref{eq:ectei_Kawai}, $L_v$ is latent heat of vaporization, and $c_p$ is the specific heat of air at constant pressure. The values of both parameters are the same as the ones in  \Eqref{eq:gamma_m}. $q_{0}$ and $q_{700}$ are the specific humidity at surface and 700 hPa respectively. The coefficient $C_{q\_gap}$ is the ratio of the total water specific humidity ($q_t$) gap at
-the inversion and the $q$ difference between the surface
-and 700 hPa. \cite{Kawai2017} estimated the $C_{q\_gap} = 0.76, k=0.70 $ and $\beta = 0.23$ based on radiosonde observation data off the coast of Peru. 
-\cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}.
+In \Eqref{eq:ectei_Kawai}, $L_v$ is latent heat of vaporization, and $c_p$ is the specific heat of air at constant pressure. The values of both parameters are the same as the ones in  \Eqref{eq:gamma_m}. $q_{0}$ and $q_{700}$ are the specific humidity at surface and 700 hPa respectively. The coefficient $C_{\mathrm{q\_gap}}$ is the ratio of the total water specific humidity ($q_t$) gap at the inversion and the $q$ difference between the surface and 700 hPa. \cite{Kawai2017} estimated the $C_{\mathrm{q\_gap}} =$ 0.76, $k=$ 0.70 and $\beta =$ 0.23 based on radiosonde observation data off the coast of Peru. \cite{Park2019} argued that the use of LTS and EIS as a global proxy for low cloud amount is limited due to their weaker and inconsistent relationship with low cloud amount over land. They kept the calculation of height of inversion, the term with which was neglected in the derivation of EIS \citep{Wood2006}.
