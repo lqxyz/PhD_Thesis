@@ -104,6 +104,7 @@ As introduced in \secref{sec:cld_fbk_chap_intro}, the PPE is a possible way to e
 %\begin{sidewaystable}
 	\caption{Design of the perturbed parameter experiments (PPEs). All simulations are run in T42 horizontal resolution.}
 	\centering
+	\vspace{0.25em}
 	\renewcommand{\arraystretch}{1.5}
 	\resizebox{\textwidth}{!}{
 	\begin{tabular}{cc >{\raggedright}m{0.26\linewidth} m{0.6\linewidth}} 
@@ -119,13 +120,13 @@ As introduced in \secref{sec:cld_fbk_chap_intro}, the PPE is a possible way to e
 		5 & sc\_park\_a\_1 & $b: 1.3 \rightarrow 1$ & The added stratocumulus clouds should decrease \\
 		6 & Tmax\_0 &  $T_{\mathrm{max}}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase) \\
 		7 & Tmin\_m35 & $T_{\mathrm{min}}: -40\rightarrow -35~^\circ$C & Increase the temperature threshold of the fraction of ice cloud \\
-		8 & reffice\_50 & $r_{e\_ice}:25\rightarrow 50~\mu$m & Increase the default effective radius for ice cloud \\
-		9 & reffliq\_12 & $r_{e\_liq}:14\rightarrow 12~\mu$m & Decrease the default effective radius for liquid cloud \\
+		8 & reffice\_50 & $r_{e\_\mathrm{ice}}:25\rightarrow 50~\mu$m & Increase the default effective radius for ice cloud \\
+		9 & reffliq\_12 & $r_{e\_\mathrm{liq}}:14\rightarrow 12~\mu$m & Decrease the default effective radius for liquid cloud \\
 		%rcl\_height &  & In-cloud liquid water mixing ratio is specified as a function of height, rather than as temperature \\
 		10 & freezedry & On & Use the freezedry method \\
 		11 & sundqvist & On & Change the default cloud fraction scheme from linear to Sundqvist \\
-		12 & qcl\_T\_0.2 & $w_{l}=0.2$ & Increase the maximum of in-cloud water mixing ratio a box can reach \\
-		%12 & qcl\_T & $q_{l}=0.2$ & In-cloud water mixing ratio as a function of height \\
+		12 & qcl\_T\_0.2 & $w_{l0}=0.2$ & Increase the maximum of in-cloud water mixing ratio a box can reach \\
+		%12 & qcl\_T & $q_{l0}=0.2$ & In-cloud water mixing ratio as a function of height \\
 		\bottomrule
 	\end{tabular}
 	}
@@ -152,13 +153,13 @@ As introduced in \secref{sec:cld_fbk_chap_intro}, the PPE is a possible way to e
 % 		5 & Sc\_coeff\_b & $b: 1.3 \rightarrow 1$ & The added stratocumulus clouds should decrease \\
 % 		6 & Tmax &  $T_{\mathrm{max}}:-5\rightarrow 0~^\circ$C & Increase the temperature threshold of the fraction of liquid cloud (Reff would increase) \\
 % 		7 & Tmin & $T_{\mathrm{min}}: -40\rightarrow -35~^\circ$C & Increase the temperature threshold of the fraction of ice cloud \\
-% 		8 & Reff\_ice & $r_{e\_ice}:25\rightarrow 50~\mu$m & Increase the default effective radius for ice cloud \\
-% 		9 & Reff\_liq & $r_{e\_liq}:14\rightarrow 12~\mu$m & Decrease the default effective radius for liquid cloud \\
+% 		8 & Reff\_ice & $r_{e\_\mathrm{ice}}:25\rightarrow 50~\mu$m & Increase the default effective radius for ice cloud \\
+% 		9 & Reff\_liq & $r_{e\_\mathrm{liq}}:14\rightarrow 12~\mu$m & Decrease the default effective radius for liquid cloud \\
 % 		%rcl\_height &  & In-cloud liquid water mixing ratio is specified as a function of height, rather than as temperature \\
 % 		10 & freezedry & On & Use the freezedry method \\
 % 		11 & Sundqvist & On & Change the default cloud fraction scheme from linear to Sundqvist \\
-% 		12 & cld\_water & $w_{l}=0.2$ & Increase the maximum of in-cloud water mixing ratio a box can reach \\
-% 		%12 & qcl\_T & $q_{l}=0.2$ & In-cloud water mixing ratio as a function of height \\
+% 		12 & cld\_water & $w_{l0}=0.2$ & Increase the maximum of in-cloud water mixing ratio a box can reach \\
+% 		%12 & qcl\_T & $q_{l0}=0.2$ & In-cloud water mixing ratio as a function of height \\
 % 		\bottomrule
 % 	\end{tabular}
 % 	}
@@ -166,9 +167,20 @@ As introduced in \secref{sec:cld_fbk_chap_intro}, the PPE is a possible way to e
 % %\end{sidewaystable}
 % \end{table}
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\linewidth]{{figs/change_of_CRE/basic_state_tsurf_in_all_PPE_runs}.pdf}
+	\caption[Check the basic states of perturbed parameter ensemble runs]{The simulated surface temperature from all the Isca perturbed parameter ensemble runs, both for control (CO$_2$ is 300 ppm; first 30 years) and 4$\times$CO$_2$ (1200 ppm; last 30 years) runs. The perturbed parameters include the ones that are not used in the final analysis (see \tabref{tab:qflux_ppe_exps_summary}).}
+	\label{fig:PPE_basic_states}
+\end{figure}
+
 The default parameters in \tabref{tab:cld_scheme_summary} are used for the control run (\textit{linear} in \tabref{tab:qflux_ppe_exps_summary}, but the freezedry adjustment introduced in \secref{sec:freezedry} is turned off. We do this for two reasons: First, the low-latitude regions usually contribute most to the spread of global mean cloud feedbacks, as suggested from previous studies and as to be shown later in \secref{sec:reg_contri_to_spread_of_cldfbk}, and the simulated cloud radiative effect in low and middle latitudes are fine without this adjustment. Therefore, keeping the schemes used in the study to its minimalism does not have large impact to the study of spread of cloud feedback. Second, the `freezedry' adjustment works well for the current climate (see \figref{fig:zonal_mean_cre}), but still needs some tests before it can be applied readily to the warming experiments. The perturbations for the cloud scheme alter either the cloud amount or cloud optical properties, as both are necessary components for radiation transfer calculation. Specifically, four experiments (i.e., \textit{a\_surf\_20}, \textit{a\_top\_10}, \textit{sc\_park\_a\_1} and \textit{sc\_park\_b\_m0.3}) listed in \tabref{tab:qflux_ppe_exps_summary} are directly associated to the cloud amount, where \textit{a\_surf\_20} and \textit{a\_top\_10} adjust the cloud amount in large-scale cloud scheme (see \secref{sec:rh_cloud}), while \textit{sc\_park\_a\_1} and \textit{sc\_park\_b\_m0.3} have impacts on the corresponding marine low cloud amount (see \secref{sec:marine_low_cld_scheme}). The perturbed parameter in \textit{sundqvist} experiment is also related to the possible changes in large-scale cloud amount. The other perturbed parameters or corresponding experiments are associated straightly with the optical properties of clouds, and these properties are altered by effective radius of cloud condensate (i.e., \textit{reffice\_50} and \textit{reffliq\_12}), temperature thresholds for liquid or ice water fraction (i.e. \textit{Tmax\_0} and \textit{Tmin\_m35}) or the maximum in-cloud water mixing ratio a box can reach (i.e. \textit{qcl\_T\_0.2}). Of course, these perturbations could have impact on cloud amount once the background condition evolves. The \textit{freezedry} experiment is also examined here for completeness, which can modify the behaviors of cloud scheme over high-latitude regions.
 
-For each simulation with perturbed parameter, two runs are performed: one with CO$_2$ level similar to current climate (300 ppm; control run for each parameter), and the other with quadruple CO$_2$ (1200 ppm; perturbed run for each parameter). The control run is performed for 30 years, and as mentioned in \secref{sec:implementation_of_cosp}, the COSP is only active in the last 5 years. On the basis of the control run, the perturbed run is performed for another 30 years with CO$_2$ concentration quadrupled. Similarly, the satellite simulator is only enabled for the last 5 years in perturbed run. The spinup usually takes less than 20 years to finish in both runs. Other Isca setups, such as the convection scheme, large-scale condensation scheme and radiation scheme, are the same as those described in \secref{sec:exp_setup_and_dataset}. The only difference is that the simulations in \chapref{ch:simple_cld_scheme} are the AMIP-type fixed-SST experiments, while here the ocean heat flux (the `Q-flux') is prescribed. In the fixed-SST experiments, the changes in atmosphere could not feedback into the SST changes, but the Q-flux can make the simulation more realistic. Here we prescribe the derived `Q-flux' from a given distribution of SSTs \citep{Durack2018} following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. The detailed description of how Q-flux is calculated can be found in \secref{sec:Q_flux_method}.\index{Perturbed parameter ensemble|)}
+For each simulation with perturbed parameter, two runs are performed: one with CO$_2$ level similar to current climate (300 ppm; control run for each parameter), and the other with quadruple CO$_2$ (1200 ppm; perturbed run for each parameter). The control run is performed for 30 years, and as mentioned in \secref{sec:implementation_of_cosp}, the COSP is only active in the last 5 years. On the basis of the control run, the perturbed run is performed for another 30 years with CO$_2$ concentration quadrupled. Similarly, the satellite simulator is only enabled for the last 5 years in perturbed run. The spinup usually takes about 10 years to finish in both runs. Other Isca setups, such as the convection scheme, large-scale condensation scheme and radiation scheme, are the same as those described in \secref{sec:exp_setup_and_dataset}. The only difference is that the simulations in \chapref{ch:simple_cld_scheme} are the AMIP-type fixed-SST experiments, while here the ocean heat flux (the `Q-flux') is prescribed. In the fixed-SST experiments, the changes in atmosphere could not feedback into the SST changes, but the Q-flux can make the simulation more realistic, as SST can response to forcing changes (see \figref{fig:PPE_basic_states}). Here we prescribe the derived `Q-flux' from a given distribution of SSTs \citep{Durack2018} following the method from \cite{Russell1985}, so that the SST can respond freely to the CO$_2$ forcing. The detailed description of how Q-flux is calculated can be found in \secref{sec:Q_flux_method}.
+
+As a final note of this section, the perturbation strategy for the parameters are discussed briefly as follows. As shown in \figref{fig:PPE_basic_states}, beyond the perturbed values in \tabref{tab:qflux_ppe_exps_summary}, some parameters are also perturbed in a larger range, but the basic states (surface temperature) of control simulations changed a lot, or the global warming simulations could not reach new balance, so they are not included in the final ensemble. For example, when the liquid cloud effective radius $r_{e\_\mathrm{liq}}$ is perturbed to 10 $\mu$m (default is 14 $\mu$m), the global mean surface temperature is about 5 K lower than most simulations, as indicated by label \textit{reffliq\_10} in \figref{fig:PPE_basic_states}. In addition, when the in-cloud liquid water content related parameter $w_{l0}$ in \Eqref{eq:qcl} uses 0.17 g kg$^{-1}$, or the liquid cloud fraction related variable $T_{\mathrm{min}}$ in \Eqref{eq:liquid_frac} uses $-20^\circ$C, we find the simulations (\textit{Tmin\_m20} and \textit{qcl\_T\_0.17}) under 4$\times$CO$_2$ could not reach new balance. Therefore, both perturbations are not included in the final ensemble. Note that the surface temperature in both runs is also higher than majority of simulations in the first 30 years (i.e., control runs), because the cloud optical depth decreases under the perturbations according to \Eqref{eq:cld_tau_lwp_re}. We have kept the \textit{reffliq\_12} run in the PPE, as when $r_{e\_\mathrm{liq}}$ is perturbed to 12 $\mu$m, its surface temperature in control run is much closer to the other runs and could reaach new balance under global warming, although the surface temperature under global warming run has a gap with other runs (Note the gap is nearly halved compared to the \textit{reffliq\_10} run).
+
+\index{Perturbed parameter ensemble|)}
 
 %\section{Results}
 %\label{sec:results_cld_fbk}
