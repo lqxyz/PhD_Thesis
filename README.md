@@ -2,21 +2,21 @@
 This is my PhD thesis draft.
 
 #### File structure
-* `thesis.tex`: main `tex` file
-* `thesisPreamble.tex`: abstract and acknowledgement
-* `paperslib.bib`: the bibliorgraphy file, to be compiled by `bibtex`
-* `ametsoc2014.bst`: the bibliorgraphy style, copied from [American Meteorological Society](https://www.ametsoc.org) journal [template](https://www.ametsoc.org/index.cfm/ams/publications/author-information/latex-author-info/)
-* `exeterthesis.cls`: thesis template for [University of Exeter](https://www.exeter.ac.uk/)
-* `packages.tex`: the `tex` packages, including self-defined commands
-* `glossary.tex`: acronyms, abbreviations and symbols
-* `chapter/`: `tex` files for each chapter
-* `figs/`: figure files (in `.pdf` or `.png` format) for each chapter (subfolder)
+* [`thesis.tex`](thesis.tex): main `tex` file
+* [`thesisPreamble.tex`](thesisPreamble.tex): abstract and acknowledgement
+* [`paperslib.bib`](paperslib.bib): the bibliorgraphy file, to be compiled by `bibtex`
+* [`ametsoc2014.bst`](ametsoc2014.bst): the bibliorgraphy style, copied from [American Meteorological Society](https://www.ametsoc.org) journal [template](https://www.ametsoc.org/index.cfm/ams/publications/author-information/latex-author-info/)
+* [`exeterthesis.cls`](exeterthesis.cls): thesis template for [University of Exeter](https://www.exeter.ac.uk/)
+* [`packages.tex`](packages.tex): the `tex` packages, including self-defined commands
+* [`glossary.tex`](glossary.tex): acronyms, abbreviations and symbols
+* [`chapter/`](chapter/): `tex` files for each chapter
+* [`figs/`](figs/): figure files (in `.pdf` or `.png` format) for each chapter (subfolder)
 * [`utils/`](utils/): scripts used to install necessary packages on Linux platform, such as [`TeXLive`](https://www.tug.org/texlive/) and `Arial` font
 * [`tidy_bib.sh`](tidy_bib.sh): a shell script to tidy the `bib` file, but there might be some mistakes in the [`Crossref`](https://www.crossref.org/) database
 * [`.github/workflows/compile_linux.yml`](.github/workflows/compile_linux.yml): Github action configuration file, which auto-compiles the `tex` files after any changes being pushed into this Github repository
 
 #### Compile the LaTeX file
-1. Use [`make`](https://www.gnu.org/software/make) and `Makefile`, which compile the LaTeX files through [`LaTeXmk`](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [`ghostscript`](https://www.ghostscript.com/) command `gs`:
+1. Use [`make`](https://www.gnu.org/software/make) and [`Makefile`](Makefile), which compile the LaTeX files through [`LaTeXmk`](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [`ghostscript`](https://www.ghostscript.com/) command `gs`:
     ```{bash}
     make
     ```
@@ -34,7 +34,7 @@ This is my PhD thesis draft.
     brew install tectonic
     ```
 
-    After that, the LaTeX files can be compiled as follows (same to the methods used in `.github/workflows/compile_linux.yml`):
+    After that, the LaTeX files can be compiled as follows (same to the methods used in [`.github/workflows/compile_linux.yml`](.github/workflows/compile_linux.yml)):
     ```{bash}
     TEXFN=thesis
     tectonic --reruns=0 ${TEXFN}.tex  # --keep-intermediates
