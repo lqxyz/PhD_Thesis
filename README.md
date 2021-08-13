@@ -36,7 +36,7 @@ Perhaps need to install `TeX Live` and `Arial` font first (see the examples: [in
     brew install tectonic
     ```
 
-    After that, the LaTeX files can be compiled as follows (same to the methods used in [.github/workflows/compile_linux.yml](.github/workflows/compile_linux.yml)):
+    After that, the LaTeX files can be compiled as follows (same to the methods used in [compile_linux.yml](.github/workflows/compile_linux.yml)):
     ```{bash}
     TEXFN=thesis
     tectonic --reruns=0 ${TEXFN}.tex  # --keep-intermediates
