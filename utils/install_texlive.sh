@@ -4,10 +4,10 @@
 # Download script to install texlive
 url=https://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
 pkg=$(basename $url)
-dst_dt=${pkg/.zip/}
+dst_dir=${pkg/.zip/}
 wget -N "$url"
-[[ -f $pkg ]] && unzip -o -d $dst_dt $pkg 
-cd $dst_dt
+[[ -f $pkg ]] && unzip -o -d $dst_dir $pkg
+cd $dst_dir
 mv -f install-tl-*/* .
 rmdir install-tl-*
 
@@ -23,4 +23,4 @@ echo $TEXLIVE_INSTALL_PREFIX
 ./install-tl
 
 # Delete the downloaded files
-# rm -rf $pkg $dst_dt
+# rm -rf $pkg $dst_dir
