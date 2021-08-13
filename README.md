@@ -9,11 +9,11 @@ This is my PhD thesis draft.
 * `exeterthesis.cls`: thesis template for [University of Exeter](https://www.exeter.ac.uk/)
 * `packages.tex`: the `tex` packages, including self-defined commands
 * `glossary.tex`: acronyms, abbreviations and symbols
-* `chapter`: `tex` files for each chapter
-* `figs`: figure files (in `.pdf` or `.png` format) for each chapter (subfolder)
-* `utils`: scripts used to install necessary packages on Linux platform, such as [`TeXLive`](https://www.tug.org/texlive/) and `Arial` font
-* `tidy_bib.sh`: a shell script to tidy the `bib` file, but there might be some mistakes in the [`Crossref`](https://www.crossref.org/) database
-*`.github/workflows/compile_linux.yml`: Github action configuration file, which auto-compiles the `tex` files after any changes being pushed in the Github repository
+* `chapter/`: `tex` files for each chapter
+* `figs/`: figure files (in `.pdf` or `.png` format) for each chapter (subfolder)
+* [`utils/`](utils/): scripts used to install necessary packages on Linux platform, such as [`TeXLive`](https://www.tug.org/texlive/) and `Arial` font
+* [`tidy_bib.sh`](tidy_bib.sh): a shell script to tidy the `bib` file, but there might be some mistakes in the [`Crossref`](https://www.crossref.org/) database
+* [`.github/workflows/compile_linux.yml`](.github/workflows/compile_linux.yml): Github action configuration file, which auto-compiles the `tex` files after any changes being pushed into this Github repository
 
 #### Compile the LaTeX file
 1. Use [`make`](https://www.gnu.org/software/make) and `Makefile`, which compile the LaTeX files through [`LaTeXmk`](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [`ghostscript`](https://www.ghostscript.com/) command `gs`:
@@ -24,7 +24,7 @@ This is my PhD thesis draft.
 
 2. Use [`Tectonic`](https://tectonic-typesetting.github.io/en-US/), which can automatically download support files.
 
-    `Tectonic` can be installed following this [instruction](https://tectonic-typesetting.github.io/book/latest/installation/). Install on Linux (or MacOS) through [`conda`](https://docs.conda.io/en/latest/):
+    `Tectonic` can be installed following this [instruction](https://tectonic-typesetting.github.io/book/latest/installation/). Simply, install on Linux (or MacOS) through [`conda`](https://docs.conda.io/en/latest/):
     ```{bash}
     conda install -c conda-forge tectonic
     ```
