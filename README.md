@@ -15,10 +15,10 @@ This is my PhD thesis draft.
 * [tidy_bib.sh](tidy_bib.sh): a shell script to tidy the `bib` file, but there might be some mistakes in the [Crossref](https://www.crossref.org/) database
 * [.github/workflows/compile_linux.yml](.github/workflows/compile_linux.yml): Github action configuration file, which auto-compiles the `tex` files after any changes being pushed into this Github repository
 
-#### Compile the LaTeX file
-Perhaps need to install `TeX Live` and `Arial` font first (see the [install_texlive.sh](utils/install_texlive.sh) and [install_ms_fonts.sh](utils/install_ms_fonts.sh) in [utils](utils))!
+#### Compile the LaTeX files
+Perhaps need to install `TeX Live` and `Arial` font first (see the examples: [install_texlive.sh](utils/install_texlive.sh) and [install_ms_fonts.sh](utils/install_ms_fonts.sh)).
 
-1. Use [`make`](https://www.gnu.org/software/make) and [Makefile](Makefile), which compile the LaTeX files through [LaTeXmk](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [`ghostscript`](https://www.ghostscript.com/) command `gs`:
+1. Use [`make`](https://www.gnu.org/software/make) and [Makefile](Makefile), which compile the LaTeX files through [LaTeXmk](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [Ghostscript](https://www.ghostscript.com/) command `gs`:
     ```{bash}
     make
     ```
@@ -31,7 +31,7 @@ Perhaps need to install `TeX Live` and `Arial` font first (see the [install_texl
     conda install -c conda-forge tectonic
     ```
 
-    On MacOS, it can also be installed using [`Homebrew`](https://brew.sh/):
+    On MacOS, it can also be installed using [Homebrew](https://brew.sh/):
     ```{bash}
     brew install tectonic
     ```
