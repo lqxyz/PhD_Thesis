@@ -18,7 +18,7 @@ This is my PhD thesis draft.
 #### Compile the LaTeX files
 Perhaps need to install `TeX Live` and `Arial` font first (see the examples: [install_texlive.sh](utils/install_texlive.sh) and [install_ms_fonts.sh](utils/install_ms_fonts.sh)).
 
-1. Use [`make`](https://www.gnu.org/software/make) and [Makefile](Makefile), which compile the LaTeX files through [LaTeXmk](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [Ghostscript](https://www.ghostscript.com/) command `gs`:
+1. Use [`make`](https://www.gnu.org/software/make) and [Makefile](Makefile), which compile the LaTeX files through [`latexmk`](https://ctan.org/pkg/LaTeXmk/?lang=en) and compress the output `pdf` file through the [Ghostscript](https://www.ghostscript.com/) command `gs`:
     ```{bash}
     make
     ```
