@@ -1,5 +1,5 @@
 ## PhD_Thesis
-This is my PhD thesis draft. The thesis template ([`thesisStyle.zip`](utils/thesisStyle.zip)) is from the module *Mathematics PGR Resources* on Exeter Learning Environment ([ELE](https://vle.exeter.ac.uk); the original file link can be found [here](https://vle.exeter.ac.uk/mod/resource/view.php?id=697014), but you may need username and password to access).
+This is my PhD thesis draft. The thesis template ([`thesisStyle.zip`](utils/thesisStyle.zip)) is from the module *Mathematics PGR Resources* on Exeter Learning Environment ([ELE](https://vle.exeter.ac.uk); the original file can be found [here](https://vle.exeter.ac.uk/mod/resource/view.php?id=697014), but you may need username and password to access).
 
 #### File structure
 * [thesis.tex](thesis.tex): main `tex` file
