@@ -39,7 +39,7 @@ This chapter is structured as follows. \secref{sec:polar_amiplicaiton_setup} des
 
 %With these choices, we can examine some of the mechanisms such as water vapor feedback associated with the polar amplification so as to understand them in further.
 
-\section{Experiment setup}
+\section{Experimental setup}
 \label{sec:polar_amiplicaiton_setup}
 
 \subsection{Basic setup}
@@ -165,7 +165,7 @@ where $L_v$ is the specific latent heat of evaporation of water, taken to as a c
 \begin{equation}
 e_s(T) = e_{s0}\exp\left[\frac{L_v}{R_v}\left(\frac{1}{T_0}-\frac{1}{T} \right)\right],
 \end{equation}
-where $e_{s0}$ is a reference value of $6.1078$ hPa for this at a reference temperature $T_0=273.16$ K. After each perturbation, the changes of radiation flux at TOA are recorded and then averaged over each month to get the kernels. In fact, the traditional kernels are supposed to compute under total-sky and clear-sky conditions separately so as to obtain the radiative effect of clouds, but only clear-sky case will be calculated for Isac model at present due to the lack of cloud schemes.
+where $e_{s0}$ is a reference value of $6.1078$ hPa for this at a reference temperature $T_0=273.16$ K. After each perturbation, the changes of radiation flux at TOA are recorded and then averaged over each month to get the kernels. In fact, the traditional kernels are supposed to compute under total-sky and clear-sky conditions separately so as to obtain the radiative effect of clouds, but only clear-sky case will be calculated for Isca model at present due to the lack of cloud schemes.
 
 %\vspace{-0.3cm}
 If $\Delta R$ represents the TOA radiation flux change due to the perturbation of variable $x$, then the radiative kernel for each level is defined as $K^i_x = \partial R / \partial x_i$, which is a function of space and time. In general, the resulting kernels are weighted relative to 100-hPa thick layer in order to make it easier to compare with other different kernels, that is $\mathbb{K}^i_x = K^i_x / \Delta p_i \times 100\text{ hPa}$, where $\Delta p_i$ is the thickness of layer $i$ in units of hPa. The total radiation flux change at TOA due to $x$ perturbation is obtained by integrating from the surface to the tropopause, that is
