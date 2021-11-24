@@ -11,7 +11,7 @@ This is my PhD thesis draft. The thesis template ([`thesisStyle.zip`](utils/thes
 * [glossary.tex](glossary.tex): acronyms, abbreviations and symbols
 * [chapter/](chapter/): `tex` files for each chapter
 * [figs/](figs/): figure files (in `.pdf` or `.png` format) for each chapter (subfolder)
-* [utils/](utils/): scripts used to install necessary packages on Linux platform, such as [`TeX Live`](https://www.tug.org/texlive/) and `Arial` font
+* [utils/](utils/): scripts to install necessary packages (i.e., [`TeX Live`](https://www.tug.org/texlive/) and `Arial` font) on Linux platform and to track changes since the initial submission
 * [tidy_bib.sh](tidy_bib.sh): a shell script to tidy the `bib` file, but there might be some mistakes in the [Crossref](https://www.crossref.org/) database
 * [.github/workflows/compile_linux.yml](.github/workflows/compile_linux.yml): Github action configuration file, which auto-compiles the `tex` files after any changes being pushed into this Github repository
 
