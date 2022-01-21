@@ -27,7 +27,7 @@ git checkout main
 mv ../$old_tex ../$new_tex .
 
 echo "Generate the diff tex file..."
-latexdiff $old_tex $new_tex > "$diff".tex
+latexdiff $old_tex $new_tex --append-textcmd=caption > "$diff".tex
 
 echo "Generate the diff pdf file..."
 # Generatre nomenclature and glossory
