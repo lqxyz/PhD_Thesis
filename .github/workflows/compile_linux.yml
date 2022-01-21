@@ -33,6 +33,7 @@ jobs:
         run: |
           # accept the license
           echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get update
           sudo apt-get install ttf-mscorefonts-installer
           sudo fc-cache -f
 
